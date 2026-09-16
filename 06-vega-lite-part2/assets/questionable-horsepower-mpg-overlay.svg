@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="430" viewBox="0 0 800 430">
+  <rect width="800" height="430" fill="#fffdf9"/>
+  <g stroke="#dce2eb" stroke-width="1">
+    <line x1="70" y1="340" x2="750" y2="340"/><line x1="70" y1="265" x2="750" y2="265"/>
+    <line x1="70" y1="190" x2="750" y2="190"/><line x1="70" y1="115" x2="750" y2="115"/>
+    <line x1="70" y1="40" x2="750" y2="40"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#64728c" text-anchor="end">
+    <text x="60" y="344">0</text><text x="60" y="269">40</text><text x="60" y="194">80</text>
+    <text x="60" y="119">120</text><text x="60" y="44">160</text>
+  </g>
+  <path d="M70 40V340H750" stroke="#17233c" fill="none" stroke-width="2"/>
+  <path d="M70 62.8 L125 139.3 L180 114.7 L235 95.4 L290 163.3 L345 150.5 L400 150.4 L455 143 L510 153.1 L565 150.2 L620 194.7 L730 187.6" fill="none" stroke="#cc455a" stroke-width="5"/>
+  <path d="M70 306.8 L125 300.4 L180 304.9 L235 307.9 L290 297.3 L345 302 L400 299.5 L455 296.2 L510 294.9 L565 293 L620 276.6 L730 281.6" fill="none" stroke="#315cab" stroke-width="5"/>
+  <g fill="#64728c" font-family="Arial,Helvetica,sans-serif" font-size="12" text-anchor="middle">
+    <text x="70" y="363">1970</text><text x="290" y="363">1974</text><text x="510" y="363">1978</text><text x="730" y="363">1982</text>
+  </g>
+  <text x="410" y="397" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#17233c" text-anchor="middle">Model year</text>
+  <text transform="translate(20 190) rotate(-90)" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#17233c" text-anchor="middle">Mean value</text>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700">
+    <line x1="505" y1="28" x2="535" y2="28" stroke="#cc455a" stroke-width="5"/><text x="543" y="33" fill="#17233c">Horsepower</text>
+    <line x1="630" y1="28" x2="660" y2="28" stroke="#315cab" stroke-width="5"/><text x="668" y="33" fill="#17233c">MPG</text>
+  </g>
+</svg>
