@@ -1,0 +1,187 @@
+{
+  "provenance": "Constructed teaching example, not empirical results. Used from the opening example onward. Eight independent runs per method under each fixed test condition; paired score and runtime records within each method. No pairing between methods is assumed.",
+  "metric": "Score",
+  "score_domain": [
+    0,
+    100
+  ],
+  "failure_rule": {
+    "operator": "less_than",
+    "threshold": 70
+  },
+  "methods": {
+    "A": [
+      77,
+      78,
+      79,
+      80,
+      80,
+      81,
+      82,
+      83
+    ],
+    "B": [
+      58,
+      66,
+      74,
+      78,
+      82,
+      86,
+      96,
+      100
+    ]
+  },
+  "conditions": [
+    {
+      "name": "Baseline",
+      "scores": {
+        "A": [
+          77,
+          78,
+          79,
+          80,
+          80,
+          81,
+          82,
+          83
+        ],
+        "B": [
+          58,
+          66,
+          74,
+          78,
+          82,
+          86,
+          96,
+          100
+        ]
+      },
+      "runtime_seconds": {
+        "A": [
+          7,
+          7.4,
+          7.5,
+          7.8,
+          8,
+          7.6,
+          7.9,
+          7.7
+        ],
+        "B": [
+          5,
+          5.2,
+          5.5,
+          5.6,
+          6,
+          5.7,
+          5.8,
+          5.4
+        ]
+      },
+      "description": "No added noise"
+    },
+    {
+      "name": "Mild noise",
+      "scores": {
+        "A": [
+          73,
+          74,
+          75,
+          76,
+          76,
+          77,
+          78,
+          79
+        ],
+        "B": [
+          52,
+          60,
+          68,
+          72,
+          76,
+          80,
+          90,
+          94
+        ]
+      },
+      "runtime_seconds": {
+        "A": [
+          8.5,
+          9,
+          9.3,
+          9.8,
+          10,
+          9.6,
+          9.1,
+          9.4
+        ],
+        "B": [
+          6,
+          6.3,
+          6.5,
+          6.9,
+          7,
+          6.7,
+          6.6,
+          6.4
+        ]
+      },
+      "description": "Low noise"
+    },
+    {
+      "name": "Strong noise",
+      "scores": {
+        "A": [
+          52,
+          58,
+          64,
+          68,
+          70,
+          74,
+          78,
+          80
+        ],
+        "B": [
+          58,
+          66,
+          70,
+          72,
+          76,
+          78,
+          84,
+          88
+        ]
+      },
+      "runtime_seconds": {
+        "A": [
+          9.5,
+          10,
+          10.2,
+          10.7,
+          11,
+          10.5,
+          10.8,
+          10.4
+        ],
+        "B": [
+          7.5,
+          8,
+          8.2,
+          8.6,
+          9,
+          8.5,
+          8.7,
+          8.3
+        ]
+      },
+      "description": "High noise"
+    }
+  ],
+  "runtime_budget_seconds": 12,
+  "uncertainty": {
+    "method": "Wilson score interval",
+    "confidence": 0.95,
+    "assumption": "Independent Bernoulli outcomes with constant failure probability within each method and condition. Intervals are marginal, not a test of the difference between methods.",
+    "source": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm"
+  }
+}

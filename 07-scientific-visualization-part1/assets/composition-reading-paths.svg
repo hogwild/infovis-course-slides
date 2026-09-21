@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="490" viewBox="0 0 1380 490" role="img" aria-labelledby="title desc">
+  <title id="title">Visual hierarchy establishes entry points for three reading paths</title>
+  <desc id="desc">Original layout schematics. A horizontal pair emphasizes failures with a larger panel before the smaller runtime panel. A vertical pair emphasizes the failure heading with larger, bolder type. A four-panel grid highlights the first view with a dark background and white text, then follows numbered views row by row. Size, typography, and contrast create visual hierarchy; arrows represent intended reading order, not measured eye movements. Layout guidance: Jambor et al., PLOS Biology 2021, doi:10.1371/journal.pbio.3001161, section 5.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3157a4"/></marker>
+  </defs>
+  <style>
+    text {font-family:Arial,Helvetica,sans-serif; fill:#17233c}
+    .heading {font-size:30px; font-weight:700}
+    .panel {fill:#f1f4fa; stroke:#b9c6dc; stroke-width:2}
+    .label {font-size:25px; font-weight:600; text-anchor:middle}
+    .label-primary {font-size:32px; font-weight:700}
+    .label-secondary {font-weight:400}
+    .number {font-size:28px; font-weight:700; fill:#3157a4; text-anchor:middle}
+    .panel-emphasis {fill:#3157a4; stroke:#3157a4}
+    .text-inverse {fill:#fff}
+    .explanation {font-size:24px; fill:#667085}
+    .path {fill:none; stroke:#3157a4; stroke-width:3; marker-end:url(#arrow)}
+    .divider {stroke:#d8dbe4; stroke-width:1}
+  </style>
+  <rect width="1380" height="490" fill="#fff"/>
+  <line class="divider" x1="450" y1="28" x2="450" y2="462"/>
+  <line class="divider" x1="920" y1="28" x2="920" y2="462"/>
+
+  <text class="heading" x="26" y="52">Left to right</text>
+  <rect class="panel" x="26" y="124" width="210" height="200" rx="3"/>
+  <text class="number" x="131" y="204">1</text>
+  <text class="label" x="131" y="247">Failures</text>
+  <path class="path" d="M 246 224 H 272"/>
+  <rect class="panel" x="284" y="170" width="135" height="108" rx="3"/>
+  <text class="number" x="351.5" y="204">2</text>
+  <text class="label" x="351.5" y="247">Runtime</text>
+  <text class="explanation" x="26" y="413">Size emphasizes failures.</text>
+  <text class="explanation" x="26" y="448">Read across the row.</text>
+
+  <text class="heading" x="480" y="52">Top to bottom</text>
+  <rect class="panel" x="536" y="98" width="274" height="99" rx="3"/>
+  <text class="number" x="569" y="157">1</text>
+  <text class="label label-primary" x="693" y="157">Failures</text>
+  <path class="path" d="M 673 209 V 245"/>
+  <rect class="panel" x="536" y="260" width="274" height="99" rx="3"/>
+  <text class="number" x="569" y="319">2</text>
+  <text class="label label-secondary" x="693" y="319">Runtime</text>
+  <text class="explanation" x="480" y="413">Bold type emphasizes failures.</text>
+  <text class="explanation" x="480" y="448">Read down the column.</text>
+
+  <text class="heading" x="950" y="52">Row by row (Z path)</text>
+  <rect class="panel panel-emphasis" x="950" y="104" width="154" height="98" rx="3"/>
+  <text class="number text-inverse" x="1027" y="145">1</text>
+  <text class="label text-inverse" x="1027" y="181">View</text>
+  <path class="path" d="M 1117 153 H 1161"/>
+  <rect class="panel" x="1174" y="104" width="154" height="98" rx="3"/>
+  <text class="number" x="1251" y="145">2</text>
+  <text class="label" x="1251" y="181">View</text>
+  <path class="path" d="M 1230 215 L 1046 260"/>
+  <rect class="panel" x="950" y="274" width="154" height="98" rx="3"/>
+  <text class="number" x="1027" y="315">3</text>
+  <text class="label" x="1027" y="351">View</text>
+  <path class="path" d="M 1117 323 H 1161"/>
+  <rect class="panel" x="1174" y="274" width="154" height="98" rx="3"/>
+  <text class="number" x="1251" y="315">4</text>
+  <text class="label" x="1251" y="351">View</text>
+  <text class="explanation" x="950" y="413">Contrast marks the entry point.</text>
+  <text class="explanation" x="950" y="448">Finish one row, then the next.</text>
+</svg>
