@@ -1,0 +1,2 @@
+raw = FileAttachment("penguins.csv")
+  .csv({typed: true})

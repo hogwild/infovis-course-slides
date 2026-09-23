@@ -1,0 +1,47 @@
+frequencySpec = (field, domain, title, width = 150, height = 340) => {
+  const counts = frequency(field);
+  const isGain = field === "gain";
+  const values = isGain ? Array.from({length: 13}, (_, i) => i - 6)
+    : [...new Set(counts.map(d => d.value))].sort((a,b) => a-b);
+  const maxCount = Math.ceil(Math.max(...counts.map(d => d.count)) / 10) * 10;
+  const padding = isGain ? 0.5 : (domain[1] - domain[0]) * 0.05;
+  return {
+    hconcat: groups.map((group, index) => {
+      const stats = summary.find(d => d.group === group);
+      const rows = values.map(value => ({group, value,
+        count: counts.find(d => d.group === group && d.value === value)?.count ?? 0}));
+      const meanRow = {value: stats[field], label: "Mean " + stats[field].toFixed(2)};
+      return {
+        title: {text: group, subtitle: "n = " + stats.n,
+          color: colors[index], fontSize: 19, offset: 10,
+          subtitleFontSize: 15, subtitlePadding: 4},
+        width, height, data: {values: rows},
+        encoding: {y: {field: "value", type: "quantitative",
+          scale: {domain: [domain[0] - padding, domain[1] + padding], nice: false},
+          axis: {title: index === 0 ? title : null, values,
+            labels: index === 0, ticks: index === 0, domain: index === 0,
+            grid: false, format: ".1~f", labelFontSize: 16,
+            labelOverlap: false, labelPadding: 4, titlePadding: 8}}},
+        layer: [
+          {mark: {type: "bar", orient: "horizontal", color: colors[index], size: 14},
+            encoding: {x: {field: "count", type: "quantitative",
+              scale: {domain: [0, maxCount], nice: false},
+              axis: {title: "Students", values: [0, maxCount / 2, maxCount],
+                labelFontSize: 16, labelOverlap: false, titleFontSize: 17, titlePadding: 8}},
+              tooltip: [{field: "group"}, {field: "value", title},
+                {field: "count", title: "Students"}]}},
+          {data: {values: [meanRow]},
+            mark: {type: "rule", color: "#17233c", strokeDash: [5, 4], strokeWidth: 2}},
+          {data: {values: [meanRow]},
+            mark: {type: "text", align: "right", baseline: "bottom",
+              dx: -3, dy: isGain ? -15 : -5,
+              fontSize: isGain ? 14 : 15, fontWeight: "bold", color: "#17233c"},
+            encoding: {x: {datum: maxCount, type: "quantitative"},
+              text: {field: "label"}}}
+        ]
+      };
+    }),
+    spacing: 18,
+    resolve: {scale: {x: "shared", y: "shared"}}
+  };
+}

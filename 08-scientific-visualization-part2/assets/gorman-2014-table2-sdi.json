@@ -1,0 +1,74 @@
+{
+  "source": "https://doi.org/10.1371/journal.pone.0090081.t002",
+  "title": "Parameter estimates and likelihoods from candidate models for predicting sex of Pygoscelis penguins.",
+  "excerpt": "Size Dimorphism Index column only; published values, not recalculated.",
+  "sign": "Negative when males are larger; positive when females are larger.",
+  "sample": {
+    "Adelie": 137,
+    "Chinstrap": 54,
+    "Gentoo": 116
+  },
+  "license": "CC BY; Gorman, Williams and Fraser (2014)",
+  "values": [
+    {
+      "species": "Adélie penguin",
+      "measurement": "Culmen length",
+      "sdi": -0.09
+    },
+    {
+      "species": "Adélie penguin",
+      "measurement": "Culmen depth",
+      "sdi": -0.08
+    },
+    {
+      "species": "Adélie penguin",
+      "measurement": "Flipper length",
+      "sdi": -0.02
+    },
+    {
+      "species": "Adélie penguin",
+      "measurement": "Body mass",
+      "sdi": -0.2
+    },
+    {
+      "species": "Chinstrap penguin",
+      "measurement": "Culmen length",
+      "sdi": -0.11
+    },
+    {
+      "species": "Chinstrap penguin",
+      "measurement": "Culmen depth",
+      "sdi": -0.1
+    },
+    {
+      "species": "Chinstrap penguin",
+      "measurement": "Flipper length",
+      "sdi": -0.05
+    },
+    {
+      "species": "Chinstrap penguin",
+      "measurement": "Body mass",
+      "sdi": -0.1
+    },
+    {
+      "species": "Gentoo penguin",
+      "measurement": "Culmen length",
+      "sdi": -0.08
+    },
+    {
+      "species": "Gentoo penguin",
+      "measurement": "Culmen depth",
+      "sdi": -0.1
+    },
+    {
+      "species": "Gentoo penguin",
+      "measurement": "Flipper length",
+      "sdi": -0.04
+    },
+    {
+      "species": "Gentoo penguin",
+      "measurement": "Body mass",
+      "sdi": -0.17
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+densityLayer = t => ({
+  transform: [
+    {density: t.field, groupby: ["species", "sex"],
+      bandwidth: t.bandwidth, extent: t.domain,
+      steps: 100, as: [t.field, "density"]},
+    ...rainRows,
+    {as: "edgeY", calculate:
+      "datum.rowY + datum.side * datum.density * " +
+      t.bandwidth}
+  ],
+  mark: {type: "area", orient: "vertical", opacity: 0.3},
+  encoding: {
+    x: position(t).x,
+    y: {field: "edgeY", type: "quantitative", stack: null},
+    y2: {field: "rowY"},
+    color: sexEncoding.color,
+    detail: [{field: "species"}, {field: "sex"}]
+  }
+})

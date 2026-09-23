@@ -1,0 +1,1 @@
+meanFigure = draw(meanSpec)

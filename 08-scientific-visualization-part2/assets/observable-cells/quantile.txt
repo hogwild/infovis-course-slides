@@ -1,0 +1,4 @@
+quantile = (sorted, p) => {
+  const x = (sorted.length - 1) * p, i = Math.floor(x);
+  return sorted[i] + (sorted[Math.min(i + 1, sorted.length - 1)] - sorted[i]) * (x - i);
+}

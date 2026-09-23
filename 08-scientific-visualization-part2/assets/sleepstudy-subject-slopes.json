@@ -1,0 +1,101 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "config": {
+    "background": "#ffffff",
+    "view": {
+      "stroke": "#d9dde5"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 14,
+      "titleColor": "#17233c",
+      "labelColor": "#445064",
+      "gridColor": "#e8ebf0"
+    },
+    "header": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#17233c"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  },
+  "width": 620,
+  "height": 330,
+  "data": {
+    "url": "sleepstudy-subject-slopes-days2-9.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#aeb6c3",
+        "size": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "Slope",
+          "type": "quantitative",
+          "title": "OLS slope, Days 2–9 (ms/day)"
+        },
+        "x2": {
+          "datum": 0
+        },
+        "y": {
+          "field": "Subject",
+          "type": "ordinal",
+          "sort": {
+            "field": "Slope"
+          },
+          "title": "Participant"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 85,
+        "color": "#3157a4"
+      },
+      "encoding": {
+        "x": {
+          "field": "Slope",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Subject",
+          "type": "ordinal",
+          "sort": {
+            "field": "Slope"
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#c9455a",
+        "strokeDash": [
+          6,
+          5
+        ],
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

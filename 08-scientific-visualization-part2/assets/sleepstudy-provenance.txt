@@ -1,0 +1,8 @@
+Dataset: sleepstudy from the lme4 R package.
+Local CSV retrieved from the Rdatasets mirror and verified against lme4 documentation.
+Authoritative documentation: https://lme4.github.io/lme4/reference/sleepstudy.html
+Original study: Belenky et al. (2003), Journal of Sleep Research 12:1–12, DOI 10.1046/j.1365-2869.2003.00337.x.
+Rows: 180 participant-day averages; Subjects: 18; Days per subject: 10.
+Days 0–1: adaptation/training; Day 2: baseline; restriction begins after Day 2.
+Derived daily summary: arithmetic mean, sample SD, SE, and illustrative normal-approximation mean ± 1.96 SE.
+Derived participant change: ordinary least-squares slope of Reaction on Days for Days 2–9, computed separately for each Subject.

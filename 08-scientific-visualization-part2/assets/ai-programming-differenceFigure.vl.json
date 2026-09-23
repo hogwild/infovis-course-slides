@@ -1,0 +1,196 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 560,
+  "height": 160,
+  "title": {
+    "text": "Mean gain difference versus No AI",
+    "subtitle": "Classroom estimates; unadjusted 95% bootstrap intervals"
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#a1a7b3",
+        "strokeDash": [
+          4,
+          4
+        ]
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "group": "Iris",
+            "comparison": "Iris - No AI",
+            "estimate": -0.13988095238095233,
+            "lo": -0.5448717948717948,
+            "hi": 0.2640081272893767
+          },
+          {
+            "group": "ChatGPT",
+            "comparison": "ChatGPT - No AI",
+            "estimate": -0.024621212121212044,
+            "lo": -0.4488873106060606,
+            "hi": 0.39962121212121204
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "lo",
+          "type": "quantitative",
+          "title": "Difference in gain (points)",
+          "scale": {
+            "domain": [
+              -0.8,
+              0.8
+            ]
+          }
+        },
+        "x2": {
+          "field": "hi"
+        },
+        "y": {
+          "field": "comparison",
+          "sort": [
+            "Iris - No AI",
+            "ChatGPT - No AI"
+          ],
+          "title": null,
+          "axis": {
+            "labelLimit": 220
+          }
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "No AI",
+            "Iris",
+            "ChatGPT"
+          ],
+          "scale": {
+            "domain": [
+              "No AI",
+              "Iris",
+              "ChatGPT"
+            ],
+            "range": [
+              "#667085",
+              "#3157a4",
+              "#7656a6"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "group": "Iris",
+            "comparison": "Iris - No AI",
+            "estimate": -0.13988095238095233,
+            "lo": -0.5448717948717948,
+            "hi": 0.2640081272893767
+          },
+          {
+            "group": "ChatGPT",
+            "comparison": "ChatGPT - No AI",
+            "estimate": -0.024621212121212044,
+            "lo": -0.4488873106060606,
+            "hi": 0.39962121212121204
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 150
+      },
+      "encoding": {
+        "x": {
+          "field": "estimate",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "comparison",
+          "sort": [
+            "Iris - No AI",
+            "ChatGPT - No AI"
+          ]
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "No AI",
+            "Iris",
+            "ChatGPT"
+          ],
+          "scale": {
+            "domain": [
+              "No AI",
+              "Iris",
+              "ChatGPT"
+            ],
+            "range": [
+              "#667085",
+              "#3157a4",
+              "#7656a6"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "background": "white",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 17,
+      "titleFontSize": 18,
+      "titlePadding": 12,
+      "labelColor": "#263248",
+      "titleColor": "#17233c",
+      "gridColor": "#e6e8ed",
+      "domainColor": "#a1a7b3",
+      "labelPadding": 8,
+      "labelAngle": 0
+    },
+    "title": {
+      "fontSize": 22,
+      "anchor": "start",
+      "color": "#17233c",
+      "offset": 18,
+      "subtitleFontSize": 16,
+      "subtitleColor": "#667085",
+      "subtitlePadding": 8
+    },
+    "legend": {
+      "labelFontSize": 15,
+      "titleFontSize": 16,
+      "orient": "bottom"
+    }
+  }
+}

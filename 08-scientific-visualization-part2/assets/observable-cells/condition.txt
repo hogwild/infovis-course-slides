@@ -1,0 +1,1 @@
+condition = ({field: "group", type: "nominal", sort: groups, scale: {domain: groups, range: colors}, legend: null})

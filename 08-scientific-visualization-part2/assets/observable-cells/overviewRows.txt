@@ -1,0 +1,7 @@
+overviewRows = ["performance", "gain", "frustration"].flatMap(metric => {
+  const base = data.filter(d => d.group === "No AI").map(d => d[metric]);
+  const center = mean(base);
+  const sd = Math.sqrt(base.reduce((s,x) => s + (x-center)**2, 0) / (base.length-1));
+  return summary.map(d => ({group: d.group, metric,
+    standardized: (d[metric] - center) / sd}));
+})

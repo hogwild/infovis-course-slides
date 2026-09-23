@@ -1,0 +1,16 @@
+offsetView = ({
+  ...massView, height: 270,
+  encoding: {...channels,
+    yOffset: {field: "sex",
+              sort: ["female", "male"]}},
+  layer: [massView.layer[0], {
+    ...massView.layer[1],
+    encoding: {...massView.layer[1].encoding,
+      shape: {field: "sex", type: "nominal",
+        scale: {domain: ["female", "male"],
+                range: ["circle", "diamond"]},
+        legend: {title: "Sex (means)",
+                 orient: "top"}}
+    }
+  }]
+})

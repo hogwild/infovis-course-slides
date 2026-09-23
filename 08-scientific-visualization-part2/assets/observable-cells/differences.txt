@@ -1,0 +1,8 @@
+differences = traits.flatMap(t => species.map(species => {
+  const rows = summary.filter(d =>
+    d.field === t.field && d.species === species);
+  const female = rows.find(d => d.sex === "female").mean;
+  const male = rows.find(d => d.sex === "male").mean;
+  return {trait: t.label, species, female, male,
+    relative: (male - female) / female};
+}))

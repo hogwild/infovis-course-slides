@@ -1,0 +1,9 @@
+rainPanel = t => ({
+  data: {values: penguins},
+  width: 365, height: 165, title: t.title,
+  encoding: rainPosition(t),
+  layer: [
+    densityLayer(t), rainPoints(t),
+    {...meanLayer(t), transform: rainRows}
+  ]
+})

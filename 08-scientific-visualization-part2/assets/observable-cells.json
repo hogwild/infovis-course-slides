@@ -1,0 +1,230 @@
+[
+  {
+    "id": "embed",
+    "title": "01 · Vega-Embed",
+    "code": "embed = require(\"vega-embed@7.1.0\")",
+    "kind": "value"
+  },
+  {
+    "id": "data",
+    "title": "02 · Verified analysis records",
+    "code": "data = FileAttachment(\"ai-programming-analysis.csv\").csv().then(rows => {\n  const fields = [\"performance\", \"pre\", \"post\", \"gain\", \"frustration\", \"comprehension\"];\n  if (rows.some(d => fields.some(f => d[f] === \"\" || !Number.isFinite(+d[f])))) {\n    throw new Error(\"Missing or invalid analytical value\");\n  }\n  return rows.map(d => ({...d,\n    ...Object.fromEntries(fields.map(f => [f, +d[f]]))}));\n})",
+    "kind": "value"
+  },
+  {
+    "id": "groups",
+    "title": "03 · Condition order",
+    "code": "groups = [\"No AI\", \"Iris\", \"ChatGPT\"]",
+    "kind": "value"
+  },
+  {
+    "id": "colors",
+    "title": "04 · Condition colors",
+    "code": "colors = [\"#667085\", \"#3157a4\", \"#7656a6\"]",
+    "kind": "value"
+  },
+  {
+    "id": "mean",
+    "title": "05 · Arithmetic mean",
+    "code": "mean = (values) => values.reduce((a, b) => a + b, 0) / values.length",
+    "kind": "value"
+  },
+  {
+    "id": "summary",
+    "title": "06 · Summaries in original units",
+    "code": "summary = groups.map((group, index) => {\n  const rows = data.filter(d => d.group === group);\n  return {group, index, n: rows.length,\n    performance: mean(rows.map(d => d.performance)),\n    pre: mean(rows.map(d => d.pre)), post: mean(rows.map(d => d.post)),\n    gain: mean(rows.map(d => d.gain)),\n    frustration: mean(rows.map(d => d.frustration))};\n})",
+    "kind": "value"
+  },
+  {
+    "id": "config",
+    "title": "07 · Shared chart typography",
+    "code": "config = ({font: \"Arial\", background: \"white\", view: {stroke: null},\n  axis: {labelFontSize: 17, titleFontSize: 18, titlePadding: 12,\n    labelColor: \"#263248\", titleColor: \"#17233c\", gridColor: \"#e6e8ed\",\n    domainColor: \"#a1a7b3\", labelPadding: 8, labelAngle: 0},\n  title: {fontSize: 22, anchor: \"start\", color: \"#17233c\", offset: 18,\n    subtitleFontSize: 16, subtitleColor: \"#667085\", subtitlePadding: 8},\n  legend: {labelFontSize: 15, titleFontSize: 16, orient: \"bottom\"}})",
+    "kind": "value"
+  },
+  {
+    "id": "draw",
+    "title": "08 · Render a Vega-Lite specification",
+    "code": "draw = (spec) => embed(spec, {actions: false, renderer: \"svg\", config})",
+    "kind": "value"
+  },
+  {
+    "id": "condition",
+    "title": "09 · Stable condition encoding",
+    "code": "condition = ({field: \"group\", type: \"nominal\", sort: groups, scale: {domain: groups, range: colors}, legend: null})",
+    "kind": "value"
+  },
+  {
+    "id": "meanSpec",
+    "title": "10 · A mean-only performance prototype",
+    "code": "meanSpec = ({\n  width: 540, height: 310, data: {values: summary},\n  encoding: {\n    x: {field: \"group\", type: \"nominal\", sort: groups,\n      title: null},\n    y: {field: \"performance\", type: \"quantitative\",\n      title: \"Exercise score (%)\",\n      scale: {domain: [0, 100]}}, color: condition},\n  layer: [\n    {mark: {type: \"point\", shape: \"diamond\",\n      filled: true, size: 220}},\n    {mark: {type: \"text\", dy: -20, fontSize: 20},\n      encoding: {text: {field: \"performance\",\n        format: \".2f\"}}}\n  ]\n})",
+    "kind": "value"
+  },
+  {
+    "id": "meanFigure",
+    "title": "11 · Mean-only view",
+    "code": "meanFigure = draw(meanSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "frequency",
+    "title": "12 · Preserve exact values; count repeated observations",
+    "code": "frequency = (field) => groups.flatMap((group, index) => {\n  const rows = data.filter(d => d.group === group);\n  const values = [...new Set(rows.map(d => d[field]))]\n    .sort((a,b) => a-b);\n  return values.map(value => ({group, index, value,\n    count: rows.filter(d => d[field] === value).length}));\n})",
+    "kind": "value"
+  },
+  {
+    "id": "groupAxis",
+    "title": "13 · Direct group labels include sample sizes",
+    "code": "groupAxis = ({values: [0, 1, 2], title: null, grid: false, tickSize: 0,\n  labelLineHeight: 20, labelOverlap: false,\n  labelExpr: \"[['No AI', 'n = 96'], ['Iris', 'n = 91'], ['ChatGPT', 'n = 88']][datum.value]\"})",
+    "kind": "value"
+  },
+  {
+    "id": "frequencySpec",
+    "title": "14 · Discrete frequency view",
+    "code": "frequencySpec = (field, domain, title, width = 150, height = 340) => {\n  const counts = frequency(field);\n  const isGain = field === \"gain\";\n  const values = isGain ? Array.from({length: 13}, (_, i) => i - 6)\n    : [...new Set(counts.map(d => d.value))].sort((a,b) => a-b);\n  const maxCount = Math.ceil(Math.max(...counts.map(d => d.count)) / 10) * 10;\n  const padding = isGain ? 0.5 : (domain[1] - domain[0]) * 0.05;\n  return {\n    hconcat: groups.map((group, index) => {\n      const stats = summary.find(d => d.group === group);\n      const rows = values.map(value => ({group, value,\n        count: counts.find(d => d.group === group && d.value === value)?.count ?? 0}));\n      const meanRow = {value: stats[field], label: \"Mean \" + stats[field].toFixed(2)};\n      return {\n        title: {text: group, subtitle: \"n = \" + stats.n,\n          color: colors[index], fontSize: 19, offset: 10,\n          subtitleFontSize: 15, subtitlePadding: 4},\n        width, height, data: {values: rows},\n        encoding: {y: {field: \"value\", type: \"quantitative\",\n          scale: {domain: [domain[0] - padding, domain[1] + padding], nice: false},\n          axis: {title: index === 0 ? title : null, values,\n            labels: index === 0, ticks: index === 0, domain: index === 0,\n            grid: false, format: \".1~f\", labelFontSize: 16,\n            labelOverlap: false, labelPadding: 4, titlePadding: 8}}},\n        layer: [\n          {mark: {type: \"bar\", orient: \"horizontal\", color: colors[index], size: 14},\n            encoding: {x: {field: \"count\", type: \"quantitative\",\n              scale: {domain: [0, maxCount], nice: false},\n              axis: {title: \"Students\", values: [0, maxCount / 2, maxCount],\n                labelFontSize: 16, labelOverlap: false, titleFontSize: 17, titlePadding: 8}},\n              tooltip: [{field: \"group\"}, {field: \"value\", title},\n                {field: \"count\", title: \"Students\"}]}},\n          {data: {values: [meanRow]},\n            mark: {type: \"rule\", color: \"#17233c\", strokeDash: [5, 4], strokeWidth: 2}},\n          {data: {values: [meanRow]},\n            mark: {type: \"text\", align: \"right\", baseline: \"bottom\",\n              dx: -3, dy: isGain ? -15 : -5,\n              fontSize: isGain ? 14 : 15, fontWeight: \"bold\", color: \"#17233c\"},\n            encoding: {x: {datum: maxCount, type: \"quantitative\"},\n              text: {field: \"label\"}}}\n        ]\n      };\n    }),\n    spacing: 18,\n    resolve: {scale: {x: \"shared\", y: \"shared\"}}\n  };\n}",
+    "kind": "value"
+  },
+  {
+    "id": "performanceSpec",
+    "title": "15 · Performance frequencies and means",
+    "code": "performanceSpec = ({\n  ...frequencySpec(\"performance\", [0, 100], \"Exercise score (%)\"),\n  title: {text: \"A  Exercise performance\"}\n})",
+    "kind": "value"
+  },
+  {
+    "id": "performanceFigure",
+    "title": "16 · Performance distribution",
+    "code": "performanceFigure = draw(performanceSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "pairedSpec",
+    "title": "17 · Pre/post pairs preserve each starting score",
+    "code": "pairedSpec = {\n  const paths = groups.flatMap(group => {\n    const counts = new Map();\n    for (const d of data.filter(d => d.group === group)) {\n      const key = `${d.pre}:${d.post}`;\n      if (!counts.has(key)) counts.set(key,\n        {group, pre: d.pre, post: d.post, path: key, count: 0});\n      counts.get(key).count += 1;\n    }\n    return [...counts.values()];\n  }).sort((a, b) => a.count - b.count);\n  const maxCount = Math.max(...paths.map(d => d.count));\n  return {\n    title: {text: \"Supplement: pretest and posttest\",\n      subtitle: \"Darker line = more students on the same path\"},\n    data: {values: paths},\n    transform: [{fold: [\"pre\", \"post\"], as: [\"time\", \"score\"]}],\n    facet: {column: {field: \"group\", sort: groups, title: null,\n      header: {labelFontSize: 19, labelColor: \"#17233c\"}}},\n    spacing: 24,\n    spec: {width: 150, height: 340,\n      mark: {type: \"line\", strokeWidth: 2.5, opacity: 1},\n      encoding: {\n        x: {field: \"time\", type: \"ordinal\", sort: [\"pre\", \"post\"],\n          title: null, scale: {padding: 0.2}},\n        y: {field: \"score\", type: \"quantitative\",\n          scale: {domain: [0, 6], nice: false},\n          title: \"Correct items\", axis: {values: [0,1,2,3,4,5,6]}},\n        detail: {field: \"path\", type: \"nominal\"},\n        color: {field: \"count\", type: \"quantitative\",\n          scale: {domain: [1, maxCount], nice: false,\n            range: [\"#b0bfd7\", \"#17233c\"]},\n          legend: {title: \"Students on path\", orient: \"bottom\",\n            direction: \"horizontal\", gradientLength: 220, titleLimit: 240,\n            values: [1, 4, 8, 12, 16], format: \"d\"}},\n        tooltip: [{field: \"group\", title: \"Group\"},\n          {field: \"pre\", title: \"Pretest\"},\n          {field: \"post\", title: \"Posttest\"},\n          {field: \"count\", title: \"Students\"}]\n      }},\n    resolve: {scale: {y: \"shared\", color: \"shared\"}}\n  };\n}",
+    "kind": "block"
+  },
+  {
+    "id": "pairedFigure",
+    "title": "18 · Paired alternative",
+    "code": "pairedFigure = draw(pairedSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "rng",
+    "title": "19 · Reproducible pseudo-random generator",
+    "code": "rng = (seed) => () => {\n  seed = (Math.imul(1664525, seed) + 1013904223) >>> 0;\n  return seed / 4294967296;\n}",
+    "kind": "value"
+  },
+  {
+    "id": "quantile",
+    "title": "20 · Linearly interpolated percentile",
+    "code": "quantile = (sorted, p) => {\n  const x = (sorted.length - 1) * p, i = Math.floor(x);\n  return sorted[i] + (sorted[Math.min(i + 1, sorted.length - 1)] - sorted[i]) * (x - i);\n}",
+    "kind": "value"
+  },
+  {
+    "id": "boot",
+    "title": "21 · Participant bootstrap, preserving pre/post pairing",
+    "code": "boot = {\n  const random = rng(20260922), B = 10000;\n  const draws = groups.map(group => {\n    const rows = data.filter(d => d.group === group);\n    return Array.from({length: B}, () => {\n      const gains = Array.from({length: rows.length}, () => {\n        const person = rows[Math.floor(random() * rows.length)];\n        return person.post - person.pre;\n      });\n      return mean(gains);\n    });\n  });\n  const interval = values => {\n    const sorted = values.slice().sort((a,b) => a-b);\n    return {lo: quantile(sorted, 0.025), hi: quantile(sorted, 0.975)};\n  };\n  return {\n    means: summary.map((d, i) => ({...d, ciX: i - 0.42, ...interval(draws[i])})),\n    differences: [1, 2].map(i => ({group: groups[i], comparison: groups[i] + \" - No AI\",\n      estimate: summary[i].gain - summary[0].gain,\n      ...interval(draws[i].map((v, b) => v - draws[0][b]))})),\n    B, seed: 20260922, method: \"95% percentile bootstrap; participants within groups\"\n  };\n}",
+    "kind": "block"
+  },
+  {
+    "id": "gainSpec",
+    "title": "22 · Knowledge gain frequencies and group means",
+    "code": "gainSpec = ({\n  ...frequencySpec(\"gain\", [-6, 6], \"Knowledge gain (points)\"),\n  title: {text: \"B  Knowledge gains\"}\n})",
+    "kind": "value"
+  },
+  {
+    "id": "gainFigure",
+    "title": "23 · Gain distribution and confidence intervals",
+    "code": "gainFigure = draw(gainSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "differenceSpec",
+    "title": "24 · Intervals for the comparisons",
+    "code": "differenceSpec = ({width: 560, height: 160,\n  title: {text: \"Mean gain difference versus No AI\", subtitle: \"Classroom estimates; unadjusted 95% bootstrap intervals\"},\n  layer: [{data: {values: [{}]}, mark: {type: \"rule\", color: \"#a1a7b3\", strokeDash: [4,4]},\n    encoding: {x: {datum: 0}}},\n    {data: {values: boot.differences}, mark: {type: \"rule\", strokeWidth: 3},\n      encoding: {x: {field: \"lo\", type: \"quantitative\", title: \"Difference in gain (points)\", scale: {domain: [-0.8,0.8]}},\n        x2: {field: \"hi\"}, y: {field: \"comparison\", sort: [\"Iris - No AI\",\"ChatGPT - No AI\"], title: null, axis: {labelLimit: 220}}, color: condition}},\n    {data: {values: boot.differences}, mark: {type: \"point\", filled: true, size: 150},\n      encoding: {x: {field: \"estimate\", type: \"quantitative\"},\n        y: {field: \"comparison\", sort: [\"Iris - No AI\",\"ChatGPT - No AI\"]}, color: condition}}\n  ]})",
+    "kind": "value"
+  },
+  {
+    "id": "differenceFigure",
+    "title": "25 · Comparison estimates",
+    "code": "differenceFigure = draw(differenceSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "responses",
+    "title": "26 · The five response proportions",
+    "code": "responses = groups.flatMap(group => {\n  const rows = data.filter(d => d.group === group);\n  let start = 0;\n  return [1,2,3,4,5].map(level => {\n    const count = rows.filter(d => d.frustration === level).length;\n    const proportion = count / rows.length, end = start + proportion;\n    const out = {group, level, count, proportion, start, end, middle: (start + end) / 2};\n    start = end;\n    return out;\n  });\n})",
+    "kind": "value"
+  },
+  {
+    "id": "frustrationSpec",
+    "title": "27 · Preserve the ordered response categories",
+    "code": "frustrationSpec = ({width: 340, height: 340, data: {values: responses},\n  title: {text: \"C  Reported frustration\", subtitle: \"Five response levels; lower = less\"},\n  encoding: {\n    x: {field: \"group\", type: \"nominal\", sort: groups, title: null},\n    y: {field: \"start\", type: \"quantitative\", title: \"Responses (%)\",\n      scale: {domain: [0,1]}, axis: {format: \".0%\"}},\n    color: {field: \"level\", type: \"ordinal\", sort: [1,2,3,4,5],\n      scale: {domain: [1,2,3,4,5], range: [\"#fff3df\",\"#fedbb2\",\"#f3b981\",\"#d58c50\",\"#9a502c\"]},\n      legend: {title: \"Response level\", direction: \"horizontal\"}},\n    tooltip: [{field: \"group\"},{field: \"level\"},{field: \"count\"}, {field: \"proportion\", format: \".1%\"}]},\n  layer: [{mark: {type: \"bar\", width: 64, stroke: \"white\", strokeWidth: 1},\n    encoding: {y2: {field: \"end\"}}},\n    {mark: {type: \"text\", fontSize: 16}, encoding: {\n      y: {field: \"middle\", type: \"quantitative\"}, text: {field: \"proportion\", format: \".0%\"},\n      color: {condition: {test: \"datum.level >= 4\", value: \"white\"}, value: \"#17233c\"},\n      opacity: {condition: {test: \"datum.proportion >= 0.06\", value: 1}, value: 0}}}]\n})",
+    "kind": "value"
+  },
+  {
+    "id": "frustrationFigure",
+    "title": "28 · Frustration proportions",
+    "code": "frustrationFigure = draw(frustrationSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "overviewRows",
+    "title": "29 · Standardized alternative relative to No AI",
+    "code": "overviewRows = [\"performance\", \"gain\", \"frustration\"].flatMap(metric => {\n  const base = data.filter(d => d.group === \"No AI\").map(d => d[metric]);\n  const center = mean(base);\n  const sd = Math.sqrt(base.reduce((s,x) => s + (x-center)**2, 0) / (base.length-1));\n  return summary.map(d => ({group: d.group, metric,\n    standardized: (d[metric] - center) / sd}));\n})",
+    "kind": "value"
+  },
+  {
+    "id": "overviewSpec",
+    "title": "30 · One common numerical scale",
+    "code": "overviewSpec = ({width: 470, height: 255, data: {values: overviewRows},\n  title: {text: \"Means relative to No AI\", subtitle: \"Difference divided by No AI sample SD\"},\n  layer: [{mark: {type: \"rule\", color: \"#a1a7b3\"}, encoding: {x: {datum: 0}}},\n    {mark: {type: \"point\", filled: true, size: 120}, encoding: {\n      x: {field: \"standardized\", type: \"quantitative\", title: \"No AI standard deviations\", scale: {domain: [-1.2,1.4]}},\n      y: {field: \"metric\", type: \"nominal\", sort: [\"performance\",\"gain\",\"frustration\"], title: null},\n      yOffset: {field: \"group\", sort: groups}, color: {...condition, legend: {title: null}}}}]\n})",
+    "kind": "value"
+  },
+  {
+    "id": "overviewFigure",
+    "title": "31 · Standardized overview",
+    "code": "overviewFigure = draw(overviewSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "finalSpec",
+    "title": "32 · Align the outcomes and supplement in two rows",
+    "code": "finalSpec = {\n  function bars(s,isGain){\n   s.title={frame:\"group\",text:isGain?'Knowledge gains':'Exercise performance',fontSize:22,offset:16};\n   for(const p of s.hconcat){\n    p.width=140;p.height=140;\n    p.title={frame:\"group\",text:p.title.text,color:p.title.color,fontSize:17,offset:8};\n    Object.assign(p.encoding.y.axis,{labelFontSize:13,titleFontSize:13,labelPadding:3,titlePadding:6});\n    if(isGain)p.encoding.y.axis.values=[-6,-4,-2,0,2,4,6];\n    if(p.encoding.y.axis.title)p.encoding.y.axis.title=isGain?\"Gain (points)\":\"Score (%)\";\n    p.layer[0].mark.size=7;\n    Object.assign(p.layer[0].encoding.x.axis,{labelFontSize:13,titleFontSize:14,titlePadding:4,labelPadding:3});\n    Object.assign(p.layer[2].mark,{fontSize:13,dy:isGain?-9:-4});\n   }\n   s.spacing=18;return s;\n  }\n  const performance = bars(structuredClone(performanceSpec), false);\n  const gain = bars(structuredClone(gainSpec), true);\n  const frustration = structuredClone(frustrationSpec);\n  const paired = structuredClone(pairedSpec);\n  frustration.width=440;frustration.height=140;\n  frustration.title={frame:'group',text:'Reported frustration',subtitle:'Five response levels; lower = less',fontSize:22,subtitleFontSize:13,offset:13,subtitlePadding:9};\n  frustration.encoding.x.axis={labelFontSize:14,labelPadding:4};\n  frustration.encoding.y.axis={format:'.0%',values:[0,.5,1],labelFontSize:13,titleFontSize:13,labelPadding:3,titlePadding:6};\n  frustration.encoding.color.legend={...frustration.encoding.color.legend,title:null,offset:6,labelFontSize:13};\n  frustration.layer[1].mark.fontSize=13;\n  paired.title={frame:'group',text:'Supplement: pretest and posttest',fontSize:22,offset:16};\n  paired.facet.column.header={labelFontSize:17,labelColor:'#17233c',labelFontWeight:'bold',labelPadding:3};\n  paired.spec.width=130;paired.spec.height=140;\n  paired.spec.encoding.x.axis={labelFontSize:13,labelPadding:4};\n  paired.spec.encoding.y.axis={values:[0,1,2,3,4,5,6],labelFontSize:13,titleFontSize:13,labelPadding:3,titlePadding:6};\n  paired.spec.encoding.color.legend={...paired.spec.encoding.color.legend,title:['Students','on path'],orient:'right',direction:'vertical',titleFontSize:13,labelFontSize:12,gradientLength:95,gradientThickness:10,offset:10,titleLimit:100};\n  return {\n    $schema: \"https://vega.github.io/schema/vega-lite/v6.json\",\n    concat: [performance, frustration, gain, paired],\n    columns: 2, align: \"each\", center: false, spacing: 24,\n    resolve: {scale: {x: \"independent\", y: \"independent\", color: \"independent\"}}\n  };\n}",
+    "kind": "block"
+  },
+  {
+    "id": "finalFigure",
+    "title": "33 · Completed evidence figure",
+    "code": "finalFigure = draw(finalSpec)",
+    "kind": "chart"
+  },
+  {
+    "id": "sampleCheck",
+    "title": "34 · Check the data before reading the figure",
+    "code": "sampleCheck = ({\n  participants: data.length,\n  groups: summary.map(d => ({group: d.group, n: d.n})),\n  pairingOK: data.every(d => d.gain === d.post - d.pre),\n  uniqueIDs: new Set(data.map(d => d.pseudonym)).size\n})",
+    "kind": "value"
+  },
+  {
+    "id": "articleIntro",
+    "title": "35 · Research context and qualified claim",
+    "code": "articleIntro = md`# Exercise performance and immediate learning with AI support\n\nBassner et al. studied an approximately 90-minute Java concurrency exercise in an introductory programming course. Students received no AI support, the Iris tutor, or unrestricted ChatGPT. Iris and ChatGPT also differed in access to course and code context.\n\nIn this short programming exercise, students in both AI-supported conditions achieved higher exercise scores and reported less frustration than the no-AI group, but the study did not detect greater immediate conceptual knowledge gains.\n\nThis is a classroom paraphrase of the results, not a quotation. The figure below uses the authors' retained analysis sample of 275 participants from 452 raw records.\n\n[Paper](https://doi.org/10.1016/j.caeai.2025.100537) · [Data version](https://doi.org/10.5281/zenodo.20285307)`",
+    "kind": "value"
+  },
+  {
+    "id": "articleReading",
+    "title": "36 · Read the evidence",
+    "code": "articleReading = md`## What the figure makes visible\n\nExercise-score means are 29.85%, 57.50% and 71.84% for No AI, Iris and ChatGPT. Three side-by-side horizontal bar charts share a vertical score axis and a horizontal 0–60 student-count scale. Bar lengths reveal concentration at each exact score; dashed horizontal lines mark group means. At 100%, the counts are 15, 28 and 52 students, respectively.\n\nThe response item is “I was frustrated during the exercise.” Levels 1–5 mean strongly disagree, disagree, neutral, agree and strongly agree. More agreement means more frustration. Numerical means, using the paper's scoring convention, are 4.09, 3.21 and 3.13. The proportions keep the ordinal response structure visible.\n\nThe lower-left view compares individual knowledge gains in three side-by-side horizontal bar charts. Knowledge gain runs from −6 to +6 on the vertical axis; horizontal bar length shows student counts on a common 0–40 scale. The mean gains are 0.85, 0.71 and 0.83 points, labeled directly above the corresponding dashed horizontal lines. Counts at zero are 35, 36 and 24 students. The paper's time-by-group interaction is p = .773. This is not an equivalence test.\n\nThe gain distributions do not retain starting scores. The lower-right supplemental paired-score view keeps both starting and ending scores. Each line groups students who share the same pretest and posttest scores; darker lines represent more students on a shared 1–16 count scale. The No AI 0-to-0 path represents 16 students, while the ChatGPT 4-to-5 path represents 5. These counts describe the observed paths, not an estimated AI effect. [Supplement: pretest and posttest](ai-programming-pairedFigure.svg).`",
+    "kind": "value"
+  },
+  {
+    "id": "articleCaption",
+    "title": "37 · An inspectable caption",
+    "code": "articleCaption = md`## Figure caption\n\nClassroom redesign, recalculated from Zenodo record 20285307 (CC BY 4.0). The authors' filtering rules retain 275 of 452 participants: No AI n = 96, Iris n = 91, ChatGPT n = 88. All panels use those participants.\n\nThe upper-left view shows exercise-score distributions in three side-by-side horizontal bar charts, ordered No AI, Iris and ChatGPT. Vertical position shows each exact observed test-pass percentage on a shared numeric scale from 0 to 100. Bar length encodes student count on a common horizontal 0–60 scale. Small margins beyond the score endpoints keep the full bars visible. The nine observed scores are labeled at their numeric positions, so the unobserved 33.3% score leaves a gap. Group colors match the knowledge-gain panel; dashed horizontal lines and direct labels show arithmetic means. Sample sizes are listed above.\n\nThe upper-right view shows within-group proportions for the five response categories, ordered from 1 (strongly disagree) at the bottom to 5 (strongly agree) at the top. Labels are rounded percentages. The question is “I was frustrated during the exercise.” Frustration is an ordinal response. Its numerical mean assumes the paper's 1–5 scoring convention.\n\nThe lower-left view shows knowledge-gain distributions in three side-by-side horizontal bar charts, ordered No AI, Iris and ChatGPT. Vertical position shows each integer gain from −6 to +6; horizontal bar length shows student counts on a common 0–40 scale. Small margins keep endpoint bars visible. Group colors match the exercise-score view. Dashed horizontal lines mark arithmetic means, with numerical labels just above their right ends. The same group sizes apply to every view. These are counts, not proportions. Gain values preserve each student's amount of change but do not retain starting scores. Mean confidence intervals remain in the notebook calculations and reference table.\n\nThe lower-right supplemental paired-score view shows pretest and posttest scores on a shared 0–6 scale, separately for each group. One line represents each distinct starting–ending score pair. A common linear light-to-dark scale encodes 1–16 students per path. The 92 paths account for all 275 students (No AI 96, Iris 91, ChatGPT 88). Line widths are constant and lines are opaque, so crossings do not add darkness. Distinct paths may still cross or share an endpoint. Counts are not adjusted for group size.\n\nCore counts and descriptive means match the paper's reported precision. The original R inferential models were not rerun. Significance claims come from the paper, Tables 4–8. Supplemental gain-difference intervals in this notebook are new, unadjusted classroom estimates, not the paper's tests. This short task and immediate test do not establish equal effects or long-term learning outcomes.`",
+    "kind": "value"
+  },
+  {
+    "id": "articleScope",
+    "title": "38 · Sources and reproducibility",
+    "code": "articleScope = md`## Data, code and scope\n\n[Original CSV](https://zenodo.org/records/20285307/files/merged_data_pseudonymized.csv?download=1), [author's preparation script](https://zenodo.org/records/20285307/files/1_dataPrep.R?download=1) and [questionnaire](https://zenodo.org/records/20285307/files/survey_questions.json?download=1). The raw CSV has 452 unique participants and 76 columns. Its MD5 is 5e77465a489bd77ab9e24a295a37144e.\n\nThe course package includes the Python translation, the original R files, the complete ordered exclusion log and all checked means. The age, gender and experience exclusions are the authors' analysis choices. Similar retained group sizes do not establish that exclusions introduced no bias.\n\nPaper: Bassner, Lenk-Ostendorf, Beinstingel, Wasner and Krusche (2026), Computers and Education: Artificial Intelligence, 10, 100537. [DOI](https://doi.org/10.1016/j.caeai.2025.100537). Figures 3 and 4 and data record 20285307: CC BY 4.0. Vega-Lite and Vega-Embed: BSD-3-Clause.`",
+    "kind": "value"
+  }
+]

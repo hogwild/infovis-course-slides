@@ -1,0 +1,15 @@
+jitterLayer = t => ({
+  transform: [{as: "jitter", calculate:
+    "(datum.row * 73 % 101 - 50) / 50"}],
+  mark: {type: "point", filled: true,
+    size: 22, opacity: 0.28,
+    yOffset: {expr: "datum.jitter * 14"}},
+  encoding: {
+    ...sexEncoding,
+    tooltip: [
+      {field: "species"}, {field: "sex"},
+      {field: t.field, type: "quantitative",
+        title: t.axis}
+    ]
+  }
+})

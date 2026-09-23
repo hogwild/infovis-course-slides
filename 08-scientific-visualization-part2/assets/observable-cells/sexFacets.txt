@@ -1,0 +1,3 @@
+sexFacets = draw({
+  data: {values: penguins}, ...sexView
+})

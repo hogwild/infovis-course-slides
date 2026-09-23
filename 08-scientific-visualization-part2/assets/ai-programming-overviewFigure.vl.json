@@ -1,0 +1,165 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 470,
+  "height": 255,
+  "data": {
+    "values": [
+      {
+        "group": "No AI",
+        "metric": "performance",
+        "standardized": 0
+      },
+      {
+        "group": "Iris",
+        "metric": "performance",
+        "standardized": 0.7644347587184525
+      },
+      {
+        "group": "ChatGPT",
+        "metric": "performance",
+        "standardized": 1.1608679188007067
+      },
+      {
+        "group": "No AI",
+        "metric": "gain",
+        "standardized": 0
+      },
+      {
+        "group": "Iris",
+        "metric": "gain",
+        "standardized": -0.08951903530256913
+      },
+      {
+        "group": "ChatGPT",
+        "metric": "gain",
+        "standardized": -0.01575673542076164
+      },
+      {
+        "group": "No AI",
+        "metric": "frustration",
+        "standardized": 0
+      },
+      {
+        "group": "Iris",
+        "metric": "frustration",
+        "standardized": -0.8889150800544366
+      },
+      {
+        "group": "ChatGPT",
+        "metric": "frustration",
+        "standardized": -0.9730808850731727
+      }
+    ]
+  },
+  "title": {
+    "text": "Means relative to No AI",
+    "subtitle": "Difference divided by No AI sample SD"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#a1a7b3"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 120
+      },
+      "encoding": {
+        "x": {
+          "field": "standardized",
+          "type": "quantitative",
+          "title": "No AI standard deviations",
+          "scale": {
+            "domain": [
+              -1.2,
+              1.4
+            ]
+          }
+        },
+        "y": {
+          "field": "metric",
+          "type": "nominal",
+          "sort": [
+            "performance",
+            "gain",
+            "frustration"
+          ],
+          "title": null
+        },
+        "yOffset": {
+          "field": "group",
+          "sort": [
+            "No AI",
+            "Iris",
+            "ChatGPT"
+          ]
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "No AI",
+            "Iris",
+            "ChatGPT"
+          ],
+          "scale": {
+            "domain": [
+              "No AI",
+              "Iris",
+              "ChatGPT"
+            ],
+            "range": [
+              "#667085",
+              "#3157a4",
+              "#7656a6"
+            ]
+          },
+          "legend": {
+            "title": null
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "background": "white",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 17,
+      "titleFontSize": 18,
+      "titlePadding": 12,
+      "labelColor": "#263248",
+      "titleColor": "#17233c",
+      "gridColor": "#e6e8ed",
+      "domainColor": "#a1a7b3",
+      "labelPadding": 8,
+      "labelAngle": 0
+    },
+    "title": {
+      "fontSize": 22,
+      "anchor": "start",
+      "color": "#17233c",
+      "offset": 18,
+      "subtitleFontSize": 16,
+      "subtitleColor": "#667085",
+      "subtitlePadding": 8
+    },
+    "legend": {
+      "labelFontSize": 15,
+      "titleFontSize": 16,
+      "orient": "bottom"
+    }
+  }
+}

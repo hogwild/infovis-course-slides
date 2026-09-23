@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "config": {
+    "background": "#ffffff",
+    "view": {
+      "stroke": "#d9dde5"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 14,
+      "titleColor": "#17233c",
+      "labelColor": "#445064",
+      "gridColor": "#e8ebf0"
+    },
+    "header": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#17233c"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  },
+  "width": 650,
+  "height": 340,
+  "data": {
+    "url": "sleepstudy.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 22
+    },
+    "strokeWidth": 1.5,
+    "opacity": 0.48
+  },
+  "encoding": {
+    "x": {
+      "field": "Days",
+      "type": "quantitative",
+      "title": "Study day",
+      "scale": {
+        "domain": [
+          0,
+          9
+        ]
+      },
+      "axis": {
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "y": {
+      "field": "Reaction",
+      "type": "quantitative",
+      "title": "Average reaction time (ms)",
+      "scale": {
+        "domain": [
+          190,
+          480
+        ]
+      }
+    },
+    "detail": {
+      "field": "Subject"
+    },
+    "color": {
+      "value": "#3157a4"
+    }
+  }
+}

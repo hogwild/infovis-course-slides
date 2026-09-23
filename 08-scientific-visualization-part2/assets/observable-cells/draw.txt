@@ -1,0 +1,1 @@
+draw = (spec) => embed(spec, {actions: false, renderer: "svg", config})

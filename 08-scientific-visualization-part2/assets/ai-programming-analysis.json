@@ -1,0 +1,2752 @@
+[
+  {
+    "pseudonym": "4795442a",
+    "group": "ChatGPT",
+    "performance": 88.9,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "e9bfb8e6",
+    "group": "ChatGPT",
+    "performance": 88.9,
+    "pre": 4,
+    "post": 6,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "638d4471",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "a9c89ee2",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "da087795",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "776b8c5f",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "2532863b",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "5b05b2e4",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 1,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "f06b9341",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "048786a2",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "e9c40c0d",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "1182e50a",
+    "group": "No AI",
+    "performance": 66.7,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "c13fef9d",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 5,
+    "gain": 5,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "1b46525d",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "456791c0",
+    "group": "No AI",
+    "performance": 66.7,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "fa57d0be",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "9cba6482",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 1,
+    "gain": -1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "fbdff20a",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "04bc6c92",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "c608046f",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 1,
+    "gain": -1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "9cade01e",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "a2ef4043",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "de904e46",
+    "group": "Iris",
+    "performance": 88.9,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "cee83d8c",
+    "group": "ChatGPT",
+    "performance": 66.7,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "dbcd30f6",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 6,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "89488026",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "0d6d94df",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "07796d45",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 3,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "38fa1656",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "78a2c130",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "0be866b5",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 5,
+    "gain": 4,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "41b06e65",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 4,
+    "gain": 3,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "48a19040",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 5,
+    "gain": 4,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "2aae6f39",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "4d2fe8a7",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "8faf5b82",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "d9330ba0",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "d0940d7c",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "c91969d8",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "f83d4042",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 6,
+    "gain": 3,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "8aa2f17f",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "3d8291b9",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "d51d1360",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "0538c43e",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "df46f4a9",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "e8786b45",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "32306b74",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "860ecc44",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "fa8f3509",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "31e4a0c8",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "13f27ad5",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "0cbc6f96",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "da8448a2",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "f4313ed6",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 0,
+    "gain": -2,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "5cda9a65",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 2,
+    "post": 1,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "0bbe4b39",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 4,
+    "gain": -1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "fb496160",
+    "group": "ChatGPT",
+    "performance": 88.9,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "6d605496",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 4,
+    "gain": -1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "8c46d4c4",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "b9a3edca",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 0,
+    "post": 5,
+    "gain": 5,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "72b798fb",
+    "group": "Iris",
+    "performance": 88.9,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "6a3f494a",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "4a532ce9",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "6817fe3c",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 6,
+    "gain": 6,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "c69e6e88",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "2fe31ee7",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 6,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "f7e98e02",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "b5df2fcc",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "ceb34917",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "f3f3cbd0",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 1,
+    "gain": -1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "0e352f88",
+    "group": "Iris",
+    "performance": 22.2,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "c4e35c2a",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "a77ec8e1",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "6259f776",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 0,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "9ba07d70",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "6c2cb2d2",
+    "group": "Iris",
+    "performance": 11.1,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 1,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "350c265f",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 5,
+    "post": 3,
+    "gain": -2,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "0721af00",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "2ee0b1d1",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "ec9d10ca",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 3,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "220a86cf",
+    "group": "Iris",
+    "performance": 22.2,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "398c4543",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 5,
+    "gain": 4,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "8a1001f9",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "458eb61d",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "ff309195",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "0607ad61",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "7d87354c",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "93525e48",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "7b976e3c",
+    "group": "ChatGPT",
+    "performance": 22.2,
+    "pre": 6,
+    "post": 4,
+    "gain": -2,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "f7c3cfc5",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "8b203e9f",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "d924cd85",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "80f4d5bc",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 0,
+    "gain": -2,
+    "frustration": 1,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "98847a47",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 1,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "33e32ab6",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "f5598405",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "36afce1a",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 6,
+    "gain": 3,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "cce04791",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 6,
+    "gain": 5,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "5df7113c",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "14fc5660",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "489a307c",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "c5b6b6aa",
+    "group": "No AI",
+    "performance": 66.7,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "1a807a8f",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 5,
+    "post": 5,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "a51aa01d",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "dc6698cd",
+    "group": "Iris",
+    "performance": 88.9,
+    "pre": 1,
+    "post": 4,
+    "gain": 3,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "5cbefe45",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "3f295061",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "af5ad0db",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "ef894196",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "cbdcee38",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "09525f93",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 6,
+    "post": 5,
+    "gain": -1,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "5c9102f8",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "66ca1005",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "b2a78ba0",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "07fb536f",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "9ea0644a",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "ce265ed1",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 4,
+    "gain": 4,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "b0c22e94",
+    "group": "Iris",
+    "performance": 11.1,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "71ee0451",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "57aca6cc",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "4bd9d03b",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 1,
+    "gain": -2,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "255573a7",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "a70c6105",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 4,
+    "gain": -2,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "22a78b05",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "bf86f806",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "ad48fb3e",
+    "group": "ChatGPT",
+    "performance": 66.7,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "ed112b43",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "031ec368",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 0,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "6d0bec98",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "e2471cf4",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "7d299391",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 4,
+    "gain": 4,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "76ba516f",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "01c3671f",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 6,
+    "gain": 4,
+    "frustration": 1,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "a1dc7bd0",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "35bef3da",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "e1bf6140",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "fc5f0f00",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "e1e21749",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "1d9273ac",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "4766711c",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "906929df",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "321b9df3",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 1,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "5d79ef6a",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "bd315a3c",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 5,
+    "post": 5,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "e995b6fc",
+    "group": "No AI",
+    "performance": 66.7,
+    "pre": 2,
+    "post": 5,
+    "gain": 3,
+    "frustration": 3,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "67ed0b6d",
+    "group": "ChatGPT",
+    "performance": 11.1,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "27646053",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "e950dae9",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "e58394d4",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 4,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "668b057d",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "9c862e09",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "60264f4d",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "b783eaef",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "647aa9ed",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 5,
+    "post": 5,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "e6a062bd",
+    "group": "Iris",
+    "performance": 88.9,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "8dccffc5",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "bb4edefb",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "be8742a5",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "b805c463",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "97f525da",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 5,
+    "gain": 3,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "bb564dbc",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "deab0531",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "c5d07494",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "9b8e802e",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 5,
+    "post": 4,
+    "gain": -1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "9b1cbcb3",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "be00c63c",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "7523dc8a",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 5,
+    "post": 5,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "d5db33fa",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 4,
+    "gain": -1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "bd5287bd",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "05ad5a74",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 3,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "54796533",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 6,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "a2ac09a7",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "7827c9c8",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "cd2f2d09",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "1ecbd46b",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "84331f2d",
+    "group": "ChatGPT",
+    "performance": 55.6,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "b0040e98",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 5,
+    "gain": 3,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "94194419",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "9e95994e",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 4,
+    "gain": 3,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "bc593d01",
+    "group": "ChatGPT",
+    "performance": 11.1,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "1676d1dd",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "d1dce5d4",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "87340190",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 3,
+    "post": 6,
+    "gain": 3,
+    "frustration": 1,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "02cb97a3",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "ae0fb680",
+    "group": "Iris",
+    "performance": 11.1,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "2ef5fb1c",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 3,
+    "gain": -2,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "c3b62fbc",
+    "group": "Iris",
+    "performance": 22.2,
+    "pre": 4,
+    "post": 3,
+    "gain": -1,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "58e6544f",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "9a7dd0d4",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "dd5664a7",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "1c884755",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 1,
+    "gain": -1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "fe8ffccd",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 1,
+    "gain": -3,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "97b54b61",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "83f0abfc",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "321c9da0",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "b94bbd60",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 5,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "609f8d13",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "0bc31175",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "4aed77dd",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "be46d854",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 2,
+    "post": 4,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "91254bc4",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 5,
+    "post": 5,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "fb0d15f1",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "9ae22e45",
+    "group": "No AI",
+    "performance": 66.7,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "368d693a",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "cf7f3abf",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "66237de0",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "e4cc19cb",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "52911d43",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "65535378",
+    "group": "Iris",
+    "performance": 88.9,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "489d0258",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 4,
+    "post": 2,
+    "gain": -2,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "e3b27d7a",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "cf5b2e58",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 5,
+    "post": 4,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "b6cdba76",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "08deb519",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 1,
+    "gain": -2,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "318826cb",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "fb33995d",
+    "group": "Iris",
+    "performance": 11.1,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "fea54869",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 5,
+    "post": 6,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "7d70eefe",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 6,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "17f06dd2",
+    "group": "ChatGPT",
+    "performance": 66.7,
+    "pre": 2,
+    "post": 5,
+    "gain": 3,
+    "frustration": 2,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "f8532e26",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 3,
+    "post": 1,
+    "gain": -2,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "4f78b4ec",
+    "group": "ChatGPT",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 0,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "1581639b",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "f6aab2b0",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "bfb737f8",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "e04d1fcd",
+    "group": "No AI",
+    "performance": 22.2,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "a2c93f99",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "8bc864f2",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "a894071f",
+    "group": "Iris",
+    "performance": 77.8,
+    "pre": 0,
+    "post": 3,
+    "gain": 3,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "8b3e090b",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "044e0b9c",
+    "group": "Iris",
+    "performance": 11.1,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "4155bfc0",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "3ad943c7",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 4,
+    "post": 6,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "b1be2d77",
+    "group": "No AI",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 1,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "2cd91470",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "788ed8c6",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "4583b8a4",
+    "group": "No AI",
+    "performance": 11.1,
+    "pre": 1,
+    "post": 4,
+    "gain": 3,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "249b990e",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "840163ed",
+    "group": "No AI",
+    "performance": 66.7,
+    "pre": 3,
+    "post": 6,
+    "gain": 3,
+    "frustration": 4,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "e6e2fe5c",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "7a61d0c9",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "48a8da21",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "7a778799",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "4699aea8",
+    "group": "Iris",
+    "performance": 88.9,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "4a2f69f1",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 4,
+    "gain": 1,
+    "frustration": 2,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "fdffbaa8",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 5,
+    "gain": -1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "31635624",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "5a0d81ca",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "3769002a",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "5a1b755c",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "8b4f3775",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 0,
+    "gain": -1,
+    "frustration": 2,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "69c58cdf",
+    "group": "ChatGPT",
+    "performance": 66.7,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "b93b1207",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "af9ba91b",
+    "group": "Iris",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 0,
+    "gain": -1,
+    "frustration": 3,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "4ebccae6",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "aa759179",
+    "group": "No AI",
+    "performance": 44.4,
+    "pre": 0,
+    "post": 0,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "49f4e020",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "ef436a2c",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 1,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "7f2ec01a",
+    "group": "Iris",
+    "performance": 44.4,
+    "pre": 1,
+    "post": 0,
+    "gain": -1,
+    "frustration": 2,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "0c7fc4ee",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 0,
+    "post": 1,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "afa9e6e3",
+    "group": "ChatGPT",
+    "performance": 88.9,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "f660d46e",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 2,
+    "post": 2,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "fc9c5cc0",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 3,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "8b8a9195",
+    "group": "Iris",
+    "performance": 11.1,
+    "pre": 0,
+    "post": 2,
+    "gain": 2,
+    "frustration": 2,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "2ffebad8",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 2,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "e358e77a",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "930d1cc4",
+    "group": "Iris",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "623300d4",
+    "group": "Iris",
+    "performance": 66.7,
+    "pre": 2,
+    "post": 3,
+    "gain": 1,
+    "frustration": 4,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "fb2bc0ee",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 4,
+    "post": 4,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "eb30dde3",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 3
+  },
+  {
+    "pseudonym": "ca4083c3",
+    "group": "ChatGPT",
+    "performance": 0.0,
+    "pre": 4,
+    "post": 5,
+    "gain": 1,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "3568eb81",
+    "group": "ChatGPT",
+    "performance": 100.0,
+    "pre": 1,
+    "post": 1,
+    "gain": 0,
+    "frustration": 3,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "55ebf340",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 3,
+    "post": 5,
+    "gain": 2,
+    "frustration": 5,
+    "comprehension": 0
+  },
+  {
+    "pseudonym": "f1180156",
+    "group": "Iris",
+    "performance": 22.2,
+    "pre": 6,
+    "post": 6,
+    "gain": 0,
+    "frustration": 4,
+    "comprehension": 1
+  },
+  {
+    "pseudonym": "a80c39ff",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 5,
+    "post": 5,
+    "gain": 0,
+    "frustration": 5,
+    "comprehension": 2
+  },
+  {
+    "pseudonym": "06b771bb",
+    "group": "No AI",
+    "performance": 0.0,
+    "pre": 1,
+    "post": 3,
+    "gain": 2,
+    "frustration": 4,
+    "comprehension": 1
+  }
+]

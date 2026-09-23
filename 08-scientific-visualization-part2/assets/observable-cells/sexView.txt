@@ -1,0 +1,8 @@
+sexView = ({
+  facet: {column: {
+    field: "sex", type: "nominal",
+    sort: ["female", "male"], title: null
+  }},
+  spec: {...massView, width: 280, height: 200},
+  resolve: {scale: {x: "shared"}}
+})

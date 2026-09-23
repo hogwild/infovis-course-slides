@@ -1,0 +1,24 @@
+boot = {
+  const random = rng(20260922), B = 10000;
+  const draws = groups.map(group => {
+    const rows = data.filter(d => d.group === group);
+    return Array.from({length: B}, () => {
+      const gains = Array.from({length: rows.length}, () => {
+        const person = rows[Math.floor(random() * rows.length)];
+        return person.post - person.pre;
+      });
+      return mean(gains);
+    });
+  });
+  const interval = values => {
+    const sorted = values.slice().sort((a,b) => a-b);
+    return {lo: quantile(sorted, 0.025), hi: quantile(sorted, 0.975)};
+  };
+  return {
+    means: summary.map((d, i) => ({...d, ciX: i - 0.42, ...interval(draws[i])})),
+    differences: [1, 2].map(i => ({group: groups[i], comparison: groups[i] + " - No AI",
+      estimate: summary[i].gain - summary[0].gain,
+      ...interval(draws[i].map((v, b) => v - draws[0][b]))})),
+    B, seed: 20260922, method: "95% percentile bootstrap; participants within groups"
+  };
+}

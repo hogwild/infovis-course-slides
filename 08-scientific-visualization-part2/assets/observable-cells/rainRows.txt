@@ -1,0 +1,9 @@
+rainRows = [
+  {as: "speciesRow", calculate:
+    "datum.species === 'Adelie' ? 0 : " +
+    "datum.species === 'Chinstrap' ? 1 : 2"},
+  {as: "side", calculate:
+    "datum.sex === 'female' ? -1 : 1"},
+  {as: "rowY", calculate:
+    "datum.speciesRow + datum.side * 0.1"}
+]

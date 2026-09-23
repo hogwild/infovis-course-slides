@@ -1,0 +1,4 @@
+evidencePanel = t => ({
+  ...meanPanel(t),
+  layer: [jitterLayer(t), meanLayer(t)]
+})

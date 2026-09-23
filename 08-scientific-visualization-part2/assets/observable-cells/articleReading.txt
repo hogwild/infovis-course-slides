@@ -1,0 +1,9 @@
+articleReading = md`## What the figure makes visible
+
+Exercise-score means are 29.85%, 57.50% and 71.84% for No AI, Iris and ChatGPT. Three side-by-side horizontal bar charts share a vertical score axis and a horizontal 0–60 student-count scale. Bar lengths reveal concentration at each exact score; dashed horizontal lines mark group means. At 100%, the counts are 15, 28 and 52 students, respectively.
+
+The response item is “I was frustrated during the exercise.” Levels 1–5 mean strongly disagree, disagree, neutral, agree and strongly agree. More agreement means more frustration. Numerical means, using the paper's scoring convention, are 4.09, 3.21 and 3.13. The proportions keep the ordinal response structure visible.
+
+The lower-left view compares individual knowledge gains in three side-by-side horizontal bar charts. Knowledge gain runs from −6 to +6 on the vertical axis; horizontal bar length shows student counts on a common 0–40 scale. The mean gains are 0.85, 0.71 and 0.83 points, labeled directly above the corresponding dashed horizontal lines. Counts at zero are 35, 36 and 24 students. The paper's time-by-group interaction is p = .773. This is not an equivalence test.
+
+The gain distributions do not retain starting scores. The lower-right supplemental paired-score view keeps both starting and ending scores. Each line groups students who share the same pretest and posttest scores; darker lines represent more students on a shared 1–16 count scale. The No AI 0-to-0 path represents 16 students, while the ChatGPT 4-to-5 path represents 5. These counts describe the observed paths, not an estimated AI effect. [Supplement: pretest and posttest](ai-programming-pairedFigure.svg).`

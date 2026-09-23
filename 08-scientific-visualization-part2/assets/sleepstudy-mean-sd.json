@@ -1,0 +1,163 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "config": {
+    "background": "#ffffff",
+    "view": {
+      "stroke": "#d9dde5"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 14,
+      "titleColor": "#17233c",
+      "labelColor": "#445064",
+      "gridColor": "#e8ebf0"
+    },
+    "header": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#17233c"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  },
+  "width": 620,
+  "height": 330,
+  "data": {
+    "url": "sleepstudy-daily-summary.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "color": "#3157a4",
+        "opacity": 0.18
+      },
+      "encoding": {
+        "x": {
+          "field": "Days",
+          "type": "quantitative",
+          "title": "Study day",
+          "scale": {
+            "domain": [
+              0,
+              9
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "y": {
+          "field": "LowerSD",
+          "type": "quantitative",
+          "title": "Average reaction time (ms)",
+          "scale": {
+            "domain": [
+              190,
+              480
+            ]
+          }
+        },
+        "y2": {
+          "field": "UpperSD"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "color": "#3157a4"
+      },
+      "encoding": {
+        "x": {
+          "field": "Days",
+          "type": "quantitative",
+          "title": "Study day",
+          "scale": {
+            "domain": [
+              0,
+              9
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "y": {
+          "field": "Mean",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 82,
+        "color": "#3157a4"
+      },
+      "encoding": {
+        "x": {
+          "field": "Days",
+          "type": "quantitative",
+          "title": "Study day",
+          "scale": {
+            "domain": [
+              0,
+              9
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "y": {
+          "field": "Mean",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

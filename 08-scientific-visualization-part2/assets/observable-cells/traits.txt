@@ -1,0 +1,14 @@
+traits = [
+  {field: "body_mass_g", label: "Body mass",
+    title: "A · Body mass", axis: "Body mass (g)", domain: [2500, 6500],
+    bandwidth: 180},
+  {field: "bill_length_mm", label: "Bill length",
+    title: "B · Bill length", axis: "Bill length (mm)", domain: [30, 62],
+    bandwidth: 1.5},
+  {field: "bill_depth_mm", label: "Bill depth",
+    title: "C · Bill depth", axis: "Bill depth (mm)", domain: [12, 22],
+    bandwidth: 0.55},
+  {field: "flipper_length_mm", label: "Flipper length",
+    title: "D · Flipper length", axis: "Flipper length (mm)", domain: [170, 235],
+    bandwidth: 3.0}
+]

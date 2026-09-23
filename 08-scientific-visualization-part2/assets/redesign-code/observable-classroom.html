@@ -1,0 +1,2486 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Observable Notebook · Classroom cells</title><style>*{box-sizing:border-box}body{margin:0;background:#fcfaf6;color:#263248;font:18px/1.6 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:36px}h1,h2{color:#17233c;line-height:1.3}a{color:#3157a4}section{border-top:1px solid #d8dbe4;padding:22px 0}pre{font:14px/1.5 ui-monospace,monospace;overflow:auto;padding:20px;background:#17233c;color:white}button{font:inherit;color:#3157a4;background:white;border:1px solid #3157a4;padding:7px 16px;margin:0 10px 12px 0;cursor:pointer}summary{cursor:pointer}img{max-width:100%;height:auto;display:block;margin:20px 0}</style><main><h1>Observable Notebook: classroom demo and sharing guide</h1><p>For <strong>Observable Notebooks 2.0</strong>: add 9 separate <strong>JavaScript (js)</strong> cells to a blank notebook. The data is embedded, and each specification can be edited directly. <a href="observable-classroom.md">Complete setup and sharing guide</a> · <a href="index.html">Chart previews / JSON</a></p><p><strong>Updated for Notebooks 2.0:</strong> replace the earlier cells with the code below. This version uses <code>import</code>, <code>const</code>, a DOM container and <code>display()</code>. It fixes the <em>Assignment to external variable</em> error from legacy cell syntax.</p><ol><li>Copy the <code>import embed</code> cell first to load the charting library.</li><li>Copy each specification and chart output in the order below to draw the four charts.</li><li>Edit <code>height</code> in <code>gainSpec</code>, run the cell and watch <code>gainChart</code> update. Try different colors and annotations too.</li><li>Add Markdown cells for explanations and sources. In <strong>Settings</strong>, choose <strong>Unlisted</strong> or <strong>Public</strong> access and copy the URL. Students can <strong>Fork</strong> their own copies. See the <a href="https://observablehq.com/@observablehq/notebooks-user-guide">user guide</a>.</li></ol><section id="embed"><h2>1. Load Vega-Lite through Vega-Embed</h2><button data-copy="code-embed">Copy complete cell</button><a href="notebook-cells/embed.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-embed">import embed from &quot;npm:vega-embed@7.1.0&quot;;</pre></details></section><section id="exerciseSpec"><h2>2. Exercise performance · editable specification</h2><button data-copy="code-exerciseSpec">Copy complete cell</button><a href="notebook-cells/exerciseSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-exerciseSpec">const exerciseSpec = {
+  &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  &quot;hconcat&quot;: [
+    {
+      &quot;title&quot;: {
+        &quot;frame&quot;: &quot;group&quot;,
+        &quot;text&quot;: &quot;No AI&quot;,
+        &quot;color&quot;: &quot;#667085&quot;,
+        &quot;fontSize&quot;: 17,
+        &quot;offset&quot;: 8
+      },
+      &quot;width&quot;: 140,
+      &quot;height&quot;: 140,
+      &quot;data&quot;: {
+        &quot;values&quot;: [
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 0,
+            &quot;count&quot;: 40
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 11.1,
+            &quot;count&quot;: 9
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 22.2,
+            &quot;count&quot;: 13
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 44.4,
+            &quot;count&quot;: 13
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 55.6,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 66.7,
+            &quot;count&quot;: 6
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 77.8,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 88.9,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 100,
+            &quot;count&quot;: 15
+          }
+        ]
+      },
+      &quot;encoding&quot;: {
+        &quot;y&quot;: {
+          &quot;field&quot;: &quot;value&quot;,
+          &quot;type&quot;: &quot;quantitative&quot;,
+          &quot;scale&quot;: {
+            &quot;domain&quot;: [
+              -5,
+              105
+            ],
+            &quot;nice&quot;: false
+          },
+          &quot;axis&quot;: {
+            &quot;title&quot;: &quot;Score (%)&quot;,
+            &quot;values&quot;: [
+              0,
+              11.1,
+              22.2,
+              44.4,
+              55.6,
+              66.7,
+              77.8,
+              88.9,
+              100
+            ],
+            &quot;labels&quot;: true,
+            &quot;ticks&quot;: true,
+            &quot;domain&quot;: true,
+            &quot;grid&quot;: false,
+            &quot;format&quot;: &quot;.1~f&quot;,
+            &quot;labelFontSize&quot;: 13,
+            &quot;labelOverlap&quot;: false,
+            &quot;labelPadding&quot;: 3,
+            &quot;titlePadding&quot;: 6,
+            &quot;titleFontSize&quot;: 13
+          }
+        }
+      },
+      &quot;layer&quot;: [
+        {
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;bar&quot;,
+            &quot;orient&quot;: &quot;horizontal&quot;,
+            &quot;color&quot;: &quot;#667085&quot;,
+            &quot;size&quot;: 7
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;field&quot;: &quot;count&quot;,
+              &quot;type&quot;: &quot;quantitative&quot;,
+              &quot;scale&quot;: {
+                &quot;domain&quot;: [
+                  0,
+                  60
+                ],
+                &quot;nice&quot;: false
+              },
+              &quot;axis&quot;: {
+                &quot;title&quot;: &quot;Students&quot;,
+                &quot;values&quot;: [
+                  0,
+                  30,
+                  60
+                ],
+                &quot;labelFontSize&quot;: 13,
+                &quot;labelOverlap&quot;: false,
+                &quot;titleFontSize&quot;: 14,
+                &quot;titlePadding&quot;: 4,
+                &quot;labelPadding&quot;: 3
+              }
+            },
+            &quot;tooltip&quot;: [
+              {
+                &quot;field&quot;: &quot;group&quot;
+              },
+              {
+                &quot;field&quot;: &quot;value&quot;,
+                &quot;title&quot;: &quot;Exercise score (%)&quot;
+              },
+              {
+                &quot;field&quot;: &quot;count&quot;,
+                &quot;title&quot;: &quot;Students&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 29.853125000000002,
+                &quot;label&quot;: &quot;Mean 29.85&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;rule&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;,
+            &quot;strokeDash&quot;: [
+              5,
+              4
+            ],
+            &quot;strokeWidth&quot;: 2
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 29.853125000000002,
+                &quot;label&quot;: &quot;Mean 29.85&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;align&quot;: &quot;right&quot;,
+            &quot;baseline&quot;: &quot;bottom&quot;,
+            &quot;dx&quot;: -3,
+            &quot;dy&quot;: -4,
+            &quot;fontSize&quot;: 13,
+            &quot;fontWeight&quot;: &quot;bold&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;datum&quot;: 60,
+              &quot;type&quot;: &quot;quantitative&quot;
+            },
+            &quot;text&quot;: {
+              &quot;field&quot;: &quot;label&quot;
+            }
+          }
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: {
+        &quot;frame&quot;: &quot;group&quot;,
+        &quot;text&quot;: &quot;Iris&quot;,
+        &quot;color&quot;: &quot;#3157a4&quot;,
+        &quot;fontSize&quot;: 17,
+        &quot;offset&quot;: 8
+      },
+      &quot;width&quot;: 140,
+      &quot;height&quot;: 140,
+      &quot;data&quot;: {
+        &quot;values&quot;: [
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 0,
+            &quot;count&quot;: 14
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 11.1,
+            &quot;count&quot;: 6
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 22.2,
+            &quot;count&quot;: 4
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 44.4,
+            &quot;count&quot;: 21
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 55.6,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 66.7,
+            &quot;count&quot;: 11
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 77.8,
+            &quot;count&quot;: 1
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 88.9,
+            &quot;count&quot;: 6
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 100,
+            &quot;count&quot;: 28
+          }
+        ]
+      },
+      &quot;encoding&quot;: {
+        &quot;y&quot;: {
+          &quot;field&quot;: &quot;value&quot;,
+          &quot;type&quot;: &quot;quantitative&quot;,
+          &quot;scale&quot;: {
+            &quot;domain&quot;: [
+              -5,
+              105
+            ],
+            &quot;nice&quot;: false
+          },
+          &quot;axis&quot;: {
+            &quot;title&quot;: null,
+            &quot;values&quot;: [
+              0,
+              11.1,
+              22.2,
+              44.4,
+              55.6,
+              66.7,
+              77.8,
+              88.9,
+              100
+            ],
+            &quot;labels&quot;: false,
+            &quot;ticks&quot;: false,
+            &quot;domain&quot;: false,
+            &quot;grid&quot;: false,
+            &quot;format&quot;: &quot;.1~f&quot;,
+            &quot;labelFontSize&quot;: 13,
+            &quot;labelOverlap&quot;: false,
+            &quot;labelPadding&quot;: 3,
+            &quot;titlePadding&quot;: 6,
+            &quot;titleFontSize&quot;: 13
+          }
+        }
+      },
+      &quot;layer&quot;: [
+        {
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;bar&quot;,
+            &quot;orient&quot;: &quot;horizontal&quot;,
+            &quot;color&quot;: &quot;#3157a4&quot;,
+            &quot;size&quot;: 7
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;field&quot;: &quot;count&quot;,
+              &quot;type&quot;: &quot;quantitative&quot;,
+              &quot;scale&quot;: {
+                &quot;domain&quot;: [
+                  0,
+                  60
+                ],
+                &quot;nice&quot;: false
+              },
+              &quot;axis&quot;: {
+                &quot;title&quot;: &quot;Students&quot;,
+                &quot;values&quot;: [
+                  0,
+                  30,
+                  60
+                ],
+                &quot;labelFontSize&quot;: 13,
+                &quot;labelOverlap&quot;: false,
+                &quot;titleFontSize&quot;: 14,
+                &quot;titlePadding&quot;: 4,
+                &quot;labelPadding&quot;: 3
+              }
+            },
+            &quot;tooltip&quot;: [
+              {
+                &quot;field&quot;: &quot;group&quot;
+              },
+              {
+                &quot;field&quot;: &quot;value&quot;,
+                &quot;title&quot;: &quot;Exercise score (%)&quot;
+              },
+              {
+                &quot;field&quot;: &quot;count&quot;,
+                &quot;title&quot;: &quot;Students&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 57.50219780219778,
+                &quot;label&quot;: &quot;Mean 57.50&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;rule&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;,
+            &quot;strokeDash&quot;: [
+              5,
+              4
+            ],
+            &quot;strokeWidth&quot;: 2
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 57.50219780219778,
+                &quot;label&quot;: &quot;Mean 57.50&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;align&quot;: &quot;right&quot;,
+            &quot;baseline&quot;: &quot;bottom&quot;,
+            &quot;dx&quot;: -3,
+            &quot;dy&quot;: -4,
+            &quot;fontSize&quot;: 13,
+            &quot;fontWeight&quot;: &quot;bold&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;datum&quot;: 60,
+              &quot;type&quot;: &quot;quantitative&quot;
+            },
+            &quot;text&quot;: {
+              &quot;field&quot;: &quot;label&quot;
+            }
+          }
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: {
+        &quot;frame&quot;: &quot;group&quot;,
+        &quot;text&quot;: &quot;ChatGPT&quot;,
+        &quot;color&quot;: &quot;#7656a6&quot;,
+        &quot;fontSize&quot;: 17,
+        &quot;offset&quot;: 8
+      },
+      &quot;width&quot;: 140,
+      &quot;height&quot;: 140,
+      &quot;data&quot;: {
+        &quot;values&quot;: [
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 0,
+            &quot;count&quot;: 15
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 11.1,
+            &quot;count&quot;: 2
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 22.2,
+            &quot;count&quot;: 1
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 44.4,
+            &quot;count&quot;: 9
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 55.6,
+            &quot;count&quot;: 1
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 66.7,
+            &quot;count&quot;: 4
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 77.8,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 88.9,
+            &quot;count&quot;: 4
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 100,
+            &quot;count&quot;: 52
+          }
+        ]
+      },
+      &quot;encoding&quot;: {
+        &quot;y&quot;: {
+          &quot;field&quot;: &quot;value&quot;,
+          &quot;type&quot;: &quot;quantitative&quot;,
+          &quot;scale&quot;: {
+            &quot;domain&quot;: [
+              -5,
+              105
+            ],
+            &quot;nice&quot;: false
+          },
+          &quot;axis&quot;: {
+            &quot;title&quot;: null,
+            &quot;values&quot;: [
+              0,
+              11.1,
+              22.2,
+              44.4,
+              55.6,
+              66.7,
+              77.8,
+              88.9,
+              100
+            ],
+            &quot;labels&quot;: false,
+            &quot;ticks&quot;: false,
+            &quot;domain&quot;: false,
+            &quot;grid&quot;: false,
+            &quot;format&quot;: &quot;.1~f&quot;,
+            &quot;labelFontSize&quot;: 13,
+            &quot;labelOverlap&quot;: false,
+            &quot;labelPadding&quot;: 3,
+            &quot;titlePadding&quot;: 6,
+            &quot;titleFontSize&quot;: 13
+          }
+        }
+      },
+      &quot;layer&quot;: [
+        {
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;bar&quot;,
+            &quot;orient&quot;: &quot;horizontal&quot;,
+            &quot;color&quot;: &quot;#7656a6&quot;,
+            &quot;size&quot;: 7
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;field&quot;: &quot;count&quot;,
+              &quot;type&quot;: &quot;quantitative&quot;,
+              &quot;scale&quot;: {
+                &quot;domain&quot;: [
+                  0,
+                  60
+                ],
+                &quot;nice&quot;: false
+              },
+              &quot;axis&quot;: {
+                &quot;title&quot;: &quot;Students&quot;,
+                &quot;values&quot;: [
+                  0,
+                  30,
+                  60
+                ],
+                &quot;labelFontSize&quot;: 13,
+                &quot;labelOverlap&quot;: false,
+                &quot;titleFontSize&quot;: 14,
+                &quot;titlePadding&quot;: 4,
+                &quot;labelPadding&quot;: 3
+              }
+            },
+            &quot;tooltip&quot;: [
+              {
+                &quot;field&quot;: &quot;group&quot;
+              },
+              {
+                &quot;field&quot;: &quot;value&quot;,
+                &quot;title&quot;: &quot;Exercise score (%)&quot;
+              },
+              {
+                &quot;field&quot;: &quot;count&quot;,
+                &quot;title&quot;: &quot;Students&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 71.84090909090908,
+                &quot;label&quot;: &quot;Mean 71.84&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;rule&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;,
+            &quot;strokeDash&quot;: [
+              5,
+              4
+            ],
+            &quot;strokeWidth&quot;: 2
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 71.84090909090908,
+                &quot;label&quot;: &quot;Mean 71.84&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;align&quot;: &quot;right&quot;,
+            &quot;baseline&quot;: &quot;bottom&quot;,
+            &quot;dx&quot;: -3,
+            &quot;dy&quot;: -4,
+            &quot;fontSize&quot;: 13,
+            &quot;fontWeight&quot;: &quot;bold&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;datum&quot;: 60,
+              &quot;type&quot;: &quot;quantitative&quot;
+            },
+            &quot;text&quot;: {
+              &quot;field&quot;: &quot;label&quot;
+            }
+          }
+        }
+      ]
+    }
+  ],
+  &quot;spacing&quot;: 18,
+  &quot;resolve&quot;: {
+    &quot;scale&quot;: {
+      &quot;x&quot;: &quot;shared&quot;,
+      &quot;y&quot;: &quot;shared&quot;
+    }
+  },
+  &quot;title&quot;: {
+    &quot;frame&quot;: &quot;group&quot;,
+    &quot;text&quot;: &quot;Exercise performance&quot;,
+    &quot;fontSize&quot;: 22,
+    &quot;offset&quot;: 16
+  },
+  &quot;config&quot;: {
+    &quot;font&quot;: &quot;Arial&quot;,
+    &quot;background&quot;: &quot;white&quot;,
+    &quot;view&quot;: {
+      &quot;stroke&quot;: null
+    },
+    &quot;axis&quot;: {
+      &quot;labelFontSize&quot;: 17,
+      &quot;titleFontSize&quot;: 18,
+      &quot;titlePadding&quot;: 12,
+      &quot;labelColor&quot;: &quot;#263248&quot;,
+      &quot;titleColor&quot;: &quot;#17233c&quot;,
+      &quot;gridColor&quot;: &quot;#e6e8ed&quot;,
+      &quot;domainColor&quot;: &quot;#a1a7b3&quot;,
+      &quot;labelPadding&quot;: 8,
+      &quot;labelAngle&quot;: 0
+    },
+    &quot;title&quot;: {
+      &quot;fontSize&quot;: 22,
+      &quot;anchor&quot;: &quot;start&quot;,
+      &quot;color&quot;: &quot;#17233c&quot;,
+      &quot;offset&quot;: 18,
+      &quot;subtitleFontSize&quot;: 16,
+      &quot;subtitleColor&quot;: &quot;#667085&quot;,
+      &quot;subtitlePadding&quot;: 8
+    },
+    &quot;legend&quot;: {
+      &quot;labelFontSize&quot;: 15,
+      &quot;titleFontSize&quot;: 16,
+      &quot;orient&quot;: &quot;bottom&quot;
+    }
+  }
+};</pre></details></section><section id="exerciseChart"><h2>3. Exercise performance · chart output</h2><button data-copy="code-exerciseChart">Copy complete cell</button><a href="notebook-cells/exerciseChart.js" download>Download cell</a><img src="exercise-performance.svg" alt="Exercise performance · chart output"><details open><summary>Show complete code</summary><pre id="code-exerciseChart">const exerciseChart = document.createElement(&quot;div&quot;);
+const exerciseResult = await embed(exerciseChart, exerciseSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(exerciseChart);
+invalidation.then(() =&gt; exerciseResult.finalize());</pre></details></section><section id="frustrationSpec"><h2>4. Reported frustration · editable specification</h2><button data-copy="code-frustrationSpec">Copy complete cell</button><a href="notebook-cells/frustrationSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-frustrationSpec">const frustrationSpec = {
+  &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  &quot;width&quot;: 440,
+  &quot;height&quot;: 140,
+  &quot;data&quot;: {
+    &quot;values&quot;: [
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;level&quot;: 1,
+        &quot;count&quot;: 2,
+        &quot;proportion&quot;: 0.020833333333333332,
+        &quot;start&quot;: 0,
+        &quot;end&quot;: 0.020833333333333332,
+        &quot;middle&quot;: 0.010416666666666666
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;level&quot;: 2,
+        &quot;count&quot;: 7,
+        &quot;proportion&quot;: 0.07291666666666667,
+        &quot;start&quot;: 0.020833333333333332,
+        &quot;end&quot;: 0.09375,
+        &quot;middle&quot;: 0.057291666666666664
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;level&quot;: 3,
+        &quot;count&quot;: 10,
+        &quot;proportion&quot;: 0.10416666666666667,
+        &quot;start&quot;: 0.09375,
+        &quot;end&quot;: 0.19791666666666669,
+        &quot;middle&quot;: 0.14583333333333334
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;level&quot;: 4,
+        &quot;count&quot;: 38,
+        &quot;proportion&quot;: 0.3958333333333333,
+        &quot;start&quot;: 0.19791666666666669,
+        &quot;end&quot;: 0.59375,
+        &quot;middle&quot;: 0.39583333333333337
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;level&quot;: 5,
+        &quot;count&quot;: 39,
+        &quot;proportion&quot;: 0.40625,
+        &quot;start&quot;: 0.59375,
+        &quot;end&quot;: 1,
+        &quot;middle&quot;: 0.796875
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;level&quot;: 1,
+        &quot;count&quot;: 5,
+        &quot;proportion&quot;: 0.054945054945054944,
+        &quot;start&quot;: 0,
+        &quot;end&quot;: 0.054945054945054944,
+        &quot;middle&quot;: 0.027472527472527472
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;level&quot;: 2,
+        &quot;count&quot;: 26,
+        &quot;proportion&quot;: 0.2857142857142857,
+        &quot;start&quot;: 0.054945054945054944,
+        &quot;end&quot;: 0.34065934065934067,
+        &quot;middle&quot;: 0.19780219780219782
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;level&quot;: 3,
+        &quot;count&quot;: 19,
+        &quot;proportion&quot;: 0.2087912087912088,
+        &quot;start&quot;: 0.34065934065934067,
+        &quot;end&quot;: 0.5494505494505495,
+        &quot;middle&quot;: 0.4450549450549451
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;level&quot;: 4,
+        &quot;count&quot;: 27,
+        &quot;proportion&quot;: 0.2967032967032967,
+        &quot;start&quot;: 0.5494505494505495,
+        &quot;end&quot;: 0.8461538461538463,
+        &quot;middle&quot;: 0.6978021978021979
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;level&quot;: 5,
+        &quot;count&quot;: 14,
+        &quot;proportion&quot;: 0.15384615384615385,
+        &quot;start&quot;: 0.8461538461538463,
+        &quot;end&quot;: 1,
+        &quot;middle&quot;: 0.9230769230769231
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;level&quot;: 1,
+        &quot;count&quot;: 8,
+        &quot;proportion&quot;: 0.09090909090909091,
+        &quot;start&quot;: 0,
+        &quot;end&quot;: 0.09090909090909091,
+        &quot;middle&quot;: 0.045454545454545456
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;level&quot;: 2,
+        &quot;count&quot;: 23,
+        &quot;proportion&quot;: 0.26136363636363635,
+        &quot;start&quot;: 0.09090909090909091,
+        &quot;end&quot;: 0.3522727272727273,
+        &quot;middle&quot;: 0.22159090909090912
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;level&quot;: 3,
+        &quot;count&quot;: 19,
+        &quot;proportion&quot;: 0.2159090909090909,
+        &quot;start&quot;: 0.3522727272727273,
+        &quot;end&quot;: 0.5681818181818182,
+        &quot;middle&quot;: 0.46022727272727276
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;level&quot;: 4,
+        &quot;count&quot;: 26,
+        &quot;proportion&quot;: 0.29545454545454547,
+        &quot;start&quot;: 0.5681818181818182,
+        &quot;end&quot;: 0.8636363636363638,
+        &quot;middle&quot;: 0.715909090909091
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;level&quot;: 5,
+        &quot;count&quot;: 12,
+        &quot;proportion&quot;: 0.13636363636363635,
+        &quot;start&quot;: 0.8636363636363638,
+        &quot;end&quot;: 1,
+        &quot;middle&quot;: 0.9318181818181819
+      }
+    ]
+  },
+  &quot;title&quot;: {
+    &quot;frame&quot;: &quot;group&quot;,
+    &quot;text&quot;: &quot;Reported frustration&quot;,
+    &quot;subtitle&quot;: &quot;Five response levels; lower = less&quot;,
+    &quot;fontSize&quot;: 22,
+    &quot;subtitleFontSize&quot;: 13,
+    &quot;offset&quot;: 13,
+    &quot;subtitlePadding&quot;: 9
+  },
+  &quot;encoding&quot;: {
+    &quot;x&quot;: {
+      &quot;field&quot;: &quot;group&quot;,
+      &quot;type&quot;: &quot;nominal&quot;,
+      &quot;sort&quot;: [
+        &quot;No AI&quot;,
+        &quot;Iris&quot;,
+        &quot;ChatGPT&quot;
+      ],
+      &quot;title&quot;: null,
+      &quot;axis&quot;: {
+        &quot;labelFontSize&quot;: 14,
+        &quot;labelPadding&quot;: 4
+      }
+    },
+    &quot;y&quot;: {
+      &quot;field&quot;: &quot;start&quot;,
+      &quot;type&quot;: &quot;quantitative&quot;,
+      &quot;title&quot;: &quot;Responses (%)&quot;,
+      &quot;scale&quot;: {
+        &quot;domain&quot;: [
+          0,
+          1
+        ]
+      },
+      &quot;axis&quot;: {
+        &quot;format&quot;: &quot;.0%&quot;,
+        &quot;values&quot;: [
+          0,
+          0.5,
+          1
+        ],
+        &quot;labelFontSize&quot;: 13,
+        &quot;titleFontSize&quot;: 13,
+        &quot;labelPadding&quot;: 3,
+        &quot;titlePadding&quot;: 6
+      }
+    },
+    &quot;color&quot;: {
+      &quot;field&quot;: &quot;level&quot;,
+      &quot;type&quot;: &quot;ordinal&quot;,
+      &quot;sort&quot;: [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      &quot;scale&quot;: {
+        &quot;domain&quot;: [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        &quot;range&quot;: [
+          &quot;#fff3df&quot;,
+          &quot;#fedbb2&quot;,
+          &quot;#f3b981&quot;,
+          &quot;#d58c50&quot;,
+          &quot;#9a502c&quot;
+        ]
+      },
+      &quot;legend&quot;: {
+        &quot;title&quot;: null,
+        &quot;direction&quot;: &quot;horizontal&quot;,
+        &quot;offset&quot;: 6,
+        &quot;labelFontSize&quot;: 13
+      }
+    },
+    &quot;tooltip&quot;: [
+      {
+        &quot;field&quot;: &quot;group&quot;
+      },
+      {
+        &quot;field&quot;: &quot;level&quot;
+      },
+      {
+        &quot;field&quot;: &quot;count&quot;
+      },
+      {
+        &quot;field&quot;: &quot;proportion&quot;,
+        &quot;format&quot;: &quot;.1%&quot;
+      }
+    ]
+  },
+  &quot;layer&quot;: [
+    {
+      &quot;mark&quot;: {
+        &quot;type&quot;: &quot;bar&quot;,
+        &quot;width&quot;: 64,
+        &quot;stroke&quot;: &quot;white&quot;,
+        &quot;strokeWidth&quot;: 1
+      },
+      &quot;encoding&quot;: {
+        &quot;y2&quot;: {
+          &quot;field&quot;: &quot;end&quot;
+        }
+      }
+    },
+    {
+      &quot;mark&quot;: {
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;fontSize&quot;: 13
+      },
+      &quot;encoding&quot;: {
+        &quot;y&quot;: {
+          &quot;field&quot;: &quot;middle&quot;,
+          &quot;type&quot;: &quot;quantitative&quot;
+        },
+        &quot;text&quot;: {
+          &quot;field&quot;: &quot;proportion&quot;,
+          &quot;format&quot;: &quot;.0%&quot;
+        },
+        &quot;color&quot;: {
+          &quot;condition&quot;: {
+            &quot;test&quot;: &quot;datum.level &gt;= 4&quot;,
+            &quot;value&quot;: &quot;white&quot;
+          },
+          &quot;value&quot;: &quot;#17233c&quot;
+        },
+        &quot;opacity&quot;: {
+          &quot;condition&quot;: {
+            &quot;test&quot;: &quot;datum.proportion &gt;= 0.06&quot;,
+            &quot;value&quot;: 1
+          },
+          &quot;value&quot;: 0
+        }
+      }
+    }
+  ],
+  &quot;config&quot;: {
+    &quot;font&quot;: &quot;Arial&quot;,
+    &quot;background&quot;: &quot;white&quot;,
+    &quot;view&quot;: {
+      &quot;stroke&quot;: null
+    },
+    &quot;axis&quot;: {
+      &quot;labelFontSize&quot;: 17,
+      &quot;titleFontSize&quot;: 18,
+      &quot;titlePadding&quot;: 12,
+      &quot;labelColor&quot;: &quot;#263248&quot;,
+      &quot;titleColor&quot;: &quot;#17233c&quot;,
+      &quot;gridColor&quot;: &quot;#e6e8ed&quot;,
+      &quot;domainColor&quot;: &quot;#a1a7b3&quot;,
+      &quot;labelPadding&quot;: 8,
+      &quot;labelAngle&quot;: 0
+    },
+    &quot;title&quot;: {
+      &quot;fontSize&quot;: 22,
+      &quot;anchor&quot;: &quot;start&quot;,
+      &quot;color&quot;: &quot;#17233c&quot;,
+      &quot;offset&quot;: 18,
+      &quot;subtitleFontSize&quot;: 16,
+      &quot;subtitleColor&quot;: &quot;#667085&quot;,
+      &quot;subtitlePadding&quot;: 8
+    },
+    &quot;legend&quot;: {
+      &quot;labelFontSize&quot;: 15,
+      &quot;titleFontSize&quot;: 16,
+      &quot;orient&quot;: &quot;bottom&quot;
+    }
+  }
+};</pre></details></section><section id="frustrationChart"><h2>5. Reported frustration · chart output</h2><button data-copy="code-frustrationChart">Copy complete cell</button><a href="notebook-cells/frustrationChart.js" download>Download cell</a><img src="reported-frustration.svg" alt="Reported frustration · chart output"><details open><summary>Show complete code</summary><pre id="code-frustrationChart">const frustrationChart = document.createElement(&quot;div&quot;);
+const frustrationResult = await embed(frustrationChart, frustrationSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(frustrationChart);
+invalidation.then(() =&gt; frustrationResult.finalize());</pre></details></section><section id="gainSpec"><h2>6. Knowledge gains · editable specification</h2><button data-copy="code-gainSpec">Copy complete cell</button><a href="notebook-cells/gainSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-gainSpec">const gainSpec = {
+  &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  &quot;hconcat&quot;: [
+    {
+      &quot;title&quot;: {
+        &quot;frame&quot;: &quot;group&quot;,
+        &quot;text&quot;: &quot;No AI&quot;,
+        &quot;color&quot;: &quot;#667085&quot;,
+        &quot;fontSize&quot;: 17,
+        &quot;offset&quot;: 8
+      },
+      &quot;width&quot;: 140,
+      &quot;height&quot;: 140,
+      &quot;data&quot;: {
+        &quot;values&quot;: [
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: -6,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: -5,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: -4,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: -3,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: -2,
+            &quot;count&quot;: 5
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: -1,
+            &quot;count&quot;: 8
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 0,
+            &quot;count&quot;: 35
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 1,
+            &quot;count&quot;: 17
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 2,
+            &quot;count&quot;: 19
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 3,
+            &quot;count&quot;: 7
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 4,
+            &quot;count&quot;: 2
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 5,
+            &quot;count&quot;: 2
+          },
+          {
+            &quot;group&quot;: &quot;No AI&quot;,
+            &quot;value&quot;: 6,
+            &quot;count&quot;: 1
+          }
+        ]
+      },
+      &quot;encoding&quot;: {
+        &quot;y&quot;: {
+          &quot;field&quot;: &quot;value&quot;,
+          &quot;type&quot;: &quot;quantitative&quot;,
+          &quot;scale&quot;: {
+            &quot;domain&quot;: [
+              -6.5,
+              6.5
+            ],
+            &quot;nice&quot;: false
+          },
+          &quot;axis&quot;: {
+            &quot;title&quot;: &quot;Gain (points)&quot;,
+            &quot;values&quot;: [
+              -6,
+              -4,
+              -2,
+              0,
+              2,
+              4,
+              6
+            ],
+            &quot;labels&quot;: true,
+            &quot;ticks&quot;: true,
+            &quot;domain&quot;: true,
+            &quot;grid&quot;: false,
+            &quot;format&quot;: &quot;.1~f&quot;,
+            &quot;labelFontSize&quot;: 13,
+            &quot;labelOverlap&quot;: false,
+            &quot;labelPadding&quot;: 3,
+            &quot;titlePadding&quot;: 6,
+            &quot;titleFontSize&quot;: 13
+          }
+        }
+      },
+      &quot;layer&quot;: [
+        {
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;bar&quot;,
+            &quot;orient&quot;: &quot;horizontal&quot;,
+            &quot;color&quot;: &quot;#667085&quot;,
+            &quot;size&quot;: 7
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;field&quot;: &quot;count&quot;,
+              &quot;type&quot;: &quot;quantitative&quot;,
+              &quot;scale&quot;: {
+                &quot;domain&quot;: [
+                  0,
+                  40
+                ],
+                &quot;nice&quot;: false
+              },
+              &quot;axis&quot;: {
+                &quot;title&quot;: &quot;Students&quot;,
+                &quot;values&quot;: [
+                  0,
+                  20,
+                  40
+                ],
+                &quot;labelFontSize&quot;: 13,
+                &quot;labelOverlap&quot;: false,
+                &quot;titleFontSize&quot;: 14,
+                &quot;titlePadding&quot;: 4,
+                &quot;labelPadding&quot;: 3
+              }
+            },
+            &quot;tooltip&quot;: [
+              {
+                &quot;field&quot;: &quot;group&quot;
+              },
+              {
+                &quot;field&quot;: &quot;value&quot;,
+                &quot;title&quot;: &quot;Knowledge gain (points)&quot;
+              },
+              {
+                &quot;field&quot;: &quot;count&quot;,
+                &quot;title&quot;: &quot;Students&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 0.8541666666666666,
+                &quot;label&quot;: &quot;Mean 0.85&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;rule&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;,
+            &quot;strokeDash&quot;: [
+              5,
+              4
+            ],
+            &quot;strokeWidth&quot;: 2
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 0.8541666666666666,
+                &quot;label&quot;: &quot;Mean 0.85&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;align&quot;: &quot;right&quot;,
+            &quot;baseline&quot;: &quot;bottom&quot;,
+            &quot;dx&quot;: -3,
+            &quot;dy&quot;: -9,
+            &quot;fontSize&quot;: 13,
+            &quot;fontWeight&quot;: &quot;bold&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;datum&quot;: 40,
+              &quot;type&quot;: &quot;quantitative&quot;
+            },
+            &quot;text&quot;: {
+              &quot;field&quot;: &quot;label&quot;
+            }
+          }
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: {
+        &quot;frame&quot;: &quot;group&quot;,
+        &quot;text&quot;: &quot;Iris&quot;,
+        &quot;color&quot;: &quot;#3157a4&quot;,
+        &quot;fontSize&quot;: 17,
+        &quot;offset&quot;: 8
+      },
+      &quot;width&quot;: 140,
+      &quot;height&quot;: 140,
+      &quot;data&quot;: {
+        &quot;values&quot;: [
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: -6,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: -5,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: -4,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: -3,
+            &quot;count&quot;: 1
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: -2,
+            &quot;count&quot;: 1
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: -1,
+            &quot;count&quot;: 8
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 0,
+            &quot;count&quot;: 36
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 1,
+            &quot;count&quot;: 22
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 2,
+            &quot;count&quot;: 14
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 3,
+            &quot;count&quot;: 8
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 4,
+            &quot;count&quot;: 1
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 5,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;Iris&quot;,
+            &quot;value&quot;: 6,
+            &quot;count&quot;: 0
+          }
+        ]
+      },
+      &quot;encoding&quot;: {
+        &quot;y&quot;: {
+          &quot;field&quot;: &quot;value&quot;,
+          &quot;type&quot;: &quot;quantitative&quot;,
+          &quot;scale&quot;: {
+            &quot;domain&quot;: [
+              -6.5,
+              6.5
+            ],
+            &quot;nice&quot;: false
+          },
+          &quot;axis&quot;: {
+            &quot;title&quot;: null,
+            &quot;values&quot;: [
+              -6,
+              -4,
+              -2,
+              0,
+              2,
+              4,
+              6
+            ],
+            &quot;labels&quot;: false,
+            &quot;ticks&quot;: false,
+            &quot;domain&quot;: false,
+            &quot;grid&quot;: false,
+            &quot;format&quot;: &quot;.1~f&quot;,
+            &quot;labelFontSize&quot;: 13,
+            &quot;labelOverlap&quot;: false,
+            &quot;labelPadding&quot;: 3,
+            &quot;titlePadding&quot;: 6,
+            &quot;titleFontSize&quot;: 13
+          }
+        }
+      },
+      &quot;layer&quot;: [
+        {
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;bar&quot;,
+            &quot;orient&quot;: &quot;horizontal&quot;,
+            &quot;color&quot;: &quot;#3157a4&quot;,
+            &quot;size&quot;: 7
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;field&quot;: &quot;count&quot;,
+              &quot;type&quot;: &quot;quantitative&quot;,
+              &quot;scale&quot;: {
+                &quot;domain&quot;: [
+                  0,
+                  40
+                ],
+                &quot;nice&quot;: false
+              },
+              &quot;axis&quot;: {
+                &quot;title&quot;: &quot;Students&quot;,
+                &quot;values&quot;: [
+                  0,
+                  20,
+                  40
+                ],
+                &quot;labelFontSize&quot;: 13,
+                &quot;labelOverlap&quot;: false,
+                &quot;titleFontSize&quot;: 14,
+                &quot;titlePadding&quot;: 4,
+                &quot;labelPadding&quot;: 3
+              }
+            },
+            &quot;tooltip&quot;: [
+              {
+                &quot;field&quot;: &quot;group&quot;
+              },
+              {
+                &quot;field&quot;: &quot;value&quot;,
+                &quot;title&quot;: &quot;Knowledge gain (points)&quot;
+              },
+              {
+                &quot;field&quot;: &quot;count&quot;,
+                &quot;title&quot;: &quot;Students&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 0.7142857142857143,
+                &quot;label&quot;: &quot;Mean 0.71&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;rule&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;,
+            &quot;strokeDash&quot;: [
+              5,
+              4
+            ],
+            &quot;strokeWidth&quot;: 2
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 0.7142857142857143,
+                &quot;label&quot;: &quot;Mean 0.71&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;align&quot;: &quot;right&quot;,
+            &quot;baseline&quot;: &quot;bottom&quot;,
+            &quot;dx&quot;: -3,
+            &quot;dy&quot;: -9,
+            &quot;fontSize&quot;: 13,
+            &quot;fontWeight&quot;: &quot;bold&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;datum&quot;: 40,
+              &quot;type&quot;: &quot;quantitative&quot;
+            },
+            &quot;text&quot;: {
+              &quot;field&quot;: &quot;label&quot;
+            }
+          }
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: {
+        &quot;frame&quot;: &quot;group&quot;,
+        &quot;text&quot;: &quot;ChatGPT&quot;,
+        &quot;color&quot;: &quot;#7656a6&quot;,
+        &quot;fontSize&quot;: 17,
+        &quot;offset&quot;: 8
+      },
+      &quot;width&quot;: 140,
+      &quot;height&quot;: 140,
+      &quot;data&quot;: {
+        &quot;values&quot;: [
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: -6,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: -5,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: -4,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: -3,
+            &quot;count&quot;: 0
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: -2,
+            &quot;count&quot;: 4
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: -1,
+            &quot;count&quot;: 8
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 0,
+            &quot;count&quot;: 24
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 1,
+            &quot;count&quot;: 30
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 2,
+            &quot;count&quot;: 12
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 3,
+            &quot;count&quot;: 6
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 4,
+            &quot;count&quot;: 3
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 5,
+            &quot;count&quot;: 1
+          },
+          {
+            &quot;group&quot;: &quot;ChatGPT&quot;,
+            &quot;value&quot;: 6,
+            &quot;count&quot;: 0
+          }
+        ]
+      },
+      &quot;encoding&quot;: {
+        &quot;y&quot;: {
+          &quot;field&quot;: &quot;value&quot;,
+          &quot;type&quot;: &quot;quantitative&quot;,
+          &quot;scale&quot;: {
+            &quot;domain&quot;: [
+              -6.5,
+              6.5
+            ],
+            &quot;nice&quot;: false
+          },
+          &quot;axis&quot;: {
+            &quot;title&quot;: null,
+            &quot;values&quot;: [
+              -6,
+              -4,
+              -2,
+              0,
+              2,
+              4,
+              6
+            ],
+            &quot;labels&quot;: false,
+            &quot;ticks&quot;: false,
+            &quot;domain&quot;: false,
+            &quot;grid&quot;: false,
+            &quot;format&quot;: &quot;.1~f&quot;,
+            &quot;labelFontSize&quot;: 13,
+            &quot;labelOverlap&quot;: false,
+            &quot;labelPadding&quot;: 3,
+            &quot;titlePadding&quot;: 6,
+            &quot;titleFontSize&quot;: 13
+          }
+        }
+      },
+      &quot;layer&quot;: [
+        {
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;bar&quot;,
+            &quot;orient&quot;: &quot;horizontal&quot;,
+            &quot;color&quot;: &quot;#7656a6&quot;,
+            &quot;size&quot;: 7
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;field&quot;: &quot;count&quot;,
+              &quot;type&quot;: &quot;quantitative&quot;,
+              &quot;scale&quot;: {
+                &quot;domain&quot;: [
+                  0,
+                  40
+                ],
+                &quot;nice&quot;: false
+              },
+              &quot;axis&quot;: {
+                &quot;title&quot;: &quot;Students&quot;,
+                &quot;values&quot;: [
+                  0,
+                  20,
+                  40
+                ],
+                &quot;labelFontSize&quot;: 13,
+                &quot;labelOverlap&quot;: false,
+                &quot;titleFontSize&quot;: 14,
+                &quot;titlePadding&quot;: 4,
+                &quot;labelPadding&quot;: 3
+              }
+            },
+            &quot;tooltip&quot;: [
+              {
+                &quot;field&quot;: &quot;group&quot;
+              },
+              {
+                &quot;field&quot;: &quot;value&quot;,
+                &quot;title&quot;: &quot;Knowledge gain (points)&quot;
+              },
+              {
+                &quot;field&quot;: &quot;count&quot;,
+                &quot;title&quot;: &quot;Students&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 0.8295454545454546,
+                &quot;label&quot;: &quot;Mean 0.83&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;rule&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;,
+            &quot;strokeDash&quot;: [
+              5,
+              4
+            ],
+            &quot;strokeWidth&quot;: 2
+          }
+        },
+        {
+          &quot;data&quot;: {
+            &quot;values&quot;: [
+              {
+                &quot;value&quot;: 0.8295454545454546,
+                &quot;label&quot;: &quot;Mean 0.83&quot;
+              }
+            ]
+          },
+          &quot;mark&quot;: {
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;align&quot;: &quot;right&quot;,
+            &quot;baseline&quot;: &quot;bottom&quot;,
+            &quot;dx&quot;: -3,
+            &quot;dy&quot;: -9,
+            &quot;fontSize&quot;: 13,
+            &quot;fontWeight&quot;: &quot;bold&quot;,
+            &quot;color&quot;: &quot;#17233c&quot;
+          },
+          &quot;encoding&quot;: {
+            &quot;x&quot;: {
+              &quot;datum&quot;: 40,
+              &quot;type&quot;: &quot;quantitative&quot;
+            },
+            &quot;text&quot;: {
+              &quot;field&quot;: &quot;label&quot;
+            }
+          }
+        }
+      ]
+    }
+  ],
+  &quot;spacing&quot;: 18,
+  &quot;resolve&quot;: {
+    &quot;scale&quot;: {
+      &quot;x&quot;: &quot;shared&quot;,
+      &quot;y&quot;: &quot;shared&quot;
+    }
+  },
+  &quot;title&quot;: {
+    &quot;frame&quot;: &quot;group&quot;,
+    &quot;text&quot;: &quot;Knowledge gains&quot;,
+    &quot;fontSize&quot;: 22,
+    &quot;offset&quot;: 16
+  },
+  &quot;config&quot;: {
+    &quot;font&quot;: &quot;Arial&quot;,
+    &quot;background&quot;: &quot;white&quot;,
+    &quot;view&quot;: {
+      &quot;stroke&quot;: null
+    },
+    &quot;axis&quot;: {
+      &quot;labelFontSize&quot;: 17,
+      &quot;titleFontSize&quot;: 18,
+      &quot;titlePadding&quot;: 12,
+      &quot;labelColor&quot;: &quot;#263248&quot;,
+      &quot;titleColor&quot;: &quot;#17233c&quot;,
+      &quot;gridColor&quot;: &quot;#e6e8ed&quot;,
+      &quot;domainColor&quot;: &quot;#a1a7b3&quot;,
+      &quot;labelPadding&quot;: 8,
+      &quot;labelAngle&quot;: 0
+    },
+    &quot;title&quot;: {
+      &quot;fontSize&quot;: 22,
+      &quot;anchor&quot;: &quot;start&quot;,
+      &quot;color&quot;: &quot;#17233c&quot;,
+      &quot;offset&quot;: 18,
+      &quot;subtitleFontSize&quot;: 16,
+      &quot;subtitleColor&quot;: &quot;#667085&quot;,
+      &quot;subtitlePadding&quot;: 8
+    },
+    &quot;legend&quot;: {
+      &quot;labelFontSize&quot;: 15,
+      &quot;titleFontSize&quot;: 16,
+      &quot;orient&quot;: &quot;bottom&quot;
+    }
+  }
+};</pre></details></section><section id="gainChart"><h2>7. Knowledge gains · chart output</h2><button data-copy="code-gainChart">Copy complete cell</button><a href="notebook-cells/gainChart.js" download>Download cell</a><img src="knowledge-gains.svg" alt="Knowledge gains · chart output"><details open><summary>Show complete code</summary><pre id="code-gainChart">const gainChart = document.createElement(&quot;div&quot;);
+const gainResult = await embed(gainChart, gainSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(gainChart);
+invalidation.then(() =&gt; gainResult.finalize());</pre></details></section><section id="pairedSpec"><h2>8. Supplement: pretest and posttest · editable specification</h2><button data-copy="code-pairedSpec">Copy complete cell</button><a href="notebook-cells/pairedSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-pairedSpec">const pairedSpec = {
+  &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  &quot;title&quot;: {
+    &quot;frame&quot;: &quot;group&quot;,
+    &quot;text&quot;: &quot;Supplement: pretest and posttest&quot;,
+    &quot;fontSize&quot;: 22,
+    &quot;offset&quot;: 16
+  },
+  &quot;data&quot;: {
+    &quot;values&quot;: [
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;1:5&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;0:6&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;5:3&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;4:3&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;5:6&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;1:0&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;0:4&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;2:5&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;4:2&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;1:4&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;1:1&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;4:5&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;2:0&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;0:4&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;3:5&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;2:5&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;4:1&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;2:0&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;1:6&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;2:6&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;5:5&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;4:3&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;1:4&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;0:2&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;5:3&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;2:2&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;0:5&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;3:4&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;4:6&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;3:6&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;4:5&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;5:4&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;1:2&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;2:4&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;4:3&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;1:4&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;3:3&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;4:6&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;3:6&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;1:0&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;4:6&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;1:5&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;2:1&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;4:4&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 6,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;6:4&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 6,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;6:5&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;1:3&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;2:5&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;2:3&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;2:2&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;0:3&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;2:4&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;3:1&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;5:5&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;4:4&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;5:6&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;5:5&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;0:3&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;1:3&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 6,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;6:6&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;0:3&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;3:5&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;1:0&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;2:1&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;0:2&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;3:5&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 6,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;6:6&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;3:3&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;4:4&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;2:3&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;5:4&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;0:1&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;2:4&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 5,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;5:6&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;0:1&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;3:4&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;1:2&quot;,
+        &quot;count&quot;: 5
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;2:2&quot;,
+        &quot;count&quot;: 5
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 4,
+        &quot;path&quot;: &quot;3:4&quot;,
+        &quot;count&quot;: 5
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 4,
+        &quot;post&quot;: 5,
+        &quot;path&quot;: &quot;4:5&quot;,
+        &quot;count&quot;: 5
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;1:1&quot;,
+        &quot;count&quot;: 5
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 2,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;2:3&quot;,
+        &quot;count&quot;: 5
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;1:3&quot;,
+        &quot;count&quot;: 6
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 6,
+        &quot;post&quot;: 6,
+        &quot;path&quot;: &quot;6:6&quot;,
+        &quot;count&quot;: 6
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;0:2&quot;,
+        &quot;count&quot;: 6
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 3,
+        &quot;post&quot;: 3,
+        &quot;path&quot;: &quot;3:3&quot;,
+        &quot;count&quot;: 6
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;0:0&quot;,
+        &quot;count&quot;: 6
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;0:1&quot;,
+        &quot;count&quot;: 7
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 1,
+        &quot;path&quot;: &quot;1:1&quot;,
+        &quot;count&quot;: 8
+      },
+      {
+        &quot;group&quot;: &quot;ChatGPT&quot;,
+        &quot;pre&quot;: 1,
+        &quot;post&quot;: 2,
+        &quot;path&quot;: &quot;1:2&quot;,
+        &quot;count&quot;: 8
+      },
+      {
+        &quot;group&quot;: &quot;Iris&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;0:0&quot;,
+        &quot;count&quot;: 9
+      },
+      {
+        &quot;group&quot;: &quot;No AI&quot;,
+        &quot;pre&quot;: 0,
+        &quot;post&quot;: 0,
+        &quot;path&quot;: &quot;0:0&quot;,
+        &quot;count&quot;: 16
+      }
+    ]
+  },
+  &quot;transform&quot;: [
+    {
+      &quot;fold&quot;: [
+        &quot;pre&quot;,
+        &quot;post&quot;
+      ],
+      &quot;as&quot;: [
+        &quot;time&quot;,
+        &quot;score&quot;
+      ]
+    }
+  ],
+  &quot;facet&quot;: {
+    &quot;column&quot;: {
+      &quot;field&quot;: &quot;group&quot;,
+      &quot;sort&quot;: [
+        &quot;No AI&quot;,
+        &quot;Iris&quot;,
+        &quot;ChatGPT&quot;
+      ],
+      &quot;title&quot;: null,
+      &quot;header&quot;: {
+        &quot;labelFontSize&quot;: 17,
+        &quot;labelColor&quot;: &quot;#17233c&quot;,
+        &quot;labelFontWeight&quot;: &quot;bold&quot;,
+        &quot;labelPadding&quot;: 3
+      }
+    }
+  },
+  &quot;spacing&quot;: 24,
+  &quot;spec&quot;: {
+    &quot;width&quot;: 130,
+    &quot;height&quot;: 140,
+    &quot;mark&quot;: {
+      &quot;type&quot;: &quot;line&quot;,
+      &quot;strokeWidth&quot;: 2.5,
+      &quot;opacity&quot;: 1
+    },
+    &quot;encoding&quot;: {
+      &quot;x&quot;: {
+        &quot;field&quot;: &quot;time&quot;,
+        &quot;type&quot;: &quot;ordinal&quot;,
+        &quot;sort&quot;: [
+          &quot;pre&quot;,
+          &quot;post&quot;
+        ],
+        &quot;title&quot;: null,
+        &quot;scale&quot;: {
+          &quot;padding&quot;: 0.2
+        },
+        &quot;axis&quot;: {
+          &quot;labelFontSize&quot;: 13,
+          &quot;labelPadding&quot;: 4
+        }
+      },
+      &quot;y&quot;: {
+        &quot;field&quot;: &quot;score&quot;,
+        &quot;type&quot;: &quot;quantitative&quot;,
+        &quot;scale&quot;: {
+          &quot;domain&quot;: [
+            0,
+            6
+          ],
+          &quot;nice&quot;: false
+        },
+        &quot;title&quot;: &quot;Correct items&quot;,
+        &quot;axis&quot;: {
+          &quot;values&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          &quot;labelFontSize&quot;: 13,
+          &quot;titleFontSize&quot;: 13,
+          &quot;labelPadding&quot;: 3,
+          &quot;titlePadding&quot;: 6
+        }
+      },
+      &quot;detail&quot;: {
+        &quot;field&quot;: &quot;path&quot;,
+        &quot;type&quot;: &quot;nominal&quot;
+      },
+      &quot;color&quot;: {
+        &quot;field&quot;: &quot;count&quot;,
+        &quot;type&quot;: &quot;quantitative&quot;,
+        &quot;scale&quot;: {
+          &quot;domain&quot;: [
+            1,
+            16
+          ],
+          &quot;nice&quot;: false,
+          &quot;range&quot;: [
+            &quot;#b0bfd7&quot;,
+            &quot;#17233c&quot;
+          ]
+        },
+        &quot;legend&quot;: {
+          &quot;title&quot;: [
+            &quot;Students&quot;,
+            &quot;on path&quot;
+          ],
+          &quot;orient&quot;: &quot;right&quot;,
+          &quot;direction&quot;: &quot;vertical&quot;,
+          &quot;gradientLength&quot;: 95,
+          &quot;titleLimit&quot;: 100,
+          &quot;values&quot;: [
+            1,
+            4,
+            8,
+            12,
+            16
+          ],
+          &quot;format&quot;: &quot;d&quot;,
+          &quot;titleFontSize&quot;: 13,
+          &quot;labelFontSize&quot;: 12,
+          &quot;gradientThickness&quot;: 10,
+          &quot;offset&quot;: 10
+        }
+      },
+      &quot;tooltip&quot;: [
+        {
+          &quot;field&quot;: &quot;group&quot;,
+          &quot;title&quot;: &quot;Group&quot;
+        },
+        {
+          &quot;field&quot;: &quot;pre&quot;,
+          &quot;title&quot;: &quot;Pretest&quot;
+        },
+        {
+          &quot;field&quot;: &quot;post&quot;,
+          &quot;title&quot;: &quot;Posttest&quot;
+        },
+        {
+          &quot;field&quot;: &quot;count&quot;,
+          &quot;title&quot;: &quot;Students&quot;
+        }
+      ]
+    }
+  },
+  &quot;resolve&quot;: {
+    &quot;scale&quot;: {
+      &quot;y&quot;: &quot;shared&quot;,
+      &quot;color&quot;: &quot;shared&quot;
+    }
+  },
+  &quot;config&quot;: {
+    &quot;font&quot;: &quot;Arial&quot;,
+    &quot;background&quot;: &quot;white&quot;,
+    &quot;view&quot;: {
+      &quot;stroke&quot;: null
+    },
+    &quot;axis&quot;: {
+      &quot;labelFontSize&quot;: 17,
+      &quot;titleFontSize&quot;: 18,
+      &quot;titlePadding&quot;: 12,
+      &quot;labelColor&quot;: &quot;#263248&quot;,
+      &quot;titleColor&quot;: &quot;#17233c&quot;,
+      &quot;gridColor&quot;: &quot;#e6e8ed&quot;,
+      &quot;domainColor&quot;: &quot;#a1a7b3&quot;,
+      &quot;labelPadding&quot;: 8,
+      &quot;labelAngle&quot;: 0
+    },
+    &quot;title&quot;: {
+      &quot;fontSize&quot;: 22,
+      &quot;anchor&quot;: &quot;start&quot;,
+      &quot;color&quot;: &quot;#17233c&quot;,
+      &quot;offset&quot;: 18,
+      &quot;subtitleFontSize&quot;: 16,
+      &quot;subtitleColor&quot;: &quot;#667085&quot;,
+      &quot;subtitlePadding&quot;: 8
+    },
+    &quot;legend&quot;: {
+      &quot;labelFontSize&quot;: 15,
+      &quot;titleFontSize&quot;: 16,
+      &quot;orient&quot;: &quot;bottom&quot;
+    }
+  }
+};</pre></details></section><section id="pairedChart"><h2>9. Supplement: pretest and posttest · chart output</h2><button data-copy="code-pairedChart">Copy complete cell</button><a href="notebook-cells/pairedChart.js" download>Download cell</a><img src="pretest-posttest-supplement.svg" alt="Supplement: pretest and posttest · chart output"><details open><summary>Show complete code</summary><pre id="code-pairedChart">const pairedChart = document.createElement(&quot;div&quot;);
+const pairedResult = await embed(pairedChart, pairedSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(pairedChart);
+invalidation.then(() =&gt; pairedResult.finalize());</pre></details></section></main><script>document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{const code=document.getElementById(button.dataset.copy);try{await navigator.clipboard.writeText(code.textContent);button.textContent='Copied'}catch{code.closest('details').open=true;const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Code selected — press Ctrl+C or ⌘C to copy'}}));</script></html>

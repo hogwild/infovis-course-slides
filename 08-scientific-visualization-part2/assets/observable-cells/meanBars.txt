@@ -1,0 +1,10 @@
+meanBars = draw({
+  data: {values: penguins},
+  width: 400, height: 230,
+  mark: {type: "bar", size: 34},
+  encoding: {
+    ...channels,
+    x: {...channels.x, aggregate: "mean",
+        scale: {domain: [0, 6500]}}
+  }
+})

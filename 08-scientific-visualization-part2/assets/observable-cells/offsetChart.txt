@@ -1,0 +1,3 @@
+offsetChart = draw({
+  data: {values: penguins}, ...offsetView
+})

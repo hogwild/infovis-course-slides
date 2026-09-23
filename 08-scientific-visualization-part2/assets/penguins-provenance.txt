@@ -1,0 +1,24 @@
+Palmer Penguins — Lecture 08
+
+Source: https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv
+Documentation: https://allisonhorst.github.io/palmerpenguins/reference/penguins.html
+Data and CC0 license: https://allisonhorst.github.io/palmerpenguins/articles/intro.html
+Collected by Kristen Gorman and Palmer Station Long Term Ecological Research, 2007–2009.
+Study: Gorman, Williams & Fraser (2014), https://doi.org/10.1371/journal.pone.0090081
+Research finding: Results / Quantifying SSD, and Abstract. Male means are larger for every measured structural parameter within the three studied species.
+The paper calls bill measurements culmen measurements.
+Retrieved: 2026-09-20. Local CSV is unchanged.
+SHA-256: f204db2c753b0937caac3cb35258562c14f073e4bbc76be24b4c51ce22767a93
+
+344 source rows; 333 included (female or male sex and all four measurements finite).
+Excluded: 2 without measurements; 9 additional records with measurements but missing sex.
+All panels use the same 333 records.
+Small marks show individual records; vertical jitter has no measurement meaning. Large marks show arithmetic means.
+The relative matrix uses (male mean - female mean) / female mean, not the paper's signed SDI.
+Displayed summaries re-express a research finding but do not reproduce paper-specific exclusions (SSD analysis n = 137 / 54 / 116), indices or models.
+Raincloud half-densities use Gaussian kernels, shared bandwidths and shared amplitude scaling within each measurement. Bandwidths: body mass 180 g, bill length 1.5 mm, bill depth 0.55 mm, flipper length 3 mm. Curves are drawn over the explicit axis domain. Density thickness is not sample size or uncertainty.
+The published Table 2 SDI column is preserved in gorman-2014-table2-sdi.json and the original XML table in gorman-2014-table2.xml. Source: https://doi.org/10.1371/journal.pone.0090081.t002 ; Gorman et al. (2014), CC BY.
+No confidence intervals, causation, individual classification or population inference are asserted.
+See penguins-audit.json for all 24 group summaries and 12 comparisons.
+
+Runtime: Vega 6.4.0, Vega-Lite 6.4.3, Vega-Embed 7.1.0 (BSD-3-Clause).

@@ -1,0 +1,1748 @@
+[
+  { "_comment": "Survey questions for the study. Questions prefixed with 'PRE' are for the survey at T1 (pre-intervention), questions prefixed with 'POS' are for the survey at T2 (post-intervention)." },
+  {
+    "question_id": "POSCG01",
+    "category": "ChatGPT Group",
+    "question": "How would you describe your overall experience with ChatGPT in this study?",
+    "answers": [
+      {
+        "code": "AO02",
+        "text": "Very positive",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Somewhat positive",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Somewhat negative",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "Very negative",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCG02",
+    "category": "ChatGPT Group",
+    "question": "Compared to traditional learning methods, how effective was ChatGPT in enhancing your learning experience?",
+    "answers": [
+      {
+        "code": "AO02",
+        "text": "Much more effective",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Somewhat more effective",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "About the same",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Somewhat less effective",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "Much less effective",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCG03_SQ002",
+    "category": "ChatGPT Group",
+    "question": "To what extent do you agree with the following statements about the ChatGPT tool you just used? – ChatGPT was easy to use.",
+    "answers": [
+      {
+        "code": "AO02",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCG03_SQ003",
+    "category": "ChatGPT Group",
+    "question": "To what extent do you agree with the following statements about the ChatGPT tool you just used? – ChatGPT helped me understand the learning material better.",
+    "answers": [
+      {
+        "code": "AO02",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCG03_SQ004",
+    "category": "ChatGPT Group",
+    "question": "To what extent do you agree with the following statements about the ChatGPT tool you just used? – The feedback provided by ChatGPT was helpful.",
+    "answers": [
+      {
+        "code": "AO02",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCG04_SQ001",
+    "category": "ChatGPT Group",
+    "question": "Please indicate how much you agree with each of the following statements: ChatGPT understands my queries well.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCG04_SQ002",
+    "category": "ChatGPT Group",
+    "question": "Please indicate how much you agree with each of the following statements: ChatGPT provides assistance that directly helps me with the issues I have while working on a programming exercise.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCG04_SQ003",
+    "category": "ChatGPT Group",
+    "question": "Please indicate how much you agree with each of the following statements: The guidance offered by ChatGPT has improved my understanding of programming concepts.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCL01_SQ001",
+    "category": "POSCL01_SQ001",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? I enjoyed doing this activity very much.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCL01_SQ002",
+    "category": "POSCL01[SQ002]",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? This task was very complex.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCL01_SQ003",
+    "category": "POSCL01[SQ003]",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements?\nFor this task, I had to highly engage myself.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCL01_SQ004",
+    "category": "POSCL01[SQ004]",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements?\nFor this task, I had to think intensively about what things meant.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCL01_SQ005",
+    "category": "POSCL01[SQ005]",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements?\nDuring this task, it was exhausting to find the important information.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCL01_SQ006",
+    "category": "POSCL01[SQ006]",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements?\nThe design of this task was very inconvenient for learning.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCL01_SQ007",
+    "category": "POSCL01[SQ007]",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements?\nDuring this task, it was difficult to recognize and link the crucial information.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCQ01",
+    "category": "PT-Knowledge Question",
+    "question": "What must be filled into GAP 1?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Code 1",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "Code 2",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Code 3",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Code 4",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCQ02",
+    "category": "PT-Knowledge Question",
+    "question": "What must be filled into GAP 2?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Code 1",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "Code 2",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Code 3",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Code 4",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSCQ03",
+    "category": "PT-Knowledge Question",
+    "question": "What must be filled into GAP 3?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Code 1",
+        "is_correct": true
+      },
+      {
+        "code": "AO03",
+        "text": "Code 2",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Code 3",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Code 4",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG01",
+    "category": "Iris Group",
+    "question": "How would you describe your overall experience with IRIS in this study?",
+    "answers": [
+      {
+        "code": "AO02",
+        "text": "Very positive",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Somewhat positive",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Somewhat negative",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "Very negative",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG02",
+    "category": "Iris Group",
+    "question": "Compared to traditional learning methods, how effective was IRIS in enhancing your learning experience?",
+    "answers": [
+      {
+        "code": "AO02",
+        "text": "Much more effective",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Somewhat more effective",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "About the same",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Somewhat less effective",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "Much less effective",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG03_SQ002",
+    "category": "Iris Group",
+    "question": "To what extent do you agree with the following statements about IRIS? – IRIS was easy to use.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG03_SQ003",
+    "category": "Iris Group",
+    "question": "To what extent do you agree with the following statements about IRIS? – IRIS helped me understand the exercise better.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG03_SQ004",
+    "category": "Iris Group",
+    "question": "To what extent do you agree with the following statements about IRIS? – The feedback provided by IRIS was helpful.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG04_SQ001",
+    "category": "Iris Group",
+    "question": "Please indicate how much you agree with each of the following statements:  IRIS understands my queries well.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG04_SQ002",
+    "category": "Iris Group",
+    "question": "Please indicate how much you agree with each of the following statements: IRIS provides assistance that directly helps me with the issues I have while working on a programming exercise.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG04_SQ003",
+    "category": "Iris Group",
+    "question": "Please indicate how much you agree with each of the following statements: The guidance offered by IRIS has improved my understanding of programming concepts.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSIG04_SQ007",
+    "category": "Iris Group",
+    "question": "Please indicate how much you agree with each of the following statements: Please select \"Agree\"",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSKQ01",
+    "category": "POSKQ01",
+    "question": "Select the Java abstraction that is used to manage concurrent tasks.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "ExecutorService",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "ConcurrentHashMap",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Semaphore",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Callable",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSKQ02",
+    "category": "POSKQ02",
+    "question": "In Java, what does a Future represent?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "A variable with a key-value set",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "A container for a result of an asynchronous computation",
+        "is_correct": true
+      },
+      {
+        "code": "AO03",
+        "text": "A thread pool",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "A function that will eventually be executed",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSKQ03",
+    "category": "POSKQ03",
+    "question": "In reactive programming, what is the main concept of the Publisher-Subscriber model?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Complete communication-free separation between data producers and consumers",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Decoupling data producers and consumers",
+        "is_correct": true
+      },
+      {
+        "code": "AO03",
+        "text": "Creating blocking interactions between components",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Synchronous processing of data streams",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSKQ04",
+    "category": "POSKQ04",
+    "question": "Which component manages data flow between publisher and subscriber?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Scheduler",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Callable",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "ExecutorService",
+        "is_correct": true
+      },
+      {
+        "code": "AO04",
+        "text": "SubmissionPublisher",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSKQ05",
+    "category": "POSKQ05",
+    "question": "Callables and a Runnables in Java: What is the main difference between them?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "A Callable returns a result, while a Runnable does not.",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "A Callable is used for long-running tasks, while a Runnable is used for short-lived tasks.",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "A Runnable can throw exceptions, while a Callable cannot.",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "A Runnable can be executed by multiple threads simultaneously, while a Callable cannot.",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSKQ06",
+    "category": "POSKQ06",
+    "question": "Which of the following options describes the role of a Consumer in reactive programming?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "To process data or results as they are produced.",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "To control the rate at which data is published.",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "To publish new data to all registered subscribers.",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "To manage thread execution for parallel tasks.",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSKQAC01",
+    "category": "POSKQAC01",
+    "question": "This is not a real question. Please just check the box named Class.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Object",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Class",
+        "is_correct": true
+      },
+      {
+        "code": "AO03",
+        "text": "Function",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Method",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSMI01_SQ001",
+    "category": "POSMI01[SQ001]",
+    "question": "Think about the exercise you just solved as your activity. To what extend do you agree with the following statements? I enjoyed doing this activity very much.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSMI01_SQ002",
+    "category": "POSMI01_SQ002",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? This activity was fun to do.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSMI01_SQ003",
+    "category": "POSMI01_SQ003",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? I thought this was a boring activity.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSMI01_SQ004",
+    "category": "POSMI01_SQ004",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? This activity did not hold my attention at all.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSMI01_SQ005",
+    "category": "POSMI01_SQ005",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? I would describe this activity as very interesting.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSMI01_SQ006",
+    "category": "POSMI01_SQ006",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? I thought this activity was quite enjoyable.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSMI01_SQ007",
+    "category": "POSMI01_SQ007",
+    "question": "Think about the exercise you just solved. To what extent do you agree with the following statements? While I was doing this activity, I was thinking about how much I enjoyed it.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSPM02_SQ005",
+    "category": "POSPM02_SQ005",
+    "question": "To what extent do you agree with the following statements? I was frustrated during the exercise.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "POSPM02_SQ007",
+    "category": "POSPM02_SQ007",
+    "question": "To what extent do you agree with the following statements? Please select \"Agree\".",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Strongly Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Disagree",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Neutral",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Agree",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Strongly Agree",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREGQ01",
+    "category": "socio-demographic questions",
+    "question": "What is your current study program?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Study Program 1 (anonymized)",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Study Program 2 (anonymized)",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Study Program 3 (anonymized)",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Study Program 4 (anonymized)",
+        "is_correct": false
+      },
+      {
+        "code": "-oth-",
+        "text": "Other",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREGQ02",
+    "category": "socio-demographic questions",
+    "question": "In which semester were you enrolled during the Winter Semester 2024/2025 (WS24/25)?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "1st Semester",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "2nd Semester",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "3rd Semester",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "4th Semester",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "5th Semester",
+        "is_correct": false
+      },
+      {
+        "code": "AO06",
+        "text": "6th Semester",
+        "is_correct": false
+      },
+      {
+        "code": "AO07",
+        "text": "7th Semester or higher",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREGQ03",
+    "category": "PREGQ03",
+    "question": "How would you describe your programming experience?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "None: I have no programming experience.",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Beginner: I have some basic knowledge but no significant practical experience.",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Intermediate: I can write simple programs and solve moderately complex problems.",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Advanced: I have significant practical experience and can write complex programs.",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "Expert: I have deep expertise and can create advanced solutions or systems.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREGQ04",
+    "category": "socio-demographic questions",
+    "question": "What is your gender?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Male",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Female",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Diverse",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Prefer not to say",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREGQ05",
+    "category": "socio-demographic questions",
+    "question": "How old are you?",
+    "answers": [
+      {
+        "code": "AGE15 bis AGE90",
+        "text": "15-90 = entspricht immer dem Wert nach AGE",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREKQ01",
+    "category": "PREKQ01",
+    "question": "Which Java abstraction would you use to manage concurrent tasks?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "ExecutorService",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "ConcurrentHashMap",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "Semaphore",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Callable",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREKQ02",
+    "category": "PREKQ02",
+    "question": "What does a Future represent in Java?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "A variable with a key-value set",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "A container for a result of an asynchronous computation",
+        "is_correct": true
+      },
+      {
+        "code": "AO03",
+        "text": "A thread pool",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "A function that will eventually be executed",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREKQ03",
+    "category": "PREKQ03",
+    "question": "What is the core concept of the Publisher-Subscriber model in reactive programming?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Complete communication-free separation between data producers and consumers",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Decoupling data producers and consumers",
+        "is_correct": true
+      },
+      {
+        "code": "AO03",
+        "text": "Creating blocking interactions between components",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Synchronous processing of data streams",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREKQ04",
+    "category": "PREKQ04",
+    "question": "Which component manages data flow between publisher and subscriber?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Scheduler",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Callable",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "ExecutorService",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "SubmissionPublisher",
+        "is_correct": true
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREKQ05",
+    "category": "PREKQ05",
+    "question": "What is the main difference between a Callable and a Runnable in Java?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "A Callable returns a result, while a Runnable does not.",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "A Callable is used for long-running tasks, while a Runnable is used for short-lived tasks.",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "A Runnable can throw exceptions, while a Callable cannot.",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "A Runnable can be executed by multiple threads simultaneously, while a Callable cannot.",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREKQ06",
+    "category": "PREKQ06",
+    "question": "In the context of reactive programming, what is the role of a Consumer?",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "To process data or results as they are produced.",
+        "is_correct": true
+      },
+      {
+        "code": "AO02",
+        "text": "To control the rate at which data is published.",
+        "is_correct": false
+      },
+      {
+        "code": "AO03",
+        "text": "To publish new data to all registered subscribers.",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "To manage thread execution for parallel tasks.",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_id": "PREKQAC01",
+    "category": "PREKQAC01",
+    "question": "This is not a real question. Please just check the box named Class.",
+    "answers": [
+      {
+        "code": "AO01",
+        "text": "Object",
+        "is_correct": false
+      },
+      {
+        "code": "AO02",
+        "text": "Class",
+        "is_correct": true
+      },
+      {
+        "code": "AO03",
+        "text": "Function",
+        "is_correct": false
+      },
+      {
+        "code": "AO04",
+        "text": "Method",
+        "is_correct": false
+      },
+      {
+        "code": "AO05",
+        "text": "I don't know the correct answer.",
+        "is_correct": false
+      }
+    ]
+  }
+]

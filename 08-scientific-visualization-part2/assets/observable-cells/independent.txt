@@ -1,0 +1,8 @@
+independent = {
+  const spec = structuredClone(sexView);
+  const auto = {zero: false};
+  spec.spec.encoding.x.scale = auto;
+  spec.spec.layer[1].encoding.x.scale = auto;
+  spec.resolve.scale.x = "independent";
+  return draw({data: {values: penguins}, ...spec});
+}

@@ -1,0 +1,67 @@
+{
+  "source_pdf": "reference/lecture8/Less stress, better scores, same learning_ The dissociation of performance and learning in AI-supported programming education.pdf",
+  "doi": "10.1016/j.caeai.2025.100537",
+  "license": "CC BY 4.0",
+  "crops": {
+    "figure3": {
+      "page": 13,
+      "bbox_points": [
+        36,
+        52,
+        562,
+        270
+      ],
+      "resolution_dpi": 240
+    },
+    "figure3-knowledge": {
+      "page": 13,
+      "bbox_points": [
+        39,
+        52,
+        220,
+        220
+      ],
+      "resolution_dpi": 240
+    },
+    "figure3-performance": {
+      "page": 13,
+      "bbox_points": [
+        381,
+        52,
+        557,
+        220
+      ],
+      "resolution_dpi": 240
+    },
+    "figure4": {
+      "page": 14,
+      "bbox_points": [
+        36,
+        52,
+        562,
+        276
+      ],
+      "resolution_dpi": 240
+    },
+    "figure4-frustration": {
+      "page": 14,
+      "bbox_points": [
+        123,
+        52,
+        290,
+        232
+      ],
+      "resolution_dpi": 240
+    },
+    "paper-title": {
+      "page": 1,
+      "bbox_points": [
+        36,
+        101,
+        562,
+        162
+      ],
+      "resolution_dpi": 240
+    }
+  }
+}

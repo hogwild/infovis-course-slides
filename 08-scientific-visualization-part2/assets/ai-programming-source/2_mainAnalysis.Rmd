@@ -1,0 +1,958 @@
+---
+title: "Main Analysis Report"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Sample Description
+
+```{r setup, include=FALSE}
+# Load all necessary libraries
+if (!require(ggplot2)) install.packages('ggplot2')
+if (!require(tidyverse)) install.packages('tidyverse')
+if (!require(rstatix)) install.packages('rstatix')
+if (!require(ggpubr)) install.packages('ggpubr')
+
+library(ggplot2) # Load ggplot2 explicitly
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+
+# Set global chunk options
+knitr::opts_chunk$set(comment = "")
+
+# Source the wrapper functions
+source("3_wrappers.R")
+```
+
+```{r loading_and_prepping_data, include = FALSE}
+# Load the data, keeping original column names
+data <- read.csv("cleaned_data.csv", check.names = FALSE)
+
+# For the denominator in the status sentence, read the pseudonymized, unfiltered dataset
+original_total <- nrow(read.csv("./merged_data_pseudonymized.csv", check.names = FALSE))
+
+# Factor/typing
+data$experiment_group <- as.factor(data$experiment_group)
+data$programming_experience <- factor(
+  data$programming_experience,
+  levels = c("None", "Beginner", "Intermediate", "Advanced", "Expert"),
+  ordered = TRUE
+)
+data$age <- as.numeric(as.character(data$age))
+```
+
+```{r filter_result, echo=FALSE, warning=FALSE, message=FALSE}
+
+cat(
+  paste(
+    "Filtered dataset contains", nrow(data), "participants out of", original_total, 
+    "total. Filtering (gender, age, programming experience) was applied in the Python preprocessing step.\n"
+  )
+)
+```
+
+# Main Analysis
+
+This section provides a comprehensive analysis of participant characteristics and experimental outcomes. The study included 275 participants distributed across three experimental conditions, with analyses examining group equivalence, learning outcomes, and differences in user experience measures.
+
+**Summary:** The main analysis revealed significant differences between experimental groups across various dimensions, including affective factors, assessment performance, and cognitive load. The results suggest that AI tools can enhance the learning experience, but differences between AI tools (ChatGPT and IRIS) also emerged, highlighting the importance of tool design and functionality.
+
+## Experimental Group
+
+The final sample consisted of 275 participants distributed across three experimental groups: CHATGPT (n = 88, 32.0%), IRIS (n = 91, 33.1%), and NOAI (n = 96, 34.9%). The distribution was approximately balanced across the three conditions.
+
+```{r exp_group_desc, echo=FALSE, warning=FALSE, message=FALSE}
+# Calculate counts and percentages for experiment_group
+group_counts <- data %>% 
+  count(experiment_group) %>% 
+  mutate(percentage = round(n / sum(n) * 100, 2))
+
+# Print the table
+knitr::kable(group_counts, col.names = c("Group", "Count", "Percentage (%)"), caption = "Distribution of Participants by Experimental Group.")
+
+# Create a bar plot
+ggplot(data, aes(x = experiment_group)) +
+  geom_bar(aes(fill = experiment_group), show.legend = FALSE) +
+  scale_fill_brewer(palette = "Set2") +
+  scale_x_discrete(labels = c("CHATGPT" = "ChatGPT", "IRIS" = "IRIS", "NOAI" = "No AI")) +
+  geom_text(stat='count', aes(label=..count..), vjust=-0.5, size = 4) +
+  labs(title = "Distribution of Participants by Experimental Group",
+       x = "Experimental Group",
+       y = "Number of Participants") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+```
+
+## Programming Experience
+
+Participants' programming experience was distributed as follows: Beginner (n = 127, 46.2%), Intermediate (n = 99, 36.0%), None (n = 47, 17.1%), and Expert (n = 2, 0.7%). The majority of participants had some programming experience, with beginners representing the largest group.
+
+```{r prog_exp_desc, echo=FALSE, warning=FALSE, message=FALSE}
+# Calculate counts and percentages for programming_experience
+prog_exp_counts <- data %>% 
+  count(programming_experience) %>% 
+  mutate(percentage = round(n / sum(n) * 100, 2))
+
+# Print the table
+knitr::kable(prog_exp_counts, col.names = c("Programming Experience", "Count", "Percentage (%)"), caption = "Distribution of Participants by Programming Experience.")
+
+# Create a bar plot
+ggplot(data, aes(x = programming_experience)) +
+  geom_bar(aes(fill = programming_experience), show.legend = FALSE) +
+  scale_fill_brewer(palette = "Set2") +
+  geom_text(stat='count', aes(label=..count..), vjust=-0.5, size = 4) +
+  labs(title = "Distribution of Participants by Programming Experience",
+       x = "Programming Experience",
+       y = "Number of Participants") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+```
+
+### Distribution of Programming Experience Across Experimental Groups
+
+A Kruskal-Wallis test was conducted to examine whether programming experience differed significantly across experimental groups. The test revealed no significant difference in programming experience distribution between groups, χ²(2) = 0.804, p = .669. This indicates that the randomization process successfully balanced programming experience across the three experimental conditions, supporting the assumption of group equivalence for this variable.
+
+```{r prog_exp_by_group, echo=FALSE, warning=FALSE, message=FALSE}
+# Create a contingency table of programming experience by experimental group
+prog_exp_table <- table(data$programming_experience, data$experiment_group)
+
+# Print the contingency table
+knitr::kable(prog_exp_table, caption = "Contingency Table of Programming Experience by Experimental Group")
+
+# Perform Kruskal-Wallis test
+kw_test <- kruskal.test(as.numeric(programming_experience) ~ experiment_group, data = data)
+
+# Print the test results
+cat(paste("Kruskal-Wallis test results:\n"))
+cat(paste("Chi-squared =", round(kw_test$statistic, 3), 
+          ", df =", kw_test$parameter, 
+          ", p-value =", round(kw_test$p.value, 3), "\n\n"))
+
+# Create a stacked bar plot to visualize the distribution
+ggplot(data, aes(x = experiment_group, fill = programming_experience)) +
+  geom_bar(position = "fill") +
+  scale_x_discrete(labels = c("CHATGPT" = "ChatGPT", "IRIS" = "IRIS", "NOAI" = "No AI")) +
+  scale_fill_brewer(palette = "Set2") +
+  labs(title = "Distribution of Programming Experience by Experimental Group",
+       x = "Experimental Group",
+       y = "Proportion",
+       fill = "Programming Experience") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.title = element_text(size = 11),
+    legend.text = element_text(size = 10)
+  )
+```
+
+## Gender
+
+The sample was nearly evenly distributed by gender, with 139 female participants (50.6%) and 136 male participants (49.5%). This balanced gender distribution supports the generalizability of findings across gender groups.
+
+```{r gender_desc, echo=FALSE, warning=FALSE, message=FALSE}
+# Calculate counts and percentages for gender
+gender_counts <- data %>% 
+  count(gender) %>% 
+  mutate(percentage = round(n / sum(n) * 100, 2))
+
+# Print the table
+knitr::kable(gender_counts, col.names = c("Gender", "Count", "Percentage (%)"), caption = "Distribution of Participants by Gender.")
+
+# Create a bar plot
+ggplot(data, aes(x = gender)) +
+  geom_bar(aes(fill = gender), show.legend = FALSE) +
+  scale_fill_brewer(palette = "Set1") +
+  geom_text(stat='count', aes(label=..count..), vjust=-0.5, size = 4) +
+  labs(title = "Distribution of Participants by Gender",
+       x = "Gender",
+       y = "Number of Participants") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+```
+
+### Distribution of Gender Across Experimental Groups
+
+A Chi-square test of independence was performed to examine whether gender distribution differed across experimental groups. The analysis revealed no significant association between gender and experimental group assignment, χ²(2) = 1.369, p = .504. Gender distribution was similar across all three groups: CHATGPT (55.7% female, 44.3% male), IRIS (48.4% female, 51.6% male), and NOAI (47.9% female, 52.1% male). This confirms successful randomization with respect to gender.
+
+```{r gender_by_group, echo=FALSE, warning=FALSE, message=FALSE}
+# Create a contingency table of gender by experimental group
+gender_table <- table(data$gender, data$experiment_group)
+
+# Print the contingency table
+knitr::kable(gender_table, caption = "Contingency Table of Gender by Experimental Group")
+
+# Calculate percentages within each experimental group
+gender_percentages <- prop.table(gender_table, margin = 2) * 100
+gender_percentages <- round(gender_percentages, 2)
+
+# Print the percentage table
+knitr::kable(gender_percentages, caption = "Percentage Distribution of Gender within Each Experimental Group")
+
+# Perform Chi-square test
+# Note: If the diverse category has very low counts, it might cause issues with the chi-square test
+# We'll check if any expected counts are less than 5
+chi_test <- chisq.test(gender_table)
+expected <- chi_test$expected
+low_expected <- sum(expected < 5)
+
+# Print a warning if there are cells with expected count less than 5
+if(low_expected > 0) {
+  cat(paste("Warning: ", low_expected, " cells have expected count less than 5. Chi-square test may not be reliable.\n\n"))
+  
+  # If there's an issue with the diverse category, we might need to run the test without it
+  if("diverse" %in% rownames(gender_table) && any(gender_table["diverse",] < 5)) {
+    # Create a new table excluding the diverse category
+    gender_table_binary <- gender_table[c("Female", "Male"), ]
+    chi_test_binary <- chisq.test(gender_table_binary)
+    
+    cat(paste("Chi-square test results (excluding 'diverse' category):\n"))
+    cat(paste("Chi-squared =", round(chi_test_binary$statistic, 3), 
+              ", df =", chi_test_binary$parameter, 
+              ", p-value =", round(chi_test_binary$p.value, 3), "\n\n"))
+  }
+} else {
+  # Print the test results
+  cat(paste("Chi-square test results:\n"))
+  cat(paste("Chi-squared =", round(chi_test$statistic, 3), 
+            ", df =", chi_test$parameter, 
+            ", p-value =", round(chi_test$p.value, 3), "\n\n"))
+}
+
+# Create a stacked bar plot to visualize the distribution
+ggplot(data, aes(x = experiment_group, fill = gender)) +
+  geom_bar(position = "fill") +
+  scale_x_discrete(labels = c("CHATGPT" = "ChatGPT", "IRIS" = "IRIS", "NOAI" = "No AI")) +
+  scale_fill_brewer(palette = "Set1") +
+  labs(title = "Distribution of Gender by Experimental Group",
+       x = "Experimental Group",
+       y = "Proportion",
+       fill = "Gender") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.title = element_text(size = 11),
+    legend.text = element_text(size = 10)
+  )
+```
+
+## Age
+
+Participants ranged in age from 19 to 33 years (M = 22.97, SD = 2.80, Mdn = 23). The age distribution was approximately normal and consistent with a typical university student population.
+
+```{r age_desc, echo=FALSE, warning=FALSE, message=FALSE}
+# Calculate summary statistics for age
+age_summary <- data %>% 
+  summarise(
+    Mean = round(mean(age, na.rm = TRUE), 2),
+    Median = median(age, na.rm = TRUE),
+    SD = round(sd(age, na.rm = TRUE), 2),
+    Min = min(age, na.rm = TRUE),
+    Max = max(age, na.rm = TRUE)
+  )
+
+# Print the table
+knitr::kable(age_summary, caption = "Descriptive Statistics for Age.")
+
+# Create a histogram for age
+ggplot(data, aes(x = age)) +
+  geom_histogram(binwidth = 1, fill = "#66C2A5", color = "white", alpha = 0.8) +
+  labs(title = "Distribution of Participant Ages",
+       x = "Age (years)",
+       y = "Frequency") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+```
+
+### Age Differences Between Experimental Groups
+
+A one-way ANOVA was conducted to examine age differences between experimental groups (n = 275). Descriptive statistics showed similar mean ages across groups: CHATGPT (M = 22.53, SD = 2.64), IRIS (M = 23.07, SD = 2.92), and NOAI (M = 23.29, SD = 2.80). The ANOVA revealed no significant difference in age between groups, F(2, 272) = 1.765, p = .173, ges = .013.
+
+Post-hoc analysis using Tukey HSD was conducted following confirmation of homogeneous variances (Levene's test: p = .498 \> .05) and reasonably balanced design (ratio = 1.09). All pairwise comparisons were non-significant: CHATGPT vs. IRIS (p = .411), CHATGPT vs. NOAI (p = .159), and IRIS vs. NOAI (p = .845). This confirms successful randomization with respect to age across experimental conditions.
+
+```{r age_by_group, echo=FALSE, warning=FALSE, message=FALSE}
+# Calculate descriptive statistics for age by experimental group
+age_by_group <- data %>%
+  group_by(experiment_group) %>%
+  summarise(
+    n = sum(!is.na(age)),
+    Mean = round(mean(age, na.rm = TRUE), 2),
+    Median = median(age, na.rm = TRUE),
+    SD = round(sd(age, na.rm = TRUE), 2),
+    Min = min(age, na.rm = TRUE),
+    Max = max(age, na.rm = TRUE)
+  )
+
+# Print the descriptive statistics table
+knitr::kable(age_by_group, caption = "Descriptive Statistics for Age by Experimental Group")
+
+# Call the wrapper function for age analysis
+age_results <- perform_ANOVA_analysis(data, "age", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", age_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(age_results$descriptive_stats, caption = "Descriptive Statistics for Age by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(age_results$anova_table, caption = "One-Way ANOVA on Age by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(age_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", age_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(age_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(age_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Age"))
+```
+
+```{r age_boxplot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(age_results$plot)
+```
+
+## Short Term Knowledge differences in groups
+
+A repeated measures ANOVA was conducted to examine the effect of experimental group (ChatGPT, IRIS, NOAI) and time (pre-test, post-test) on knowledge scores (n = 275). The analysis revealed a significant main effect of time, F(1, 272) = 88.231, p \< .001, ges = 0.042, indicating that knowledge scores significantly increased from pre-test to post-test across all groups. However, there was no significant main effect of experimental group, F(2, 272) = 1.174, p = .311, ges = 0.007, and the interaction effect between time and group was also not significant, F(2, 272) = 0.258, p = .773, ges = 0.0003.
+
+Pairwise t-tests for post-test knowledge scores confirmed no significant differences between groups: CHATGPT vs. IRIS (p = 1.000), CHATGPT vs. NOAI (p = .526), and IRIS vs. NOAI (p = 1.000). These results suggest that while all participants demonstrated significant learning gains over time, the change in knowledge did not differ significantly between experimental conditions.
+
+```{r hyp1_analysis, echo=FALSE,warning=FALSE}
+# Call the wrapper function for Hyp 1 analysis
+hyp1_results <- perform_short_term_learning_analysis(data)
+
+# Print sample size for ANOVA
+cat(paste("Sample size for Repeated Measures ANOVA (n):", hyp1_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(hyp1_results$descriptive_stats, caption = "Descriptive Statistics for Knowledge Scores by Group and Time")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(hyp1_results$anova_table, caption = "Repeated Measures ANOVA on Knowledge Scores")
+
+# Print sample size for pairwise t-test
+cat(paste("\nSample size for Pairwise T-test (n):", hyp1_results$n_obs_pwc, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+knitr::kable(hyp1_results$pwc, caption = "Pairwise T-tests for Post-Test Knowledge by Group")
+```
+
+```{r ANOVA visualisation, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(hyp1_results$plot)
+```
+
+## Code Comprehension Performance
+
+A one-way ANOVA was conducted to examine code comprehension performance across experimental groups (n = 275). The code comprehension total score represents participants' ability to identify and understand code structure after the learning intervention. Descriptive statistics and ANOVA results are presented below to assess whether AI tools influenced participants' coding comprehension abilities.
+
+```{r code_comprehension_analysis, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for code comprehension analysis
+code_comprehension_results <- perform_ANOVA_analysis(data, "post-coding-gap-total", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", code_comprehension_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(code_comprehension_results$descriptive_stats, caption = "Descriptive Statistics for Code Comprehension Score by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(code_comprehension_results$anova_table, caption = "One-Way ANOVA on Code Comprehension Score by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(code_comprehension_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", code_comprehension_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(code_comprehension_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(code_comprehension_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Code Comprehension Score"))
+```
+
+```{r code_comprehension_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(code_comprehension_results$plot)
+```
+
+```{r code_comprehension_violin, echo=FALSE, warning=FALSE, message=FALSE, fig.width=5, fig.height=5}
+# add violin plot
+# Generate violin plot for code comprehension analysis
+code_comprehension_violin_results <- perform_ANOVA_analysis(data, "post-coding-gap-total", "experiment_group", plot_type = "violin")
+
+# Print the violin plot visualization
+print(code_comprehension_violin_results$plot)
+```
+
+## Differences between experimental groups
+
+This section examines potential differences between experimental groups across affective factors, assessment performance, and cognitive load measures. The analyses revealed significant group differences in several key variables, with AI groups generally showing distinct patterns compared to the no-AI control group.
+
+**Summary:** The analysis revealed significant differences between experimental groups across various dimensions, including affective factors, assessment performance, and cognitive load. The results suggest that AI tools can enhance the learning experience, but differences between AI tools (ChatGPT and IRIS) also emerged, highlighting the importance of tool design and functionality.
+
+### Affective Factors
+
+Analysis of affective factors revealed significant differences between groups in frustration and intrinsic motivation. Both AI groups reported significantly lower frustration levels than the no-AI group, while the IRIS group showed significantly higher intrinsic motivation compared to the no-AI group.
+
+#### Frustration (`frustration`)
+
+A one-way ANOVA was conducted to examine frustration levels across experimental groups (n = 275). Descriptive statistics showed: CHATGPT (M = 3.125, SD = 1.211), IRIS (M = 3.209, SD = 1.179), and NOAI (M = 4.094, SD = 0.996). Due to violation of homogeneity of variance assumption (Levene's test: p = .004 \< .05), Welch's ANOVA was employed, revealing a significant difference between groups, F(2, 177.652) = 23.41, p \< .001.
+
+Post-hoc analysis using Games-Howell test (selected due to unequal variances) showed that both AI groups reported significantly lower frustration than the NOAI group: CHATGPT vs. NOAI (p \< .001, estimate = 0.969), and IRIS vs. NOAI (p \< .001, estimate = 0.885). No significant difference was found between the two AI groups: CHATGPT vs. IRIS (p = .886, estimate = 0.084).
+
+```{r hyp4_frustration, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for frustration analysis
+frustration_results <- perform_ANOVA_analysis(data, "frustration", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", frustration_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(frustration_results$descriptive_stats, caption = "Descriptive Statistics for Frustration by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(frustration_results$anova_table, caption = "One-Way ANOVA on Frustration by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(frustration_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", frustration_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(frustration_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(frustration_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Frustration"))
+
+# Print Cohen's d effect sizes
+cat("\n**Effect Sizes (Cohen's d):**\n")
+knitr::kable(frustration_results$cohens_d, caption = "Cohen's d Effect Sizes for Frustration")
+```
+
+```{r hyp4_frustration_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(frustration_results$plot)
+```
+
+#### Intrinsic Motivation (`IMI_average`)
+
+A one-way ANOVA was conducted to examine intrinsic motivation levels across experimental groups (n = 275). Descriptive statistics showed: CHATGPT (M = 2.644, SD = 0.648), IRIS (M = 2.815, SD = 0.699), and NOAI (M = 2.420, SD = 0.741). The ANOVA revealed a significant difference between groups, F(2, 272) = 7.542, p \< .001, ges = .053.
+
+Post-hoc analysis using Tukey HSD (selected due to homogeneous variances, Levene's test: p = .567 \> .05) showed that only the IRIS group reported significantly higher intrinsic motivation than the NOAI group (p \< .001, estimate = -0.395). The comparison between CHATGPT and IRIS was not significant (p = .234, estimate = 0.170), nor was the comparison between CHATGPT and NOAI (p = .076, estimate = -0.225).
+
+```{r hyp4_imi, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for intrinsic motivation analysis
+imi_results <- perform_ANOVA_analysis(data, "IMI_average", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", imi_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(imi_results$descriptive_stats, caption = "Descriptive Statistics for Intrinsic Motivation by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(imi_results$anova_table, caption = "One-Way ANOVA on Intrinsic Motivation by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(imi_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", imi_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(imi_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(imi_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Intrinsic Motivation"))
+
+# Print Cohen's d effect sizes
+cat("\n**Effect Sizes (Cohen's d):**\n")
+knitr::kable(imi_results$cohens_d, caption = "Cohen's d Effect Sizes for Intrinsic Motivation")
+```
+
+```{r hyp4_imi_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(imi_results$plot)
+```
+
+### Assessment Performance & Learning
+
+Analysis of assessment performance revealed significant differences in immediate exercise scores, with both AI groups outperforming the no-AI group, and the ChatGPT group achieving the highest scores. However, no significant differences were found in time spent on exercises (approximately 88-91 minutes across groups), suggesting that performance improvements were due to effectiveness rather than increased effort duration.
+
+#### Exercise Score (`exercise_score_artemis`)
+
+A one-way ANOVA was conducted to examine exercise performance across experimental groups (n = 275). Exercise score can be understood as a measure how well the learning exercises were completed. Descriptive statistics showed substantial differences: CHATGPT (M = 71.841, SD = 39.654), IRIS (M = 57.502, SD = 37.361), and NOAI (M = 29.853, SD = 36.169). The ANOVA revealed a significant difference between groups, F(2, 272) = 29.693, p \< .001, ges = .179.
+
+Post-hoc analysis using Tukey HSD (selected due to homogeneous variances, Levene's test: p = .476 \> .05) revealed that all three groups differed significantly from one another. The ChatGPT group performed significantly better than both the IRIS group (p = .031, estimate = -14.339) and the NOAI group (p \< .001, estimate = -41.988). The IRIS group also performed significantly better than the NOAI group (p \< .001, estimate = -27.649). This represents a large effect size, indicating substantial practical significance of the AI tools for immediate task performance.
+
+When taking a closer look, the distributions are telling. Students using ChatGPT finished every task most of the time, the NoAI group finished less task, while the IRIS group shows a distribution on all levels of taskperformance.
+
+```{r hyp4_ex_score, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for exercise score analysis (boxplot)
+ex_score_results <- perform_ANOVA_analysis(data, "exercise_score_artemis", "experiment_group", plot_type = "box")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", ex_score_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ex_score_results$descriptive_stats, caption = "Descriptive Statistics for Exercise Score by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(ex_score_results$anova_table, caption = "One-Way ANOVA on Exercise Score by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(ex_score_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", ex_score_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(ex_score_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(ex_score_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Exercise Score"))
+```
+
+```{r hyp4_ex_score_boxplot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the boxplot visualization
+print(ex_score_results$plot)
+```
+
+```{r hyp4_ex_score_violin, echo=FALSE, warning=FALSE, message=FALSE, fig.width=5, fig.height=5}
+# Generate violin plot for exercise score analysis
+ex_score_violin_results <- perform_ANOVA_analysis(data, "exercise_score_artemis", "experiment_group", plot_type = "violin")
+
+# Print the violin plot visualization
+print(ex_score_violin_results$plot)
+```
+
+#### Exercise Duration (`exercise_duration_minutes`)
+
+A one-way ANOVA was conducted to examine time spent on exercises across experimental groups (n = 275). Descriptive statistics showed similar durations: CHATGPT (M = 88.16 minutes, SD = 12.22), IRIS (M = 90.93 minutes, SD = 8.69), and NOAI (M = 91.28 minutes, SD = 10.55). Due to violation of homogeneity of variance assumption (Levene's test: p = .007 \< .05), Welch's ANOVA was employed, revealing no significant difference between groups, F(2, 176.838) = 1.97, p = .142.
+
+Post-hoc analysis using Games-Howell test (selected due to unequal variances) confirmed no significant pairwise differences: CHATGPT vs. IRIS (p = .192), CHATGPT vs. NOAI (p = .158), and IRIS vs. NOAI (p = .967). This indicates that performance improvements in the AI groups were achieved without requiring additional time investment, suggesting enhanced efficiency rather than increased effort duration.
+
+```{r hyp4_ex_duration, echo=FALSE, warning=FALSE, message=FALSE}
+# Convert exercise duration from seconds to minutes
+data$exercise_duration_minutes <- data$exercise_duration_seconds / 60
+
+# Call the wrapper function for exercise duration analysis
+ex_duration_results <- perform_ANOVA_analysis(data, "exercise_duration_minutes", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", ex_duration_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ex_duration_results$descriptive_stats, caption = "Descriptive Statistics for Exercise Duration (minutes) by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(ex_duration_results$anova_table, caption = "One-Way ANOVA on Exercise Duration (minutes) by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(ex_duration_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", ex_duration_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(ex_duration_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(ex_duration_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Exercise Duration (minutes)"))
+```
+
+```{r hyp4_ex_duration_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ex_duration_results$plot)
+```
+
+### Cognitive Load
+
+Analysis of cognitive load revealed significant differences between experimental groups in germane and extraneous cognitive load, with both AI groups reporting lower levels than the no-AI group. Intrinsic cognitive load, related to the inherent difficulty of the material, showed no significant differences between groups, indicating that the learning content was perceived as equally challenging across conditions.
+
+#### Intrinsic Cognitive Load (`ICL_average`)
+
+A one-way ANOVA was conducted to examine intrinsic cognitive load across experimental groups (n = 275). Descriptive statistics showed similar levels: CHATGPT (M = 3.812, SD = 0.736), IRIS (M = 3.588, SD = 0.835), and NOAI (M = 3.812, SD = 0.755). The ANOVA revealed no significant difference between groups, F(2, 272) = 2.546, p = .080, ges = .018.
+
+Post-hoc analysis using Tukey HSD (selected due to homogeneous variances, Levene's test: p = .240 \> .05) confirmed no significant pairwise differences: CHATGPT vs. IRIS (p = .131), CHATGPT vs. NOAI (p = 1.000), and IRIS vs. NOAI (p = .120). This indicates that the inherent difficulty of the learning material was perceived similarly across all experimental conditions.
+
+```{r hyp4_icl, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for intrinsic cognitive load analysis
+icl_results <- perform_ANOVA_analysis(data, "ICL_average", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", icl_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(icl_results$descriptive_stats, caption = "Descriptive Statistics for Intrinsic Cognitive Load by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(icl_results$anova_table, caption = "One-Way ANOVA on Intrinsic Cognitive Load by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(icl_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", icl_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(icl_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(icl_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Intrinsic Cognitive Load"))
+
+# Print Cohen's d effect sizes
+cat("\n**Effect Sizes (Cohen's d):**\n")
+knitr::kable(icl_results$cohens_d, caption = "Cohen's d Effect Sizes for Intrinsic Cognitive Load")
+```
+
+```{r hyp4_icl_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(icl_results$plot)
+```
+
+#### Germane Cognitive Load (`GCL_average`)
+
+A one-way ANOVA was conducted to examine germane cognitive load across experimental groups (n = 275). Descriptive statistics showed: CHATGPT (M = 3.562, SD = 1.124), IRIS (M = 3.830, SD = 0.907), and NOAI (M = 4.281, SD = 0.691). Due to violation of homogeneity of variance assumption (Levene's test: p \< .001), Welch's ANOVA was employed, revealing a significant difference between groups, F(2, 170.614) = 16.08, p \< .001.
+
+Post-hoc analysis using Games-Howell test (selected due to unequal variances) showed that both AI groups reported significantly lower germane cognitive load than the NOAI group: CHATGPT vs. NOAI (p \< .001, estimate = 0.719), and IRIS vs. NOAI (p \< .001, estimate = 0.452). No significant difference was found between the two AI groups: CHATGPT vs. IRIS (p = .191, estimate = 0.267). This suggests that AI tools reduced the cognitive resources devoted to constructing and elaborating mental models.
+
+```{r hyp4_gcl, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for germane cognitive load analysis
+gcl_results <- perform_ANOVA_analysis(data, "GCL_average", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", gcl_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(gcl_results$descriptive_stats, caption = "Descriptive Statistics for Germane Cognitive Load by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(gcl_results$anova_table, caption = "One-Way ANOVA on Germane Cognitive Load by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(gcl_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", gcl_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(gcl_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(gcl_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Germane Cognitive Load"))
+
+# Print Cohen's d effect sizes
+cat("\n**Effect Sizes (Cohen's d):**\n")
+knitr::kable(gcl_results$cohens_d, caption = "Cohen's d Effect Sizes for Germane Cognitive Load")
+```
+
+```{r hyp4_gcl_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(gcl_results$plot)
+```
+
+#### Extraneous Cognitive Load (`ECL_average`)
+
+A one-way ANOVA was conducted to examine extraneous cognitive load across experimental groups (n = 275). Descriptive statistics showed: CHATGPT (M = 3.133, SD = 0.919), IRIS (M = 3.308, SD = 0.845), and NOAI (M = 3.861, SD = 0.744). The ANOVA revealed a significant difference between groups, F(2, 272) = 19.242, p \< .001, ges = .124.
+
+Post-hoc analysis using Tukey HSD (selected due to homogeneous variances, Levene's test: p = .091 \> .05) showed that both AI groups experienced significantly lower extraneous cognitive load than the NOAI group: CHATGPT vs. NOAI (p \< .001, estimate = 0.729), and IRIS vs. NOAI (p \< .001, estimate = 0.553). No significant difference was found between the two AI groups: CHATGPT vs. IRIS (p = .342, estimate = 0.175). This indicates that AI tools reduced cognitive load imposed by poor instructional design or irrelevant processing demands.
+
+```{r hyp4_ecl, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for extraneous cognitive load analysis
+ecl_results <- perform_ANOVA_analysis(data, "ECL_average", "experiment_group")
+
+# Print sample size for ANOVA
+cat(paste("Sample size for One-Way ANOVA (n):", ecl_results$n_obs_anova, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ecl_results$descriptive_stats, caption = "Descriptive Statistics for Extraneous Cognitive Load by Group")
+
+# Print ANOVA results using knitr::kable
+knitr::kable(ecl_results$anova_table, caption = "One-Way ANOVA on Extraneous Cognitive Load by Group")
+
+# Print post-hoc test selection reasoning
+cat("\n**Post-hoc Test Selection:**\n")
+cat(paste("Selected test:", toupper(ecl_results$posthoc_test_used), "\n"))
+cat(paste("Reasoning:", ecl_results$posthoc_reasoning, "\n\n"))
+
+# Print Post-hoc results using knitr::kable
+test_name <- switch(ecl_results$posthoc_test_used,
+                   "tukey" = "Tukey HSD",
+                   "games_howell" = "Games-Howell",
+                   "bonferroni" = "Bonferroni",
+                   "Post-hoc")
+knitr::kable(ecl_results$posthoc_result, caption = paste(test_name, "Post-Hoc Test for Extraneous Cognitive Load"))
+
+# Print Cohen's d effect sizes
+cat("\n**Effect Sizes (Cohen's d):**\n")
+knitr::kable(ecl_results$cohens_d, caption = "Cohen's d Effect Sizes for Extraneous Cognitive Load")
+```
+
+```{r hyp4_ecl_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ecl_results$plot)
+```
+
+## Hyp 5: Differences between AI groups
+
+This section compares the user experience between the two AI groups (ChatGPT and IRIS) using independent samples t-tests on AI-specific variables (n = 179). The analyses revealed significant differences favoring ChatGPT in several key areas, particularly ease of use, feedback helpfulness, and assistance with exercise-related issues. The analysis is structured into three categories: General AI Perceptions, AI Helpfulness & Impact, and AI Engagement & Motivation.
+
+**Summary:** The analysis revealed significant differences between the two AI groups across various dimensions, including general AI perceptions, AI helpfulness and impact, and AI engagement and motivation. The results suggest that ChatGPT was perceived as more user-friendly and effective in providing feedback and assistance, while IRIS was rated higher in terms of overall experience.
+
+```{r hyp5_filter_data, echo=FALSE, include=FALSE}
+# Filter data for the two AI groups
+ai_data <- data %>% filter(experiment_group %in% c("CHATGPT", "IRIS"))
+```
+
+### General AI Perceptions
+
+Analysis of general AI perceptions revealed mixed results, with ChatGPT showing advantages in ease of use but no significant differences in overall experience or comparison to traditional methods.
+
+#### AI Usage Experience (`ai_experience`)
+
+An independent samples t-test was conducted to compare overall AI usage experience between groups (n = 179). Descriptive statistics showed: CHATGPT (M = 2.102, SD = 1.040) and IRIS (M = 2.396, SD = 1.021). The t-test revealed no significant difference between groups, t(176.516) = -1.904, p = .059. This indicates that participants in both AI groups had similar overall experiences with their respective tools.
+
+```{r hyp5_ai_exp, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI experience analysis
+ai_exp_results <- perform_t_test_analysis(ai_data, "ai_experience", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_exp_results$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_exp_results$descriptive_stats, caption = "Descriptive Statistics for AI Experience by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_exp_results$ttest_result, caption = "Independent Samples t-test on AI Experience by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_exp_results$cohens_d, caption = "Cohen's d Effect Size for AI Experience")
+```
+
+```{r hyp5_ai_exp_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_exp_results$plot)
+```
+
+#### Ease of Use (`ai_easy_to_use`)
+
+An independent samples t-test was conducted to assess perceived ease of use between AI groups (n = 179). Descriptive statistics showed: CHATGPT (M = 4.364, SD = 0.819) and IRIS (M = 3.967, SD = 0.948). The t-test revealed a significant difference, t(174.811) = 2.998, p = .003, with the ChatGPT group rating their tool as significantly easier to use than the IRIS group. This represents a medium effect size, suggesting meaningful practical differences in perceived usability between the two AI tools.
+
+```{r hyp5_ai_ease, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI ease of use analysis
+ai_ease_results <- perform_t_test_analysis(ai_data, "ai_easy_to_use", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_ease_results$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_ease_results$descriptive_stats, caption = "Descriptive Statistics for AI Ease of Use by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_ease_results$ttest_result, caption = "Independent Samples t-test on AI Ease of Use by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_ease_results$cohens_d, caption = "Cohen's d Effect Size for AI Ease of Use")
+```
+
+```{r hyp5_ai_ease_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_ease_results$plot)
+```
+
+#### Comparison to Traditional Methods (`ai_cmp_to_traditional`)
+
+An independent samples t-test was conducted to compare how participants rated their AI tool relative to traditional learning methods (n = 179). Descriptive statistics showed: CHATGPT (M = 3.852, SD = 1.150) and IRIS (M = 3.604, SD = 1.104). The t-test revealed no significant difference between groups, t(176.029) = 1.470, p = .143. This suggests that participants in both AI groups held similar views regarding how their tools compared to traditional learning approaches.
+
+```{r hyp5_ai_cmp, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI comparison to traditional methods analysis
+ai_cmp_results <- perform_t_test_analysis(ai_data, "ai_cmp_to_traditional", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_cmp_results$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_cmp_results$descriptive_stats, caption = "Descriptive Statistics for AI Comparison to Traditional Methods by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_cmp_results$ttest_result, caption = "Independent Samples t-test on AI Comparison to Traditional Methods by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_cmp_results$cohens_d, caption = "Cohen's d Effect Size for AI Comparison to Traditional Methods")
+```
+
+```{r hyp5_ai_cmp_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_cmp_results$plot)
+```
+
+### AI Helpfulness & Impact
+
+Analysis of AI helpfulness and impact revealed consistent advantages for ChatGPT across multiple measures. Significant differences favoring ChatGPT were found for feedback helpfulness, understanding user queries, assistance with exercise issues, and concept understanding improvement. No significant difference was observed for general help with understanding, suggesting both tools provided similar overall support.
+
+#### Feedback Helpfulness (`ai_feedback_helpful`)
+
+An independent samples t-test was conducted to compare perceived helpfulness of AI-generated feedback between groups (n = 179). Descriptive statistics showed: CHATGPT (M = 3.977, SD = 0.959) and IRIS (M = 3.538, SD = 1.025). The t-test revealed a significant difference, t(176.802) = 2.959, p = .004, with the ChatGPT group finding the feedback significantly more helpful than the IRIS group. This represents a medium effect size, indicating meaningful practical differences in percieved feedback quality between the two AI tools.
+
+```{r hyp5_fb_helpful, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI feedback helpfulness analysis
+ai_fb_helpful_results <- perform_t_test_analysis(ai_data, "ai_feedback_helpful", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_fb_helpful_results$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_fb_helpful_results$descriptive_stats, caption = "Descriptive Statistics for AI Feedback Helpfulness by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_fb_helpful_results$ttest_result, caption = "Independent Samples t-test on AI Feedback Helpfulness by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_fb_helpful_results$cohens_d, caption = "Cohen's d Effect Size for AI Feedback Helpfulness")
+```
+
+```{r hyp5_fb_helpful_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_fb_helpful_results$plot)
+```
+
+#### Understanding User Queries (`ai_understands_user_queries`)
+
+An independent samples t-test was conducted to assess how well each AI tool understood user queries (n = 179). Descriptive statistics showed: CHATGPT (M = 3.898, SD = 0.858) and IRIS (M = 3.560, SD = 0.897). The t-test revealed a significant difference, t(176.981) = 2.571, p = .011, with the ChatGPT group rating their tool as significantly better at understanding user queries than the IRIS group.
+
+```{r hyp5_understand_quiery, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI help with exercise issues analysis
+ai_understands_quiery <- perform_t_test_analysis(ai_data, "ai_understands_user_queries", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_understands_quiery$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_understands_quiery$descriptive_stats, caption = "Descriptive Statistics for AI Help with Exercise Issues by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_understands_quiery$ttest_result, caption = "Independent Samples t-test on AI Help with Exercise Issues by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_understands_quiery$cohens_d, caption = "Cohen's d Effect Size for AI Understanding User Queries")
+```
+
+```{r hyp5_understand_quiery_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_understands_quiery$plot)
+```
+
+#### Help with Exercise Issues (`ai_helps_with_exercise_issues`)
+
+An independent samples t-test was conducted to compare how helpful the AI tools were in resolving exercise-related issues (n = 179). Descriptive statistics showed: CHATGPT (M = 4.080, SD = 0.834) and IRIS (M = 3.495, SD = 1.004). The t-test revealed a highly significant difference, t(173.057) = 4.247, p \< .001, with the ChatGPT group reporting substantially more help with exercise issues than the IRIS group. This represents a large effect size, indicating substantial practical differences in perceived problem-solving assistance between the two AI tools.
+
+```{r hyp5_ex_issues, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI help with exercise issues analysis
+ai_ex_issues_results <- perform_t_test_analysis(ai_data, "ai_helps_with_exercise_issues", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_ex_issues_results$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_ex_issues_results$descriptive_stats, caption = "Descriptive Statistics for AI Help with Exercise Issues by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_ex_issues_results$ttest_result, caption = "Independent Samples t-test on AI Help with Exercise Issues by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_ex_issues_results$cohens_d, caption = "Cohen's d Effect Size for AI Help with Exercise Issues")
+```
+
+```{r hyp5_ex_issues_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_ex_issues_results$plot)
+```
+
+#### Improved Concept Understanding (`ai_improved_my_concept_understanding`)
+
+An independent samples t-test was conducted to assess whether the AI tools improved participants' concept understanding (n = 179). Descriptive statistics showed: CHATGPT (M = 3.864, SD = 1.052) and IRIS (M = 3.374, SD = 0.927). The t-test revealed a significant difference, t(172.585) = 3.302, p = .001, with the ChatGPT group reporting significantly greater improvement in concept understanding than the IRIS group. T
+
+```{r hyp5_concept, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI improved concept understanding analysis
+ai_concept_results <- perform_t_test_analysis(ai_data, "ai_improved_my_concept_understanding", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_concept_results$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_concept_results$descriptive_stats, caption = "Descriptive Statistics for AI Improved Concept Understanding by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_concept_results$ttest_result, caption = "Independent Samples t-test on AI Improved Concept Understanding by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_concept_results$cohens_d, caption = "Cohen's d Effect Size for AI Improved Concept Understanding")
+```
+
+```{r hyp5_concept_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_concept_results$plot)
+```
+
+#### General Helpfulness for Understanding (`ai_helped_understanding`)
+
+An independent samples t-test was conducted to compare general helpfulness for understanding between AI groups (n = 179). Descriptive statistics showed: CHATGPT (M = 3.750, SD = 1.137) and IRIS (M = 3.604, SD = 0.930). The t-test revealed no significant difference between groups, t(168.447) = 0.967, p = .335.
+
+```{r hyp5_gen_understanding, echo=FALSE, warning=FALSE, message=FALSE}
+# Call the wrapper function for AI helped understanding analysis
+ai_understanding_results <- perform_t_test_analysis(ai_data, "ai_helped_understanding", "experiment_group")
+
+# Print sample size for t-test
+cat(paste("Sample size for t-test (n):", ai_understanding_results$n_obs_ttest, "\n\n"))
+
+# Print descriptive statistics using knitr::kable
+knitr::kable(ai_understanding_results$descriptive_stats, caption = "Descriptive Statistics for AI Helped Understanding by Group")
+
+# Print t-test results using knitr::kable
+knitr::kable(ai_understanding_results$ttest_result, caption = "Independent Samples t-test on AI Helped Understanding by Group")
+
+# Print Cohen's d effect size
+knitr::kable(ai_understanding_results$cohens_d, caption = "Cohen's d Effect Size for AI Helped Understanding")
+```
+
+```{r hyp5_gen_understanding_plot, echo=FALSE, fig.width=5, fig.height=5}
+# Print the visualization from the wrapper function results
+print(ai_understanding_results$plot)
+```

@@ -1,0 +1,308 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "config": {
+    "background": "#ffffff",
+    "view": {
+      "stroke": "#d9dde5"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 14,
+      "titleColor": "#17233c",
+      "labelColor": "#445064",
+      "gridColor": "#e8ebf0"
+    },
+    "header": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#17233c"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  },
+  "spacing": 20,
+  "vconcat": [
+    {
+      "width": 760,
+      "height": 230,
+      "title": {
+        "text": "A  Overall pattern",
+        "anchor": "start",
+        "fontSize": 16,
+        "color": "#17233c"
+      },
+      "data": {
+        "url": "sleepstudy-daily-summary.csv"
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "area",
+            "color": "#3157a4",
+            "opacity": 0.18
+          },
+          "encoding": {
+            "x": {
+              "field": "Days",
+              "type": "quantitative",
+              "title": "Study day",
+              "scale": {
+                "domain": [
+                  0,
+                  9
+                ]
+              },
+              "axis": {
+                "values": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ]
+              }
+            },
+            "y": {
+              "field": "LowerSD",
+              "type": "quantitative",
+              "title": "Reaction time (ms)",
+              "scale": {
+                "domain": [
+                  190,
+                  480
+                ]
+              }
+            },
+            "y2": {
+              "field": "UpperSD"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "strokeWidth": 4,
+            "color": "#3157a4"
+          },
+          "encoding": {
+            "x": {
+              "field": "Days",
+              "type": "quantitative",
+              "title": "Study day",
+              "scale": {
+                "domain": [
+                  0,
+                  9
+                ]
+              },
+              "axis": {
+                "values": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ]
+              }
+            },
+            "y": {
+              "field": "Mean",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "size": 65,
+            "color": "#3157a4"
+          },
+          "encoding": {
+            "x": {
+              "field": "Days",
+              "type": "quantitative",
+              "title": "Study day",
+              "scale": {
+                "domain": [
+                  0,
+                  9
+                ]
+              },
+              "axis": {
+                "values": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ]
+              }
+            },
+            "y": {
+              "field": "Mean",
+              "type": "quantitative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "title": {
+            "text": "B  Participant trajectories",
+            "anchor": "start",
+            "fontSize": 16,
+            "color": "#17233c"
+          },
+          "data": {
+            "url": "sleepstudy.csv"
+          },
+          "columns": 6,
+          "facet": {
+            "field": "Subject",
+            "type": "nominal",
+            "title": null
+          },
+          "spec": {
+            "width": 65,
+            "height": 52,
+            "mark": {
+              "type": "line",
+              "strokeWidth": 1.2,
+              "color": "#3157a4"
+            },
+            "encoding": {
+              "x": {
+                "field": "Days",
+                "type": "quantitative",
+                "title": null,
+                "axis": null,
+                "scale": {
+                  "domain": [
+                    0,
+                    9
+                  ]
+                }
+              },
+              "y": {
+                "field": "Reaction",
+                "type": "quantitative",
+                "title": null,
+                "axis": null,
+                "scale": {
+                  "domain": [
+                    190,
+                    480
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "width": 240,
+          "height": 250,
+          "title": {
+            "text": "C  Participant change",
+            "anchor": "start",
+            "fontSize": 16,
+            "color": "#17233c"
+          },
+          "data": {
+            "url": "sleepstudy-subject-slopes-days2-9.csv"
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "bar",
+                "color": "#aeb6c3",
+                "size": 2
+              },
+              "encoding": {
+                "x": {
+                  "field": "Slope",
+                  "type": "quantitative",
+                  "title": "Slope (ms/day)"
+                },
+                "x2": {
+                  "datum": 0
+                },
+                "y": {
+                  "field": "Subject",
+                  "type": "ordinal",
+                  "sort": {
+                    "field": "Slope"
+                  },
+                  "axis": null
+                }
+              }
+            },
+            {
+              "mark": {
+                "type": "point",
+                "filled": true,
+                "size": 52,
+                "color": "#3157a4"
+              },
+              "encoding": {
+                "x": {
+                  "field": "Slope",
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "Subject",
+                  "type": "ordinal",
+                  "sort": {
+                    "field": "Slope"
+                  },
+                  "axis": null
+                }
+              }
+            },
+            {
+              "mark": {
+                "type": "rule",
+                "color": "#c9455a",
+                "strokeDash": [
+                  5,
+                  4
+                ]
+              },
+              "encoding": {
+                "x": {
+                  "datum": 0,
+                  "type": "quantitative"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

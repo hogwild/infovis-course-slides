@@ -1,0 +1,59 @@
+{
+  "unit": "One retained participant per row",
+  "group_order": [
+    "No AI",
+    "Iris",
+    "ChatGPT"
+  ],
+  "performance": {
+    "source": "exercise_score_artemis",
+    "unit": "Percent tests passed (0-100); already a percentage"
+  },
+  "pre": {
+    "source": "PREKQ01-PREKQ06",
+    "unit": "Correct items, 0-6",
+    "correct_answers": [
+      "AO01",
+      "AO02",
+      "AO02",
+      "AO04",
+      "AO01",
+      "AO01"
+    ]
+  },
+  "post": {
+    "source": "POSKQ01-POSKQ06",
+    "unit": "Correct items, 0-6",
+    "correct_answers": [
+      "AO01",
+      "AO02",
+      "AO02",
+      "AO04",
+      "AO01",
+      "AO01"
+    ]
+  },
+  "gain": {
+    "formula": "post - pre within pseudonym",
+    "unit": "Points, theoretical -6 to +6"
+  },
+  "frustration": {
+    "source": "POSPM02[SQ005]",
+    "question": "I was frustrated during the exercise.",
+    "codes": {
+      "AO01": 1,
+      "AO02": 2,
+      "AO03": 3,
+      "AO04": 4,
+      "AO05": 5
+    },
+    "labels": [
+      "Strongly disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly agree"
+    ]
+  },
+  "missing": "Knowledge totals propagate missing items. Retained core fields have no missing values. No complete-case filter over all 76 columns."
+}

@@ -1,0 +1,8 @@
+summary = groups.map((group, index) => {
+  const rows = data.filter(d => d.group === group);
+  return {group, index, n: rows.length,
+    performance: mean(rows.map(d => d.performance)),
+    pre: mean(rows.map(d => d.pre)), post: mean(rows.map(d => d.post)),
+    gain: mean(rows.map(d => d.gain)),
+    frustration: mean(rows.map(d => d.frustration))};
+})

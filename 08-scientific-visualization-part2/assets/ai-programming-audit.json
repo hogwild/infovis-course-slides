@@ -1,0 +1,786 @@
+{
+  "raw_rows": 452,
+  "raw_columns": 76,
+  "unique_ids": 452,
+  "included": 275,
+  "excluded": 177,
+  "exclusions": [
+    {
+      "step": 1,
+      "reason": "Posttest before pretest",
+      "excluded": 13,
+      "remaining": 439,
+      "ids": [
+        "185c2c6d",
+        "3f06bc69",
+        "587d9bae",
+        "77acaa59",
+        "90d23644",
+        "9465c848",
+        "a99d74a8",
+        "c09d8db4",
+        "d8e27ffa",
+        "e892fd01",
+        "f20dea79",
+        "f272746f",
+        "f6eb13f4"
+      ]
+    },
+    {
+      "step": 2,
+      "reason": "Pre-post gap < 10 minutes",
+      "excluded": 4,
+      "remaining": 435,
+      "ids": [
+        "253398f3",
+        "80c8d0a1",
+        "cc614553",
+        "d9fdd547"
+      ]
+    },
+    {
+      "step": 3,
+      "reason": "Pre-post gap > 2 hours",
+      "excluded": 21,
+      "remaining": 414,
+      "ids": [
+        "0375b2f3",
+        "16f97583",
+        "19d9f3a7",
+        "4bda9258",
+        "4c7b5662",
+        "4fca7417",
+        "56c6c44d",
+        "5964158a",
+        "5d8608c2",
+        "6c4419bc",
+        "711dd3e5",
+        "80da9ade",
+        "8131ed8f",
+        "9166b10c",
+        "958f165c",
+        "9a81cd5d",
+        "9f2d73ed",
+        "a0feb67d",
+        "de2d4f66",
+        "f1741341",
+        "f9a8cae5"
+      ]
+    },
+    {
+      "step": 4,
+      "reason": "First submission (+1h) before pretest",
+      "excluded": 10,
+      "remaining": 404,
+      "ids": [
+        "06ef9d71",
+        "27a176e3",
+        "31e427d9",
+        "4a984c26",
+        "63bc9277",
+        "6598f698",
+        "72ad72c6",
+        "75e76e2e",
+        "c3f8e11b",
+        "e6533d45"
+      ]
+    },
+    {
+      "step": 5,
+      "reason": "Failed attention check: POSKQAC01",
+      "excluded": 7,
+      "remaining": 397,
+      "ids": [
+        "12ab713e",
+        "166fe494",
+        "5fe10326",
+        "906f0611",
+        "cf660f0c",
+        "de3fc69e",
+        "fcb8bc90"
+      ]
+    },
+    {
+      "step": 6,
+      "reason": "Failed attention check: PREKQAC01",
+      "excluded": 6,
+      "remaining": 391,
+      "ids": [
+        "5a4b4732",
+        "66d44b54",
+        "79cba608",
+        "87af833e",
+        "e6246a52",
+        "e96dc83f"
+      ]
+    },
+    {
+      "step": 7,
+      "reason": "Failed attention check: POSIG04[SQ007]",
+      "excluded": 3,
+      "remaining": 388,
+      "ids": [
+        "12cca869",
+        "35672eb5",
+        "53ac1cc8"
+      ]
+    },
+    {
+      "step": 8,
+      "reason": "Failed attention check: POSPM02[SQ007]",
+      "excluded": 10,
+      "remaining": 378,
+      "ids": [
+        "1d0c55aa",
+        "41c2fabc",
+        "481adc8e",
+        "5f0cad9d",
+        "731d706a",
+        "791582b5",
+        "9527bcf7",
+        "a7153b85",
+        "ae7458c9",
+        "b7a45353"
+      ]
+    },
+    {
+      "step": 9,
+      "reason": "Last valid submission after posttest",
+      "excluded": 0,
+      "remaining": 378,
+      "ids": []
+    },
+    {
+      "step": 10,
+      "reason": "Pretest before study window",
+      "excluded": 40,
+      "remaining": 338,
+      "ids": [
+        "02a19313",
+        "052358a6",
+        "0a9448bd",
+        "12174a9a",
+        "19b729fa",
+        "1b188103",
+        "294c9bc3",
+        "324a9ea6",
+        "48128ec1",
+        "48ba271d",
+        "5904e68a",
+        "6195d854",
+        "62d491d2",
+        "71d8248b",
+        "7cb70dc9",
+        "85172f84",
+        "919b7139",
+        "95e88651",
+        "9601270d",
+        "9ffa7d97",
+        "a06a0ecc",
+        "a165a605",
+        "a1d194a3",
+        "a76420db",
+        "a992e465",
+        "a99320a4",
+        "aa4c3b76",
+        "bbe11725",
+        "c1110876",
+        "c389d3eb",
+        "c8dc1554",
+        "cf660492",
+        "d399ae6b",
+        "db164ad2",
+        "dd52fd27",
+        "df26674b",
+        "e8674398",
+        "f3a111d0",
+        "f653d392",
+        "fce70d4c"
+      ]
+    },
+    {
+      "step": 11,
+      "reason": "No submissions",
+      "excluded": 0,
+      "remaining": 338,
+      "ids": []
+    },
+    {
+      "step": 12,
+      "reason": "Opt-out detected",
+      "excluded": 4,
+      "remaining": 334,
+      "ids": [
+        "6fb5fe73",
+        "8970888e",
+        "f1f6a995",
+        "f5e7a461"
+      ]
+    },
+    {
+      "step": 13,
+      "reason": "AI group without message history",
+      "excluded": 22,
+      "remaining": 312,
+      "ids": [
+        "00493b26",
+        "0450f5af",
+        "0a15da09",
+        "142c79f0",
+        "221424aa",
+        "244d63c8",
+        "3b65105b",
+        "3f3c0ee6",
+        "70764669",
+        "7e063ce2",
+        "84454a42",
+        "8f1d68ef",
+        "9963d823",
+        "9ca2eb9f",
+        "a3112ec2",
+        "a856baaa",
+        "ac529ed3",
+        "aec3ac8f",
+        "b6dabf38",
+        "bafa1391",
+        "c85a99db",
+        "fb884be5"
+      ]
+    },
+    {
+      "step": 14,
+      "reason": "Author choice: gender outside Male/Female",
+      "excluded": 1,
+      "remaining": 311,
+      "ids": [
+        "1adef29d"
+      ]
+    },
+    {
+      "step": 15,
+      "reason": "Author choice: age outside 0-33 or missing",
+      "excluded": 10,
+      "remaining": 301,
+      "ids": [
+        "3169b5ee",
+        "34fb1a6f",
+        "39956ea9",
+        "7aa4e36a",
+        "8638855c",
+        "904bf8a4",
+        "ab9c7003",
+        "e03046f0",
+        "ee147f08",
+        "f085b4a4"
+      ]
+    },
+    {
+      "step": 16,
+      "reason": "Author choice: experience outside selected levels",
+      "excluded": 9,
+      "remaining": 292,
+      "ids": [
+        "1e2934c0",
+        "3d0049e0",
+        "4c2c9acc",
+        "79762384",
+        "b307e461",
+        "c2599f70",
+        "d98b2a94",
+        "f52e499d",
+        "ff155dd9"
+      ]
+    },
+    {
+      "step": 17,
+      "reason": "Exercise duration > 7600 seconds or missing",
+      "excluded": 17,
+      "remaining": 275,
+      "ids": [
+        "00e67d41",
+        "044eb18b",
+        "07f456a6",
+        "113b8ffd",
+        "25bb5076",
+        "4a1c6921",
+        "58d45deb",
+        "71653e09",
+        "92612522",
+        "ac73ae2b",
+        "b3aa16cc",
+        "b4ebf56c",
+        "c97216fe",
+        "cc552656",
+        "cd911cf9",
+        "dac75e2d",
+        "e05ae6b8"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "group": "No AI",
+      "n": 96,
+      "raw_n": 148,
+      "performance": {
+        "mean": 29.853125,
+        "sd": 36.169303510675576,
+        "min": 0,
+        "max": 100,
+        "counts": {
+          "0.0": 40,
+          "11.1": 9,
+          "22.2": 13,
+          "44.4": 13,
+          "66.7": 6,
+          "100.0": 15
+        }
+      },
+      "pre": {
+        "mean": 1.9166666666666667,
+        "sd": 1.8618986725025255,
+        "min": 0,
+        "max": 6,
+        "counts": {
+          "0": 34,
+          "1": 12,
+          "2": 14,
+          "3": 15,
+          "4": 10,
+          "5": 7,
+          "6": 4
+        }
+      },
+      "post": {
+        "mean": 2.7708333333333335,
+        "sd": 1.981382646785435,
+        "min": 0,
+        "max": 6,
+        "counts": {
+          "0": 17,
+          "1": 15,
+          "2": 10,
+          "3": 18,
+          "4": 13,
+          "5": 13,
+          "6": 10
+        }
+      },
+      "gain": {
+        "mean": 0.8541666666666666,
+        "sd": 1.5625833311112296,
+        "min": -2,
+        "max": 6,
+        "counts": {
+          "0": 35,
+          "1": 17,
+          "2": 19,
+          "3": 7,
+          "4": 2,
+          "5": 2,
+          "6": 1,
+          "-2": 5,
+          "-1": 8
+        }
+      },
+      "frustration": {
+        "mean": 4.09375,
+        "sd": 0.9955493061886145,
+        "min": 1,
+        "max": 5,
+        "counts": {
+          "1": 2,
+          "2": 7,
+          "3": 10,
+          "4": 38,
+          "5": 39
+        }
+      },
+      "comprehension": {
+        "mean": 1.1770833333333333,
+        "sd": 0.894365893176385,
+        "min": 0,
+        "max": 3,
+        "counts": {
+          "0": 23,
+          "1": 41,
+          "2": 24,
+          "3": 8
+        }
+      }
+    },
+    {
+      "group": "Iris",
+      "n": 91,
+      "raw_n": 150,
+      "performance": {
+        "mean": 57.502197802197806,
+        "sd": 37.36119786927483,
+        "min": 0,
+        "max": 100,
+        "counts": {
+          "0.0": 14,
+          "11.1": 6,
+          "22.2": 4,
+          "44.4": 21,
+          "66.7": 11,
+          "77.8": 1,
+          "88.9": 6,
+          "100.0": 28
+        }
+      },
+      "pre": {
+        "mean": 2.1758241758241756,
+        "sd": 1.9470399561808152,
+        "min": 0,
+        "max": 6,
+        "counts": {
+          "0": 23,
+          "1": 20,
+          "2": 13,
+          "3": 10,
+          "4": 9,
+          "5": 10,
+          "6": 6
+        }
+      },
+      "post": {
+        "mean": 2.89010989010989,
+        "sd": 1.9232527392158054,
+        "min": 0,
+        "max": 6,
+        "counts": {
+          "0": 12,
+          "1": 13,
+          "2": 16,
+          "3": 14,
+          "4": 17,
+          "5": 6,
+          "6": 13
+        }
+      },
+      "gain": {
+        "mean": 0.7142857142857143,
+        "sd": 1.2497618820818477,
+        "min": -3,
+        "max": 4,
+        "counts": {
+          "0": 36,
+          "1": 22,
+          "2": 14,
+          "3": 8,
+          "4": 1,
+          "-3": 1,
+          "-2": 1,
+          "-1": 8
+        }
+      },
+      "frustration": {
+        "mean": 3.208791208791209,
+        "sd": 1.1786666998160207,
+        "min": 1,
+        "max": 5,
+        "counts": {
+          "1": 5,
+          "2": 26,
+          "3": 19,
+          "4": 27,
+          "5": 14
+        }
+      },
+      "comprehension": {
+        "mean": 1.4285714285714286,
+        "sd": 0.8710511803161504,
+        "min": 0,
+        "max": 3,
+        "counts": {
+          "0": 13,
+          "1": 36,
+          "2": 32,
+          "3": 10
+        }
+      }
+    },
+    {
+      "group": "ChatGPT",
+      "n": 88,
+      "raw_n": 154,
+      "performance": {
+        "mean": 71.8409090909091,
+        "sd": 39.65411267494984,
+        "min": 0,
+        "max": 100,
+        "counts": {
+          "0.0": 15,
+          "11.1": 2,
+          "22.2": 1,
+          "44.4": 9,
+          "55.6": 1,
+          "66.7": 4,
+          "88.9": 4,
+          "100.0": 52
+        }
+      },
+      "pre": {
+        "mean": 2.3295454545454546,
+        "sd": 1.8176756087376513,
+        "min": 0,
+        "max": 6,
+        "counts": {
+          "0": 14,
+          "1": 22,
+          "2": 16,
+          "3": 13,
+          "4": 10,
+          "5": 6,
+          "6": 7
+        }
+      },
+      "post": {
+        "mean": 3.159090909090909,
+        "sd": 1.8991005955715756,
+        "min": 0,
+        "max": 6,
+        "counts": {
+          "0": 10,
+          "1": 11,
+          "2": 10,
+          "3": 18,
+          "4": 13,
+          "5": 15,
+          "6": 11
+        }
+      },
+      "gain": {
+        "mean": 0.8295454545454546,
+        "sd": 1.3914483557235489,
+        "min": -2,
+        "max": 5,
+        "counts": {
+          "0": 24,
+          "1": 30,
+          "2": 12,
+          "3": 6,
+          "4": 3,
+          "5": 1,
+          "-2": 4,
+          "-1": 8
+        }
+      },
+      "frustration": {
+        "mean": 3.125,
+        "sd": 1.2111787741652782,
+        "min": 1,
+        "max": 5,
+        "counts": {
+          "1": 8,
+          "2": 23,
+          "3": 19,
+          "4": 26,
+          "5": 12
+        }
+      },
+      "comprehension": {
+        "mean": 1.3636363636363635,
+        "sd": 0.9120120258056968,
+        "min": 0,
+        "max": 3,
+        "counts": {
+          "0": 16,
+          "1": 34,
+          "2": 28,
+          "3": 10
+        }
+      }
+    }
+  ],
+  "values": {
+    "performance": [
+      0,
+      11.1,
+      22.2,
+      44.4,
+      55.6,
+      66.7,
+      77.8,
+      88.9,
+      100
+    ],
+    "gain": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "frustration": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "validation": "Python translation of author's core filters and scoring. Core n and means match published precision. R inferential models and other scales not rerun.",
+  "source_hashes": {
+    "merged_data_pseudonymized.csv": {
+      "md5": "5e77465a489bd77ab9e24a295a37144e",
+      "sha256": "4ecbb52a605481fbb075f0f39c72817f2f4e0740d21608084c2929f7dba73be6"
+    },
+    "1_dataPrep.R": {
+      "md5": "84efd9439d48cada10c462f4eefd99dc",
+      "sha256": "79a17febc62de3b95eb62a861d786d0336efa22abec3642dbb758d6ce15a60a5"
+    },
+    "2_mainAnalysis.Rmd": {
+      "md5": "65e53c8d2c9b4de038384d7329798e3e",
+      "sha256": "b781253ffa9bc59550a562a4806c6a00833c0aa1bc3910797c63558b3e6f2c80"
+    },
+    "3_wrappers.R": {
+      "md5": "83bc54e3f0a489d417e3e1c6b844e835",
+      "sha256": "0b6799612a6cf71399b82cba198d1219eb6f66b0bd6ada5767a6a6ad1ad5f874"
+    },
+    "README.md": {
+      "md5": "63ba8e113e53f7f27b44484dfe8cd660",
+      "sha256": "974b52353ee4b6ae5be7650022e6d55e58455a6e99611ad41cdfb09d2ea162e6"
+    },
+    "survey_questions.json": {
+      "md5": "9812c3ba0e3af2525d432d0cb8ef408b",
+      "sha256": "1d4149424fd93f02f7dc9fa8149073338fedaf8f56424d868dc0d7d36ad461fc"
+    },
+    "zenodo-record.json": {
+      "md5": "a42dd3e410cbcf1db393f9b1e5b6351d",
+      "sha256": "f340ab3d7e56be009daabedc4324eb2cc9c26f14bf6284587c497ba613ab6feb"
+    }
+  },
+  "bootstrap": {
+    "means": [
+      {
+        "group": "No AI",
+        "index": 0,
+        "n": 96,
+        "performance": 29.853125000000002,
+        "pre": 1.9166666666666667,
+        "post": 2.7708333333333335,
+        "gain": 0.8541666666666666,
+        "frustration": 4.09375,
+        "ciX": -0.42,
+        "lo": 0.5416666666666666,
+        "hi": 1.1666666666666667
+      },
+      {
+        "group": "Iris",
+        "index": 1,
+        "n": 91,
+        "performance": 57.50219780219778,
+        "pre": 2.1758241758241756,
+        "post": 2.89010989010989,
+        "gain": 0.7142857142857143,
+        "frustration": 3.208791208791209,
+        "ciX": 0.5800000000000001,
+        "lo": 0.46153846153846156,
+        "hi": 0.967032967032967
+      },
+      {
+        "group": "ChatGPT",
+        "index": 2,
+        "n": 88,
+        "performance": 71.84090909090908,
+        "pre": 2.3295454545454546,
+        "post": 3.159090909090909,
+        "gain": 0.8295454545454546,
+        "frustration": 3.125,
+        "ciX": 1.58,
+        "lo": 0.5454545454545454,
+        "hi": 1.125
+      }
+    ],
+    "differences": [
+      {
+        "group": "Iris",
+        "comparison": "Iris - No AI",
+        "estimate": -0.13988095238095233,
+        "lo": -0.5448717948717948,
+        "hi": 0.2640081272893767
+      },
+      {
+        "group": "ChatGPT",
+        "comparison": "ChatGPT - No AI",
+        "estimate": -0.024621212121212044,
+        "lo": -0.4488873106060606,
+        "hi": 0.39962121212121204
+      }
+    ],
+    "B": 10000,
+    "seed": 20260922,
+    "method": "95% percentile bootstrap; participants within groups"
+  },
+  "charts": [
+    {
+      "cell": "meanFigure",
+      "svgBytes": 8513
+    },
+    {
+      "cell": "performanceFigure",
+      "svgBytes": 22425
+    },
+    {
+      "cell": "pairedFigure",
+      "svgBytes": 68592
+    },
+    {
+      "cell": "gainFigure",
+      "svgBytes": 25742
+    },
+    {
+      "cell": "differenceFigure",
+      "svgBytes": 9142
+    },
+    {
+      "cell": "frustrationFigure",
+      "svgBytes": 20390
+    },
+    {
+      "cell": "overviewFigure",
+      "svgBytes": 13443
+    },
+    {
+      "cell": "finalFigure",
+      "svgBytes": 131362
+    }
+  ],
+  "runtime": {
+    "vega": "6.4.0",
+    "vegaLite": "6.4.3",
+    "vegaEmbed": "7.1.0"
+  },
+  "pairedPaths": {
+    "paths": 92,
+    "participants": 275,
+    "countDomain": [
+      1,
+      16
+    ],
+    "groups": [
+      {
+        "group": "No AI",
+        "paths": 33,
+        "participants": 96
+      },
+      {
+        "group": "Iris",
+        "paths": 28,
+        "participants": 91
+      },
+      {
+        "group": "ChatGPT",
+        "paths": 31,
+        "participants": 88
+      }
+    ]
+  }
+}

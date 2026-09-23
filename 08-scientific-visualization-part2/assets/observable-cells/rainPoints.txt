@@ -1,0 +1,14 @@
+rainPoints = t => ({
+  ...jitterLayer(t),
+  transform: [
+    ...rainRows,
+    {as: "pointY", calculate:
+      "datum.rowY - datum.side * " +
+      "(0.03 + (datum.row * 73 % 101)" +
+      " / 100 * 0.06)"}
+  ],
+  mark: {type: "point", filled: true,
+    size: 18, opacity: 0.45},
+  encoding: {...jitterLayer(t).encoding,
+    y: {field: "pointY", type: "quantitative"}}
+})

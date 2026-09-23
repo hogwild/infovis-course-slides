@@ -1,0 +1,432 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lecture 8 · CSV-based classroom notebook</title><style>*{box-sizing:border-box}body{margin:0;background:#fcfaf6;color:#263248;font:18px/1.6 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:36px}h1,h2{color:#17233c;line-height:1.3}a{color:#3157a4}section{border-top:1px solid #d8dbe4;padding:22px 0}pre{font:14px/1.5 ui-monospace,monospace;overflow:auto;padding:20px;background:#17233c;color:white}button{font:inherit;color:#3157a4;background:white;border:1px solid #3157a4;padding:7px 16px;margin:0 10px 12px 0;cursor:pointer}summary{cursor:pointer}img{max-width:100%;height:auto;display:block;margin:20px 0}nav{display:flex;flex-wrap:wrap;gap:10px 20px}.check{padding:16px 20px;background:#edf1f7}code{overflow-wrap:anywhere}</style><main>
+<h1>Lecture 8: CSV-based classroom notebook</h1><p><strong>Observable Notebooks 2.0 · 18 JavaScript cells + 1 Markdown cell</strong></p><p>Read one processed CSV attachment, compute summaries, and draw the four redesigned charts.</p>
+<p><a href="../ai-programming-analysis.csv" download>Download the CSV</a> · <a href="observable-classroom-main.md" download>Complete code and sharing guide</a> · <a href="observable-classroom.html">9-cell quick-start backup</a></p>
+<ol><li>Upload <code>ai-programming-analysis.csv</code> to your notebook as a file attachment. Keep the exact filename.</li><li>Copy each numbered block into a separate cell. Use <strong>Markdown</strong> for cell 1 and <strong>JavaScript (js)</strong> for cells 2–19. Replace the earlier version to avoid duplicate variables.</li><li>Prepare cells 2–10, then use cells 11–18 to discuss encodings, scales, colors and annotations.</li><li>In <code>gainSpec</code>, change <code>height: 140</code> to <code>height: 220</code> and watch the chart update. Restore 140 afterward.</li><li>Finish with cell 19: two aligned rows in reading order. If cells 1–18 are already in your notebook, append only this new JavaScript cell.</li></ol>
+<p class="check"><strong>Check cell 10:</strong> 275 students and unique IDs; No AI 96 / Iris 91 / ChatGPT 88; 92 paths covering all 275 students; both checks true.</p>
+<nav><a href="#data">Read data</a><a href="#summary">Summaries</a><a href="#dataCheck">Check sample</a><a href="#exerciseSpec">Exercise performance</a><a href="#frustrationSpec">Frustration</a><a href="#gainSpec">Knowledge gains</a><a href="#pairedSpec">Paired supplement</a><a href="#combinedChart">Combined figure</a></nav>
+<section id="introduction"><h2>1. Notebook title and sources</h2><p>Cell type: <strong>Markdown</strong></p><button data-copy="code-introduction">Copy complete cell</button><a href="main-cells/introduction.md" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-introduction"># Redesigning figures for a research paper
+
+Compare exercise performance, reported frustration and knowledge gains across three groups: No AI, Iris and ChatGPT. Use the paired-score supplement to see the starting and ending levels behind the gains.
+
+The attached **ai-programming-analysis.csv** is a processed analysis table: one row per student. This notebook computes chart summaries from that table.
+
+Classroom redesign based on [Bassner et al. (2026)](https://doi.org/10.1016/j.caeai.2025.100537).
+Original data: [Zenodo 20285307](https://doi.org/10.5281/zenodo.20285307), CC BY 4.0.</pre></details></section><section id="embed"><h2>2. Import the charting library</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-embed">Copy complete cell</button><a href="main-cells/embed.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-embed">import embed from &quot;npm:vega-embed@7.1.0&quot;;</pre></details></section><section id="data"><h2>3. Read the processed CSV attachment</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-data">Copy complete cell</button><a href="main-cells/data.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-data">const csvRows = await FileAttachment(&quot;ai-programming-analysis.csv&quot;).csv();
+const numericFields = [&quot;performance&quot;, &quot;pre&quot;, &quot;post&quot;, &quot;gain&quot;, &quot;frustration&quot;, &quot;comprehension&quot;];
+
+// Keep pseudonym and group as text; convert only the measured fields.
+const data = csvRows.map((row, index) =&gt; {
+  const student = {...row};
+  for (const field of numericFields) {
+    if (row[field] == null || row[field].trim() === &quot;&quot; || !Number.isFinite(Number(row[field]))) {
+      throw new Error(&quot;Missing or invalid &quot; + field + &quot; in CSV row &quot; + (index + 2));
+    }
+    student[field] = Number(row[field]);
+  }
+  return student;
+});</pre></details></section><section id="design"><h2>4. Shared group order, colors and typography</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-design">Copy complete cell</button><a href="main-cells/design.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-design">const groups = [&quot;No AI&quot;, &quot;Iris&quot;, &quot;ChatGPT&quot;];
+const groupColors = {&quot;No AI&quot;: &quot;#667085&quot;, Iris: &quot;#3157a4&quot;, ChatGPT: &quot;#7656a6&quot;};
+const chartConfig = {
+  font: &quot;Arial&quot;,
+  background: &quot;white&quot;,
+  view: {stroke: null},
+  axis: {
+    labelFontSize: 17,
+    titleFontSize: 18,
+    titlePadding: 12,
+    labelColor: &quot;#263248&quot;,
+    titleColor: &quot;#17233c&quot;,
+    gridColor: &quot;#e6e8ed&quot;,
+    domainColor: &quot;#a1a7b3&quot;,
+    labelPadding: 8,
+    labelAngle: 0
+  },
+  title: {
+    fontSize: 22,
+    anchor: &quot;start&quot;,
+    color: &quot;#17233c&quot;,
+    offset: 18,
+    subtitleFontSize: 16,
+    subtitleColor: &quot;#667085&quot;,
+    subtitlePadding: 8
+  },
+  legend: {labelFontSize: 15, titleFontSize: 16, orient: &quot;bottom&quot;}
+};</pre></details></section><section id="summary"><h2>5. Compute group sizes and means</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-summary">Copy complete cell</button><a href="main-cells/summary.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-summary">const summary = groups.map(group =&gt; {
+  const students = data.filter(d =&gt; d.group === group);
+  const mean = field =&gt; students.length
+    ? students.reduce((sum, d) =&gt; sum + d[field], 0) / students.length
+    : null;
+  return {group, n: students.length, performance: mean(&quot;performance&quot;), gain: mean(&quot;gain&quot;)};
+});
+
+function meanRows(group, field) {
+  const value = summary.find(d =&gt; d.group === group)[field];
+  return value == null ? [] : [{value, label: &quot;Mean &quot; + value.toFixed(2)}];
+}</pre></details></section><section id="exerciseCounts"><h2>6. Count students at each exercise score</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-exerciseCounts">Copy complete cell</button><a href="main-cells/exerciseCounts.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-exerciseCounts">function countScores(field, levels) {
+  return groups.flatMap(group =&gt; {
+    const students = data.filter(d =&gt; d.group === group);
+    return levels.map(value =&gt; ({
+      group, value, count: students.filter(d =&gt; d[field] === value).length
+    }));
+  });
+}
+
+// All groups use the same observed score positions, including zero counts.
+const scoreValues = [...new Set(data.map(d =&gt; d.performance))].sort((a, b) =&gt; a - b);
+const exerciseCounts = countScores(&quot;performance&quot;, scoreValues);</pre></details></section><section id="gainCounts"><h2>7. Count students at each knowledge gain</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-gainCounts">Copy complete cell</button><a href="main-cells/gainCounts.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-gainCounts">// Include every possible gain from -6 to +6, including zero-count categories.
+const gainValues = Array.from({length: 13}, (_, i) =&gt; i - 6);
+const gainCounts = countScores(&quot;gain&quot;, gainValues);</pre></details></section><section id="frustrationCounts"><h2>8. Compute proportions for the five response levels</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-frustrationCounts">Copy complete cell</button><a href="main-cells/frustrationCounts.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-frustrationCounts">const frustrationCounts = groups.flatMap(group =&gt; {
+  const students = data.filter(d =&gt; d.group === group);
+  let start = 0;
+  return [1, 2, 3, 4, 5].map(level =&gt; {
+    const count = students.filter(d =&gt; d.frustration === level).length;
+    const proportion = students.length ? count / students.length : 0;
+    const end = start + proportion;
+    const result = {group, level, count, proportion, start, end, middle: (start + end) / 2};
+    start = end;
+    return result;
+  });
+});</pre></details></section><section id="pairedCounts"><h2>9. Count students following each pretest–posttest path</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-pairedCounts">Copy complete cell</button><a href="main-cells/pairedCounts.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-pairedCounts">const pairedCounts = groups.flatMap(group =&gt; {
+  const counts = new Map();
+  for (const student of data.filter(d =&gt; d.group === group)) {
+    const path = student.pre + &quot;:&quot; + student.post;
+    if (!counts.has(path)) {
+      counts.set(path, {group, pre: student.pre, post: student.post, path, count: 0});
+    }
+    counts.get(path).count += 1;
+  }
+  return [...counts.values()];
+}).sort((a, b) =&gt; a.count - b.count);
+
+// One shared color scale across all three groups.
+const maxPathCount = Math.max(1, ...pairedCounts.map(d =&gt; d.count));</pre></details></section><section id="dataCheck"><h2>10. Check the loaded sample</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-dataCheck">Copy complete cell</button><a href="main-cells/dataCheck.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-dataCheck">const dataCheck = {
+  students: data.length,
+  uniqueStudents: new Set(data.map(d =&gt; d.pseudonym)).size,
+  groupSizes: Object.fromEntries(summary.map(d =&gt; [d.group, d.n])),
+  allGroupsRecognized: data.every(d =&gt; groups.includes(d.group)),
+  pairingOK: data.every(d =&gt; d.gain === d.post - d.pre),
+  paths: pairedCounts.length,
+  studentsOnPaths: pairedCounts.reduce((sum, d) =&gt; sum + d.count, 0)
+};
+display(dataCheck);</pre></details></section><section id="exerciseSpec"><h2>11. Exercise performance: editable specification</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-exerciseSpec">Copy complete cell</button><a href="main-cells/exerciseSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-exerciseSpec">const exerciseSpec = {
+  $schema: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  hconcat: groups.map((group, index) =&gt; ({
+    title: {frame: &quot;group&quot;, text: group, color: groupColors[group], fontSize: 17, offset: 8},
+    width: 140,
+    height: 140,
+    data: {values: exerciseCounts.filter(d =&gt; d.group === group)},
+    encoding: {
+      y: {
+        field: &quot;value&quot;,
+        type: &quot;quantitative&quot;,
+        scale: {domain: [-5, 105], nice: false},
+        axis: {
+          title: index === 0 ? &quot;Score (%)&quot; : null,
+          values: scoreValues,
+          labels: index === 0,
+          ticks: index === 0,
+          domain: index === 0,
+          grid: false,
+          format: &quot;.1~f&quot;,
+          labelFontSize: 13,
+          labelOverlap: false,
+          labelPadding: 3,
+          titlePadding: 6,
+          titleFontSize: 13
+        }
+      }
+    },
+    layer: [
+      {
+        mark: {type: &quot;bar&quot;, orient: &quot;horizontal&quot;, color: groupColors[group], size: 7},
+        encoding: {
+          x: {
+            field: &quot;count&quot;,
+            type: &quot;quantitative&quot;,
+            scale: {domain: [0, 60], nice: false},
+            axis: {
+              title: &quot;Students&quot;,
+              values: [0, 30, 60],
+              labelFontSize: 13,
+              labelOverlap: false,
+              titleFontSize: 14,
+              titlePadding: 4,
+              labelPadding: 3
+            }
+          },
+          tooltip: [
+            {field: &quot;group&quot;},
+            {field: &quot;value&quot;, title: &quot;Exercise score (%)&quot;},
+            {field: &quot;count&quot;, title: &quot;Students&quot;}
+          ]
+        }
+      },
+      {
+        data: {values: meanRows(group, &quot;performance&quot;)},
+        mark: {type: &quot;rule&quot;, color: &quot;#17233c&quot;, strokeDash: [5, 4], strokeWidth: 2}
+      },
+      {
+        data: {values: meanRows(group, &quot;performance&quot;)},
+        mark: {
+          type: &quot;text&quot;,
+          align: &quot;right&quot;,
+          baseline: &quot;bottom&quot;,
+          dx: -3,
+          dy: -4,
+          fontSize: 13,
+          fontWeight: &quot;bold&quot;,
+          color: &quot;#17233c&quot;
+        },
+        encoding: {x: {datum: 60, type: &quot;quantitative&quot;}, text: {field: &quot;label&quot;}}
+      }
+    ]
+  })),
+  spacing: 18,
+  resolve: {scale: {x: &quot;shared&quot;, y: &quot;shared&quot;}},
+  title: {frame: &quot;group&quot;, text: &quot;Exercise performance&quot;, fontSize: 22, offset: 16},
+  config: chartConfig
+};</pre></details></section><section id="exerciseChart"><h2>12. Exercise performance: chart output</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-exerciseChart">Copy complete cell</button><a href="main-cells/exerciseChart.js" download>Download cell</a><img src="exercise-performance.svg" alt="Exercise performance: chart output"><details open><summary>Show complete code</summary><pre id="code-exerciseChart">const exerciseChart = document.createElement(&quot;div&quot;);
+const exerciseResult = await embed(exerciseChart, exerciseSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(exerciseChart);
+invalidation.then(() =&gt; exerciseResult.finalize());</pre></details></section><section id="frustrationSpec"><h2>13. Reported frustration: editable specification</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-frustrationSpec">Copy complete cell</button><a href="main-cells/frustrationSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-frustrationSpec">const frustrationSpec = {
+  $schema: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  width: 440,
+  height: 140,
+  data: {values: frustrationCounts},
+  title: {
+    frame: &quot;group&quot;,
+    text: &quot;Reported frustration&quot;,
+    subtitle: &quot;Five response levels; lower = less&quot;,
+    fontSize: 22,
+    subtitleFontSize: 13,
+    offset: 13,
+    subtitlePadding: 9
+  },
+  encoding: {
+    x: {field: &quot;group&quot;, type: &quot;nominal&quot;, sort: groups, title: null, axis: {labelFontSize: 14, labelPadding: 4}},
+    y: {
+      field: &quot;start&quot;,
+      type: &quot;quantitative&quot;,
+      title: &quot;Responses (%)&quot;,
+      scale: {domain: [0, 1]},
+      axis: {
+        format: &quot;.0%&quot;,
+        values: [0, 0.5, 1],
+        labelFontSize: 13,
+        titleFontSize: 13,
+        labelPadding: 3,
+        titlePadding: 6
+      }
+    },
+    color: {
+      field: &quot;level&quot;,
+      type: &quot;ordinal&quot;,
+      sort: [1, 2, 3, 4, 5],
+      scale: {domain: [1, 2, 3, 4, 5], range: [&quot;#fff3df&quot;, &quot;#fedbb2&quot;, &quot;#f3b981&quot;, &quot;#d58c50&quot;, &quot;#9a502c&quot;]},
+      legend: {title: null, direction: &quot;horizontal&quot;, offset: 6, labelFontSize: 13}
+    },
+    tooltip: [{field: &quot;group&quot;}, {field: &quot;level&quot;}, {field: &quot;count&quot;}, {field: &quot;proportion&quot;, format: &quot;.1%&quot;}]
+  },
+  layer: [
+    {mark: {type: &quot;bar&quot;, width: 64, stroke: &quot;white&quot;, strokeWidth: 1}, encoding: {y2: {field: &quot;end&quot;}}},
+    {
+      mark: {type: &quot;text&quot;, fontSize: 13},
+      encoding: {
+        y: {field: &quot;middle&quot;, type: &quot;quantitative&quot;},
+        text: {field: &quot;proportion&quot;, format: &quot;.0%&quot;},
+        color: {condition: {test: &quot;datum.level &gt;= 4&quot;, value: &quot;white&quot;}, value: &quot;#17233c&quot;},
+        opacity: {condition: {test: &quot;datum.proportion &gt;= 0.06&quot;, value: 1}, value: 0}
+      }
+    }
+  ],
+  config: chartConfig
+};</pre></details></section><section id="frustrationChart"><h2>14. Reported frustration: chart output</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-frustrationChart">Copy complete cell</button><a href="main-cells/frustrationChart.js" download>Download cell</a><img src="reported-frustration.svg" alt="Reported frustration: chart output"><details open><summary>Show complete code</summary><pre id="code-frustrationChart">const frustrationChart = document.createElement(&quot;div&quot;);
+const frustrationResult = await embed(frustrationChart, frustrationSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(frustrationChart);
+invalidation.then(() =&gt; frustrationResult.finalize());</pre></details></section><section id="gainSpec"><h2>15. Knowledge gains: editable specification</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-gainSpec">Copy complete cell</button><a href="main-cells/gainSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-gainSpec">const gainSpec = {
+  $schema: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  hconcat: groups.map((group, index) =&gt; ({
+    title: {frame: &quot;group&quot;, text: group, color: groupColors[group], fontSize: 17, offset: 8},
+    width: 140,
+    height: 140,
+    data: {values: gainCounts.filter(d =&gt; d.group === group)},
+    encoding: {
+      y: {
+        field: &quot;value&quot;,
+        type: &quot;quantitative&quot;,
+        scale: {domain: [-6.5, 6.5], nice: false},
+        axis: {
+          title: index === 0 ? &quot;Gain (points)&quot; : null,
+          values: [-6, -4, -2, 0, 2, 4, 6],
+          labels: index === 0,
+          ticks: index === 0,
+          domain: index === 0,
+          grid: false,
+          format: &quot;.1~f&quot;,
+          labelFontSize: 13,
+          labelOverlap: false,
+          labelPadding: 3,
+          titlePadding: 6,
+          titleFontSize: 13
+        }
+      }
+    },
+    layer: [
+      {
+        mark: {type: &quot;bar&quot;, orient: &quot;horizontal&quot;, color: groupColors[group], size: 7},
+        encoding: {
+          x: {
+            field: &quot;count&quot;,
+            type: &quot;quantitative&quot;,
+            scale: {domain: [0, 40], nice: false},
+            axis: {
+              title: &quot;Students&quot;,
+              values: [0, 20, 40],
+              labelFontSize: 13,
+              labelOverlap: false,
+              titleFontSize: 14,
+              titlePadding: 4,
+              labelPadding: 3
+            }
+          },
+          tooltip: [
+            {field: &quot;group&quot;},
+            {field: &quot;value&quot;, title: &quot;Knowledge gain (points)&quot;},
+            {field: &quot;count&quot;, title: &quot;Students&quot;}
+          ]
+        }
+      },
+      {
+        data: {values: meanRows(group, &quot;gain&quot;)},
+        mark: {type: &quot;rule&quot;, color: &quot;#17233c&quot;, strokeDash: [5, 4], strokeWidth: 2}
+      },
+      {
+        data: {values: meanRows(group, &quot;gain&quot;)},
+        mark: {
+          type: &quot;text&quot;,
+          align: &quot;right&quot;,
+          baseline: &quot;bottom&quot;,
+          dx: -3,
+          dy: -9,
+          fontSize: 13,
+          fontWeight: &quot;bold&quot;,
+          color: &quot;#17233c&quot;
+        },
+        encoding: {x: {datum: 40, type: &quot;quantitative&quot;}, text: {field: &quot;label&quot;}}
+      }
+    ]
+  })),
+  spacing: 18,
+  resolve: {scale: {x: &quot;shared&quot;, y: &quot;shared&quot;}},
+  title: {frame: &quot;group&quot;, text: &quot;Knowledge gains&quot;, fontSize: 22, offset: 16},
+  config: chartConfig
+};</pre></details></section><section id="gainChart"><h2>16. Knowledge gains: chart output</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-gainChart">Copy complete cell</button><a href="main-cells/gainChart.js" download>Download cell</a><img src="knowledge-gains.svg" alt="Knowledge gains: chart output"><details open><summary>Show complete code</summary><pre id="code-gainChart">const gainChart = document.createElement(&quot;div&quot;);
+const gainResult = await embed(gainChart, gainSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(gainChart);
+invalidation.then(() =&gt; gainResult.finalize());</pre></details></section><section id="pairedSpec"><h2>17. Supplement: pretest and posttest: editable specification</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-pairedSpec">Copy complete cell</button><a href="main-cells/pairedSpec.js" download>Download cell</a><details><summary>Show complete code</summary><pre id="code-pairedSpec">const pairedSpec = {
+  $schema: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  title: {frame: &quot;group&quot;, text: &quot;Supplement: pretest and posttest&quot;, fontSize: 22, offset: 16},
+  data: {values: pairedCounts},
+  transform: [{fold: [&quot;pre&quot;, &quot;post&quot;], as: [&quot;time&quot;, &quot;score&quot;]}],
+  facet: {
+    column: {
+      field: &quot;group&quot;,
+      sort: groups,
+      title: null,
+      header: {labelFontSize: 17, labelColor: &quot;#17233c&quot;, labelFontWeight: &quot;bold&quot;, labelPadding: 3}
+    }
+  },
+  spacing: 24,
+  spec: {
+    width: 130,
+    height: 140,
+    mark: {type: &quot;line&quot;, strokeWidth: 2.5, opacity: 1},
+    encoding: {
+      x: {
+        field: &quot;time&quot;,
+        type: &quot;ordinal&quot;,
+        sort: [&quot;pre&quot;, &quot;post&quot;],
+        title: null,
+        scale: {padding: 0.2},
+        axis: {labelFontSize: 13, labelPadding: 4}
+      },
+      y: {
+        field: &quot;score&quot;,
+        type: &quot;quantitative&quot;,
+        scale: {domain: [0, 6], nice: false},
+        title: &quot;Correct items&quot;,
+        axis: {
+          values: [0, 1, 2, 3, 4, 5, 6],
+          labelFontSize: 13,
+          titleFontSize: 13,
+          labelPadding: 3,
+          titlePadding: 6
+        }
+      },
+      detail: {field: &quot;path&quot;, type: &quot;nominal&quot;},
+      color: {
+        field: &quot;count&quot;,
+        type: &quot;quantitative&quot;,
+        scale: {domain: [1, maxPathCount], nice: false, range: [&quot;#b0bfd7&quot;, &quot;#17233c&quot;]},
+        legend: {
+          title: [&quot;Students&quot;, &quot;on path&quot;],
+          orient: &quot;right&quot;,
+          direction: &quot;vertical&quot;,
+          gradientLength: 95,
+          titleLimit: 100,
+          values: [1, 4, 8, 12, maxPathCount].filter((d, i, a) =&gt; d &lt;= maxPathCount &amp;&amp; a.indexOf(d) === i),
+          format: &quot;d&quot;,
+          titleFontSize: 13,
+          labelFontSize: 12,
+          gradientThickness: 10,
+          offset: 10
+        }
+      },
+      tooltip: [
+        {field: &quot;group&quot;, title: &quot;Group&quot;},
+        {field: &quot;pre&quot;, title: &quot;Pretest&quot;},
+        {field: &quot;post&quot;, title: &quot;Posttest&quot;},
+        {field: &quot;count&quot;, title: &quot;Students&quot;}
+      ]
+    }
+  },
+  resolve: {scale: {y: &quot;shared&quot;, color: &quot;shared&quot;}},
+  config: chartConfig
+};</pre></details></section><section id="pairedChart"><h2>18. Supplement: pretest and posttest: chart output</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-pairedChart">Copy complete cell</button><a href="main-cells/pairedChart.js" download>Download cell</a><img src="pretest-posttest-supplement.svg" alt="Supplement: pretest and posttest: chart output"><details open><summary>Show complete code</summary><pre id="code-pairedChart">const pairedChart = document.createElement(&quot;div&quot;);
+const pairedResult = await embed(pairedChart, pairedSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+display(pairedChart);
+invalidation.then(() =&gt; pairedResult.finalize());</pre></details></section><section id="combinedChart"><h2>19. Combine the four views in reading order</h2><p>Cell type: <strong>JavaScript</strong></p><button data-copy="code-combinedChart">Copy complete cell</button><a href="main-cells/combinedChart.js" download>Download cell</a><details open><summary>Show complete code</summary><pre id="code-combinedChart">const combinedSpec = {
+  $schema: &quot;https://vega.github.io/schema/vega-lite/v6.json&quot;,
+  // Read left to right across the first row, then the second row.
+  concat: [exerciseSpec, frustrationSpec, gainSpec, pairedSpec].map(
+    ({$schema, config, ...view}) =&gt; view
+  ),
+  columns: 2,
+  align: &quot;each&quot;,
+  center: false,
+  spacing: 24,
+  resolve: {scale: {x: &quot;independent&quot;, y: &quot;independent&quot;, color: &quot;independent&quot;}},
+  config: chartConfig
+};
+
+const combinedChart = document.createElement(&quot;div&quot;);
+combinedChart.style.maxWidth = &quot;100%&quot;;
+const combinedResult = await embed(combinedChart, combinedSpec,
+  {actions: false, renderer: &quot;svg&quot;});
+
+// Fit the complete figure to the notebook width, keeping its proportions.
+const combinedSvg = combinedChart.querySelector(&quot;svg&quot;);
+combinedSvg.setAttribute(&quot;viewBox&quot;,
+  &quot;0 0 &quot; + combinedSvg.getAttribute(&quot;width&quot;) + &quot; &quot; + combinedSvg.getAttribute(&quot;height&quot;));
+combinedSvg.style.maxWidth = &quot;100%&quot;;
+combinedSvg.style.height = &quot;auto&quot;;
+
+display(combinedChart);
+invalidation.then(() =&gt; combinedResult.finalize());</pre></details></section>
+<section><h2>Share the notebook</h2><p>In Settings, choose Unlisted or Public access and copy the URL. Check the shared notebook while signed out, including its attachment, all four charts and the combined figure. Students can sign in and Fork their own copy.</p><p>See the <a href="observable-classroom-main.md">complete guide</a> and the <a href="https://observablehq.com/@observablehq/notebooks-user-guide">Observable user guide</a>.</p></section>
+<p>Data: <a href="https://doi.org/10.5281/zenodo.20285307">Zenodo 20285307</a>, CC BY 4.0. Classroom redesign based on Bassner et al. (2026).</p></main>
+<script>document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{const code=document.getElementById(button.dataset.copy);try{await navigator.clipboard.writeText(code.textContent);button.textContent='Copied'}catch{code.closest('details').open=true;const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Code selected — press Ctrl+C or ⌘C to copy'}}));</script></html>

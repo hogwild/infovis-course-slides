@@ -1,0 +1,120 @@
+[
+  {
+    "id": "introduction",
+    "title": "Notebook title and sources",
+    "mode": "md",
+    "code": "# Redesigning figures for a research paper\n\nCompare exercise performance, reported frustration and knowledge gains across three groups: No AI, Iris and ChatGPT. Use the paired-score supplement to see the starting and ending levels behind the gains.\n\nThe attached **ai-programming-analysis.csv** is a processed analysis table: one row per student. This notebook computes chart summaries from that table.\n\nClassroom redesign based on [Bassner et al. (2026)](https://doi.org/10.1016/j.caeai.2025.100537).\nOriginal data: [Zenodo 20285307](https://doi.org/10.5281/zenodo.20285307), CC BY 4.0."
+  },
+  {
+    "id": "embed",
+    "title": "Import the charting library",
+    "mode": "js",
+    "code": "import embed from \"npm:vega-embed@7.1.0\";"
+  },
+  {
+    "id": "data",
+    "title": "Read the processed CSV attachment",
+    "mode": "js",
+    "code": "const csvRows = await FileAttachment(\"ai-programming-analysis.csv\").csv();\nconst numericFields = [\"performance\", \"pre\", \"post\", \"gain\", \"frustration\", \"comprehension\"];\n\n// Keep pseudonym and group as text; convert only the measured fields.\nconst data = csvRows.map((row, index) => {\n  const student = {...row};\n  for (const field of numericFields) {\n    if (row[field] == null || row[field].trim() === \"\" || !Number.isFinite(Number(row[field]))) {\n      throw new Error(\"Missing or invalid \" + field + \" in CSV row \" + (index + 2));\n    }\n    student[field] = Number(row[field]);\n  }\n  return student;\n});"
+  },
+  {
+    "id": "design",
+    "title": "Shared group order, colors and typography",
+    "mode": "js",
+    "code": "const groups = [\"No AI\", \"Iris\", \"ChatGPT\"];\nconst groupColors = {\"No AI\": \"#667085\", Iris: \"#3157a4\", ChatGPT: \"#7656a6\"};\nconst chartConfig = {\n  font: \"Arial\",\n  background: \"white\",\n  view: {stroke: null},\n  axis: {\n    labelFontSize: 17,\n    titleFontSize: 18,\n    titlePadding: 12,\n    labelColor: \"#263248\",\n    titleColor: \"#17233c\",\n    gridColor: \"#e6e8ed\",\n    domainColor: \"#a1a7b3\",\n    labelPadding: 8,\n    labelAngle: 0\n  },\n  title: {\n    fontSize: 22,\n    anchor: \"start\",\n    color: \"#17233c\",\n    offset: 18,\n    subtitleFontSize: 16,\n    subtitleColor: \"#667085\",\n    subtitlePadding: 8\n  },\n  legend: {labelFontSize: 15, titleFontSize: 16, orient: \"bottom\"}\n};"
+  },
+  {
+    "id": "summary",
+    "title": "Compute group sizes and means",
+    "mode": "js",
+    "code": "const summary = groups.map(group => {\n  const students = data.filter(d => d.group === group);\n  const mean = field => students.length\n    ? students.reduce((sum, d) => sum + d[field], 0) / students.length\n    : null;\n  return {group, n: students.length, performance: mean(\"performance\"), gain: mean(\"gain\")};\n});\n\nfunction meanRows(group, field) {\n  const value = summary.find(d => d.group === group)[field];\n  return value == null ? [] : [{value, label: \"Mean \" + value.toFixed(2)}];\n}"
+  },
+  {
+    "id": "exerciseCounts",
+    "title": "Count students at each exercise score",
+    "mode": "js",
+    "code": "function countScores(field, levels) {\n  return groups.flatMap(group => {\n    const students = data.filter(d => d.group === group);\n    return levels.map(value => ({\n      group, value, count: students.filter(d => d[field] === value).length\n    }));\n  });\n}\n\n// All groups use the same observed score positions, including zero counts.\nconst scoreValues = [...new Set(data.map(d => d.performance))].sort((a, b) => a - b);\nconst exerciseCounts = countScores(\"performance\", scoreValues);"
+  },
+  {
+    "id": "gainCounts",
+    "title": "Count students at each knowledge gain",
+    "mode": "js",
+    "code": "// Include every possible gain from -6 to +6, including zero-count categories.\nconst gainValues = Array.from({length: 13}, (_, i) => i - 6);\nconst gainCounts = countScores(\"gain\", gainValues);"
+  },
+  {
+    "id": "frustrationCounts",
+    "title": "Compute proportions for the five response levels",
+    "mode": "js",
+    "code": "const frustrationCounts = groups.flatMap(group => {\n  const students = data.filter(d => d.group === group);\n  let start = 0;\n  return [1, 2, 3, 4, 5].map(level => {\n    const count = students.filter(d => d.frustration === level).length;\n    const proportion = students.length ? count / students.length : 0;\n    const end = start + proportion;\n    const result = {group, level, count, proportion, start, end, middle: (start + end) / 2};\n    start = end;\n    return result;\n  });\n});"
+  },
+  {
+    "id": "pairedCounts",
+    "title": "Count students following each pretest–posttest path",
+    "mode": "js",
+    "code": "const pairedCounts = groups.flatMap(group => {\n  const counts = new Map();\n  for (const student of data.filter(d => d.group === group)) {\n    const path = student.pre + \":\" + student.post;\n    if (!counts.has(path)) {\n      counts.set(path, {group, pre: student.pre, post: student.post, path, count: 0});\n    }\n    counts.get(path).count += 1;\n  }\n  return [...counts.values()];\n}).sort((a, b) => a.count - b.count);\n\n// One shared color scale across all three groups.\nconst maxPathCount = Math.max(1, ...pairedCounts.map(d => d.count));"
+  },
+  {
+    "id": "dataCheck",
+    "title": "Check the loaded sample",
+    "mode": "js",
+    "code": "const dataCheck = {\n  students: data.length,\n  uniqueStudents: new Set(data.map(d => d.pseudonym)).size,\n  groupSizes: Object.fromEntries(summary.map(d => [d.group, d.n])),\n  allGroupsRecognized: data.every(d => groups.includes(d.group)),\n  pairingOK: data.every(d => d.gain === d.post - d.pre),\n  paths: pairedCounts.length,\n  studentsOnPaths: pairedCounts.reduce((sum, d) => sum + d.count, 0)\n};\ndisplay(dataCheck);"
+  },
+  {
+    "id": "exerciseSpec",
+    "title": "Exercise performance: editable specification",
+    "mode": "js",
+    "code": "const exerciseSpec = {\n  $schema: \"https://vega.github.io/schema/vega-lite/v6.json\",\n  hconcat: groups.map((group, index) => ({\n    title: {frame: \"group\", text: group, color: groupColors[group], fontSize: 17, offset: 8},\n    width: 140,\n    height: 140,\n    data: {values: exerciseCounts.filter(d => d.group === group)},\n    encoding: {\n      y: {\n        field: \"value\",\n        type: \"quantitative\",\n        scale: {domain: [-5, 105], nice: false},\n        axis: {\n          title: index === 0 ? \"Score (%)\" : null,\n          values: scoreValues,\n          labels: index === 0,\n          ticks: index === 0,\n          domain: index === 0,\n          grid: false,\n          format: \".1~f\",\n          labelFontSize: 13,\n          labelOverlap: false,\n          labelPadding: 3,\n          titlePadding: 6,\n          titleFontSize: 13\n        }\n      }\n    },\n    layer: [\n      {\n        mark: {type: \"bar\", orient: \"horizontal\", color: groupColors[group], size: 7},\n        encoding: {\n          x: {\n            field: \"count\",\n            type: \"quantitative\",\n            scale: {domain: [0, 60], nice: false},\n            axis: {\n              title: \"Students\",\n              values: [0, 30, 60],\n              labelFontSize: 13,\n              labelOverlap: false,\n              titleFontSize: 14,\n              titlePadding: 4,\n              labelPadding: 3\n            }\n          },\n          tooltip: [\n            {field: \"group\"},\n            {field: \"value\", title: \"Exercise score (%)\"},\n            {field: \"count\", title: \"Students\"}\n          ]\n        }\n      },\n      {\n        data: {values: meanRows(group, \"performance\")},\n        mark: {type: \"rule\", color: \"#17233c\", strokeDash: [5, 4], strokeWidth: 2}\n      },\n      {\n        data: {values: meanRows(group, \"performance\")},\n        mark: {\n          type: \"text\",\n          align: \"right\",\n          baseline: \"bottom\",\n          dx: -3,\n          dy: -4,\n          fontSize: 13,\n          fontWeight: \"bold\",\n          color: \"#17233c\"\n        },\n        encoding: {x: {datum: 60, type: \"quantitative\"}, text: {field: \"label\"}}\n      }\n    ]\n  })),\n  spacing: 18,\n  resolve: {scale: {x: \"shared\", y: \"shared\"}},\n  title: {frame: \"group\", text: \"Exercise performance\", fontSize: 22, offset: 16},\n  config: chartConfig\n};"
+  },
+  {
+    "id": "exerciseChart",
+    "title": "Exercise performance: chart output",
+    "mode": "js",
+    "code": "const exerciseChart = document.createElement(\"div\");\nconst exerciseResult = await embed(exerciseChart, exerciseSpec,\n  {actions: false, renderer: \"svg\"});\ndisplay(exerciseChart);\ninvalidation.then(() => exerciseResult.finalize());",
+    "preview": "exercise-performance.svg"
+  },
+  {
+    "id": "frustrationSpec",
+    "title": "Reported frustration: editable specification",
+    "mode": "js",
+    "code": "const frustrationSpec = {\n  $schema: \"https://vega.github.io/schema/vega-lite/v6.json\",\n  width: 440,\n  height: 140,\n  data: {values: frustrationCounts},\n  title: {\n    frame: \"group\",\n    text: \"Reported frustration\",\n    subtitle: \"Five response levels; lower = less\",\n    fontSize: 22,\n    subtitleFontSize: 13,\n    offset: 13,\n    subtitlePadding: 9\n  },\n  encoding: {\n    x: {field: \"group\", type: \"nominal\", sort: groups, title: null, axis: {labelFontSize: 14, labelPadding: 4}},\n    y: {\n      field: \"start\",\n      type: \"quantitative\",\n      title: \"Responses (%)\",\n      scale: {domain: [0, 1]},\n      axis: {\n        format: \".0%\",\n        values: [0, 0.5, 1],\n        labelFontSize: 13,\n        titleFontSize: 13,\n        labelPadding: 3,\n        titlePadding: 6\n      }\n    },\n    color: {\n      field: \"level\",\n      type: \"ordinal\",\n      sort: [1, 2, 3, 4, 5],\n      scale: {domain: [1, 2, 3, 4, 5], range: [\"#fff3df\", \"#fedbb2\", \"#f3b981\", \"#d58c50\", \"#9a502c\"]},\n      legend: {title: null, direction: \"horizontal\", offset: 6, labelFontSize: 13}\n    },\n    tooltip: [{field: \"group\"}, {field: \"level\"}, {field: \"count\"}, {field: \"proportion\", format: \".1%\"}]\n  },\n  layer: [\n    {mark: {type: \"bar\", width: 64, stroke: \"white\", strokeWidth: 1}, encoding: {y2: {field: \"end\"}}},\n    {\n      mark: {type: \"text\", fontSize: 13},\n      encoding: {\n        y: {field: \"middle\", type: \"quantitative\"},\n        text: {field: \"proportion\", format: \".0%\"},\n        color: {condition: {test: \"datum.level >= 4\", value: \"white\"}, value: \"#17233c\"},\n        opacity: {condition: {test: \"datum.proportion >= 0.06\", value: 1}, value: 0}\n      }\n    }\n  ],\n  config: chartConfig\n};"
+  },
+  {
+    "id": "frustrationChart",
+    "title": "Reported frustration: chart output",
+    "mode": "js",
+    "code": "const frustrationChart = document.createElement(\"div\");\nconst frustrationResult = await embed(frustrationChart, frustrationSpec,\n  {actions: false, renderer: \"svg\"});\ndisplay(frustrationChart);\ninvalidation.then(() => frustrationResult.finalize());",
+    "preview": "reported-frustration.svg"
+  },
+  {
+    "id": "gainSpec",
+    "title": "Knowledge gains: editable specification",
+    "mode": "js",
+    "code": "const gainSpec = {\n  $schema: \"https://vega.github.io/schema/vega-lite/v6.json\",\n  hconcat: groups.map((group, index) => ({\n    title: {frame: \"group\", text: group, color: groupColors[group], fontSize: 17, offset: 8},\n    width: 140,\n    height: 140,\n    data: {values: gainCounts.filter(d => d.group === group)},\n    encoding: {\n      y: {\n        field: \"value\",\n        type: \"quantitative\",\n        scale: {domain: [-6.5, 6.5], nice: false},\n        axis: {\n          title: index === 0 ? \"Gain (points)\" : null,\n          values: [-6, -4, -2, 0, 2, 4, 6],\n          labels: index === 0,\n          ticks: index === 0,\n          domain: index === 0,\n          grid: false,\n          format: \".1~f\",\n          labelFontSize: 13,\n          labelOverlap: false,\n          labelPadding: 3,\n          titlePadding: 6,\n          titleFontSize: 13\n        }\n      }\n    },\n    layer: [\n      {\n        mark: {type: \"bar\", orient: \"horizontal\", color: groupColors[group], size: 7},\n        encoding: {\n          x: {\n            field: \"count\",\n            type: \"quantitative\",\n            scale: {domain: [0, 40], nice: false},\n            axis: {\n              title: \"Students\",\n              values: [0, 20, 40],\n              labelFontSize: 13,\n              labelOverlap: false,\n              titleFontSize: 14,\n              titlePadding: 4,\n              labelPadding: 3\n            }\n          },\n          tooltip: [\n            {field: \"group\"},\n            {field: \"value\", title: \"Knowledge gain (points)\"},\n            {field: \"count\", title: \"Students\"}\n          ]\n        }\n      },\n      {\n        data: {values: meanRows(group, \"gain\")},\n        mark: {type: \"rule\", color: \"#17233c\", strokeDash: [5, 4], strokeWidth: 2}\n      },\n      {\n        data: {values: meanRows(group, \"gain\")},\n        mark: {\n          type: \"text\",\n          align: \"right\",\n          baseline: \"bottom\",\n          dx: -3,\n          dy: -9,\n          fontSize: 13,\n          fontWeight: \"bold\",\n          color: \"#17233c\"\n        },\n        encoding: {x: {datum: 40, type: \"quantitative\"}, text: {field: \"label\"}}\n      }\n    ]\n  })),\n  spacing: 18,\n  resolve: {scale: {x: \"shared\", y: \"shared\"}},\n  title: {frame: \"group\", text: \"Knowledge gains\", fontSize: 22, offset: 16},\n  config: chartConfig\n};"
+  },
+  {
+    "id": "gainChart",
+    "title": "Knowledge gains: chart output",
+    "mode": "js",
+    "code": "const gainChart = document.createElement(\"div\");\nconst gainResult = await embed(gainChart, gainSpec,\n  {actions: false, renderer: \"svg\"});\ndisplay(gainChart);\ninvalidation.then(() => gainResult.finalize());",
+    "preview": "knowledge-gains.svg"
+  },
+  {
+    "id": "pairedSpec",
+    "title": "Supplement: pretest and posttest: editable specification",
+    "mode": "js",
+    "code": "const pairedSpec = {\n  $schema: \"https://vega.github.io/schema/vega-lite/v6.json\",\n  title: {frame: \"group\", text: \"Supplement: pretest and posttest\", fontSize: 22, offset: 16},\n  data: {values: pairedCounts},\n  transform: [{fold: [\"pre\", \"post\"], as: [\"time\", \"score\"]}],\n  facet: {\n    column: {\n      field: \"group\",\n      sort: groups,\n      title: null,\n      header: {labelFontSize: 17, labelColor: \"#17233c\", labelFontWeight: \"bold\", labelPadding: 3}\n    }\n  },\n  spacing: 24,\n  spec: {\n    width: 130,\n    height: 140,\n    mark: {type: \"line\", strokeWidth: 2.5, opacity: 1},\n    encoding: {\n      x: {\n        field: \"time\",\n        type: \"ordinal\",\n        sort: [\"pre\", \"post\"],\n        title: null,\n        scale: {padding: 0.2},\n        axis: {labelFontSize: 13, labelPadding: 4}\n      },\n      y: {\n        field: \"score\",\n        type: \"quantitative\",\n        scale: {domain: [0, 6], nice: false},\n        title: \"Correct items\",\n        axis: {\n          values: [0, 1, 2, 3, 4, 5, 6],\n          labelFontSize: 13,\n          titleFontSize: 13,\n          labelPadding: 3,\n          titlePadding: 6\n        }\n      },\n      detail: {field: \"path\", type: \"nominal\"},\n      color: {\n        field: \"count\",\n        type: \"quantitative\",\n        scale: {domain: [1, maxPathCount], nice: false, range: [\"#b0bfd7\", \"#17233c\"]},\n        legend: {\n          title: [\"Students\", \"on path\"],\n          orient: \"right\",\n          direction: \"vertical\",\n          gradientLength: 95,\n          titleLimit: 100,\n          values: [1, 4, 8, 12, maxPathCount].filter((d, i, a) => d <= maxPathCount && a.indexOf(d) === i),\n          format: \"d\",\n          titleFontSize: 13,\n          labelFontSize: 12,\n          gradientThickness: 10,\n          offset: 10\n        }\n      },\n      tooltip: [\n        {field: \"group\", title: \"Group\"},\n        {field: \"pre\", title: \"Pretest\"},\n        {field: \"post\", title: \"Posttest\"},\n        {field: \"count\", title: \"Students\"}\n      ]\n    }\n  },\n  resolve: {scale: {y: \"shared\", color: \"shared\"}},\n  config: chartConfig\n};"
+  },
+  {
+    "id": "pairedChart",
+    "title": "Supplement: pretest and posttest: chart output",
+    "mode": "js",
+    "code": "const pairedChart = document.createElement(\"div\");\nconst pairedResult = await embed(pairedChart, pairedSpec,\n  {actions: false, renderer: \"svg\"});\ndisplay(pairedChart);\ninvalidation.then(() => pairedResult.finalize());",
+    "preview": "pretest-posttest-supplement.svg"
+  },
+  {
+    "id": "combinedChart",
+    "title": "Combine the four views in reading order",
+    "mode": "js",
+    "code": "const combinedSpec = {\n  $schema: \"https://vega.github.io/schema/vega-lite/v6.json\",\n  // Read left to right across the first row, then the second row.\n  concat: [exerciseSpec, frustrationSpec, gainSpec, pairedSpec].map(\n    ({$schema, config, ...view}) => view\n  ),\n  columns: 2,\n  align: \"each\",\n  center: false,\n  spacing: 24,\n  resolve: {scale: {x: \"independent\", y: \"independent\", color: \"independent\"}},\n  config: chartConfig\n};\n\nconst combinedChart = document.createElement(\"div\");\ncombinedChart.style.maxWidth = \"100%\";\nconst combinedResult = await embed(combinedChart, combinedSpec,\n  {actions: false, renderer: \"svg\"});\n\n// Fit the complete figure to the notebook width, keeping its proportions.\nconst combinedSvg = combinedChart.querySelector(\"svg\");\ncombinedSvg.setAttribute(\"viewBox\",\n  \"0 0 \" + combinedSvg.getAttribute(\"width\") + \" \" + combinedSvg.getAttribute(\"height\"));\ncombinedSvg.style.maxWidth = \"100%\";\ncombinedSvg.style.height = \"auto\";\n\ndisplay(combinedChart);\ninvalidation.then(() => combinedResult.finalize());"
+  }
+]

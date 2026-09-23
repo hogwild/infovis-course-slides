@@ -1,0 +1,11 @@
+rainPosition = t => ({
+  x: position(t).x,
+  y: {field: "rowY", type: "quantitative",
+    title: null,
+    scale: {domain: [-0.5, 2.5], reverse: true},
+    axis: {values: [0, 1, 2], grid: false,
+      ticks: false, labelPadding: 10,
+      labelExpr:
+        "['Adelie','Chinstrap','Gentoo']" +
+        "[datum.value]"}}
+})

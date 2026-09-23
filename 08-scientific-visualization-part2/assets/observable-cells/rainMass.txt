@@ -1,0 +1,1 @@
+rainMass = draw(rainPanel(traits[0]))

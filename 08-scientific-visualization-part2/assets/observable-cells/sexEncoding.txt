@@ -1,0 +1,12 @@
+sexEncoding = ({
+  color: {
+    field: "sex", type: "nominal", title: "Sex",
+    scale: {domain: ["female", "male"],
+      range: ["#3157a4", "#c9455a"]}
+  },
+  shape: {
+    field: "sex", type: "nominal", title: "Sex",
+    scale: {domain: ["female", "male"],
+      range: ["circle", "diamond"]}
+  }
+})

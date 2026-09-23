@@ -1,0 +1,16 @@
+meanSpec = ({
+  width: 540, height: 310, data: {values: summary},
+  encoding: {
+    x: {field: "group", type: "nominal", sort: groups,
+      title: null},
+    y: {field: "performance", type: "quantitative",
+      title: "Exercise score (%)",
+      scale: {domain: [0, 100]}}, color: condition},
+  layer: [
+    {mark: {type: "point", shape: "diamond",
+      filled: true, size: 220}},
+    {mark: {type: "text", dy: -20, fontSize: 20},
+      encoding: {text: {field: "performance",
+        format: ".2f"}}}
+  ]
+})

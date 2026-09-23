@@ -1,0 +1,18 @@
+step,reason,excluded,remaining
+1,Posttest before pretest,13,439
+2,Pre-post gap < 10 minutes,4,435
+3,Pre-post gap > 2 hours,21,414
+4,First submission (+1h) before pretest,10,404
+5,Failed attention check: POSKQAC01,7,397
+6,Failed attention check: PREKQAC01,6,391
+7,Failed attention check: POSIG04[SQ007],3,388
+8,Failed attention check: POSPM02[SQ007],10,378
+9,Last valid submission after posttest,0,378
+10,Pretest before study window,40,338
+11,No submissions,0,338
+12,Opt-out detected,4,334
+13,AI group without message history,22,312
+14,Author choice: gender outside Male/Female,1,311
+15,Author choice: age outside 0-33 or missing,10,301
+16,Author choice: experience outside selected levels,9,292
+17,Exercise duration > 7600 seconds or missing,17,275

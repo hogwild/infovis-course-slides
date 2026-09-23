@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "config": {
+    "background": "#ffffff",
+    "view": {
+      "stroke": "#d9dde5"
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 14,
+      "titleColor": "#17233c",
+      "labelColor": "#445064",
+      "gridColor": "#e8ebf0"
+    },
+    "header": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#17233c"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  },
+  "width": 360,
+  "height": 270,
+  "data": {
+    "url": "sleepstudy.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Days",
+      "type": "quantitative",
+      "title": "Study day",
+      "scale": {
+        "domain": [
+          0,
+          9
+        ]
+      },
+      "axis": {
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "y": {
+      "field": "Reaction",
+      "aggregate": "mean",
+      "type": "quantitative",
+      "title": "Mean reaction time (ms)",
+      "scale": {
+        "domain": [
+          240,
+          360
+        ]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "color": "#3157a4"
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 90,
+        "color": "#3157a4"
+      }
+    }
+  ]
+}

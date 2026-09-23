@@ -1,0 +1,8 @@
+overviewSpec = ({width: 470, height: 255, data: {values: overviewRows},
+  title: {text: "Means relative to No AI", subtitle: "Difference divided by No AI sample SD"},
+  layer: [{mark: {type: "rule", color: "#a1a7b3"}, encoding: {x: {datum: 0}}},
+    {mark: {type: "point", filled: true, size: 120}, encoding: {
+      x: {field: "standardized", type: "quantitative", title: "No AI standard deviations", scale: {domain: [-1.2,1.4]}},
+      y: {field: "metric", type: "nominal", sort: ["performance","gain","frustration"], title: null},
+      yOffset: {field: "group", sort: groups}, color: {...condition, legend: {title: null}}}}]
+})

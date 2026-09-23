@@ -1,0 +1,43 @@
+{
+  "source_pptx": "Design Figures for A Research Paper.pptx",
+  "source_sha256": "22407d4824b65243c4c873845451bf665eb9e1f48c03d833bf572994742b0922",
+  "paper_doi": "10.1016/j.caeai.2025.100537",
+  "assets": [
+    {
+      "file": "bassner-2026-paper-introduction.png",
+      "source_slide": 1,
+      "media": "ppt/media/image3.png",
+      "description": "Paper title and abstract, page 1"
+    },
+    {
+      "file": "bassner-2026-experiment-flow.png",
+      "source_slide": 2,
+      "media": "ppt/media/image4.png",
+      "description": "Figure 2 procedure excerpt, page 10"
+    },
+    {
+      "file": "ai-programming-processed-preview.png",
+      "source_slide": 4,
+      "media": "ppt/media/image2.png",
+      "description": "Processed analysis data screenshot"
+    },
+    {
+      "file": "bassner-2026-figure5.png",
+      "source_slide": 8,
+      "media": "ppt/media/image5.png",
+      "description": "Original Figure 5 and caption, page 14"
+    },
+    {
+      "file": "bassner-2026-figure3-introduction.png",
+      "source_slide": 6,
+      "media": "ppt/media/image1.png",
+      "description": "Original Figure 3 and caption, page 13"
+    },
+    {
+      "file": "bassner-2026-figure4-introduction.png",
+      "source_slide": 7,
+      "media": "ppt/media/image6.png",
+      "description": "Original Figure 4 and caption, page 14"
+    }
+  ]
+}

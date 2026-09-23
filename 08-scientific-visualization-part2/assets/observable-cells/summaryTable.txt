@@ -1,0 +1,4 @@
+summaryTable = Inputs.table(summary, {
+  columns: ["trait", "species", "sex", "n", "mean", "min", "max"],
+  format: {mean: d => d.toFixed(2)}
+})

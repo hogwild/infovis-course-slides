@@ -1,0 +1,11 @@
+responses = groups.flatMap(group => {
+  const rows = data.filter(d => d.group === group);
+  let start = 0;
+  return [1,2,3,4,5].map(level => {
+    const count = rows.filter(d => d.frustration === level).length;
+    const proportion = count / rows.length, end = start + proportion;
+    const out = {group, level, count, proportion, start, end, middle: (start + end) / 2};
+    start = end;
+    return out;
+  });
+})

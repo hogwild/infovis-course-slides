@@ -1,0 +1,15 @@
+meanLayer = t => ({
+  mark: {type: "point", filled: true,
+    size: 145, opacity: 1,
+    stroke: "white", strokeWidth: 1.5},
+  encoding: {
+    ...sexEncoding,
+    x: {...position(t).x, aggregate: "mean"},
+    tooltip: [
+      {field: "species"}, {field: "sex"},
+      {field: t.field, aggregate: "mean",
+        type: "quantitative",
+        title: "Mean", format: ".1f"}
+    ]
+  }
+})

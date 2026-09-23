@@ -1,0 +1,9 @@
+position = t => ({
+  x: {field: t.field, type: "quantitative",
+    title: t.axis,
+    scale: {domain: t.domain, zero: false},
+    axis: {tickCount: 5}},
+  y: {field: "species", type: "nominal",
+    title: null, sort: species,
+    axis: {labelPadding: 10, ticks: false}}
+})

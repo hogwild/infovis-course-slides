@@ -1,0 +1,9 @@
+articleIntro = md`# Exercise performance and immediate learning with AI support
+
+Bassner et al. studied an approximately 90-minute Java concurrency exercise in an introductory programming course. Students received no AI support, the Iris tutor, or unrestricted ChatGPT. Iris and ChatGPT also differed in access to course and code context.
+
+In this short programming exercise, students in both AI-supported conditions achieved higher exercise scores and reported less frustration than the no-AI group, but the study did not detect greater immediate conceptual knowledge gains.
+
+This is a classroom paraphrase of the results, not a quotation. The figure below uses the authors' retained analysis sample of 275 participants from 452 raw records.
+
+[Paper](https://doi.org/10.1016/j.caeai.2025.100537) · [Data version](https://doi.org/10.5281/zenodo.20285307)`

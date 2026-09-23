@@ -1,0 +1,12 @@
+channels = ({
+  x: {field: "body_mass_g", type: "quantitative",
+      title: "Body mass (g)",
+      scale: {domain: [2500, 6500], zero: false},
+      axis: {format: ",.0f", tickCount: 5}},
+  y: {field: "species", type: "nominal",
+      sort: species, title: null},
+  color: {field: "species", type: "nominal",
+      scale: {domain: species,
+        range: ["#3157a4", "#7656a6", "#258276"]},
+      legend: null}
+})

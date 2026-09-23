@@ -1,0 +1,7 @@
+frequency = (field) => groups.flatMap((group, index) => {
+  const rows = data.filter(d => d.group === group);
+  const values = [...new Set(rows.map(d => d[field]))]
+    .sort((a,b) => a-b);
+  return values.map(value => ({group, index, value,
+    count: rows.filter(d => d[field] === value).length}));
+})

@@ -1,0 +1,18 @@
+relativeSpec = ({
+  data: {values: differences}, width: 640, height: 185,
+  encoding: {
+    x: {field: "trait", type: "nominal", title: null,
+      sort: traits.map(t => t.label), axis: {labelAngle: 0}},
+    y: {field: "species", type: "nominal", title: null, sort: species}
+  },
+  layer: [
+    {mark: {type: "rect", stroke: "white", strokeWidth: 3},
+      encoding: {color: {field: "relative", type: "quantitative",
+        title: "Male excess (%)", legend: {format: ".0%"},
+        scale: {domain: [-0.25, 0, 0.25], range: ["#b75e2a", "#f5f4f7", "#7656a6"]}}}},
+    {mark: {type: "text", fontSize: 20, fontWeight: "bold"},
+      encoding: {text: {field: "relative", format: "+.1%"},
+        color: {condition: {test: "abs(datum.relative) > 0.14",
+          value: "white"}, value: "#17233c"}}}
+  ]
+})

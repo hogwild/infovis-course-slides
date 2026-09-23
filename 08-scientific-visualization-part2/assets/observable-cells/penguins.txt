@@ -1,0 +1,4 @@
+penguins = raw.filter(d =>
+  ["female", "male"].includes(d.sex) &&
+  traits.every(t => Number.isFinite(d[t.field]))
+).map((d, i) => ({...d, row: i}))

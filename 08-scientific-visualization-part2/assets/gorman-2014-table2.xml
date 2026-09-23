@@ -1,0 +1,187 @@
+<table-wrap xmlns:ns0="http://www.w3.org/1999/xlink" id="pone-0090081-t002" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0090081.t002</object-id><label>Table 2</label><caption>
+<title>Parameter estimates and likelihoods from candidate models for predicting sex of <italic>Pygoscelis</italic> penguins.</title>
+</caption><alternatives><graphic id="pone-0090081-t002-2" position="float" mimetype="image" ns0:href="info:doi/10.1371/journal.pone.0090081.t002" ns0:type="simple" />
+<table><colgroup span="1"><col align="left" span="1" /><col align="center" span="1" /><col align="center" span="1" /><col align="center" span="1" /><col align="center" span="1" /><col align="center" span="1" /></colgroup>
+<thead>
+<tr>
+<td align="left" rowspan="1" colspan="1">Species</td>
+<td align="left" rowspan="1" colspan="1">Response variable</td>
+<td align="left" rowspan="1" colspan="1">Explanatory variable</td>
+<td align="left" rowspan="1" colspan="1">Parameter likelihood</td>
+<td align="left" rowspan="1" colspan="1">Parameter estimate (±1 SE)</td>
+<td align="left" rowspan="1" colspan="1">Size Dimorphism Index</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" rowspan="1" colspan="1">Adélie penguin</td>
+<td align="left" rowspan="1" colspan="1">Sex</td>
+<td align="left" rowspan="1" colspan="1">Intercept</td>
+<td align="left" rowspan="1" colspan="1">1.000</td>
+<td align="left" rowspan="1" colspan="1">77.00±23.38</td>
+<td align="left" rowspan="1" colspan="1" />
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Culmen length</td>
+<td align="left" rowspan="1" colspan="1">0.999</td>
+<td align="left" rowspan="1" colspan="1">−1.04±0.34</td>
+<td align="left" rowspan="1" colspan="1">−0.09</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Culmen depth</td>
+<td align="left" rowspan="1" colspan="1">0.691</td>
+<td align="left" rowspan="1" colspan="1">−0.58±0.41</td>
+<td align="left" rowspan="1" colspan="1">−0.08</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Flipper length</td>
+<td align="left" rowspan="1" colspan="1">0.299</td>
+<td align="left" rowspan="1" colspan="1">0.03±0.03</td>
+<td align="left" rowspan="1" colspan="1">−0.02</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Body mass</td>
+<td align="left" rowspan="1" colspan="1">0.999</td>
+<td align="left" rowspan="1" colspan="1">−0.009±0.003</td>
+<td align="left" rowspan="1" colspan="1">−0.20</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">AVE -0.10 (Overall)</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">AVE -0.06 (-Body mass)</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1">Chinstrap penguin</td>
+<td align="left" rowspan="1" colspan="1">Sex</td>
+<td align="left" rowspan="1" colspan="1">Intercept</td>
+<td align="left" rowspan="1" colspan="1">1.000</td>
+<td align="left" rowspan="1" colspan="1">88.86±37.16</td>
+<td align="left" rowspan="1" colspan="1" />
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Culmen length</td>
+<td align="left" rowspan="1" colspan="1">0.816</td>
+<td align="left" rowspan="1" colspan="1">−0.687±0.37</td>
+<td align="left" rowspan="1" colspan="1">−0.11</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Culmen depth</td>
+<td align="left" rowspan="1" colspan="1">0.841</td>
+<td align="left" rowspan="1" colspan="1">−2.01±1.07</td>
+<td align="left" rowspan="1" colspan="1">−0.10</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Flipper length</td>
+<td align="left" rowspan="1" colspan="1">0.407</td>
+<td align="left" rowspan="1" colspan="1">−0.12±0.13</td>
+<td align="left" rowspan="1" colspan="1">−0.05</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Body mass</td>
+<td align="left" rowspan="1" colspan="1">0.328</td>
+<td align="left" rowspan="1" colspan="1">0.002±0.002</td>
+<td align="left" rowspan="1" colspan="1">−0.10</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">AVE -0.09 (Overall)</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">AVE -0.09 (-Body mass)</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1">Gentoo penguin</td>
+<td align="left" rowspan="1" colspan="1">Sex</td>
+<td align="left" rowspan="1" colspan="1">Intercept</td>
+<td align="left" rowspan="1" colspan="1">1.000</td>
+<td align="left" rowspan="1" colspan="1">138.78±57.35</td>
+<td align="left" rowspan="1" colspan="1" />
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Culmen length</td>
+<td align="left" rowspan="1" colspan="1">0.739</td>
+<td align="left" rowspan="1" colspan="1">−0.72 ±0.46</td>
+<td align="left" rowspan="1" colspan="1">−0.08</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Culmen depth</td>
+<td align="left" rowspan="1" colspan="1">0.954</td>
+<td align="left" rowspan="1" colspan="1">−3.05±1.50</td>
+<td align="left" rowspan="1" colspan="1">−0.10</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Flipper length</td>
+<td align="left" rowspan="1" colspan="1">0.299</td>
+<td align="left" rowspan="1" colspan="1">−0.02±0.08</td>
+<td align="left" rowspan="1" colspan="1">−0.04</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">Body mass</td>
+<td align="left" rowspan="1" colspan="1">0.999</td>
+<td align="left" rowspan="1" colspan="1">−0.01±0.004</td>
+<td align="left" rowspan="1" colspan="1">−0.17</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">AVE -0.10 (Overall)</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1" />
+<td align="left" rowspan="1" colspan="1">AVE -0.07 (-Body mass)</td>
+</tr>
+</tbody>
+</table>
+</alternatives><table-wrap-foot><fn id="nt103"><label /><p>Parameter estimates (±1 SE) are weighted averages, and standard errors are based on unconditional variances. Parameter likelihoods are Akaike weight (<italic>w</italic>) values summed across all models that include the variable. Size dimorphism indices are also reported for each structural parameter.</p></fn><fn id="nt104"><label /><p>Abbreviations: ± 1SE  =  plus or minus 1 standard error, AVE  =  average.</p></fn></table-wrap-foot></table-wrap>
+

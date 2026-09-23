@@ -1,0 +1,1158 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Focused Teacher-LLM comparison of fairness ratings and adjusted revision scores from Weidlich et al. (2025). Left intervals are one SE; right intervals are 95% CIs.",
+  "width": 1280,
+  "height": 720,
+  "padding": 0,
+  "autosize": "none",
+  "background": "#fcfaf6",
+  "data": [
+    {
+      "name": "fairness",
+      "values": [
+        {
+          "source": "Teacher",
+          "mean": 6.69,
+          "se": 0.61,
+          "low": 6.08,
+          "high": 7.3
+        },
+        {
+          "source": "LLM",
+          "mean": 8.49,
+          "se": 0.32,
+          "low": 8.17,
+          "high": 8.81
+        }
+      ]
+    },
+    {
+      "name": "argumentation",
+      "values": [
+        {
+          "source": "Teacher",
+          "mean": 3.04,
+          "ci_low": 2.84,
+          "ci_high": 3.24,
+          "low": 2.84,
+          "high": 3.24
+        },
+        {
+          "source": "LLM",
+          "mean": 2.59,
+          "ci_low": 2.38,
+          "ci_high": 2.79,
+          "low": 2.38,
+          "high": 2.79
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 34
+          },
+          "text": {
+            "value": "LECTURE 08  /  RESEARCH FIGURE DRAFT"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fill": {
+            "value": "#7656a6"
+          },
+          "fontWeight": {
+            "value": 700
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 82
+          },
+          "text": {
+            "value": "LLM feedback was rated fairer;"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 34
+          },
+          "fill": {
+            "value": "#17233c"
+          },
+          "fontWeight": {
+            "value": 700
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 124
+          },
+          "text": {
+            "value": "teacher feedback led to higher argumentation scores."
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 34
+          },
+          "fill": {
+            "value": "#17233c"
+          },
+          "fontWeight": {
+            "value": 700
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 160
+          },
+          "text": {
+            "value": "A focused comparison in a randomized study; students were not told their feedback source."
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 18
+          },
+          "fill": {
+            "value": "#667085"
+          },
+          "fontWeight": {
+            "value": 400
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 186
+          },
+          "x2": {
+            "value": 1216
+          },
+          "y2": {
+            "value": 186
+          },
+          "stroke": {
+            "value": "#d8dbe4"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 227
+          },
+          "text": {
+            "value": "A   Perceived fairness"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 24
+          },
+          "fill": {
+            "value": "#17233c"
+          },
+          "fontWeight": {
+            "value": 700
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 257
+          },
+          "text": {
+            "value": "Winsorized mean ± 1 standard error (SE)"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 18
+          },
+          "fill": {
+            "value": "#667085"
+          },
+          "fontWeight": {
+            "value": 400
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 704
+          },
+          "y": {
+            "value": 227
+          },
+          "text": {
+            "value": "B   Revised argumentation quality"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 24
+          },
+          "fill": {
+            "value": "#17233c"
+          },
+          "fontWeight": {
+            "value": 700
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 704
+          },
+          "y": {
+            "value": 257
+          },
+          "text": {
+            "value": "Adjusted mean and 95% confidence interval"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 18
+          },
+          "fill": {
+            "value": "#667085"
+          },
+          "fontWeight": {
+            "value": 400
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 704
+          },
+          "y": {
+            "value": 283
+          },
+          "text": {
+            "value": "Adjusted for initial submission quality"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 16
+          },
+          "fill": {
+            "value": "#667085"
+          },
+          "fontWeight": {
+            "value": 400
+          }
+        }
+      }
+    },
+    {
+      "type": "group",
+      "name": "fairness_panel",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 176
+          },
+          "y": {
+            "value": 305
+          },
+          "width": {
+            "value": 408
+          },
+          "height": {
+            "value": 180
+          }
+        }
+      },
+      "data": [
+        {
+          "name": "grid_ticks",
+          "values": [
+            {
+              "value": 0
+            },
+            {
+              "value": 2
+            },
+            {
+              "value": 4
+            },
+            {
+              "value": 6
+            },
+            {
+              "value": 8
+            },
+            {
+              "value": 10
+            }
+          ]
+        }
+      ],
+      "scales": [
+        {
+          "name": "value",
+          "type": "linear",
+          "domain": [
+            0,
+            10
+          ],
+          "range": [
+            0,
+            408
+          ],
+          "zero": false,
+          "nice": false
+        },
+        {
+          "name": "source",
+          "type": "ordinal",
+          "domain": [
+            "Teacher",
+            "LLM"
+          ],
+          "range": [
+            42,
+            139
+          ]
+        },
+        {
+          "name": "color",
+          "type": "ordinal",
+          "domain": [
+            "Teacher",
+            "LLM"
+          ],
+          "range": [
+            "#3157a4",
+            "#c9455a"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "ordinal",
+          "domain": [
+            "Teacher",
+            "LLM"
+          ],
+          "range": [
+            "circle",
+            "diamond"
+          ]
+        }
+      ],
+      "axes": [
+        {
+          "orient": "bottom",
+          "scale": "value",
+          "values": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "grid": false,
+          "domainColor": "#d8dbe4",
+          "tickColor": "#d8dbe4",
+          "labelFont": "Arial",
+          "labelFontSize": 17,
+          "labelColor": "#667085",
+          "labelPadding": 10,
+          "title": "Fairness rating (10-point measure)",
+          "titleFont": "Arial",
+          "titleFontSize": 17,
+          "titleFontWeight": "normal",
+          "titleColor": "#17233c",
+          "titlePadding": 17,
+          "zindex": 0
+        },
+        {
+          "orient": "left",
+          "scale": "source",
+          "domain": false,
+          "ticks": false,
+          "labelFont": "Arial",
+          "labelFontSize": 19,
+          "labelFontWeight": "bold",
+          "labelColor": "#17233c",
+          "labelPadding": 18,
+          "labelLimit": 110
+        }
+      ],
+      "marks": [
+        {
+          "type": "rule",
+          "from": {
+            "data": "grid_ticks"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "value"
+              },
+              "y": {
+                "value": 0
+              },
+              "y2": {
+                "value": 180
+              },
+              "stroke": {
+                "value": "#d8dbe4"
+              },
+              "strokeOpacity": {
+                "value": 0.45
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "from": {
+            "data": "fairness"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "low"
+              },
+              "x2": {
+                "scale": "value",
+                "field": "high"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source"
+              },
+              "stroke": {
+                "scale": "color",
+                "field": "source"
+              },
+              "strokeWidth": {
+                "value": 3
+              }
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "from": {
+            "data": "fairness"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "low"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source",
+                "offset": -7
+              },
+              "y2": {
+                "scale": "source",
+                "field": "source",
+                "offset": 7
+              },
+              "stroke": {
+                "scale": "color",
+                "field": "source"
+              },
+              "strokeWidth": {
+                "value": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "from": {
+            "data": "fairness"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "high"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source",
+                "offset": -7
+              },
+              "y2": {
+                "scale": "source",
+                "field": "source",
+                "offset": 7
+              },
+              "stroke": {
+                "scale": "color",
+                "field": "source"
+              },
+              "strokeWidth": {
+                "value": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "from": {
+            "data": "fairness"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "mean"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source"
+              },
+              "shape": {
+                "scale": "shape",
+                "field": "source"
+              },
+              "size": {
+                "value": 175
+              },
+              "fill": {
+                "scale": "color",
+                "field": "source"
+              },
+              "stroke": {
+                "value": "#fcfaf6"
+              },
+              "strokeWidth": {
+                "value": 1.5
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {
+            "data": "fairness"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "mean"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source",
+                "offset": -21
+              },
+              "text": {
+                "signal": "format(datum.mean, '.2f')"
+              },
+              "align": {
+                "value": "center"
+              },
+              "font": {
+                "value": "Arial"
+              },
+              "fontSize": {
+                "value": 21
+              },
+              "fontWeight": {
+                "value": "bold"
+              },
+              "fill": {
+                "scale": "color",
+                "field": "source"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "argumentation_panel",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 808
+          },
+          "y": {
+            "value": 305
+          },
+          "width": {
+            "value": 408
+          },
+          "height": {
+            "value": 180
+          }
+        }
+      },
+      "data": [
+        {
+          "name": "grid_ticks",
+          "values": [
+            {
+              "value": 0
+            },
+            {
+              "value": 1
+            },
+            {
+              "value": 2
+            },
+            {
+              "value": 3
+            },
+            {
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "scales": [
+        {
+          "name": "value",
+          "type": "linear",
+          "domain": [
+            0,
+            4
+          ],
+          "range": [
+            0,
+            408
+          ],
+          "zero": false,
+          "nice": false
+        },
+        {
+          "name": "source",
+          "type": "ordinal",
+          "domain": [
+            "Teacher",
+            "LLM"
+          ],
+          "range": [
+            42,
+            139
+          ]
+        },
+        {
+          "name": "color",
+          "type": "ordinal",
+          "domain": [
+            "Teacher",
+            "LLM"
+          ],
+          "range": [
+            "#3157a4",
+            "#c9455a"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "ordinal",
+          "domain": [
+            "Teacher",
+            "LLM"
+          ],
+          "range": [
+            "circle",
+            "diamond"
+          ]
+        }
+      ],
+      "axes": [
+        {
+          "orient": "bottom",
+          "scale": "value",
+          "values": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "grid": false,
+          "domainColor": "#d8dbe4",
+          "tickColor": "#d8dbe4",
+          "labelFont": "Arial",
+          "labelFontSize": 17,
+          "labelColor": "#667085",
+          "labelPadding": 10,
+          "title": "Argumentation quality score (maximum 4)",
+          "titleFont": "Arial",
+          "titleFontSize": 17,
+          "titleFontWeight": "normal",
+          "titleColor": "#17233c",
+          "titlePadding": 17,
+          "zindex": 0
+        },
+        {
+          "orient": "left",
+          "scale": "source",
+          "domain": false,
+          "ticks": false,
+          "labelFont": "Arial",
+          "labelFontSize": 19,
+          "labelFontWeight": "bold",
+          "labelColor": "#17233c",
+          "labelPadding": 18,
+          "labelLimit": 110
+        }
+      ],
+      "marks": [
+        {
+          "type": "rule",
+          "from": {
+            "data": "grid_ticks"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "value"
+              },
+              "y": {
+                "value": 0
+              },
+              "y2": {
+                "value": 180
+              },
+              "stroke": {
+                "value": "#d8dbe4"
+              },
+              "strokeOpacity": {
+                "value": 0.45
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "from": {
+            "data": "argumentation"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "low"
+              },
+              "x2": {
+                "scale": "value",
+                "field": "high"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source"
+              },
+              "stroke": {
+                "scale": "color",
+                "field": "source"
+              },
+              "strokeWidth": {
+                "value": 3
+              }
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "from": {
+            "data": "argumentation"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "low"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source",
+                "offset": -7
+              },
+              "y2": {
+                "scale": "source",
+                "field": "source",
+                "offset": 7
+              },
+              "stroke": {
+                "scale": "color",
+                "field": "source"
+              },
+              "strokeWidth": {
+                "value": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "from": {
+            "data": "argumentation"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "high"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source",
+                "offset": -7
+              },
+              "y2": {
+                "scale": "source",
+                "field": "source",
+                "offset": 7
+              },
+              "stroke": {
+                "scale": "color",
+                "field": "source"
+              },
+              "strokeWidth": {
+                "value": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "from": {
+            "data": "argumentation"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "mean"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source"
+              },
+              "shape": {
+                "scale": "shape",
+                "field": "source"
+              },
+              "size": {
+                "value": 175
+              },
+              "fill": {
+                "scale": "color",
+                "field": "source"
+              },
+              "stroke": {
+                "value": "#fcfaf6"
+              },
+              "strokeWidth": {
+                "value": 1.5
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {
+            "data": "argumentation"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "scale": "value",
+                "field": "mean"
+              },
+              "y": {
+                "scale": "source",
+                "field": "source",
+                "offset": -21
+              },
+              "text": {
+                "signal": "format(datum.mean, '.2f')"
+              },
+              "align": {
+                "value": "center"
+              },
+              "font": {
+                "value": "Arial"
+              },
+              "fontSize": {
+                "value": 21
+              },
+              "fontWeight": {
+                "value": "bold"
+              },
+              "fill": {
+                "scale": "color",
+                "field": "source"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 583
+          },
+          "text": {
+            "value": "LLM > Teacher  ·  reported p = .004"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 18
+          },
+          "fill": {
+            "value": "#c9455a"
+          },
+          "fontWeight": {
+            "value": 700
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 704
+          },
+          "y": {
+            "value": 583
+          },
+          "text": {
+            "value": "Teacher > LLM  ·  reported p = .006"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 18
+          },
+          "fill": {
+            "value": "#3157a4"
+          },
+          "fontWeight": {
+            "value": 700
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 612
+          },
+          "x2": {
+            "value": 1216
+          },
+          "y2": {
+            "value": 612
+          },
+          "stroke": {
+            "value": "#d8dbe4"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 641
+          },
+          "text": {
+            "value": "Full study: N = 90 (Teacher 31; Peer 30; LLM 29). Peer is omitted from this focused display."
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 16
+          },
+          "fill": {
+            "value": "#667085"
+          },
+          "fontWeight": {
+            "value": 400
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 666
+          },
+          "text": {
+            "value": "Different scales and interval definitions. Summary estimates are not individual observations or change scores."
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 16
+          },
+          "fill": {
+            "value": "#667085"
+          },
+          "fontWeight": {
+            "value": 400
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 64
+          },
+          "y": {
+            "value": 697
+          },
+          "text": {
+            "value": "Source: Weidlich et al. (2025), Results 4.1–4.2, pp. 8–9.  doi:10.1016/j.caeo.2025.100300"
+          },
+          "font": {
+            "value": "Arial"
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fill": {
+            "value": "#667085"
+          },
+          "fontWeight": {
+            "value": 400
+          },
+          "href": {
+            "value": "https://doi.org/10.1016/j.caeo.2025.100300"
+          }
+        }
+      }
+    }
+  ]
+}

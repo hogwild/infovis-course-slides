@@ -1,0 +1,43 @@
+pairedSpec = {
+  const paths = groups.flatMap(group => {
+    const counts = new Map();
+    for (const d of data.filter(d => d.group === group)) {
+      const key = `${d.pre}:${d.post}`;
+      if (!counts.has(key)) counts.set(key,
+        {group, pre: d.pre, post: d.post, path: key, count: 0});
+      counts.get(key).count += 1;
+    }
+    return [...counts.values()];
+  }).sort((a, b) => a.count - b.count);
+  const maxCount = Math.max(...paths.map(d => d.count));
+  return {
+    title: {text: "Supplement: pretest and posttest",
+      subtitle: "Darker line = more students on the same path"},
+    data: {values: paths},
+    transform: [{fold: ["pre", "post"], as: ["time", "score"]}],
+    facet: {column: {field: "group", sort: groups, title: null,
+      header: {labelFontSize: 19, labelColor: "#17233c"}}},
+    spacing: 24,
+    spec: {width: 150, height: 340,
+      mark: {type: "line", strokeWidth: 2.5, opacity: 1},
+      encoding: {
+        x: {field: "time", type: "ordinal", sort: ["pre", "post"],
+          title: null, scale: {padding: 0.2}},
+        y: {field: "score", type: "quantitative",
+          scale: {domain: [0, 6], nice: false},
+          title: "Correct items", axis: {values: [0,1,2,3,4,5,6]}},
+        detail: {field: "path", type: "nominal"},
+        color: {field: "count", type: "quantitative",
+          scale: {domain: [1, maxCount], nice: false,
+            range: ["#b0bfd7", "#17233c"]},
+          legend: {title: "Students on path", orient: "bottom",
+            direction: "horizontal", gradientLength: 220, titleLimit: 240,
+            values: [1, 4, 8, 12, 16], format: "d"}},
+        tooltip: [{field: "group", title: "Group"},
+          {field: "pre", title: "Pretest"},
+          {field: "post", title: "Posttest"},
+          {field: "count", title: "Students"}]
+      }},
+    resolve: {scale: {y: "shared", color: "shared"}}
+  };
+}

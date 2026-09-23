@@ -1,0 +1,3 @@
+groupAxis = ({values: [0, 1, 2], title: null, grid: false, tickSize: 0,
+  labelLineHeight: 20, labelOverlap: false,
+  labelExpr: "[['No AI', 'n = 96'], ['Iris', 'n = 91'], ['ChatGPT', 'n = 88']][datum.value]"})

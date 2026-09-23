@@ -1,0 +1,41 @@
+{
+  "source": {
+    "authors": "Weidlich et al.",
+    "year": 2025,
+    "title": "Teacher, peer, or AI? Comparing effects of feedback sources in higher education",
+    "doi": "10.1016/j.caeo.2025.100300",
+    "basis": "Values transcribed from Results sections 4.1 and 4.2, pages 8-9; not digitized from figures and not re-estimated.",
+    "study_n": 90,
+    "group_n": {"Teacher": 31, "Peer": 30, "LLM": 29}
+  },
+  "scope": "Focused Teacher-LLM comparison. Peer is omitted from the display, not from the original statistical analyses. Summary estimates are not individual observations or change scores.",
+  "panels": [
+    {
+      "id": "fairness",
+      "measure": "Perceived fairness",
+      "estimate_type": "Winsorized mean",
+      "unit": "10-point rating",
+      "interval_type": "Mean plus/minus one reported standard error",
+      "reported_comparison_p": 0.004,
+      "source_page": 8,
+      "values": [
+        {"source": "Teacher", "mean": 6.69, "se": 0.61},
+        {"source": "LLM", "mean": 8.49, "se": 0.32}
+      ]
+    },
+    {
+      "id": "argumentation",
+      "measure": "Revised argumentation quality",
+      "estimate_type": "Estimated marginal mean, adjusted for initial submission quality",
+      "unit": "Quality score, maximum 4 points",
+      "interval_type": "Reported 95% confidence interval",
+      "reported_comparison_p": 0.006,
+      "comparison_method": "Tukey-adjusted post-hoc comparison",
+      "source_page": 9,
+      "values": [
+        {"source": "Teacher", "mean": 3.04, "ci_low": 2.84, "ci_high": 3.24},
+        {"source": "LLM", "mean": 2.59, "ci_low": 2.38, "ci_high": 2.79}
+      ]
+    }
+  ]
+}

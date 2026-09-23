@@ -1,0 +1,4 @@
+gainSpec = ({
+  ...frequencySpec("gain", [-6, 6], "Knowledge gain (points)"),
+  title: {text: "B  Knowledge gains"}
+})

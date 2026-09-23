@@ -1,0 +1,8 @@
+data = FileAttachment("ai-programming-analysis.csv").csv().then(rows => {
+  const fields = ["performance", "pre", "post", "gain", "frustration", "comprehension"];
+  if (rows.some(d => fields.some(f => d[f] === "" || !Number.isFinite(+d[f])))) {
+    throw new Error("Missing or invalid analytical value");
+  }
+  return rows.map(d => ({...d,
+    ...Object.fromEntries(fields.map(f => [f, +d[f]]))}));
+})

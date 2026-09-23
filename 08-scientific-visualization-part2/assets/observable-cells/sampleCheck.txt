@@ -1,0 +1,6 @@
+sampleCheck = ({
+  participants: data.length,
+  groups: summary.map(d => ({group: d.group, n: d.n})),
+  pairingOK: data.every(d => d.gain === d.post - d.pre),
+  uniqueIDs: new Set(data.map(d => d.pseudonym)).size
+})

@@ -1,0 +1,14 @@
+massView = ({
+  width: 400, height: 230,
+  encoding: channels,
+  layer: [
+    {mark: {type: "tick", thickness: 1.5,
+            size: 28, opacity: 0.25}},
+    {mark: {type: "point", shape: "diamond",
+            filled: true, size: 150,
+            stroke: "white", strokeWidth: 1},
+     encoding: {
+       x: {...channels.x, aggregate: "mean"}
+     }}
+  ]
+})

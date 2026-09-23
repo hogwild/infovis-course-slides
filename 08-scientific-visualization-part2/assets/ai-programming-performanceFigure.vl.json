@@ -1,0 +1,629 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "hconcat": [
+    {
+      "title": {
+        "text": "No AI",
+        "subtitle": "n = 96",
+        "color": "#667085",
+        "fontSize": 19,
+        "offset": 10,
+        "subtitleFontSize": 15,
+        "subtitlePadding": 4
+      },
+      "width": 150,
+      "height": 340,
+      "data": {
+        "values": [
+          {
+            "group": "No AI",
+            "value": 0,
+            "count": 40
+          },
+          {
+            "group": "No AI",
+            "value": 11.1,
+            "count": 9
+          },
+          {
+            "group": "No AI",
+            "value": 22.2,
+            "count": 13
+          },
+          {
+            "group": "No AI",
+            "value": 44.4,
+            "count": 13
+          },
+          {
+            "group": "No AI",
+            "value": 55.6,
+            "count": 0
+          },
+          {
+            "group": "No AI",
+            "value": 66.7,
+            "count": 6
+          },
+          {
+            "group": "No AI",
+            "value": 77.8,
+            "count": 0
+          },
+          {
+            "group": "No AI",
+            "value": 88.9,
+            "count": 0
+          },
+          {
+            "group": "No AI",
+            "value": 100,
+            "count": 15
+          }
+        ]
+      },
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -5,
+              105
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Exercise score (%)",
+            "values": [
+              0,
+              11.1,
+              22.2,
+              44.4,
+              55.6,
+              66.7,
+              77.8,
+              88.9,
+              100
+            ],
+            "labels": true,
+            "ticks": true,
+            "domain": true,
+            "grid": false,
+            "format": ".1~f",
+            "labelFontSize": 16,
+            "labelOverlap": false,
+            "labelPadding": 4,
+            "titlePadding": 8
+          }
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "orient": "horizontal",
+            "color": "#667085",
+            "size": 14
+          },
+          "encoding": {
+            "x": {
+              "field": "count",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  60
+                ],
+                "nice": false
+              },
+              "axis": {
+                "title": "Students",
+                "values": [
+                  0,
+                  30,
+                  60
+                ],
+                "labelFontSize": 16,
+                "labelOverlap": false,
+                "titleFontSize": 17,
+                "titlePadding": 8
+              }
+            },
+            "tooltip": [
+              {
+                "field": "group"
+              },
+              {
+                "field": "value",
+                "title": "Exercise score (%)"
+              },
+              {
+                "field": "count",
+                "title": "Students"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "value": 29.853125000000002,
+                "label": "Mean 29.85"
+              }
+            ]
+          },
+          "mark": {
+            "type": "rule",
+            "color": "#17233c",
+            "strokeDash": [
+              5,
+              4
+            ],
+            "strokeWidth": 2
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "value": 29.853125000000002,
+                "label": "Mean 29.85"
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -3,
+            "dy": -5,
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "color": "#17233c"
+          },
+          "encoding": {
+            "x": {
+              "datum": 60,
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Iris",
+        "subtitle": "n = 91",
+        "color": "#3157a4",
+        "fontSize": 19,
+        "offset": 10,
+        "subtitleFontSize": 15,
+        "subtitlePadding": 4
+      },
+      "width": 150,
+      "height": 340,
+      "data": {
+        "values": [
+          {
+            "group": "Iris",
+            "value": 0,
+            "count": 14
+          },
+          {
+            "group": "Iris",
+            "value": 11.1,
+            "count": 6
+          },
+          {
+            "group": "Iris",
+            "value": 22.2,
+            "count": 4
+          },
+          {
+            "group": "Iris",
+            "value": 44.4,
+            "count": 21
+          },
+          {
+            "group": "Iris",
+            "value": 55.6,
+            "count": 0
+          },
+          {
+            "group": "Iris",
+            "value": 66.7,
+            "count": 11
+          },
+          {
+            "group": "Iris",
+            "value": 77.8,
+            "count": 1
+          },
+          {
+            "group": "Iris",
+            "value": 88.9,
+            "count": 6
+          },
+          {
+            "group": "Iris",
+            "value": 100,
+            "count": 28
+          }
+        ]
+      },
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -5,
+              105
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": null,
+            "values": [
+              0,
+              11.1,
+              22.2,
+              44.4,
+              55.6,
+              66.7,
+              77.8,
+              88.9,
+              100
+            ],
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "format": ".1~f",
+            "labelFontSize": 16,
+            "labelOverlap": false,
+            "labelPadding": 4,
+            "titlePadding": 8
+          }
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "orient": "horizontal",
+            "color": "#3157a4",
+            "size": 14
+          },
+          "encoding": {
+            "x": {
+              "field": "count",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  60
+                ],
+                "nice": false
+              },
+              "axis": {
+                "title": "Students",
+                "values": [
+                  0,
+                  30,
+                  60
+                ],
+                "labelFontSize": 16,
+                "labelOverlap": false,
+                "titleFontSize": 17,
+                "titlePadding": 8
+              }
+            },
+            "tooltip": [
+              {
+                "field": "group"
+              },
+              {
+                "field": "value",
+                "title": "Exercise score (%)"
+              },
+              {
+                "field": "count",
+                "title": "Students"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "value": 57.50219780219778,
+                "label": "Mean 57.50"
+              }
+            ]
+          },
+          "mark": {
+            "type": "rule",
+            "color": "#17233c",
+            "strokeDash": [
+              5,
+              4
+            ],
+            "strokeWidth": 2
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "value": 57.50219780219778,
+                "label": "Mean 57.50"
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -3,
+            "dy": -5,
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "color": "#17233c"
+          },
+          "encoding": {
+            "x": {
+              "datum": 60,
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "ChatGPT",
+        "subtitle": "n = 88",
+        "color": "#7656a6",
+        "fontSize": 19,
+        "offset": 10,
+        "subtitleFontSize": 15,
+        "subtitlePadding": 4
+      },
+      "width": 150,
+      "height": 340,
+      "data": {
+        "values": [
+          {
+            "group": "ChatGPT",
+            "value": 0,
+            "count": 15
+          },
+          {
+            "group": "ChatGPT",
+            "value": 11.1,
+            "count": 2
+          },
+          {
+            "group": "ChatGPT",
+            "value": 22.2,
+            "count": 1
+          },
+          {
+            "group": "ChatGPT",
+            "value": 44.4,
+            "count": 9
+          },
+          {
+            "group": "ChatGPT",
+            "value": 55.6,
+            "count": 1
+          },
+          {
+            "group": "ChatGPT",
+            "value": 66.7,
+            "count": 4
+          },
+          {
+            "group": "ChatGPT",
+            "value": 77.8,
+            "count": 0
+          },
+          {
+            "group": "ChatGPT",
+            "value": 88.9,
+            "count": 4
+          },
+          {
+            "group": "ChatGPT",
+            "value": 100,
+            "count": 52
+          }
+        ]
+      },
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -5,
+              105
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": null,
+            "values": [
+              0,
+              11.1,
+              22.2,
+              44.4,
+              55.6,
+              66.7,
+              77.8,
+              88.9,
+              100
+            ],
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false,
+            "format": ".1~f",
+            "labelFontSize": 16,
+            "labelOverlap": false,
+            "labelPadding": 4,
+            "titlePadding": 8
+          }
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "orient": "horizontal",
+            "color": "#7656a6",
+            "size": 14
+          },
+          "encoding": {
+            "x": {
+              "field": "count",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  60
+                ],
+                "nice": false
+              },
+              "axis": {
+                "title": "Students",
+                "values": [
+                  0,
+                  30,
+                  60
+                ],
+                "labelFontSize": 16,
+                "labelOverlap": false,
+                "titleFontSize": 17,
+                "titlePadding": 8
+              }
+            },
+            "tooltip": [
+              {
+                "field": "group"
+              },
+              {
+                "field": "value",
+                "title": "Exercise score (%)"
+              },
+              {
+                "field": "count",
+                "title": "Students"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "value": 71.84090909090908,
+                "label": "Mean 71.84"
+              }
+            ]
+          },
+          "mark": {
+            "type": "rule",
+            "color": "#17233c",
+            "strokeDash": [
+              5,
+              4
+            ],
+            "strokeWidth": 2
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "value": 71.84090909090908,
+                "label": "Mean 71.84"
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -3,
+            "dy": -5,
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "color": "#17233c"
+          },
+          "encoding": {
+            "x": {
+              "datum": 60,
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 18,
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "title": {
+    "text": "A  Exercise performance"
+  },
+  "config": {
+    "font": "Arial",
+    "background": "white",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 17,
+      "titleFontSize": 18,
+      "titlePadding": 12,
+      "labelColor": "#263248",
+      "titleColor": "#17233c",
+      "gridColor": "#e6e8ed",
+      "domainColor": "#a1a7b3",
+      "labelPadding": 8,
+      "labelAngle": 0
+    },
+    "title": {
+      "fontSize": 22,
+      "anchor": "start",
+      "color": "#17233c",
+      "offset": 18,
+      "subtitleFontSize": 16,
+      "subtitleColor": "#667085",
+      "subtitlePadding": 8
+    },
+    "legend": {
+      "labelFontSize": 15,
+      "titleFontSize": 16,
+      "orient": "bottom"
+    }
+  }
+}

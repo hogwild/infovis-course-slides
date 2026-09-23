@@ -1,0 +1,4 @@
+performanceSpec = ({
+  ...frequencySpec("performance", [0, 100], "Exercise score (%)"),
+  title: {text: "A  Exercise performance"}
+})

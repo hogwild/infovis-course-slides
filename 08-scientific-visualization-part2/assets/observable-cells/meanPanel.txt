@@ -1,0 +1,7 @@
+meanPanel = t => ({
+  data: {values: penguins},
+  width: 365, height: 125,
+  title: t.title,
+  encoding: position(t),
+  layer: [meanLayer(t)]
+})

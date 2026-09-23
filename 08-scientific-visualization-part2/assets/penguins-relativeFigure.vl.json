@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "values": [
+      {
+        "trait": "Body mass",
+        "species": "Adelie",
+        "female": 3368.8356164383563,
+        "male": 4043.4931506849316,
+        "relative": 0.20026430822405203
+      },
+      {
+        "trait": "Body mass",
+        "species": "Chinstrap",
+        "female": 3527.205882352941,
+        "male": 3938.970588235294,
+        "relative": 0.11673962893475096
+      },
+      {
+        "trait": "Body mass",
+        "species": "Gentoo",
+        "female": 4679.741379310345,
+        "male": 5484.836065573771,
+        "relative": 0.1720382860947911
+      },
+      {
+        "trait": "Bill length",
+        "species": "Adelie",
+        "female": 37.25753424657533,
+        "male": 40.39041095890407,
+        "relative": 0.08408706522538345
+      },
+      {
+        "trait": "Bill length",
+        "species": "Chinstrap",
+        "female": 46.5735294117647,
+        "male": 51.09411764705882,
+        "relative": 0.09706346700347337
+      },
+      {
+        "trait": "Bill length",
+        "species": "Gentoo",
+        "female": 45.563793103448276,
+        "male": 49.473770491803286,
+        "relative": 0.08581325482445627
+      },
+      {
+        "trait": "Bill depth",
+        "species": "Adelie",
+        "female": 17.621917808219177,
+        "male": 19.072602739726022,
+        "relative": 0.08232276119402965
+      },
+      {
+        "trait": "Bill depth",
+        "species": "Chinstrap",
+        "female": 17.588235294117652,
+        "male": 19.252941176470586,
+        "relative": 0.09464882943143767
+      },
+      {
+        "trait": "Bill depth",
+        "species": "Gentoo",
+        "female": 14.237931034482758,
+        "male": 15.718032786885248,
+        "relative": 0.10395483366353163
+      },
+      {
+        "trait": "Flipper length",
+        "species": "Adelie",
+        "female": 187.7945205479452,
+        "male": 192.41095890410958,
+        "relative": 0.02458239112991456
+      },
+      {
+        "trait": "Flipper length",
+        "species": "Chinstrap",
+        "female": 191.73529411764707,
+        "male": 199.91176470588235,
+        "relative": 0.04264457738917002
+      },
+      {
+        "trait": "Flipper length",
+        "species": "Gentoo",
+        "female": 212.70689655172413,
+        "male": 221.54098360655738,
+        "relative": 0.04153173779527668
+      }
+    ]
+  },
+  "width": 640,
+  "height": 185,
+  "encoding": {
+    "x": {
+      "field": "trait",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Body mass",
+        "Bill length",
+        "Bill depth",
+        "Flipper length"
+      ],
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "species",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Adelie",
+        "Chinstrap",
+        "Gentoo"
+      ]
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "color": {
+          "field": "relative",
+          "type": "quantitative",
+          "title": "Male excess (%)",
+          "legend": {
+            "format": ".0%"
+          },
+          "scale": {
+            "domain": [
+              -0.25,
+              0,
+              0.25
+            ],
+            "range": [
+              "#b75e2a",
+              "#f5f4f7",
+              "#7656a6"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 20,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "relative",
+          "format": "+.1%"
+        },
+        "color": {
+          "condition": {
+            "test": "abs(datum.relative) > 0.14",
+            "value": "white"
+          },
+          "value": "#17233c"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "background": "white",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 15,
+      "titleFontSize": 16,
+      "gridColor": "#edf0f4",
+      "domain": false,
+      "tickSize": 3
+    },
+    "legend": {
+      "orient": "top",
+      "labelFontSize": 15,
+      "titleFontSize": 15,
+      "symbolSize": 110,
+      "symbolOpacity": 1,
+      "titleLimit": 400
+    },
+    "title": {
+      "fontSize": 18,
+      "anchor": "start",
+      "offset": 12
+    }
+  }
+}

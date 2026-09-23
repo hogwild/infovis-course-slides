@@ -1,0 +1,13 @@
+articleTitle = md`# Three claims about penguin body mass
+
+Evaluate these claims in the 333 displayed records:
+
+**C1 · Mean:** Gentoo have the highest overall
+mean body mass.
+
+**C2 · Overlap:** Individual body-mass ranges
+overlap across species.
+
+**C3 · Sex:** Gentoo remain highest on average
+in both sex groups, while the Adelie–Chinstrap
+mean ordering reverses.`

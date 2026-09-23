@@ -1,0 +1,485 @@
+{
+  "sample": {
+    "source": 344,
+    "included": 333,
+    "excluded": 11
+  },
+  "groups": [
+    {
+      "trait": "Body mass",
+      "field": "body_mass_g",
+      "species": "Adelie",
+      "sex": "female",
+      "n": 73,
+      "mean": 3368.8356164383563,
+      "min": 2850,
+      "max": 3900
+    },
+    {
+      "trait": "Body mass",
+      "field": "body_mass_g",
+      "species": "Adelie",
+      "sex": "male",
+      "n": 73,
+      "mean": 4043.4931506849316,
+      "min": 3325,
+      "max": 4775
+    },
+    {
+      "trait": "Body mass",
+      "field": "body_mass_g",
+      "species": "Chinstrap",
+      "sex": "female",
+      "n": 34,
+      "mean": 3527.205882352941,
+      "min": 2700,
+      "max": 4150
+    },
+    {
+      "trait": "Body mass",
+      "field": "body_mass_g",
+      "species": "Chinstrap",
+      "sex": "male",
+      "n": 34,
+      "mean": 3938.970588235294,
+      "min": 3250,
+      "max": 4800
+    },
+    {
+      "trait": "Body mass",
+      "field": "body_mass_g",
+      "species": "Gentoo",
+      "sex": "female",
+      "n": 58,
+      "mean": 4679.741379310345,
+      "min": 3950,
+      "max": 5200
+    },
+    {
+      "trait": "Body mass",
+      "field": "body_mass_g",
+      "species": "Gentoo",
+      "sex": "male",
+      "n": 61,
+      "mean": 5484.836065573771,
+      "min": 4750,
+      "max": 6300
+    },
+    {
+      "trait": "Bill length",
+      "field": "bill_length_mm",
+      "species": "Adelie",
+      "sex": "female",
+      "n": 73,
+      "mean": 37.25753424657533,
+      "min": 32.1,
+      "max": 42.2
+    },
+    {
+      "trait": "Bill length",
+      "field": "bill_length_mm",
+      "species": "Adelie",
+      "sex": "male",
+      "n": 73,
+      "mean": 40.39041095890407,
+      "min": 34.6,
+      "max": 46
+    },
+    {
+      "trait": "Bill length",
+      "field": "bill_length_mm",
+      "species": "Chinstrap",
+      "sex": "female",
+      "n": 34,
+      "mean": 46.5735294117647,
+      "min": 40.9,
+      "max": 58
+    },
+    {
+      "trait": "Bill length",
+      "field": "bill_length_mm",
+      "species": "Chinstrap",
+      "sex": "male",
+      "n": 34,
+      "mean": 51.09411764705882,
+      "min": 48.5,
+      "max": 55.8
+    },
+    {
+      "trait": "Bill length",
+      "field": "bill_length_mm",
+      "species": "Gentoo",
+      "sex": "female",
+      "n": 58,
+      "mean": 45.563793103448276,
+      "min": 40.9,
+      "max": 50.5
+    },
+    {
+      "trait": "Bill length",
+      "field": "bill_length_mm",
+      "species": "Gentoo",
+      "sex": "male",
+      "n": 61,
+      "mean": 49.473770491803286,
+      "min": 44.4,
+      "max": 59.6
+    },
+    {
+      "trait": "Bill depth",
+      "field": "bill_depth_mm",
+      "species": "Adelie",
+      "sex": "female",
+      "n": 73,
+      "mean": 17.621917808219177,
+      "min": 15.5,
+      "max": 20.7
+    },
+    {
+      "trait": "Bill depth",
+      "field": "bill_depth_mm",
+      "species": "Adelie",
+      "sex": "male",
+      "n": 73,
+      "mean": 19.072602739726022,
+      "min": 17,
+      "max": 21.5
+    },
+    {
+      "trait": "Bill depth",
+      "field": "bill_depth_mm",
+      "species": "Chinstrap",
+      "sex": "female",
+      "n": 34,
+      "mean": 17.588235294117652,
+      "min": 16.4,
+      "max": 19.4
+    },
+    {
+      "trait": "Bill depth",
+      "field": "bill_depth_mm",
+      "species": "Chinstrap",
+      "sex": "male",
+      "n": 34,
+      "mean": 19.252941176470586,
+      "min": 17.5,
+      "max": 20.8
+    },
+    {
+      "trait": "Bill depth",
+      "field": "bill_depth_mm",
+      "species": "Gentoo",
+      "sex": "female",
+      "n": 58,
+      "mean": 14.237931034482758,
+      "min": 13.1,
+      "max": 15.5
+    },
+    {
+      "trait": "Bill depth",
+      "field": "bill_depth_mm",
+      "species": "Gentoo",
+      "sex": "male",
+      "n": 61,
+      "mean": 15.718032786885248,
+      "min": 14.1,
+      "max": 17.3
+    },
+    {
+      "trait": "Flipper length",
+      "field": "flipper_length_mm",
+      "species": "Adelie",
+      "sex": "female",
+      "n": 73,
+      "mean": 187.7945205479452,
+      "min": 172,
+      "max": 202
+    },
+    {
+      "trait": "Flipper length",
+      "field": "flipper_length_mm",
+      "species": "Adelie",
+      "sex": "male",
+      "n": 73,
+      "mean": 192.41095890410958,
+      "min": 178,
+      "max": 210
+    },
+    {
+      "trait": "Flipper length",
+      "field": "flipper_length_mm",
+      "species": "Chinstrap",
+      "sex": "female",
+      "n": 34,
+      "mean": 191.73529411764707,
+      "min": 178,
+      "max": 202
+    },
+    {
+      "trait": "Flipper length",
+      "field": "flipper_length_mm",
+      "species": "Chinstrap",
+      "sex": "male",
+      "n": 34,
+      "mean": 199.91176470588235,
+      "min": 187,
+      "max": 212
+    },
+    {
+      "trait": "Flipper length",
+      "field": "flipper_length_mm",
+      "species": "Gentoo",
+      "sex": "female",
+      "n": 58,
+      "mean": 212.70689655172413,
+      "min": 203,
+      "max": 222
+    },
+    {
+      "trait": "Flipper length",
+      "field": "flipper_length_mm",
+      "species": "Gentoo",
+      "sex": "male",
+      "n": 61,
+      "mean": 221.54098360655738,
+      "min": 208,
+      "max": 231
+    }
+  ],
+  "differences": [
+    {
+      "trait": "Body mass",
+      "species": "Adelie",
+      "female": 3368.8356164383563,
+      "male": 4043.4931506849316,
+      "relative": 0.20026430822405203
+    },
+    {
+      "trait": "Body mass",
+      "species": "Chinstrap",
+      "female": 3527.205882352941,
+      "male": 3938.970588235294,
+      "relative": 0.11673962893475096
+    },
+    {
+      "trait": "Body mass",
+      "species": "Gentoo",
+      "female": 4679.741379310345,
+      "male": 5484.836065573771,
+      "relative": 0.1720382860947911
+    },
+    {
+      "trait": "Bill length",
+      "species": "Adelie",
+      "female": 37.25753424657533,
+      "male": 40.39041095890407,
+      "relative": 0.08408706522538345
+    },
+    {
+      "trait": "Bill length",
+      "species": "Chinstrap",
+      "female": 46.5735294117647,
+      "male": 51.09411764705882,
+      "relative": 0.09706346700347337
+    },
+    {
+      "trait": "Bill length",
+      "species": "Gentoo",
+      "female": 45.563793103448276,
+      "male": 49.473770491803286,
+      "relative": 0.08581325482445627
+    },
+    {
+      "trait": "Bill depth",
+      "species": "Adelie",
+      "female": 17.621917808219177,
+      "male": 19.072602739726022,
+      "relative": 0.08232276119402965
+    },
+    {
+      "trait": "Bill depth",
+      "species": "Chinstrap",
+      "female": 17.588235294117652,
+      "male": 19.252941176470586,
+      "relative": 0.09464882943143767
+    },
+    {
+      "trait": "Bill depth",
+      "species": "Gentoo",
+      "female": 14.237931034482758,
+      "male": 15.718032786885248,
+      "relative": 0.10395483366353163
+    },
+    {
+      "trait": "Flipper length",
+      "species": "Adelie",
+      "female": 187.7945205479452,
+      "male": 192.41095890410958,
+      "relative": 0.02458239112991456
+    },
+    {
+      "trait": "Flipper length",
+      "species": "Chinstrap",
+      "female": 191.73529411764707,
+      "male": 199.91176470588235,
+      "relative": 0.04264457738917002
+    },
+    {
+      "trait": "Flipper length",
+      "species": "Gentoo",
+      "female": 212.70689655172413,
+      "male": 221.54098360655738,
+      "relative": 0.04153173779527668
+    }
+  ],
+  "density": {
+    "kernel": "Gaussian",
+    "bandwidths": [
+      {
+        "field": "body_mass_g",
+        "bandwidth": 180
+      },
+      {
+        "field": "bill_length_mm",
+        "bandwidth": 1.5
+      },
+      {
+        "field": "bill_depth_mm",
+        "bandwidth": 0.55
+      },
+      {
+        "field": "flipper_length_mm",
+        "bandwidth": 3
+      }
+    ],
+    "scaling": "Shared across species/sex within each measurement; thickness is not count or uncertainty."
+  },
+  "publishedTable": {
+    "source": "https://doi.org/10.1371/journal.pone.0090081.t002",
+    "title": "Parameter estimates and likelihoods from candidate models for predicting sex of Pygoscelis penguins.",
+    "excerpt": "Size Dimorphism Index column only; published values, not recalculated.",
+    "sign": "Negative when males are larger; positive when females are larger.",
+    "sample": {
+      "Adelie": 137,
+      "Chinstrap": 54,
+      "Gentoo": 116
+    },
+    "license": "CC BY; Gorman, Williams and Fraser (2014)",
+    "values": [
+      {
+        "species": "Adélie penguin",
+        "measurement": "Culmen length",
+        "sdi": -0.09
+      },
+      {
+        "species": "Adélie penguin",
+        "measurement": "Culmen depth",
+        "sdi": -0.08
+      },
+      {
+        "species": "Adélie penguin",
+        "measurement": "Flipper length",
+        "sdi": -0.02
+      },
+      {
+        "species": "Adélie penguin",
+        "measurement": "Body mass",
+        "sdi": -0.2
+      },
+      {
+        "species": "Chinstrap penguin",
+        "measurement": "Culmen length",
+        "sdi": -0.11
+      },
+      {
+        "species": "Chinstrap penguin",
+        "measurement": "Culmen depth",
+        "sdi": -0.1
+      },
+      {
+        "species": "Chinstrap penguin",
+        "measurement": "Flipper length",
+        "sdi": -0.05
+      },
+      {
+        "species": "Chinstrap penguin",
+        "measurement": "Body mass",
+        "sdi": -0.1
+      },
+      {
+        "species": "Gentoo penguin",
+        "measurement": "Culmen length",
+        "sdi": -0.08
+      },
+      {
+        "species": "Gentoo penguin",
+        "measurement": "Culmen depth",
+        "sdi": -0.1
+      },
+      {
+        "species": "Gentoo penguin",
+        "measurement": "Flipper length",
+        "sdi": -0.04
+      },
+      {
+        "species": "Gentoo penguin",
+        "measurement": "Body mass",
+        "sdi": -0.17
+      }
+    ]
+  },
+  "research": {
+    "doi": "10.1371/journal.pone.0090081",
+    "finding": "Among the adults studied, males were larger on average within each species across all four measured traits.",
+    "analysis": "Descriptive re-summary of the public dataset; not a reproduction of paper-specific exclusions, models or SDIs."
+  },
+  "runtime": {
+    "vega": "6.4.0",
+    "vegaLite": "6.4.3",
+    "vegaEmbed": "7.1.0"
+  },
+  "charts": [
+    {
+      "cell": "massMeans",
+      "sampleRecords": 333,
+      "svgBytes": 8778,
+      "warnings": []
+    },
+    {
+      "cell": "speciesFacets",
+      "sampleRecords": 333,
+      "svgBytes": 16363,
+      "warnings": []
+    },
+    {
+      "cell": "meanFigure",
+      "sampleRecords": 333,
+      "svgBytes": 30290,
+      "warnings": []
+    },
+    {
+      "cell": "relativeFigure",
+      "sampleRecords": 333,
+      "svgBytes": 12103,
+      "warnings": []
+    },
+    {
+      "cell": "massEvidence",
+      "sampleRecords": 333,
+      "svgBytes": 103121,
+      "warnings": []
+    },
+    {
+      "cell": "rainMass",
+      "sampleRecords": 333,
+      "svgBytes": 122727,
+      "warnings": []
+    },
+    {
+      "cell": "finalFigure",
+      "sampleRecords": 333,
+      "svgBytes": 496092,
+      "warnings": []
+    }
+  ]
+}

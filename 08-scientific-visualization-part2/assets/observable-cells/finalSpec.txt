@@ -1,0 +1,38 @@
+finalSpec = {
+  function bars(s,isGain){
+   s.title={frame:"group",text:isGain?'Knowledge gains':'Exercise performance',fontSize:22,offset:16};
+   for(const p of s.hconcat){
+    p.width=140;p.height=140;
+    p.title={frame:"group",text:p.title.text,color:p.title.color,fontSize:17,offset:8};
+    Object.assign(p.encoding.y.axis,{labelFontSize:13,titleFontSize:13,labelPadding:3,titlePadding:6});
+    if(isGain)p.encoding.y.axis.values=[-6,-4,-2,0,2,4,6];
+    if(p.encoding.y.axis.title)p.encoding.y.axis.title=isGain?"Gain (points)":"Score (%)";
+    p.layer[0].mark.size=7;
+    Object.assign(p.layer[0].encoding.x.axis,{labelFontSize:13,titleFontSize:14,titlePadding:4,labelPadding:3});
+    Object.assign(p.layer[2].mark,{fontSize:13,dy:isGain?-9:-4});
+   }
+   s.spacing=18;return s;
+  }
+  const performance = bars(structuredClone(performanceSpec), false);
+  const gain = bars(structuredClone(gainSpec), true);
+  const frustration = structuredClone(frustrationSpec);
+  const paired = structuredClone(pairedSpec);
+  frustration.width=440;frustration.height=140;
+  frustration.title={frame:'group',text:'Reported frustration',subtitle:'Five response levels; lower = less',fontSize:22,subtitleFontSize:13,offset:13,subtitlePadding:9};
+  frustration.encoding.x.axis={labelFontSize:14,labelPadding:4};
+  frustration.encoding.y.axis={format:'.0%',values:[0,.5,1],labelFontSize:13,titleFontSize:13,labelPadding:3,titlePadding:6};
+  frustration.encoding.color.legend={...frustration.encoding.color.legend,title:null,offset:6,labelFontSize:13};
+  frustration.layer[1].mark.fontSize=13;
+  paired.title={frame:'group',text:'Supplement: pretest and posttest',fontSize:22,offset:16};
+  paired.facet.column.header={labelFontSize:17,labelColor:'#17233c',labelFontWeight:'bold',labelPadding:3};
+  paired.spec.width=130;paired.spec.height=140;
+  paired.spec.encoding.x.axis={labelFontSize:13,labelPadding:4};
+  paired.spec.encoding.y.axis={values:[0,1,2,3,4,5,6],labelFontSize:13,titleFontSize:13,labelPadding:3,titlePadding:6};
+  paired.spec.encoding.color.legend={...paired.spec.encoding.color.legend,title:['Students','on path'],orient:'right',direction:'vertical',titleFontSize:13,labelFontSize:12,gradientLength:95,gradientThickness:10,offset:10,titleLimit:100};
+  return {
+    $schema: "https://vega.github.io/schema/vega-lite/v6.json",
+    concat: [performance, frustration, gain, paired],
+    columns: 2, align: "each", center: false, spacing: 24,
+    resolve: {scale: {x: "independent", y: "independent", color: "independent"}}
+  };
+}

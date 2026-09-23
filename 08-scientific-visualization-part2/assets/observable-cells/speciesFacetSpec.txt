@@ -1,0 +1,16 @@
+speciesFacetSpec = ({
+  data: {values: penguins},
+  facet: {field: "species", type: "nominal",
+    sort: species, title: null,
+    header: {labelFontSize: 18}},
+  columns: 3, spacing: 24,
+  spec: {
+    width: 300, height: 160,
+    encoding: {
+      y: {field: "sex", type: "nominal",
+        sort: ["female", "male"], title: null}
+    },
+    layer: [meanLayer(traits[0])]
+  },
+  resolve: {scale: {x: "shared", y: "shared"}}
+})

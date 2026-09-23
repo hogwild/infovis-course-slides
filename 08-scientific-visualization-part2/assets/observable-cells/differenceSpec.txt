@@ -1,0 +1,11 @@
+differenceSpec = ({width: 560, height: 160,
+  title: {text: "Mean gain difference versus No AI", subtitle: "Classroom estimates; unadjusted 95% bootstrap intervals"},
+  layer: [{data: {values: [{}]}, mark: {type: "rule", color: "#a1a7b3", strokeDash: [4,4]},
+    encoding: {x: {datum: 0}}},
+    {data: {values: boot.differences}, mark: {type: "rule", strokeWidth: 3},
+      encoding: {x: {field: "lo", type: "quantitative", title: "Difference in gain (points)", scale: {domain: [-0.8,0.8]}},
+        x2: {field: "hi"}, y: {field: "comparison", sort: ["Iris - No AI","ChatGPT - No AI"], title: null, axis: {labelLimit: 220}}, color: condition}},
+    {data: {values: boot.differences}, mark: {type: "point", filled: true, size: 150},
+      encoding: {x: {field: "estimate", type: "quantitative"},
+        y: {field: "comparison", sort: ["Iris - No AI","ChatGPT - No AI"]}, color: condition}}
+  ]})

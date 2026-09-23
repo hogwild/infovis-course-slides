@@ -1,0 +1,139 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 540,
+  "height": 310,
+  "data": {
+    "values": [
+      {
+        "group": "No AI",
+        "index": 0,
+        "n": 96,
+        "performance": 29.853125000000002,
+        "pre": 1.9166666666666667,
+        "post": 2.7708333333333335,
+        "gain": 0.8541666666666666,
+        "frustration": 4.09375
+      },
+      {
+        "group": "Iris",
+        "index": 1,
+        "n": 91,
+        "performance": 57.50219780219778,
+        "pre": 2.1758241758241756,
+        "post": 2.89010989010989,
+        "gain": 0.7142857142857143,
+        "frustration": 3.208791208791209
+      },
+      {
+        "group": "ChatGPT",
+        "index": 2,
+        "n": 88,
+        "performance": 71.84090909090908,
+        "pre": 2.3295454545454546,
+        "post": 3.159090909090909,
+        "gain": 0.8295454545454546,
+        "frustration": 3.125
+      }
+    ]
+  },
+  "encoding": {
+    "x": {
+      "field": "group",
+      "type": "nominal",
+      "sort": [
+        "No AI",
+        "Iris",
+        "ChatGPT"
+      ],
+      "title": null
+    },
+    "y": {
+      "field": "performance",
+      "type": "quantitative",
+      "title": "Exercise score (%)",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      }
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "sort": [
+        "No AI",
+        "Iris",
+        "ChatGPT"
+      ],
+      "scale": {
+        "domain": [
+          "No AI",
+          "Iris",
+          "ChatGPT"
+        ],
+        "range": [
+          "#667085",
+          "#3157a4",
+          "#7656a6"
+        ]
+      },
+      "legend": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "shape": "diamond",
+        "filled": true,
+        "size": 220
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -20,
+        "fontSize": 20
+      },
+      "encoding": {
+        "text": {
+          "field": "performance",
+          "format": ".2f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial",
+    "background": "white",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 17,
+      "titleFontSize": 18,
+      "titlePadding": 12,
+      "labelColor": "#263248",
+      "titleColor": "#17233c",
+      "gridColor": "#e6e8ed",
+      "domainColor": "#a1a7b3",
+      "labelPadding": 8,
+      "labelAngle": 0
+    },
+    "title": {
+      "fontSize": 22,
+      "anchor": "start",
+      "color": "#17233c",
+      "offset": 18,
+      "subtitleFontSize": 16,
+      "subtitleColor": "#667085",
+      "subtitlePadding": 8
+    },
+    "legend": {
+      "labelFontSize": 15,
+      "titleFontSize": 16,
+      "orient": "bottom"
+    }
+  }
+}
