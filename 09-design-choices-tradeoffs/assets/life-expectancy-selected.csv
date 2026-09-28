@@ -1,0 +1,193 @@
+country,year,period_life_expectancy_years
+Japan,1960,67.718
+Japan,1961,68.3705
+Japan,1962,68.6668
+Japan,1963,69.7463
+Japan,1964,70.1973
+Japan,1965,70.257
+Japan,1966,71.0552
+Japan,1967,71.401
+Japan,1968,71.6718
+Japan,1969,71.9225
+Japan,1970,72.0073
+Japan,1971,72.827
+Japan,1972,73.2584
+Japan,1973,73.4218
+Japan,1974,73.8494
+Japan,1975,74.3569
+Japan,1976,74.7611
+Japan,1977,75.3257
+Japan,1978,75.6571
+Japan,1979,76.1671
+Japan,1980,76.1408
+Japan,1981,76.5629
+Japan,1982,77.0723
+Japan,1983,77.1069
+Japan,1984,77.5068
+Japan,1985,77.799
+Japan,1986,78.2119
+Japan,1987,78.6307
+Japan,1988,78.5454
+Japan,1989,78.9799
+Japan,1990,78.9928
+Japan,1991,79.262
+Japan,1992,79.303
+Japan,1993,79.4461
+Japan,1994,79.8366
+Japan,1995,79.6837
+Japan,1996,80.3627
+Japan,1997,80.5836
+Japan,1998,80.6487
+Japan,1999,80.6129
+Japan,2000,81.1788
+Japan,2001,81.5101
+Japan,2002,81.7952
+Japan,2003,81.854
+Japan,2004,82.1275
+Japan,2005,82.0073
+Japan,2006,82.3699
+Japan,2007,82.5488
+Japan,2008,82.6332
+Japan,2009,82.9699
+Japan,2010,82.916
+Japan,2011,82.6705
+Japan,2012,83.1676
+Japan,2013,83.4018
+Japan,2014,83.6434
+Japan,2015,83.8832
+Japan,2016,84.0568
+Japan,2017,84.1891
+Japan,2018,84.289
+Japan,2019,84.4177
+Japan,2020,84.6703
+Japan,2021,84.55
+Japan,2022,84.0541
+Japan,2023,84.7123
+United Kingdom,1960,71.0251
+United Kingdom,1961,70.7895
+United Kingdom,1962,70.8576
+United Kingdom,1963,70.7609
+United Kingdom,1964,71.5407
+United Kingdom,1965,71.5157
+United Kingdom,1966,71.4329
+United Kingdom,1967,72.0706
+United Kingdom,1968,71.6842
+United Kingdom,1969,71.6625
+United Kingdom,1970,71.8819
+United Kingdom,1971,72.234
+United Kingdom,1972,71.9882
+United Kingdom,1973,72.1846
+United Kingdom,1974,72.376
+United Kingdom,1975,72.65
+United Kingdom,1976,72.6341
+United Kingdom,1977,73.1111
+United Kingdom,1978,73.0429
+United Kingdom,1979,73.1607
+United Kingdom,1980,73.5906
+United Kingdom,1981,73.9162
+United Kingdom,1982,74.0388
+United Kingdom,1983,74.2927
+United Kingdom,1984,74.6741
+United Kingdom,1985,74.5362
+United Kingdom,1986,74.7948
+United Kingdom,1987,75.147
+United Kingdom,1988,75.2593
+United Kingdom,1989,75.3971
+United Kingdom,1990,75.7377
+United Kingdom,1991,75.9108
+United Kingdom,1992,76.3074
+United Kingdom,1993,76.1602
+United Kingdom,1994,76.7198
+United Kingdom,1995,76.614
+United Kingdom,1996,76.8719
+United Kingdom,1997,77.1389
+United Kingdom,1998,77.2745
+United Kingdom,1999,77.3728
+United Kingdom,2000,77.8491
+United Kingdom,2001,78.1208
+United Kingdom,2002,78.237
+United Kingdom,2003,78.3302
+United Kingdom,2004,78.8998
+United Kingdom,2005,79.1061
+United Kingdom,2006,79.3474
+United Kingdom,2007,79.5337
+United Kingdom,2008,79.6554
+United Kingdom,2009,80.1556
+United Kingdom,2010,80.3908
+United Kingdom,2011,80.7961
+United Kingdom,2012,80.8594
+United Kingdom,2013,80.9232
+United Kingdom,2014,81.1529
+United Kingdom,2015,80.919
+United Kingdom,2016,81.0675
+United Kingdom,2017,81.164
+United Kingdom,2018,81.1229
+United Kingdom,2019,81.4426
+United Kingdom,2020,80.3854
+United Kingdom,2021,80.708
+United Kingdom,2022,81.0744
+United Kingdom,2023,81.3015
+United States,1960,69.8293
+United States,1961,70.2536
+United States,1962,70.1162
+United States,1963,69.9428
+United States,1964,70.1993
+United States,1965,70.2495
+United States,1966,70.21
+United States,1967,70.5202
+United States,1968,70.2004
+United States,1969,70.4763
+United States,1970,70.7343
+United States,1971,71.0979
+United States,1972,71.1779
+United States,1973,71.3966
+United States,1974,71.9592
+United States,1975,72.5434
+United States,1976,72.8448
+United States,1977,73.2267
+United States,1978,73.4091
+United States,1979,73.8331
+United States,1980,73.73
+United States,1981,74.1174
+United States,1982,74.4635
+United States,1983,74.5528
+United States,1984,74.6747
+United States,1985,74.65
+United States,1986,74.7284
+United States,1987,74.8599
+United States,1988,74.8333
+United States,1989,75.1091
+United States,1990,75.3743
+United States,1991,75.5243
+United States,1992,75.779
+United States,1993,75.5677
+United States,1994,75.7381
+United States,1995,75.8522
+United States,1996,76.1749
+United States,1997,76.4981
+United States,1998,76.6592
+United States,1999,76.6691
+United States,2000,76.8058
+United States,2001,76.9194
+United States,2002,76.9883
+United States,2003,77.1369
+United States,2004,77.535
+United States,2005,77.5264
+United States,2006,77.7976
+United States,2007,78.0471
+United States,2008,78.1273
+United States,2009,78.4758
+United States,2010,78.6681
+United States,2011,78.7023
+United States,2012,78.8169
+United States,2013,78.8175
+United States,2014,78.8785
+United States,2015,78.7219
+United States,2016,78.686
+United States,2017,78.6483
+United States,2018,78.7997
+United States,2019,78.916
+United States,2020,77.0115
+United States,2021,76.3836
+United States,2022,77.9789
+United States,2023,79.3043
