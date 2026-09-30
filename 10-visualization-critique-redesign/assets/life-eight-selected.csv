@@ -1,0 +1,513 @@
+country,year,period_life_expectancy_years
+Japan,1960,67.718
+Japan,1961,68.3705
+Japan,1962,68.6668
+Japan,1963,69.7463
+Japan,1964,70.1973
+Japan,1965,70.257
+Japan,1966,71.0552
+Japan,1967,71.401
+Japan,1968,71.6718
+Japan,1969,71.9225
+Japan,1970,72.0073
+Japan,1971,72.827
+Japan,1972,73.2584
+Japan,1973,73.4218
+Japan,1974,73.8494
+Japan,1975,74.3569
+Japan,1976,74.7611
+Japan,1977,75.3257
+Japan,1978,75.6571
+Japan,1979,76.1671
+Japan,1980,76.1408
+Japan,1981,76.5629
+Japan,1982,77.0723
+Japan,1983,77.1069
+Japan,1984,77.5068
+Japan,1985,77.799
+Japan,1986,78.2119
+Japan,1987,78.6307
+Japan,1988,78.5454
+Japan,1989,78.9799
+Japan,1990,78.9928
+Japan,1991,79.262
+Japan,1992,79.303
+Japan,1993,79.4461
+Japan,1994,79.8366
+Japan,1995,79.6837
+Japan,1996,80.3627
+Japan,1997,80.5836
+Japan,1998,80.6487
+Japan,1999,80.6129
+Japan,2000,81.1788
+Japan,2001,81.5101
+Japan,2002,81.7952
+Japan,2003,81.854
+Japan,2004,82.1275
+Japan,2005,82.0073
+Japan,2006,82.3699
+Japan,2007,82.5488
+Japan,2008,82.6332
+Japan,2009,82.9699
+Japan,2010,82.916
+Japan,2011,82.6705
+Japan,2012,83.1676
+Japan,2013,83.4018
+Japan,2014,83.6434
+Japan,2015,83.8832
+Japan,2016,84.0568
+Japan,2017,84.1891
+Japan,2018,84.289
+Japan,2019,84.4177
+Japan,2020,84.6703
+Japan,2021,84.55
+Japan,2022,84.0541
+Japan,2023,84.7123
+United Kingdom,1960,71.0251
+United Kingdom,1961,70.7895
+United Kingdom,1962,70.8576
+United Kingdom,1963,70.7609
+United Kingdom,1964,71.5407
+United Kingdom,1965,71.5157
+United Kingdom,1966,71.4329
+United Kingdom,1967,72.0706
+United Kingdom,1968,71.6842
+United Kingdom,1969,71.6625
+United Kingdom,1970,71.8819
+United Kingdom,1971,72.234
+United Kingdom,1972,71.9882
+United Kingdom,1973,72.1846
+United Kingdom,1974,72.376
+United Kingdom,1975,72.65
+United Kingdom,1976,72.6341
+United Kingdom,1977,73.1111
+United Kingdom,1978,73.0429
+United Kingdom,1979,73.1607
+United Kingdom,1980,73.5906
+United Kingdom,1981,73.9162
+United Kingdom,1982,74.0388
+United Kingdom,1983,74.2927
+United Kingdom,1984,74.6741
+United Kingdom,1985,74.5362
+United Kingdom,1986,74.7948
+United Kingdom,1987,75.147
+United Kingdom,1988,75.2593
+United Kingdom,1989,75.3971
+United Kingdom,1990,75.7377
+United Kingdom,1991,75.9108
+United Kingdom,1992,76.3074
+United Kingdom,1993,76.1602
+United Kingdom,1994,76.7198
+United Kingdom,1995,76.614
+United Kingdom,1996,76.8719
+United Kingdom,1997,77.1389
+United Kingdom,1998,77.2745
+United Kingdom,1999,77.3728
+United Kingdom,2000,77.8491
+United Kingdom,2001,78.1208
+United Kingdom,2002,78.237
+United Kingdom,2003,78.3302
+United Kingdom,2004,78.8998
+United Kingdom,2005,79.1061
+United Kingdom,2006,79.3474
+United Kingdom,2007,79.5337
+United Kingdom,2008,79.6554
+United Kingdom,2009,80.1556
+United Kingdom,2010,80.3908
+United Kingdom,2011,80.7961
+United Kingdom,2012,80.8594
+United Kingdom,2013,80.9232
+United Kingdom,2014,81.1529
+United Kingdom,2015,80.919
+United Kingdom,2016,81.0675
+United Kingdom,2017,81.164
+United Kingdom,2018,81.1229
+United Kingdom,2019,81.4426
+United Kingdom,2020,80.3854
+United Kingdom,2021,80.708
+United Kingdom,2022,81.0744
+United Kingdom,2023,81.3015
+United States,1960,69.8293
+United States,1961,70.2536
+United States,1962,70.1162
+United States,1963,69.9428
+United States,1964,70.1993
+United States,1965,70.2495
+United States,1966,70.21
+United States,1967,70.5202
+United States,1968,70.2004
+United States,1969,70.4763
+United States,1970,70.7343
+United States,1971,71.0979
+United States,1972,71.1779
+United States,1973,71.3966
+United States,1974,71.9592
+United States,1975,72.5434
+United States,1976,72.8448
+United States,1977,73.2267
+United States,1978,73.4091
+United States,1979,73.8331
+United States,1980,73.73
+United States,1981,74.1174
+United States,1982,74.4635
+United States,1983,74.5528
+United States,1984,74.6747
+United States,1985,74.65
+United States,1986,74.7284
+United States,1987,74.8599
+United States,1988,74.8333
+United States,1989,75.1091
+United States,1990,75.3743
+United States,1991,75.5243
+United States,1992,75.779
+United States,1993,75.5677
+United States,1994,75.7381
+United States,1995,75.8522
+United States,1996,76.1749
+United States,1997,76.4981
+United States,1998,76.6592
+United States,1999,76.6691
+United States,2000,76.8058
+United States,2001,76.9194
+United States,2002,76.9883
+United States,2003,77.1369
+United States,2004,77.535
+United States,2005,77.5264
+United States,2006,77.7976
+United States,2007,78.0471
+United States,2008,78.1273
+United States,2009,78.4758
+United States,2010,78.6681
+United States,2011,78.7023
+United States,2012,78.8169
+United States,2013,78.8175
+United States,2014,78.8785
+United States,2015,78.7219
+United States,2016,78.686
+United States,2017,78.6483
+United States,2018,78.7997
+United States,2019,78.916
+United States,2020,77.0115
+United States,2021,76.3836
+United States,2022,77.9789
+United States,2023,79.3043
+China,1960,33.419
+China,1961,40.1583
+China,1962,50.9594
+China,1963,51.6698
+China,1964,52.3425
+China,1965,53.0009
+China,1966,53.6624
+China,1967,54.4005
+China,1968,55.1908
+China,1969,55.9878
+China,1970,56.8241
+China,1971,57.7312
+China,1972,58.5789
+China,1973,59.4961
+China,1974,60.2408
+China,1975,60.952
+China,1976,61.225
+China,1977,62.458
+China,1978,63.1016
+China,1979,63.7043
+China,1980,64.2433
+China,1981,64.7779
+China,1982,65.2494
+China,1983,65.7285
+China,1984,66.1478
+China,1985,66.5319
+China,1986,66.8873
+China,1987,67.263
+China,1988,67.6071
+China,1989,67.9303
+China,1990,68.1547
+China,1991,68.6099
+China,1992,69.0587
+China,1993,69.4924
+China,1994,69.8355
+China,1995,70.3631
+China,1996,70.8225
+China,1997,71.2271
+China,1998,71.6014
+China,1999,71.9519
+China,2000,72.2885
+China,2001,72.6755
+China,2002,73.0339
+China,2003,73.3853
+China,2004,73.7274
+China,2005,74.085
+China,2006,74.4037
+China,2007,74.7886
+China,2008,74.8333
+China,2009,75.3174
+China,2010,75.6679
+China,2011,75.8891
+China,2012,76.2
+China,2013,76.4521
+China,2014,76.7143
+China,2015,76.9755
+China,2016,77.214
+China,2017,77.2353
+China,2018,77.709
+China,2019,77.9396
+China,2020,78.0191
+China,2021,78.1166
+China,2022,78.2021
+China,2023,77.9529
+India,1960,45.6104
+India,1961,45.8244
+India,1962,46.1335
+India,1963,46.4581
+India,1964,46.7418
+India,1965,45.5579
+India,1966,45.8839
+India,1967,46.1835
+India,1968,47.9249
+India,1969,48.2601
+India,1970,48.5852
+India,1971,48.9023
+India,1972,49.2126
+India,1973,49.6418
+India,1974,50.2589
+India,1975,50.7615
+India,1976,51.3019
+India,1977,51.8221
+India,1978,52.4204
+India,1979,53.0143
+India,1980,53.5928
+India,1981,54.1726
+India,1982,54.7354
+India,1983,55.2829
+India,1984,55.8125
+India,1985,56.3239
+India,1986,56.8193
+India,1987,57.2908
+India,1988,57.7443
+India,1989,58.1959
+India,1990,58.6184
+India,1991,59.0324
+India,1992,59.445
+India,1993,59.823
+India,1994,60.2372
+India,1995,60.6295
+India,1996,61.0269
+India,1997,61.4393
+India,1998,61.8525
+India,1999,62.2837
+India,2000,62.7492
+India,2001,63.1581
+India,2002,63.6486
+India,2003,64.0862
+India,2004,64.4843
+India,2005,64.9385
+India,2006,65.3726
+India,2007,65.8034
+India,2008,66.2471
+India,2009,66.7001
+India,2010,67.1616
+India,2011,67.6228
+India,2012,68.0763
+India,2013,68.499
+India,2014,68.9323
+India,2015,69.326
+India,2016,69.7091
+India,2017,70.0676
+India,2018,70.4152
+India,2019,70.7463
+India,2020,70.1563
+India,2021,67.2823
+India,2022,71.6984
+India,2023,72.0026
+France,1960,70.3675
+France,1961,70.9582
+France,1962,70.4704
+France,1963,70.3204
+France,1964,71.2802
+France,1965,71.1067
+France,1966,71.5138
+France,1967,71.4983
+France,1968,71.4857
+France,1969,71.2063
+France,1970,72.0915
+France,1971,72.0735
+France,1972,72.3134
+France,1973,72.4756
+France,1974,72.8037
+France,1975,72.9001
+France,1976,73.122
+France,1977,73.7282
+France,1978,73.8445
+France,1979,74.125
+France,1980,74.2335
+France,1981,74.3965
+France,1982,74.7657
+France,1983,74.7344
+France,1984,75.2175
+France,1985,75.309
+France,1986,75.5776
+France,1987,76.1465
+France,1988,76.398
+France,1989,76.5432
+France,1990,76.8351
+France,1991,77.0162
+France,1992,77.2973
+France,1993,77.3488
+France,1994,77.7681
+France,1995,77.8715
+France,1996,78.0613
+France,1997,78.4246
+France,1998,78.5879
+France,1999,78.7457
+France,2000,79.0438
+France,2001,79.2208
+France,2002,79.4109
+France,2003,79.419
+France,2004,80.3363
+France,2005,80.3367
+France,2006,80.7449
+France,2007,80.9602
+France,2008,81.0392
+France,2009,81.1635
+France,2010,81.4047
+France,2011,81.781
+France,2012,81.739
+France,2013,81.9786
+France,2014,82.4366
+France,2015,82.1487
+France,2016,82.4008
+France,2017,82.4385
+France,2018,82.5682
+France,2019,82.7304
+France,2020,82.1993
+France,2021,82.3216
+France,2022,82.4753
+France,2023,83.3253
+Germany,1960,69.2509
+Germany,1961,69.837
+Germany,1962,69.9991
+Germany,1963,70.1167
+Germany,1964,70.6493
+Germany,1965,70.6251
+Germany,1966,70.7413
+Germany,1967,70.9581
+Germany,1968,70.6078
+Germany,1969,70.4581
+Germany,1970,70.6782
+Germany,1971,70.9119
+Germany,1972,71.1482
+Germany,1973,71.362
+Germany,1974,71.6776
+Germany,1975,71.5162
+Germany,1976,71.9791
+Germany,1977,72.5901
+Germany,1978,72.5703
+Germany,1979,72.9181
+Germany,1980,73.0883
+Germany,1981,73.331
+Germany,1982,73.6277
+Germany,1983,73.9176
+Germany,1984,74.3796
+Germany,1985,74.4919
+Germany,1986,74.6953
+Germany,1987,75.1073
+Germany,1988,75.2806
+Germany,1989,75.467
+Germany,1990,75.3414
+Germany,1991,75.5597
+Germany,1992,76.0035
+Germany,1993,76.0803
+Germany,1994,76.3799
+Germany,1995,76.5515
+Germany,1996,76.7833
+Germany,1997,77.2182
+Germany,1998,77.5759
+Germany,1999,77.7977
+Germany,2000,78.0563
+Germany,2001,78.4023
+Germany,2002,78.4749
+Germany,2003,78.5361
+Germany,2004,79.1186
+Germany,2005,79.254
+Germany,2006,79.5862
+Germany,2007,79.7306
+Germany,2008,79.8161
+Germany,2009,79.9151
+Germany,2010,80.0814
+Germany,2011,80.3549
+Germany,2012,80.5017
+Germany,2013,80.454
+Germany,2014,80.9056
+Germany,2015,80.5658
+Germany,2016,80.8371
+Germany,2017,80.9371
+Germany,2018,80.8747
+Germany,2019,81.1893
+Germany,2020,81.0036
+Germany,2021,81.1059
+Germany,2022,80.5796
+Germany,2023,81.3777
+Brazil,1960,53.1624
+Brazil,1961,53.5944
+Brazil,1962,54.0165
+Brazil,1963,54.4516
+Brazil,1964,54.8483
+Brazil,1965,55.2429
+Brazil,1966,55.6252
+Brazil,1967,56.0157
+Brazil,1968,56.4704
+Brazil,1969,56.8978
+Brazil,1970,57.338
+Brazil,1971,57.7857
+Brazil,1972,58.2553
+Brazil,1973,58.6812
+Brazil,1974,59.0812
+Brazil,1975,59.5561
+Brazil,1976,60.0072
+Brazil,1977,60.4612
+Brazil,1978,60.9215
+Brazil,1979,61.3654
+Brazil,1980,61.8195
+Brazil,1981,62.2672
+Brazil,1982,62.7083
+Brazil,1983,63.1329
+Brazil,1984,63.5532
+Brazil,1985,63.9795
+Brazil,1986,64.3887
+Brazil,1987,64.7849
+Brazil,1988,65.1613
+Brazil,1989,65.5141
+Brazil,1990,65.8624
+Brazil,1991,66.203
+Brazil,1992,66.5393
+Brazil,1993,66.8923
+Brazil,1994,67.2934
+Brazil,1995,67.7006
+Brazil,1996,68.1084
+Brazil,1997,68.505
+Brazil,1998,68.8482
+Brazil,1999,69.2111
+Brazil,2000,69.5842
+Brazil,2001,69.98
+Brazil,2002,70.3958
+Brazil,2003,70.8841
+Brazil,2004,71.3611
+Brazil,2005,71.8319
+Brazil,2006,72.2963
+Brazil,2007,72.7297
+Brazil,2008,73.1109
+Brazil,2009,73.4569
+Brazil,2010,73.779
+Brazil,2011,74.0473
+Brazil,2012,74.3346
+Brazil,2013,74.6093
+Brazil,2014,74.8225
+Brazil,2015,75.1064
+Brazil,2016,75.0805
+Brazil,2017,75.3835
+Brazil,2018,75.6335
+Brazil,2019,75.8093
+Brazil,2020,74.5058
+Brazil,2021,73.0377
+Brazil,2022,74.8719
+Brazil,2023,75.8482

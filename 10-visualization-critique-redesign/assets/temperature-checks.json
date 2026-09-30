@@ -1,0 +1,15 @@
+{
+  "monthly_count": 1716,
+  "annual_count": 143,
+  "baseline": "1951-1980",
+  "window": "1880-2022",
+  "colour_domain_celsius": [
+    -1.5,
+    1.5
+  ],
+  "monthly_min": "-0.82",
+  "monthly_max": "1.37",
+  "mean_2022": "0.8925",
+  "min_2022": "0.73",
+  "max_2022": "1.05"
+}

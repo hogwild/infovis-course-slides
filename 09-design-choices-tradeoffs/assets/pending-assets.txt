@@ -1,6 +1,6 @@
-Lecture 09 · 素材状态（2026-09-27）
+Lecture 09 · 素材状态（2026-09-29）
 
-本版 44 页无 SOURCE PLACEHOLDER 或 PRODUCTION PLACEHOLDER。
+本版 45 页无 SOURCE PLACEHOLDER 或 PRODUCTION PLACEHOLDER。
 使用现有原图、用户提供的 exercise-performance.png / debt-risk.png 对照图，以及 NASA 气候动画和折线图；完整来源、版本、许可与派生说明见 assets/SOURCES.md。
 第 30 页内嵌 NASA 动画并提供静态 PNG fallback。
 
@@ -8,4 +8,6 @@ Lecture 09 · 素材状态（2026-09-27）
 第 21–22 页的传统/极简条形图与 Bateman 研究对照图均已就绪。
 第 24–42 页的 Wheel、读者与 Isotype 案例素材均已就绪；3 张 Wheel SVG 保留原轮廓，不新增评分。
 
-已删除原第 43–61 页，新增 Summary 为第 43 页，阅读材料为第 44 页。删除页面未清理 assets，原素材保留备查。
+已删除原第 43–61 页，第 43 页新增 glyph，Summary 为第 44 页，阅读材料为第 45 页。删除页面未清理 assets，原素材保留备查。
+
+第 43 页使用完整 Guerry 星形图地图，原图已从指定 PPTX 提取，原始作者和变量编码已核对，无待补素材。

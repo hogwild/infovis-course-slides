@@ -1,0 +1,9 @@
+{
+  "eight_observations": 512,
+  "studio_endpoints": 6,
+  "studio_annual_observations": 102,
+  "Japan_US_gap_1990": 3.6184999999999974,
+  "Japan_US_gap_2023": 5.408000000000001,
+  "truncated_length_ratio": 2.256418000604048,
+  "actual_value_ratio": 1.068193023581319
+}

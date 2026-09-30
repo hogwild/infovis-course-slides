@@ -363,3 +363,12 @@ Instructor requested all reference slides 18–36 after current slide 23. Fourte
 - No numeric scores were inferred. Geometry preserves the instructor-supplied qualitative illustration, not a measurement of chart quality. Wheel credit: Alberto Cairo, The Functional Art, Ch. 3.
 
 Text references: Cairo, https://www.peachpit.com/store/functional-art-an-introduction-to-information-graphics-9780321834737 ; Don Norman, Emotion & Design (2002), https://jnd.org/emotion-design-attractive-things-work-better/ ; University of Reading, https://isotyperevisited.org/ .
+
+## guerry-star-glyphs.png
+
+- Extracted unchanged from `slides_previous_semester/05_Designing_layouts.pptx`, slide 14, `ppt/media/image21.png` on 2026-09-29.
+- SHA-256: `c2a4caaa765f54d00682a31e0b2efcac7b9c0029604b258fd6be98569f15d826`.
+- Original figure: Michael Friendly (2007), *A.-M. Guerry’s Moral Statistics of France: Challenges for Multivariable Spatial Analysis*, Statistical Science 22(3), 368–399, Fig. 17. https://datavis.ca/papers/guerry-STS241.pdf ; DOI 10.1214/07-STS241. Image retained as supplied for the teaching example, with visible original-author attribution.
+- Left: French department glyphs. Right: regional median/quartile glyphs. Six rays encode oriented variable ranks, not raw data values. Original axes, legends, colors and complete map panels retained.
+- Concept reference: Borgo et al. (2013), *Glyph-based Visualization: Foundations, Design Guidelines, Techniques and Applications*, https://doi.org/10.2312/conf/EG2013/stars/039-063 . Definition and visual-channel mapping checked against the authors’ report.
+- Teaching scope: generalizes shared visual grammar from pictograms to multivariate glyphs; does not assert a direct historical lineage from Isotype.
