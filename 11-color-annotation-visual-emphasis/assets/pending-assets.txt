@@ -1,0 +1,42 @@
+Lecture 11 · Designing Colormaps · 53 slides · 2026-10-12
+
+No unresolved SOURCE PLACEHOLDER or PRODUCTION PLACEHOLDER remains.
+
+The lecture uses historical source graphics, original mechanism diagrams, and the user-selected schematic spectral response graphic. The five opening foundation slides are complete. Slide 6 uses the user's two selected original images, with related scientific reading and provenance limitations recorded in SOURCES.md.
+
+Documented source limitations:
+- NYT image is preserved by Joshua Stevens; the original NYT page was inaccessible.
+- The previous BBC vote-share images are retained as unused references. BBC vaccination uses the archived 5 July 2022 classes; the highest class is open-ended (80%+).
+- NOAA source collection returned HTTP 429; title, date, and key are verified from the original supplied image.
+- Crop image has no visible data year. The unused Tableau parallel-map excerpt has no numeric keys.
+- Slide 6's supplied grayscale micrograph has no original photographer credit; the precise source panel of the supplied cone-mosaic raster is unverified. Reading references do not assert image authorship.
+
+- Slide 7 uses the supplied schematic response chart; its original illustrator and numerical basis are unverified. The Stockman link is scientific reading, not image attribution.
+
+See SOURCES.md and the relevant speaker notes for details.
+
+Imported content has been consolidated through removal of duplicate sections and examples. Five sequential/diverging definition and example pages have moved forward to slides 26–28 and 30–31, immediately after the ordered-colormap overview; slide 29 compares single- and multiple-hue visual emphasis. The colormap definition is now on slide 21 with category and ordered-attribute examples; the standalone qualitative-palette slide has been removed. All requested core images are local; no production or source placeholders were introduced. Supplied images with unverified original creators or data metadata are documented individually in SOURCES.md and relevant teaching notes.
+
+The value-mapping section now follows slide 32 on slides 33–41. The duplicate continuous/binned page has been merged into slide 32; its SVG is retained as an unused asset. Univariate/bivariate examples begin on slide 43; the bivariate-legend reading exercise follows the two-ordinal-attribute example on slide 46.
+
+Slides 39–41 now show the BBC vaccination, English IMD 2019 decile, and AirNow / Fast Company AQI examples. All maps and enlarged keys are local; no unresolved placeholders.
+
+The standalone special-value and cross-view consistency pages have been removed. Their reminders are incorporated into slides 42 and 35; the two original SVG files are retained unused.
+
+The duplicate color-coordinate page (formerly slide 57) has been removed. Slide 19 now includes the perceptual-uniformity definition and CIELAB approximation; the NASA palette raster remains unused.
+
+The former slides 54–78 have been removed at the user’s request. The final main-lecture example is on slide 49 with redundant cues, followed by the summary on slide 50 and Appendix on slides 51–53. All source assets remain available, including those no longer referenced. An agenda and summary were added in the subsequent review.
+
+The previously duplicated univariate/bivariate pages are consolidated on current slide 43. Full definitions, both historical maps and their variable captions, the bivariate-legend reminder, and source limitations are preserved. No new assets or placeholders were required.
+
+The new agenda on slide 2 and summary on slide 50 use existing theme components and require no new assets or placeholders.
+
+The cultural-association pages are consolidated on slide 15 using the user-selected yellow smiley and imperial-robe examples; the red examples are retained as unused assets. No new assets or placeholders were introduced.
+
+The two comparison-task pages are consolidated on slide 16 using the unchanged dna-mice-human.png. The separate chromosome-key asset is retained unused. No new imagery or placeholders were required.
+
+The Appendix contains a new divider on slide 51 and the unchanged bivariate-resource and mixed-color-example pages on slides 52–53. All referenced assets remain local and active; no new assets or placeholders were required.
+
+The standalone color-vision introduction was removed. Slide 48 now explains how palette choice mitigates reading barriers and why blue–orange is useful for deuteranopia and protanopia. The test-plate raster is retained unused; the four color wheels are unchanged. No new assets or placeholders were required.
+
+Slide 37 adds two local choropleth maps of the same 2020 Census state population density data under linear and logarithmic normalization. The verified data, boundaries, and static SVG are complete; no placeholder remains. Subsequent slides moved forward by one.

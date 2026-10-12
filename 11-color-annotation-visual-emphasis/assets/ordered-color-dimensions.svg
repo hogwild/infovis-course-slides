@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="320" viewBox="0 0 660 320" role="img" aria-labelledby="title desc">
+<title id="title">Ordered color dimensions</title>
+<desc id="desc">Two conceptual ordered ramps: light to dark gray and muted to vivid blue.</desc>
+<rect width="660" height="320" fill="white"/>
+<text x="24" y="35" font-family="Arial,sans-serif" font-size="30" fill="#19233B" text-anchor="start" font-weight="700">Lightness</text>
+<text x="636" y="35" font-family="Arial,sans-serif" font-size="26" fill="#637084" text-anchor="end" font-weight="400">Light → Dark</text>
+<text x="24" y="180" font-family="Arial,sans-serif" font-size="30" fill="#19233B" text-anchor="start" font-weight="700">Saturation</text>
+<text x="636" y="180" font-family="Arial,sans-serif" font-size="26" fill="#637084" text-anchor="end" font-weight="400">Muted → Vivid</text>
+<rect x="24" y="52" width="102" height="50" fill="#e8e8e8"/>
+<rect x="126" y="52" width="102" height="50" fill="#c5c5c5"/>
+<rect x="228" y="52" width="102" height="50" fill="#a2a2a2"/>
+<rect x="330" y="52" width="102" height="50" fill="#808080"/>
+<rect x="432" y="52" width="102" height="50" fill="#5d5d5d"/>
+<rect x="534" y="52" width="102" height="50" fill="#3a3a3a"/>
+<rect x="24" y="197" width="102" height="50" fill="#737f8c"/>
+<rect x="126" y="197" width="102" height="50" fill="#5c7fa3"/>
+<rect x="228" y="197" width="102" height="50" fill="#457fba"/>
+<rect x="330" y="197" width="102" height="50" fill="#2e7fd1"/>
+<rect x="432" y="197" width="102" height="50" fill="#177fe8"/>
+<rect x="534" y="197" width="102" height="50" fill="#007fff"/>
+<text x="24" y="132" font-family="Arial,sans-serif" font-size="28" fill="#637084" text-anchor="start" font-weight="400">Lower value</text>
+<text x="636" y="132" font-family="Arial,sans-serif" font-size="28" fill="#637084" text-anchor="end" font-weight="400">Higher value</text>
+<text x="24" y="279" font-family="Arial,sans-serif" font-size="28" fill="#637084" text-anchor="start" font-weight="400">Lower value</text>
+<text x="636" y="279" font-family="Arial,sans-serif" font-size="28" fill="#637084" text-anchor="end" font-weight="400">Higher value</text>
+</svg>

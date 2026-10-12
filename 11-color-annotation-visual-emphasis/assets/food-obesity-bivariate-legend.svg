@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="870" height="640" viewBox="0 0 870 640" role="img" aria-labelledby="title desc">
+<title id="title">Food insecurity and obesity: the same nine classes as the preceding map</title>
+<desc id="desc">Food insecurity increases from left to right. Obesity increases from bottom to top. Corner labels list food insecurity first and obesity second.</desc>
+<g font-family="Arial, sans-serif" fill="#17233c">
+<text x="504" y="35" text-anchor="middle" font-size="32" font-weight="600">Food insecurity level</text>
+<text x="38" y="297" font-size="30" font-weight="600">Obesity</text>
+<text x="38" y="333" font-size="30" font-weight="600">level</text>
+<text x="348.0" y="83" text-anchor="middle" font-size="28">Low</text>
+<text x="504.0" y="83" text-anchor="middle" font-size="28">Medium</text>
+<text x="660.0" y="83" text-anchor="middle" font-size="28">High</text>
+<text x="242" y="196.0" text-anchor="end" font-size="28">High</text>
+<text x="242" y="352.0" text-anchor="end" font-size="28">Medium</text>
+<text x="242" y="508.0" text-anchor="end" font-size="28">Low</text>
+<rect x="270" y="108" width="156" height="156" fill="#f3b300" stroke="#ffffff" stroke-width="3"/>
+<rect x="426" y="108" width="156" height="156" fill="#b36600" stroke="#ffffff" stroke-width="3"/>
+<rect x="582" y="108" width="156" height="156" fill="#010002" stroke="#ffffff" stroke-width="3"/>
+<rect x="270" y="264" width="156" height="156" fill="#f4e6b3" stroke="#ffffff" stroke-width="3"/>
+<rect x="426" y="264" width="156" height="156" fill="#b4b4b4" stroke="#ffffff" stroke-width="3"/>
+<rect x="582" y="264" width="156" height="156" fill="#376287" stroke="#ffffff" stroke-width="3"/>
+<rect x="270" y="420" width="156" height="156" fill="#f4f4f3" stroke="#ffffff" stroke-width="3"/>
+<rect x="426" y="420" width="156" height="156" fill="#b3d3e2" stroke="#ffffff" stroke-width="3"/>
+<rect x="582" y="420" width="156" height="156" fill="#509dc2" stroke="#ffffff" stroke-width="3"/>
+<text x="348" y="195" text-anchor="middle" fill="#17233c" font-size="25" font-weight="600">Low × high</text>
+<text x="660" y="195" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="600">High × high</text>
+<text x="348" y="507" text-anchor="middle" fill="#17233c" font-size="25" font-weight="600">Low × low</text>
+<text x="660" y="507" text-anchor="middle" fill="#17233c" font-size="25" font-weight="600">High × low</text>
+<text x="504" y="622" text-anchor="middle" font-size="25">Pairs: food insecurity × obesity</text>
+</g>
+</svg>
