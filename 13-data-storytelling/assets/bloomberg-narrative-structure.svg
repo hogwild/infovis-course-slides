@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Bloomberg: a guided explanation opens into exploration</title>
+  <desc id="desc">Four selected stages form a common authored path: observed warming, natural factors, greenhouse gases, and the combined response. Afterwards, readers can choose comparisons among the introduced factors. Branch labels describe comparison topics, not original interface controls.</desc>
+  <defs>
+    <marker id="author-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#3157a4"/>
+    </marker>
+    <marker id="reader-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#7656a6"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <g font-family="Arial, sans-serif" fill="#17233c">
+    <text x="38" y="64" font-size="29" font-weight="700" fill="#3157a4">1  Guided explanation</text>
+    <text x="650" y="64" font-size="29" font-weight="700" fill="#7656a6">2  Open exploration</text>
+    <text x="38" y="103" font-size="22" fill="#667085">One shared sequence</text>
+    <text x="650" y="103" font-size="22" fill="#667085">Reader-chosen comparisons</text>
+    <g stroke="#3157a4" stroke-width="3" fill="none" marker-end="url(#author-arrow)">
+      <path d="M81 251H192"/>
+      <path d="M226 251H337"/>
+      <path d="M371 251H482"/>
+    </g>
+    <g fill="#3157a4">
+      <circle cx="64" cy="251" r="15"/>
+      <circle cx="209" cy="251" r="15"/>
+      <circle cx="354" cy="251" r="15"/>
+      <circle cx="499" cy="251" r="15"/>
+    </g>
+    <g font-size="24" text-anchor="middle">
+      <text x="64" y="306"><tspan x="64">Observed</tspan><tspan x="64" dy="29">warming</tspan></text>
+      <text x="209" y="306"><tspan x="209">Natural</tspan><tspan x="209" dy="29">factors</tspan></text>
+      <text x="354" y="306"><tspan x="354">Greenhouse</tspan><tspan x="354" dy="29">gases</tspan></text>
+      <text x="499" y="306"><tspan x="499">Combined</tspan><tspan x="499" dy="29">response</tspan></text>
+    </g>
+    <g stroke="#7656a6" stroke-width="3" fill="none">
+      <path d="M516 251H609"/>
+      <path d="M609 169V390"/>
+      <path d="M609 169H694" marker-end="url(#reader-arrow)"/>
+      <path d="M609 280H694" marker-end="url(#reader-arrow)"/>
+      <path d="M609 390H694" marker-end="url(#reader-arrow)"/>
+    </g>
+    <circle cx="609" cy="251" r="6" fill="#7656a6"/>
+    <g font-size="25">
+      <text x="716" y="166"><tspan x="716">Natural factors</tspan><tspan x="716" dy="30" font-size="22" fill="#667085">and observed warming</tspan></text>
+      <text x="716" y="277"><tspan x="716">Greenhouse gases</tspan><tspan x="716" dy="30" font-size="22" fill="#667085">and observed warming</tspan></text>
+      <text x="716" y="387"><tspan x="716">Combined influences</tspan><tspan x="716" dy="30" font-size="22" fill="#667085">and observed warming</tspan></text>
+    </g>
+    <path d="M38 466H962" stroke="#d8dbe4" stroke-width="2"/>
+    <text x="38" y="507" font-size="25">The guided sequence prepares readers for the comparisons they choose.</text>
+  </g>
+</svg>
