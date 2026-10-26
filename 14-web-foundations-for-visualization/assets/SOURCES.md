@@ -1,5 +1,7 @@
 # Lecture 14 · Material sources
 
+> Cleanup 2026-10-26: superseded demo runtime files, optional `starter.html`, `class-style.html`, Bootstrap `index.html` / `grid.html`, and unused `chapter-states.svg`, `style-states.svg`, `dom-tree.svg` were removed. References to retained earlier versions below are historical provenance, not the current file inventory. Current slide-linked examples and teaching-data audit records remain. QA screenshots were removed from built and published outputs.
+
 Updated 2026-10-25. The current beginner deck has **38 pages / a 75-minute session**: seven established opening pages, an Agenda, six HTML pages (09–14), fourteen CSS pages (15–28: eleven foundations pages and three Bootstrap pages), nine SVG pages (29–37), and a five-minute review (38). Slide Notes total 73 minutes, leaving 2 minutes for classroom questions and discussion. Bootstrap's twelve-unit grid replaces native CSS Grid on slide 26. The original native Grid implementation and gap exercise remain optional resources; the separate SVG group-movement activity remains removed. JavaScript and D3 are deferred to Lecture 15. Technical examples are original course illustrations except for the specifically attributed reference images, with actual small HTML/CSS/SVG files supplied for practice. Their visual language follows the shared Marp theme.
 
 ## Instructor’s project and data
