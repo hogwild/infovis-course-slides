@@ -1,0 +1,32 @@
+/* The HTML supplies the content. These rules set its presentation. */
+body {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #263248;
+  background: #fcfaf6;
+}
+h1 { color: #3157a4; font-size: 40px; }
+h2 { color: #3157a4; font-size: 28px; }
+p { font-size: 24px; line-height: 1.5; }
+a { color: #3157a4; }
+header { margin-bottom: 24px; }
+header p { margin: 12px 0; }
+.story-section {
+  border: 2px solid #3157a4;
+  padding: 16px;
+}
+#calendar { background: #edf3fc; }
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.story-layout > * { min-width: 0; }
+svg { display: block; width: 100%; height: auto; }
+footer p { margin-top: 24px; font-size: 16px; }
+/* Keep the example readable when the browser is narrower than a slide. */
+@media (max-width: 700px) {
+  .story-layout { grid-template-columns: 1fr; }
+}

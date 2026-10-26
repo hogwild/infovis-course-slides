@@ -1,0 +1,25 @@
+{
+  "scope": "Jersey City",
+  "month": "April 2020",
+  "acceptedTrips": 9268,
+  "coveredDates": 30,
+  "weekdayDates": 22,
+  "weekendDates": 8,
+  "weekdayRides": 5742,
+  "weekendRides": 3526,
+  "weekdayMean": 261.0,
+  "weekendMean": 440.75,
+  "dailyMean": 308.93333333333334,
+  "maximumDay": {
+    "date": "2020-04-25",
+    "rides": 731,
+    "isWeekend": true
+  },
+  "minimumDay": {
+    "date": "2020-04-13",
+    "rides": 98,
+    "isWeekend": false
+  },
+  "weekendVsWeekdayPercent": 68.86973180076627,
+  "totalCheck": true
+}

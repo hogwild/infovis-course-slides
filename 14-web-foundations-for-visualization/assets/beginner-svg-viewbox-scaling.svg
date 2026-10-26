@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Internal coordinates stay fixed while displayed sizes scale</title>
+  <desc id="desc">Both viewBox regions are 240 by 180 SVG units. The same 100 by 80-unit rectangle displays at 100 by 80 CSS pixels with scale 1, and 150 by 120 CSS pixels with scale 1.5. Purple boundaries and blue labels are teaching annotations; rectangle dimensions exclude its stroke.</desc>
+  <defs>
+    <marker id="dimension-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#7656a6"/></marker>
+  </defs>
+  <g fill="#17233c" font-size="28" font-weight="700" text-anchor="middle">
+    <text x="260" y="30">SVG display: 240 × 180 CSS px</text>
+    <text x="875" y="30">SVG display: 360 × 270 CSS px</text>
+  </g>
+  <g fill="#3157a4" font-size="28" text-anchor="middle">
+    <text x="260" y="67">Scale: 240 ÷ 240 = <tspan font-weight="700">1×</tspan></text>
+    <text x="875" y="67">Scale: 360 ÷ 240 = <tspan font-weight="700">1.5×</tspan></text>
+  </g>
+  <rect x="140" y="145" width="240" height="180" fill="#f3eff9" stroke="#7656a6" stroke-width="3" stroke-dasharray="8 5"/>
+  <rect x="695" y="100" width="360" height="270" fill="#f3eff9" stroke="#7656a6" stroke-width="3" stroke-dasharray="8 5"/>
+  <g transform="translate(140,145)">
+    <rect x="60" y="40" width="100" height="80" fill="#3157a4" stroke="#b86f16" stroke-width="3"/>
+    <g fill="white" font-size="24"><text x="70" y="65">4</text><text x="70" y="100">538</text></g>
+  </g>
+  <g transform="translate(695,100) scale(1.5)">
+    <rect x="60" y="40" width="100" height="80" fill="#3157a4" stroke="#b86f16" stroke-width="3"/>
+    <g fill="white" font-size="24"><text x="70" y="65">4</text><text x="70" y="100">538</text></g>
+  </g>
+  <g fill="#7656a6" font-size="24">
+    <text x="140" y="130">(0, 0)</text><text x="695" y="85">(0, 0)</text>
+    <text x="154" y="171" font-size="22" font-weight="700">viewBox region</text>
+    <text x="709" y="126" font-size="22" font-weight="700">viewBox region</text>
+    <text x="390" y="330">(240, 180)</text><text x="1065" y="375">(240, 180)</text>
+    <text x="260" y="383" text-anchor="middle">240 SVG units</text><text x="875" y="428" text-anchor="middle">240 SVG units</text>
+    <text transform="translate(96,235) rotate(-90)" text-anchor="middle">180 SVG units</text>
+    <text transform="translate(651,235) rotate(-90)" text-anchor="middle">180 SVG units</text>
+    <circle cx="140" cy="145" r="4"/><circle cx="380" cy="325" r="4"/><circle cx="695" cy="100" r="4"/><circle cx="1055" cy="370" r="4"/>
+  </g>
+  <g fill="none" stroke="#7656a6" stroke-width="2" marker-start="url(#dimension-arrow)" marker-end="url(#dimension-arrow)">
+    <path d="M140 351 H380"/><path d="M695 396 H1055"/>
+    <path d="M115 145 V325"/><path d="M670 100 V370"/>
+  </g>
+  <g stroke="#3157a4" stroke-width="2" fill="none"><path d="M250 265 V279"/><path d="M860 280 V295"/></g>
+  <g fill="#3157a4" font-size="24" font-weight="700" text-anchor="middle">
+    <text x="260" y="302">rect: 100 × 80 px</text>
+    <text x="875" y="319">rect: 150 × 120 px</text>
+  </g>
+</svg>

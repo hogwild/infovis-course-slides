@@ -1,0 +1,152 @@
+[
+  {
+    "date": "2020-04-01",
+    "rides": 299,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-02",
+    "rides": 219,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-03",
+    "rides": 149,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-04",
+    "rides": 538,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-05",
+    "rides": 478,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-06",
+    "rides": 444,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-07",
+    "rides": 350,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-08",
+    "rides": 356,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-09",
+    "rides": 190,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-10",
+    "rides": 237,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-11",
+    "rides": 377,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-12",
+    "rides": 471,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-13",
+    "rides": 98,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-14",
+    "rides": 280,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-15",
+    "rides": 333,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-16",
+    "rides": 228,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-17",
+    "rides": 221,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-18",
+    "rides": 209,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-19",
+    "rides": 587,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-20",
+    "rides": 288,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-21",
+    "rides": 209,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-22",
+    "rides": 292,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-23",
+    "rides": 228,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-24",
+    "rides": 156,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-25",
+    "rides": 731,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-26",
+    "rides": 135,
+    "isWeekend": true
+  },
+  {
+    "date": "2020-04-27",
+    "rides": 209,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-28",
+    "rides": 562,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-29",
+    "rides": 261,
+    "isWeekend": false
+  },
+  {
+    "date": "2020-04-30",
+    "rides": 133,
+    "isWeekend": false
+  }
+]

@@ -1,0 +1,33 @@
+# Lecture 14 · Static page example
+
+Updated 2026-10-25 for the 38-page, 75-minute deck: HTML on slides 09–14, CSS foundations on 15–25 (11 pages), Bootstrap on 26–28 (3 pages), SVG on 29–37 (9 pages), and the review on 38. Slide Notes allocate 73 minutes, with 2 minutes reserved for questions and discussion.
+
+- `intro.html`: the complete minimal HTML shown on slide 10, including its local calendar image. It has no CSS or JavaScript.
+- `css-methods/`: three complete minimal CSS examples. `internal.html` places a style element in head, `external/index.html` links its adjacent `style.css`, and `inline.html` uses the heading’s style attribute. All show the same heading in #3157a4 blue.
+- `selector-class.html` / `selector-id.html`: complete documents containing the exact HTML body fragments on slides 22–23. The first applies the shared class border rule; the second retains it and adds a background only to the calendar ID. Typography and spacing setup are separated from the teaching rules.
+- `starter.html`: plain HTML with a local SVG image and an in-page link.
+- `index.html`: the original implementation after CSS is connected, using native CSS Grid; the calendar is inline SVG so its elements can be inspected and edited as part of the page. This page remains available for the closing review and optional practice, separately from the Bootstrap examples.
+- `style.css`: the original small stylesheet. Tag, class and ID selectors match the corresponding earlier lessons. Its native Grid layout and gap change from 16px to 48px remain optional practice; slide 26 now teaches Bootstrap grid spans.
+- `../bootstrap-grid-system.png`: the full supplied 2048 × 1151 grid illustration on slide 26, used to explain the twelve units and the 6+6 / 4+8 span combinations. This concept page has no code block.
+- `../bootstrap-breakpoints.png`: the complete supplied 1632 × 768 breakpoint-table image on slide 27. The page defines responsive layout and breakpoint, focusing on `md` = 768 CSS pixels; the other table values remain reference material. These two images are user-provided source material, not new browser captures; provenance is recorded in `../SOURCES.md`.
+- `bootstrap/layout.html`: the current complete offline Bootstrap example linked from slide 28. That slide shows a one-line stylesheet link labelled “In head” and the complete twelve-line container fragment labelled “In body”, without ellipses. The full file also includes document structure, charset, title and viewport metadata. It loads the local unmodified Bootstrap 5.3.8 `bootstrap.css` and `calendar.svg`, with no additional page CSS or JavaScript. The original MIT header and `LICENSE` are included; see `bootstrap/README.md` for official download sources and verified CSS SHA-384.
+- `bootstrap/index.html` and `bootstrap/grid.html`: retained optional examples from the earlier arrangement. The first is the earlier responsive page; the second has two `col-6` children labelled Text and Chart. They are not the code or screenshot source for the current slides 26–28.
+- `../bootstrap-citibike-wide.png` (800 × 290) and `../bootstrap-citibike-narrow.png` (360 × 300): updated real browser captures of `bootstrap/layout.html`, made on 2026-10-25 at the respective CSS-pixel viewport sizes. They match slide 28's h2/div layout and replace the earlier captures of `bootstrap/index.html`. Their independent projection scaling does not support comparing absolute pixel or physical sizes across the two displayed images.
+- `calendar.svg`: copied from the verified teaching calendar, generated from the supplied April 2020 Jersey City trip data. 30 dates, 9,268 trips. Geometry is drawn before class; no JavaScript is used.
+- `cell.html`: optional practice file for the SVG group introduced on slide 35, with the disclosed white 24px Arial text style. Edit its translation to move the cell and its labels together. The separate movement activity remains removed from the lecture.
+- `../beginner-calendar-pair.svg`: the complete two-date SVG example on slide 37, using the verified April 1 and April 2 counts.
+- `final-page.png`: actual browser capture of `index.html`, used in the closing review on slide 38.
+
+Open the supplied local HTTP link, or open a complete HTML file directly. All required resources are local. Some slide excerpts omit surrounding metadata for readability. On slide 28, the two Bootstrap snippets are explicitly located in head and body; their shown elements are complete, while the full runnable document is in `bootstrap/layout.html`. The selector examples retain their full body contents. Browser snippets in the deck are enlarged classroom presentations; these files provide the actual standalone result. The original React/D3 project is separate. Existing original graphics and optional practice files are retained.
+
+## Classroom use
+
+For the three CSS placement methods, open each complete example in `css-methods/` and compare the source. All three apply the same color declaration to the same heading. The external example keeps its own one-rule stylesheet so it does not alter the finished page.
+
+On slide 26, define Bootstrap and use the complete grid illustration to compare 6+6 with 4+8. Twelve equal-width units do not require twelve visible elements; each column can span multiple units. No code is taught on this page.
+
+On slide 27, define a responsive layout as one that adapts to viewport width, and a breakpoint as a width threshold at which specified rules apply. Use the full reference table to locate only `md` at 768 CSS pixels. Describe the required behavior before introducing code: text and calendar share a 1:2 row from that width upward and stack below it, with unchanged content.
+
+The former native CSS Grid and gap exercise is outside the current classroom sequence. For optional practice afterward, use the retained original `index.html` and `style.css` and change only the gap from 16px to 48px.
+
+On slide 28, connect the complete local stylesheet link and body container fragment to `bootstrap/layout.html`, then resize that file in the same browser window. From 768 CSS pixels upward, `col-md-4` and `col-md-8` provide 4/12 and 8/12 column widths, a 1:2 ratio. Below 768 pixels, the text and calendar stack in source order. Both column elements are divs; the text includes h2 “Citi Bike” and p “April 2020: 9,268 trips”. `img-fluid` keeps the calendar within its column while preserving its aspect ratio. Compare the arrangement and preserved content; do not infer absolute screen sizes from the slide's independently resized screenshots. Bootstrap's default grid uses Flexbox; the retained original top-level `index.html` is a separate native CSS Grid implementation.

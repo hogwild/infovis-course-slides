@@ -1,0 +1,78 @@
+{
+  "verifiedOn": "2026-10-22",
+  "publisher": "Citi Bike / Lyft",
+  "sourcePage": "https://citibikenyc.com/system-data",
+  "sourceUrl": "https://s3.amazonaws.com/tripdata/JC-202004-citibike-tripdata.csv.zip",
+  "csvFilename": "JC-202004-citibike-tripdata.csv",
+  "archiveSha256": "a9ac36d8e51332f9ffd7f91f739fb50f32052fdafb18951bf846d29b6dfd5963",
+  "csvSha256": "1c7cd6a2607c28dfc2fb542406fc083a906a2d051c2310b592646313cf22cfa7",
+  "sourceBytes": 1712500,
+  "columns": [
+    "tripduration",
+    "starttime",
+    "stoptime",
+    "start station id",
+    "start station name",
+    "start station latitude",
+    "start station longitude",
+    "end station id",
+    "end station name",
+    "end station latitude",
+    "end station longitude",
+    "bikeid",
+    "usertype",
+    "birth year",
+    "gender"
+  ],
+  "countingUnit": "one published trip row",
+  "inputRows": 9268,
+  "excludedRows": 0,
+  "exclusionRules": "All instructor CSV rows retained; no additional duration, usertype, station, or deduplication filtering.",
+  "timestampPolicy": "Preserve starttime local civil-date prefix without browser/UTC timezone conversion. Source timestamps carry no UTC offset; the file does not independently prove a timezone offset.",
+  "firstStarttime": "2020-04-01 01:06:20.6300",
+  "lastStarttime": "2020-04-30 22:54:39.0840",
+  "coverage": "Monthly JC April 2020 file; every one of 30 April dates has positive records. No date has been zero-filled. Completeness beyond the publisher release is not independently established.",
+  "datesObserved": 30,
+  "zeroFilledDates": [],
+  "duplicateCompleteRows": 0,
+  "originalWebsiteComparison": "Instructor supplied the project CSV and source. This CSV matches the official monthly release in every parsed record; only the final newline differs. The native classroom app is an explicit two-chapter reconstruction.",
+  "summary": {
+    "scope": "Jersey City",
+    "month": "April 2020",
+    "acceptedTrips": 9268,
+    "coveredDates": 30,
+    "weekdayDates": 22,
+    "weekendDates": 8,
+    "weekdayRides": 5742,
+    "weekendRides": 3526,
+    "weekdayMean": 261.0,
+    "weekendMean": 440.75,
+    "dailyMean": 308.93333333333334,
+    "maximumDay": {
+      "date": "2020-04-25",
+      "rides": 731,
+      "isWeekend": true
+    },
+    "minimumDay": {
+      "date": "2020-04-13",
+      "rides": 98,
+      "isWeekend": false
+    },
+    "weekendVsWeekdayPercent": 68.86973180076627,
+    "totalCheck": true
+  },
+  "classroomSource": "reference/citibike_storytelling_example/citibike_april.csv",
+  "classroomSourceSha256": "1ad57d04c3559cb10617254c0b1ecbe0f71506691522f08f4d683e99fae0a44e",
+  "classroomSourceBytes": 1712499,
+  "officialCrossCheck": {
+    "rawBytesIdentical": false,
+    "orderedParsedRowsIdentical": true,
+    "identicalIgnoringFinalNewline": true,
+    "difference": "Instructor CSV omits the final newline in the official CSV; all other bytes and all parsed records are identical."
+  },
+  "independentAggregateCheck": {
+    "method": "SQLite GROUP BY substr(starttime,1,10), COUNT(*) on the instructor CSV",
+    "result": "All 30 date/count pairs match the Python-derived daily.json exactly",
+    "checkedOn": "2026-10-22"
+  }
+}

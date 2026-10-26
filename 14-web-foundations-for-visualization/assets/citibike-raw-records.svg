@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 296" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+<title id="title">The first four actual Citi Bike records, showing five original fields</title>
+<desc id="desc">Selected source columns from the instructor CSV, in original row order. All values are exact. Each starttime is shown on two lines without changing its four fractional-second digits. Tripduration is measured in seconds.</desc>
+<rect width="1136" height="296" fill="#fcfaf6"/>
+<text x="0" y="23" font-size="19" font-weight="700" fill="#3157a4">FIRST 4 RECORDS · 5 OF 15 SOURCE FIELDS</text>
+<rect x="0" y="38" width="1136" height="50" fill="#edf3fc"/>
+<text x="14" y="65" font-size="22" font-weight="700" fill="#17233c">starttime</text>
+<text x="254" y="65" font-size="22" font-weight="700" fill="#17233c">tripduration</text>
+<text x="254" y="83" font-size="16" fill="#667085">seconds</text>
+<text x="422" y="65" font-size="22" font-weight="700" fill="#17233c">start station name</text>
+<text x="666" y="65" font-size="22" font-weight="700" fill="#17233c">end station name</text>
+<text x="910" y="65" font-size="22" font-weight="700" fill="#17233c">usertype</text>
+<rect x="0" y="88" width="1136" height="50" fill="#ffffff"/>
+<path d="M0 138H1136" stroke="#d8dbe4" stroke-width="1"/>
+<text data-source-row="1" data-field="starttime" aria-label="2020-04-01 01:06:20.6300" x="14" y="109" font-size="22" fill="#263248"><tspan x="14" dy="0">2020-04-01</tspan><tspan x="14" dy="23">01:06:20.6300</tspan></text>
+<text data-source-row="1" data-field="tripduration" x="254" y="120" font-size="23" fill="#263248">1437</text>
+<text data-source-row="1" data-field="start station name" x="422" y="120" font-size="23" fill="#263248">Fairmount Ave</text>
+<text data-source-row="1" data-field="end station name" x="666" y="120" font-size="23" fill="#263248">Fairmount Ave</text>
+<text data-source-row="1" data-field="usertype" x="910" y="120" font-size="23" fill="#263248">Customer</text>
+<rect x="0" y="138" width="1136" height="50" fill="#f6f7fa"/>
+<path d="M0 188H1136" stroke="#d8dbe4" stroke-width="1"/>
+<text data-source-row="2" data-field="starttime" aria-label="2020-04-01 05:02:42.0570" x="14" y="159" font-size="22" fill="#263248"><tspan x="14" dy="0">2020-04-01</tspan><tspan x="14" dy="23">05:02:42.0570</tspan></text>
+<text data-source-row="2" data-field="tripduration" x="254" y="170" font-size="23" fill="#263248">264</text>
+<text data-source-row="2" data-field="start station name" x="422" y="170" font-size="23" fill="#263248">Oakland Ave</text>
+<text data-source-row="2" data-field="end station name" x="666" y="170" font-size="23" fill="#263248">Sip Ave</text>
+<text data-source-row="2" data-field="usertype" x="910" y="170" font-size="23" fill="#263248">Subscriber</text>
+<rect x="0" y="188" width="1136" height="50" fill="#ffffff"/>
+<path d="M0 238H1136" stroke="#d8dbe4" stroke-width="1"/>
+<text data-source-row="3" data-field="starttime" aria-label="2020-04-01 06:20:28.1190" x="14" y="209" font-size="22" fill="#263248"><tspan x="14" dy="0">2020-04-01</tspan><tspan x="14" dy="23">06:20:28.1190</tspan></text>
+<text data-source-row="3" data-field="tripduration" x="254" y="220" font-size="23" fill="#263248">254</text>
+<text data-source-row="3" data-field="start station name" x="422" y="220" font-size="23" fill="#263248">Fairmount Ave</text>
+<text data-source-row="3" data-field="end station name" x="666" y="220" font-size="23" fill="#263248">Sip Ave</text>
+<text data-source-row="3" data-field="usertype" x="910" y="220" font-size="23" fill="#263248">Subscriber</text>
+<rect x="0" y="238" width="1136" height="50" fill="#f6f7fa"/>
+<path d="M0 288H1136" stroke="#d8dbe4" stroke-width="1"/>
+<text data-source-row="4" data-field="starttime" aria-label="2020-04-01 06:33:30.5170" x="14" y="259" font-size="22" fill="#263248"><tspan x="14" dy="0">2020-04-01</tspan><tspan x="14" dy="23">06:33:30.5170</tspan></text>
+<text data-source-row="4" data-field="tripduration" x="254" y="270" font-size="23" fill="#263248">429</text>
+<text data-source-row="4" data-field="start station name" x="422" y="270" font-size="23" fill="#263248">Sip Ave</text>
+<text data-source-row="4" data-field="end station name" x="666" y="270" font-size="23" fill="#263248">Bergen Ave</text>
+<text data-source-row="4" data-field="usertype" x="910" y="270" font-size="23" fill="#263248">Subscriber</text>
+</svg>

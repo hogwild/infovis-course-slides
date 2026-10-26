@@ -1,0 +1,36 @@
+{
+  "checkedOn": "2026-10-22",
+  "browser": "Installed Google Chrome, headless Playwright",
+  "viewport": {
+    "width": 1136,
+    "height": 450
+  },
+  "embeddedBodySize": {
+    "width": 1136,
+    "height": 448
+  },
+  "passed": [
+    "Data loaded with 9,268 total and 30 unique dates",
+    "Three complete chapter round trips preserve all 30 prepared cells",
+    "Native Enter key returns to overview",
+    "Both narrative sections remain displayed in normal document flow",
+    "Navigation active class and aria-pressed agree",
+    "Real figcaption changes with the active chapter",
+    "No page JavaScript errors",
+    "Bad-data interception (daily first count +1, total +1) is rejected because the visible prepared count differs; buttons remain disabled",
+    "SVG files parse as XML",
+    "Independent SQLite aggregation matches every derived date/count pair"
+  ],
+  "visualInspection": [
+    "Embedded overview",
+    "Embedded calendar with legend",
+    "Full page at 1280 \u00d7 900",
+    "Static chapter states",
+    "Static style states"
+  ],
+  "limitations": [
+    "No screen-reader user test",
+    "No mobile touch-device test",
+    "Reference project source is not executed by this classroom reconstruction"
+  ]
+}
