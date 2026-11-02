@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="520" viewBox="0 0 680 520" role="img" aria-label="Conceptual temperature field on a flat material sample, not measured data"><title>Conceptual temperature field on a flat material sample, not measured data</title><rect width="680" height="520" fill="#fff"/><g font-family="Arial, sans-serif" fill="#17233c">
+<defs><radialGradient id="heat" cx="32%" cy="40%" r="75%"><stop stop-color="#c9455a"/><stop offset=".28" stop-color="#f1ac8d"/><stop offset=".58" stop-color="#f7e7c7"/><stop offset="1" stop-color="#bfd4ed"/></radialGradient></defs>
+<text x="340" y="37" text-anchor="middle" font-size="25" font-weight="700">Temperature across a material sample</text>
+<rect x="80" y="80" width="520" height="310" fill="url(#heat)" stroke="#17233c" stroke-width="2"/>
+<g stroke="#fff" stroke-opacity=".45" stroke-width="1"><path d="M145 80V390M210 80V390M275 80V390M340 80V390M405 80V390M470 80V390M535 80V390M80 142H600M80 204H600M80 266H600M80 328H600"/></g>
+<circle cx="246" cy="204" r="7" fill="#17233c" stroke="#fff" stroke-width="3"/>
+<path d="M251 200L365 130" stroke="#17233c" stroke-width="2"/>
+<text x="374" y="124" font-size="22">A value at this location</text>
+<text x="340" y="432" text-anchor="middle" font-size="23">Positions refer to the sample, not Earth.</text>
+<text x="340" y="485" text-anchor="middle" font-size="20" fill="#667085">Conceptual field · warmer → cooler</text></g></svg>
