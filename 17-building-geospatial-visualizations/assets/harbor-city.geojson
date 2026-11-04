@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "name": "Harbor City districts",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "north",
+      "properties": {"district_id": "north", "name": "North Ridge"},
+      "geometry": {"type": "Polygon", "coordinates": [[[121.40,31.30],[121.48,31.31],[121.50,31.25],[121.43,31.24],[121.40,31.30]]]}
+    },
+    {
+      "type": "Feature",
+      "id": "west",
+      "properties": {"district_id": "west", "name": "West Garden"},
+      "geometry": {"type": "Polygon", "coordinates": [[[121.36,31.25],[121.43,31.24],[121.44,31.18],[121.37,31.17],[121.36,31.25]]]}
+    },
+    {
+      "type": "Feature",
+      "id": "central",
+      "properties": {"district_id": "central", "name": "Central"},
+      "geometry": {"type": "Polygon", "coordinates": [[[121.43,31.24],[121.50,31.25],[121.51,31.18],[121.44,31.18],[121.43,31.24]]]}
+    },
+    {
+      "type": "Feature",
+      "id": "east",
+      "properties": {"district_id": "east", "name": "East Point"},
+      "geometry": {"type": "Polygon", "coordinates": [[[121.50,31.25],[121.57,31.23],[121.58,31.17],[121.51,31.18],[121.50,31.25]]]}
+    },
+    {
+      "type": "Feature",
+      "id": "south",
+      "properties": {"district_id": "south", "name": "South Bank"},
+      "geometry": {"type": "Polygon", "coordinates": [[[121.37,31.17],[121.44,31.18],[121.49,31.12],[121.39,31.10],[121.37,31.17]]]}
+    },
+    {
+      "type": "Feature",
+      "id": "harbor",
+      "properties": {"district_id": "harbor", "name": "Harbor"},
+      "geometry": {"type": "Polygon", "coordinates": [[[121.44,31.18],[121.51,31.18],[121.58,31.17],[121.55,31.10],[121.49,31.12],[121.44,31.18]]]}
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+district_id,requests,population
+north,1800,60000
+west,950,50000
+central,2100,40000
+east,,52000
+south,1600,80000
+harbor,1250,25000

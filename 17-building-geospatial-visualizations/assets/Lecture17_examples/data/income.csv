@@ -1,0 +1,178 @@
+code,name,income_group,source_income_group
+FJI,Fiji,Lower middle income,4. Lower middle income
+TZA,Tanzania,Low income,5. Low income
+SAH,W. Sahara,Low income,5. Low income
+CAN,Canada,High income,1. High income: OECD
+USA,United States of America,High income,1. High income: OECD
+KAZ,Kazakhstan,Upper middle income,3. Upper middle income
+UZB,Uzbekistan,Lower middle income,4. Lower middle income
+PNG,Papua New Guinea,Lower middle income,4. Lower middle income
+IDN,Indonesia,Lower middle income,4. Lower middle income
+ARG,Argentina,Upper middle income,3. Upper middle income
+CHL,Chile,Upper middle income,3. Upper middle income
+COD,Dem. Rep. Congo,Low income,5. Low income
+SOM,Somalia,Low income,5. Low income
+KEN,Kenya,Low income,5. Low income
+SDN,Sudan,Lower middle income,4. Lower middle income
+TCD,Chad,Low income,5. Low income
+HTI,Haiti,Low income,5. Low income
+DOM,Dominican Rep.,Upper middle income,3. Upper middle income
+RUS,Russia,Upper middle income,3. Upper middle income
+BHS,Bahamas,High income,2. High income: nonOECD
+FLK,Falkland Is.,High income,1. High income: OECD
+NOR,Norway,High income,1. High income: OECD
+GRL,Greenland,High income,2. High income: nonOECD
+ATF,Fr. S. Antarctic Lands,High income,2. High income: nonOECD
+TLS,Timor-Leste,Lower middle income,4. Lower middle income
+ZAF,South Africa,Upper middle income,3. Upper middle income
+LSO,Lesotho,Lower middle income,4. Lower middle income
+MEX,Mexico,Upper middle income,3. Upper middle income
+URY,Uruguay,Upper middle income,3. Upper middle income
+BRA,Brazil,Upper middle income,3. Upper middle income
+BOL,Bolivia,Lower middle income,4. Lower middle income
+PER,Peru,Upper middle income,3. Upper middle income
+COL,Colombia,Upper middle income,3. Upper middle income
+PAN,Panama,Upper middle income,3. Upper middle income
+CRI,Costa Rica,Upper middle income,3. Upper middle income
+NIC,Nicaragua,Lower middle income,4. Lower middle income
+HND,Honduras,Lower middle income,4. Lower middle income
+SLV,El Salvador,Lower middle income,4. Lower middle income
+GTM,Guatemala,Lower middle income,4. Lower middle income
+BLZ,Belize,Lower middle income,4. Lower middle income
+VEN,Venezuela,Upper middle income,3. Upper middle income
+GUY,Guyana,Lower middle income,4. Lower middle income
+SUR,Suriname,Upper middle income,3. Upper middle income
+FRA,France,High income,1. High income: OECD
+ECU,Ecuador,Upper middle income,3. Upper middle income
+PRI,Puerto Rico,High income,2. High income: nonOECD
+JAM,Jamaica,Upper middle income,3. Upper middle income
+CUB,Cuba,Upper middle income,3. Upper middle income
+ZWE,Zimbabwe,Low income,5. Low income
+BWA,Botswana,Upper middle income,3. Upper middle income
+NAM,Namibia,Upper middle income,3. Upper middle income
+SEN,Senegal,Lower middle income,4. Lower middle income
+MLI,Mali,Low income,5. Low income
+MRT,Mauritania,Low income,5. Low income
+BEN,Benin,Low income,5. Low income
+NER,Niger,Low income,5. Low income
+NGA,Nigeria,Lower middle income,4. Lower middle income
+CMR,Cameroon,Lower middle income,4. Lower middle income
+TGO,Togo,Low income,5. Low income
+GHA,Ghana,Lower middle income,4. Lower middle income
+CIV,Côte d'Ivoire,Lower middle income,4. Lower middle income
+GIN,Guinea,Low income,5. Low income
+GNB,Guinea-Bissau,Low income,5. Low income
+LBR,Liberia,Low income,5. Low income
+SLE,Sierra Leone,Low income,5. Low income
+BFA,Burkina Faso,Low income,5. Low income
+CAF,Central African Rep.,Low income,5. Low income
+COG,Congo,Lower middle income,4. Lower middle income
+GAB,Gabon,Upper middle income,3. Upper middle income
+GNQ,Eq. Guinea,High income,2. High income: nonOECD
+ZMB,Zambia,Lower middle income,4. Lower middle income
+MWI,Malawi,Low income,5. Low income
+MOZ,Mozambique,Low income,5. Low income
+SWZ,eSwatini,Lower middle income,4. Lower middle income
+AGO,Angola,Upper middle income,3. Upper middle income
+BDI,Burundi,Low income,5. Low income
+ISR,Israel,High income,1. High income: OECD
+LBN,Lebanon,Upper middle income,3. Upper middle income
+MDG,Madagascar,Low income,5. Low income
+PSX,Palestine,Lower middle income,4. Lower middle income
+GMB,Gambia,Low income,5. Low income
+TUN,Tunisia,Upper middle income,3. Upper middle income
+DZA,Algeria,Upper middle income,3. Upper middle income
+JOR,Jordan,Upper middle income,3. Upper middle income
+ARE,United Arab Emirates,High income,2. High income: nonOECD
+QAT,Qatar,High income,2. High income: nonOECD
+KWT,Kuwait,High income,2. High income: nonOECD
+IRQ,Iraq,Lower middle income,4. Lower middle income
+OMN,Oman,High income,2. High income: nonOECD
+VUT,Vanuatu,Lower middle income,4. Lower middle income
+KHM,Cambodia,Low income,5. Low income
+THA,Thailand,Upper middle income,3. Upper middle income
+LAO,Laos,Lower middle income,4. Lower middle income
+MMR,Myanmar,Low income,5. Low income
+VNM,Vietnam,Lower middle income,4. Lower middle income
+PRK,North Korea,Low income,5. Low income
+KOR,South Korea,High income,1. High income: OECD
+MNG,Mongolia,Lower middle income,4. Lower middle income
+IND,India,Lower middle income,4. Lower middle income
+BGD,Bangladesh,Low income,5. Low income
+BTN,Bhutan,Lower middle income,4. Lower middle income
+NPL,Nepal,Low income,5. Low income
+PAK,Pakistan,Lower middle income,4. Lower middle income
+AFG,Afghanistan,Low income,5. Low income
+TJK,Tajikistan,Low income,5. Low income
+KGZ,Kyrgyzstan,Low income,5. Low income
+TKM,Turkmenistan,Upper middle income,3. Upper middle income
+IRN,Iran,Upper middle income,3. Upper middle income
+SYR,Syria,Lower middle income,4. Lower middle income
+ARM,Armenia,Lower middle income,4. Lower middle income
+SWE,Sweden,High income,1. High income: OECD
+BLR,Belarus,Upper middle income,3. Upper middle income
+UKR,Ukraine,Lower middle income,4. Lower middle income
+POL,Poland,High income,1. High income: OECD
+AUT,Austria,High income,1. High income: OECD
+HUN,Hungary,High income,1. High income: OECD
+MDA,Moldova,Lower middle income,4. Lower middle income
+ROU,Romania,Upper middle income,3. Upper middle income
+LTU,Lithuania,Upper middle income,3. Upper middle income
+LVA,Latvia,Upper middle income,3. Upper middle income
+EST,Estonia,High income,1. High income: OECD
+DEU,Germany,High income,1. High income: OECD
+BGR,Bulgaria,Upper middle income,3. Upper middle income
+GRC,Greece,High income,1. High income: OECD
+TUR,Turkey,Upper middle income,3. Upper middle income
+ALB,Albania,Lower middle income,4. Lower middle income
+HRV,Croatia,High income,2. High income: nonOECD
+CHE,Switzerland,High income,1. High income: OECD
+LUX,Luxembourg,High income,1. High income: OECD
+BEL,Belgium,High income,1. High income: OECD
+NLD,Netherlands,High income,1. High income: OECD
+PRT,Portugal,High income,1. High income: OECD
+ESP,Spain,High income,1. High income: OECD
+IRL,Ireland,High income,1. High income: OECD
+NCL,New Caledonia,High income,2. High income: nonOECD
+SLB,Solomon Is.,Lower middle income,4. Lower middle income
+NZL,New Zealand,High income,1. High income: OECD
+AUS,Australia,High income,1. High income: OECD
+LKA,Sri Lanka,Lower middle income,4. Lower middle income
+CHN,China,Upper middle income,3. Upper middle income
+TWN,Taiwan,High income,2. High income: nonOECD
+ITA,Italy,High income,1. High income: OECD
+DNK,Denmark,High income,1. High income: OECD
+GBR,United Kingdom,High income,1. High income: OECD
+ISL,Iceland,High income,1. High income: OECD
+AZE,Azerbaijan,Upper middle income,3. Upper middle income
+GEO,Georgia,Lower middle income,4. Lower middle income
+PHL,Philippines,Lower middle income,4. Lower middle income
+MYS,Malaysia,Upper middle income,3. Upper middle income
+BRN,Brunei,High income,2. High income: nonOECD
+SVN,Slovenia,High income,1. High income: OECD
+FIN,Finland,High income,1. High income: OECD
+SVK,Slovakia,High income,1. High income: OECD
+CZE,Czechia,High income,1. High income: OECD
+ERI,Eritrea,Low income,5. Low income
+JPN,Japan,High income,1. High income: OECD
+PRY,Paraguay,Lower middle income,4. Lower middle income
+YEM,Yemen,Lower middle income,4. Lower middle income
+SAU,Saudi Arabia,High income,2. High income: nonOECD
+ATA,Antarctica,,2. High income: nonOECD
+CYN,N. Cyprus,Upper middle income,3. Upper middle income
+CYP,Cyprus,High income,2. High income: nonOECD
+MAR,Morocco,Lower middle income,4. Lower middle income
+EGY,Egypt,Lower middle income,4. Lower middle income
+LBY,Libya,Upper middle income,3. Upper middle income
+ETH,Ethiopia,Low income,5. Low income
+DJI,Djibouti,Lower middle income,4. Lower middle income
+SOL,Somaliland,Lower middle income,4. Lower middle income
+UGA,Uganda,Low income,5. Low income
+RWA,Rwanda,Low income,5. Low income
+BIH,Bosnia and Herz.,Upper middle income,3. Upper middle income
+MKD,North Macedonia,Upper middle income,3. Upper middle income
+SRB,Serbia,Upper middle income,3. Upper middle income
+MNE,Montenegro,Upper middle income,3. Upper middle income
+KOS,Kosovo,Lower middle income,4. Lower middle income
+TTO,Trinidad and Tobago,High income,2. High income: nonOECD
+SDS,S. Sudan,Low income,5. Low income

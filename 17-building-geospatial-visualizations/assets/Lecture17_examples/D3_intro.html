@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lecture 17 · D3 world-map lab</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="lib/d3.v7.9.0.min.js"></script>
+    </head>
+    <body>
+        <svg id="chart" viewBox="0 0 520 240"></svg>
+    </body>
+    <script>
+    // Open D3_intro.html with VS Code Live Server.
+    // 1. Define the data and scale.
+    const daily = [
+      { date: "Apr 1", rides: 299 },
+      { date: "Apr 2", rides: 219 },
+      { date: "Apr 3", rides: 149 }
+    ];
+    const x = d3.scaleLinear().domain([0, 400]).range([0, 320]);
+    const svg = d3.select("#chart");
+    // 2. Bind data and draw the bars.
+    svg
+      .selectAll("rect")
+      .data(daily)
+      .enter()
+      .append("rect")
+      .attr("x", 100)
+      .attr("y", (d, i) => 40 + i * 60)
+      .attr("width", d => x(d.rides))
+      .attr("height", 30)
+      .attr("fill", "steelblue");
+
+    // Add a date label and value for each bar.
+    daily.forEach((d, i) => {
+      svg
+        .append("text")
+        .attr("x", 90)
+        .attr("y", 60 + i * 60)
+        .attr("text-anchor", "end")
+        .text(d.date);
+      svg
+        .append("text")
+        .attr("x", 108 + x(d.rides))
+        .attr("y", 60 + i * 60)
+        .text(d.rides);
+    });
+  </script>
+   
+</html>
