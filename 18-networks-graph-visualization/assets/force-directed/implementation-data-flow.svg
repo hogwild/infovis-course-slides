@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1136" height="450" viewBox="0 0 1136 450" role="img" aria-labelledby="title desc">
+  <title id="title">Data flow in the examples and a proposed linked interaction</title>
+  <desc id="desc">Prepared station and edge data is copied for each view, passed to a force simulation, and rendered as SVG. A proposed project extension sends a clicked network node's station ID to a shared selection controller. The controller highlights the station in the network and its matching bubble, and updates the bubble's station details.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#3157a4"/></marker>
+    <style>
+      text { font-family: Inter, 'Source Sans 3', 'Segoe UI', sans-serif; fill: #263248; font-size: 24px; }
+      .heading { font-size: 27px; font-weight: 700; fill: #17233c; }
+      .name { font-weight: 700; fill: #17233c; }
+      .code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 21px; }
+      .note { font-size: 22px; fill: #667085; }
+      .step { fill: #edf3fc; stroke: #d8dbe4; stroke-width: 1.5; }
+      .selection { fill: #f3effa; stroke: #7656a6; stroke-width: 1.5; }
+      .view { fill: #eaf6f1; stroke: #258276; stroke-width: 1.5; }
+      .arrow { fill: none; stroke: #3157a4; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <text x="0" y="29" class="heading">Data flow in each JavaScript example</text>
+  <rect x="1" y="53" width="240" height="122" rx="3" class="step"/>
+  <text x="19" y="84" class="name">Prepared data</text>
+  <text x="19" y="118" class="code">CITIBIKE_DATA</text>
+  <text x="19" y="151">Stations + edges</text>
+  <path d="M246 114H284" class="arrow"/>
+
+  <rect x="293" y="53" width="240" height="122" rx="3" class="step"/>
+  <text x="311" y="84" class="name">Prepare copies</text>
+  <text x="311" y="118" class="code">prepareGraph()</text>
+  <text x="311" y="151" class="code">prepareNodes()</text>
+  <path d="M538 114H576" class="arrow"/>
+
+  <rect x="585" y="53" width="250" height="122" rx="3" class="step"/>
+  <text x="603" y="84" class="name">Compute positions</text>
+  <text x="603" y="118" class="code">createSimulation()</text>
+  <text x="603" y="151">Nodes gain x / y</text>
+  <path d="M840 114H878" class="arrow"/>
+
+  <rect x="887" y="53" width="248" height="122" rx="3" class="view"/>
+  <text x="905" y="84" class="name">Update the view</text>
+  <text x="905" y="118" class="code">updatePositions()</text>
+  <text x="905" y="151">SVG circles / lines</text>
+
+  <text x="0" y="207" class="note">drawGraph() / drawBubbles() create marks once; tick updates their coordinates.</text>
+  <path d="M0 229H1136" stroke="#d8dbe4" stroke-width="1.5"/>
+  <text x="0" y="266" class="heading">Project extension: link the network and bubble views</text>
+
+  <rect x="1" y="311" width="278" height="95" rx="3" class="step"/>
+  <text x="19" y="346" class="name">Click a network node</text>
+  <text x="19" y="381">Emit its station ID</text>
+  <path d="M284 358H328" class="arrow"/>
+
+  <rect x="337" y="311" width="322" height="95" rx="3" class="selection"/>
+  <text x="355" y="343" class="name">Selection controller</text>
+  <text x="355" y="373" class="code">selectedStationId = id</text>
+  <text x="355" y="398" class="note">Notify both views</text>
+  <path d="M664 358H712V322H755" class="arrow"/>
+  <path d="M712 358V413H755" class="arrow"/>
+
+  <rect x="764" y="286" width="371" height="72" rx="3" class="view"/>
+  <text x="782" y="315" class="name">Node-link view</text>
+  <text x="782" y="344">Highlight the selected node</text>
+
+  <rect x="764" y="377" width="371" height="72" rx="3" class="view"/>
+  <text x="782" y="406" class="name">Bubble view</text>
+  <text x="782" y="435">Highlight bubble + show counts</text>
+</svg>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Citi Bike node-link diagram</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="vendor/d3.v7.9.0.min.js"></script>
+  <script defer src="citibike-data.js"></script>
+  <script defer src="shared.js"></script>
+  <script defer src="forceLinkedGraph.js"></script>
+</head>
+<body>
+<main>
+  <nav aria-label="Examples">
+    <a href="forceLinkedGraph.html" aria-current="page">Node-link diagram</a>
+    <a href="forceCollide.html">Bubble graph</a>
+  </nav>
+  <h1>Find the hubs in the Citi Bike station network</h1>
+  <p class="intro">Stations are nodes. Trips between different stations form undirected edges.</p>
+  <div class="controls">
+    <label>Layout <select id="layout-mode"><option value="dynamic">Dynamic</option><option value="static">Static</option></select></label>
+    <button id="reset-layout" type="button">Restart layout</button>
+    <button id="fit-view" type="button">Fit view</button>
+    <label><input id="show-labels" type="checkbox"> Show station names</label>
+  </div>
+  <div class="summary"><span id="data-summary"></span><span id="mode-status" role="status"></span></div>
+  <div class="chart-frame"><svg id="chart" viewBox="0 0 960 600" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">Citi Bike station connections</title><desc id="chart-desc">Node radius represents arrivals. Edge width represents trip frequency. In dynamic mode, drag a station to explore its connections.</desc></svg></div>
+  <p id="details" class="detail" aria-live="polite">Hover over or focus a station to inspect its activity.</p>
+  <p class="encoding">Radius: arrivals · Edge width: square root of trips · Color: second digit of station ID</p>
+  <footer>April 2020 trip data from the course reference examples. <a href="https://gist.githubusercontent.com/hogwild/4a23b2327e88e6e3aa101bb01ddb28ba/raw/81fd842af7328d2ad6d2a498cc4589031ae5b4af/citibike_rawdata_2020_4.csv">Source CSV</a> · Same-station trips contribute to station counts but are omitted from the edges.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; }
+
+.teaching-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+  height: 100vh;
+  height: 100dvh;
+}
+
+.chart-pane {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.chart-pane svg { display: block; width: 100%; height: 100%; }
+.chart-pane.draggable circle { cursor: grab; }
+.chart-pane.draggable circle:active { cursor: grabbing; }
+.preview-frame { display: block; width: 100%; height: 100%; border: 0; }
+.preview-frame.pending { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+
+.code-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-left: 1px solid #d8dee4;
+  background: #f6f8fa;
+  color: #24292f;
+  font: 14px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+#code-editor { flex: 1; min-height: 0; }
+.CodeMirror { height: 100%; font: inherit; background: transparent; color: #24292f; }
+.CodeMirror-scroll { overscroll-behavior: contain; }
+.CodeMirror-lines { padding: 20px 0; }
+.CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like { padding: 0 20px 0 12px; }
+.CodeMirror-gutters { border-right: 0; background: #f6f8fa; }
+.CodeMirror-linenumber { color: #6e7781; padding-left: 8px; }
+.CodeMirror-cursor { border-left: 2px solid #24292f; }
+.CodeMirror-focused .CodeMirror-selected { background: #c8e1ff; }
+#code-status {
+  flex: none;
+  max-height: 120px;
+  overflow: auto;
+  padding: 10px 16px;
+  border-top: 1px solid #d8dee4;
+  font: 12px/1.5 system-ui, sans-serif;
+  color: #57606a;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+#code-status[data-state="error"] { background: #fff1f1; color: #a40e26; }
+
+/* CodeMirror's JavaScript tokens, using the same light teaching palette. */
+.cm-s-teaching .cm-comment { color: #57606a; }
+.cm-s-teaching .cm-keyword, .cm-s-teaching .cm-operator { color: #cf222e; }
+.cm-s-teaching .cm-string, .cm-s-teaching .cm-string-2 { color: #0a3069; }
+.cm-s-teaching .cm-number, .cm-s-teaching .cm-atom { color: #0550ae; }
+.cm-s-teaching .cm-property, .cm-s-teaching .cm-def { color: #8250df; }
+.cm-s-teaching .cm-builtin { color: #953800; }
+
+@media (max-width: 900px) {
+  .teaching-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 42% 58%;
+  }
+  .code-pane { border-left: 0; border-top: 1px solid #d8dee4; }
+}

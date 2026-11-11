@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Citi Bike bubble graph · Dynamic · D3 v7</title>
+  <link rel="stylesheet" href="vendor/codemirror-5.65.20/codemirror.css">
+  <link rel="stylesheet" href="teaching.css">
+</head>
+<body>
+  <main class="teaching-layout">
+    <section class="chart-pane draggable" aria-label="Visualization">
+      <!-- The viewBox places (0, 0) at the center of the drawing area. -->
+      <svg viewBox="-300 -320 600 640" role="img" aria-label="Citi Bike station arrivals shown as bubbles"></svg>
+    </section>
+    <section class="code-pane" aria-label="JavaScript editor">
+      <div id="code-editor"></div>
+      <div id="code-status" role="status" aria-live="polite">Edit JavaScript to update the chart.</div>
+    </section>
+  </main>
+
+  <script id="example-code" type="text/plain">
+    // 1. One node per station. Copy the data: the simulation adds x, y, vx, vy.
+    // April 2020 Citi Bike trip data; source and aggregation: README.md.
+    const nodes = CITIBIKE_DATA.nodes.map(d => ({ ...d }));
+    const svg = d3.select('svg');
+
+    // 2. Square-root radius makes circle AREA proportional to arrival count.
+    const radius = d3.scaleSqrt()
+      .domain([0, d3.max(nodes, d => d.arrivals)])
+      .range([0, 50]);
+
+    // 3. Bind nodes to SVG circles. Use the station ID's second digit for color.
+    // These colors distinguish IDs; they do not represent geographic groups.
+    const circles = svg.selectAll('circle')
+      .data(nodes)
+      .join('circle')
+      .attr('r', d => radius(d.arrivals))
+      .attr('fill', d => d3.schemeCategory10[Number(String(d.id)[1])]);
+
+    // 4. Position forces pull toward the center; collision separates circles.
+    // Add 1 to each collision radius to leave a small gap between bubbles.
+    const simulation = d3.forceSimulation(nodes)
+      .force('x', d3.forceX(0).strength(0.05))
+      .force('y', d3.forceY(0).strength(0.05))
+      .force('collide', d3.forceCollide()
+        .radius(d => radius(d.arrivals) + 1)
+        .iterations(2));
+
+    // 5. The simulation computes positions; this callback updates the SVG.
+    // It starts automatically and cools down until the layout settles.
+    simulation.on('tick', () => {
+      circles
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y);
+    });
+
+    // 6. Dragging pins a node; releasing it lets the forces move it again.
+    circles.call(d3.drag()
+      .on('start', (event, d) => {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      })
+      .on('drag', (event, d) => {
+        d.fx = event.x;
+        d.fy = event.y;
+      })
+      .on('end', (event, d) => {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }));
+  </script>
+  <script src="vendor/codemirror-5.65.20/codemirror.js"></script>
+  <script src="vendor/codemirror-5.65.20/javascript.js"></script>
+  <script src="teaching-view.js"></script>
+</body>
+</html>
