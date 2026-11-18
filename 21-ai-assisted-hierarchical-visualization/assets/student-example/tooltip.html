@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02 · Add tooltips · Titanic D3 Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Local classic D3 bundle creates the shared global `d3`. -->
+  <script src="lib/d3.v7.9.0.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body data-stage="tooltip">
+  <header>
+    <p class="eyebrow">INFORMATION VISUALIZATION · LECTURE 21</p>
+    <nav aria-label="Lab stages">
+      <a href="index.html" >1. Static treemap</a>
+      <a href="tooltip.html" aria-current="page">2. Tooltips</a>
+      <a href="tree.html">Appendix: Tree</a>
+    </nav>
+    <h1>02 · Add tooltips</h1>
+    <p>Hover over a rectangle to read its full details.</p>
+  </header>
+  <main>
+    <p id="summary" role="status">Loading data… If this message remains, run the local HTTP server described below.</p>
+    <p id="error" role="alert"></p>
+    <figure>
+      <figcaption><strong>Titanic passengers</strong> · <span id="hierarchy">Sex → Pclass</span><br>Area = passenger count · Color = survival rate</figcaption>
+      <div id="legend"></div>
+      <svg id="chart" role="group" aria-label="Titanic passengers grouped by sex and passenger class" aria-describedby="chart-description">
+        <!-- aria-label names the chart without triggering a native SVG title tooltip. -->
+        <desc id="chart-description">891 passengers, 342 survivors. Rectangles show group counts and survival rates. The largest group is male, Class 3: 347 passengers, 47 survivors. Female, Class 1 has 94 passengers, 91 survivors.</desc>
+      </svg>
+    </figure>
+    <p id="detail" aria-live="polite">Point to a group to read its full details.</p>
+<div id="tooltip" role="tooltip" hidden></div>
+    <p class="source">Data: <a href="https://gist.github.com/hogwild/2ac0f0b665b4295e0574c85c12bec092">hogwild / titanic.csv</a> · Supplied 891-record sample, not the full ship population.</p>
+    <details class="instructions"><summary>How to run and read this example</summary>
+      <p>From this project folder, run <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/</code>. ES modules and CSV loading require HTTP; do not double-click the HTML files.</p>
+      <p>Start with <code>js/main.js</code>, then read <code>data.js → buildTree.js → treemap.js</code>. For Stage 2, read <code>interaction.js</code> and its one call in <code>main.js</code>.</p>
+    </details>
+    <noscript>This example requires JavaScript. A rendered preview is included in preview/static-treemap.png.</noscript>
+  </main>
+</body>
+</html>

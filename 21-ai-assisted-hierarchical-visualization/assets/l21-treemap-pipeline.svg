@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 440" role="img" aria-labelledby="title desc">
+  <title id="title">The treemap pipeline in D3</title>
+  <desc id="desc">Flat records are grouped and converted to a named tree. d3.hierarchy wraps the tree, sum and sort set weights and child order, and d3.treemap calculates rectangle coordinates. D3 selections use those coordinates to draw SVG rectangles and labels.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7b8da9"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family:Arial,sans-serif; fill:#17233c; text-anchor:middle; }
+    .heading { font-size:25px; font-weight:700; }
+    .api { font-family:Menlo,Consolas,monospace; font-size:25px; fill:#3157a4; }
+    .detail { font-size:22px; fill:#637086; }
+    .step { fill:#edf3ff; stroke:#8fa7d2; stroke-width:1.5; }
+    .connector { fill:none; stroke:#7b8da9; stroke-width:3.5; marker-end:url(#arrow); }
+  </style>
+
+  <!-- Read the top row from left to right, then follow the turn downward. -->
+  <path class="connector" d="M245 120H289"/>
+  <path class="connector" d="M540 120H584"/>
+  <path class="connector" d="M835 120H879"/>
+  <path class="connector" d="M1010 200V285"/>
+  <path class="connector" d="M890 350H746"/>
+
+  <rect x="5" y="40" width="240" height="160" rx="6" fill="#fff" stroke="#b9c2d1" stroke-width="1.5"/>
+  <text class="heading" x="125" y="76">Prepare the tree</text>
+  <text class="api" x="125" y="114">d3.groups()</text>
+  <text class="api" x="125" y="149">buildTree()</text>
+  <text class="detail" x="125" y="183">name + children</text>
+
+  <rect class="step" x="300" y="40" width="240" height="160" rx="6"/>
+  <text class="heading" x="420" y="76">Wrap the tree</text>
+  <text class="api" x="420" y="126">d3.hierarchy()</text>
+  <text class="detail" x="420" y="174">Linked D3 nodes</text>
+
+  <rect class="step" x="595" y="40" width="240" height="160" rx="6"/>
+  <text class="heading" x="715" y="76">Aggregate + order</text>
+  <text class="api" x="715" y="114">.sum()</text>
+  <text class="api" x="715" y="149">.sort()</text>
+  <text class="detail" x="715" y="183">Weights + child order</text>
+
+  <rect class="step" x="890" y="40" width="240" height="160" rx="6"/>
+  <text class="heading" x="1010" y="76">Compute layout</text>
+  <text class="api" x="1010" y="126">d3.treemap()</text>
+  <text class="detail" x="1010" y="174">Apply the layout to root</text>
+
+  <rect x="890" y="295" width="240" height="110" rx="6" fill="#edf7f2" stroke="#79b59e" stroke-width="1.5"/>
+  <text class="heading" x="1010" y="335">Rectangle bounds</text>
+  <text class="api" x="1010" y="376">x0, y0, x1, y1</text>
+
+  <rect x="430" y="295" width="300" height="110" rx="6" fill="#fff" stroke="#b9c2d1" stroke-width="1.5"/>
+  <text class="heading" x="580" y="328">Render with SVG</text>
+  <text class="api" x="580" y="362">D3 selections</text>
+  <text class="detail" x="580" y="391">Rectangles + labels</text>
+
+  <text class="detail" x="125" y="24">Flat input records</text>
+</svg>

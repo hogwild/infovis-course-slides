@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appendix · Draw a tree · Titanic D3 Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="lib/d3.v7.9.0.min.js"></script>
+  <script type="module" src="js/tree.js"></script>
+</head>
+<body data-stage="tree">
+  <header>
+    <p class="eyebrow">INFORMATION VISUALIZATION · LECTURE 21</p>
+    <nav aria-label="Lab examples">
+      <a href="index.html">1. Static treemap</a>
+      <a href="tooltip.html">2. Tooltips</a>
+      <a href="tree.html" aria-current="page">Appendix: Tree</a>
+    </nav>
+    <h1>Appendix · Draw a tree</h1>
+    <p>Reuse the same hierarchy, then draw nodes and parent–child links.</p>
+  </header>
+  <main>
+    <p id="summary" role="status">Loading data… If this message remains, run the local HTTP server described below.</p>
+    <p id="error" role="alert"></p>
+    <figure>
+      <figcaption><strong>Titanic passengers</strong> · Sex → Pclass<br>Each circle represents a group. Links connect parents to children.</figcaption>
+      <div class="tree-frame">
+        <svg id="tree" role="img" aria-label="Titanic passenger groups as a tree: Sex then Pclass" aria-describedby="tree-description">
+          <desc id="tree-description">Nine nodes and eight links. Passengers contains male and female; each sex contains three passenger classes. All circles have the same size.</desc>
+        </svg>
+      </div>
+    </figure>
+    <p class="source">Data: <a href="https://gist.github.com/hogwild/2ac0f0b665b4295e0574c85c12bec092">hogwild / titanic.csv</a> · Supplied 891-record sample, not the full ship population.</p>
+    <details class="instructions"><summary>How to run and read this example</summary>
+      <p>From this project folder, run <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/tree.html</code>. Use HTTP rather than opening the file directly.</p>
+      <p>Read <code>js/tree.js</code>. It imports the existing <code>loadData()</code> and <code>buildTree()</code>, calls <code>d3.hierarchy()</code> and <code>d3.tree()</code>, then draws links and nodes.</p>
+      <p>This tree layout does not require <code>.sum()</code>. Node size and spacing show structure, not passenger counts or survival rates.</p>
+      <p>On a narrow screen, scroll the chart horizontally to keep the labels readable.</p>
+    </details>
+    <noscript>This example requires JavaScript.</noscript>
+  </main>
+</body>
+</html>
